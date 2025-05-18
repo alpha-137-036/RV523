@@ -1307,16 +1307,16 @@
 		(uuid "3f604569-3cfc-4e99-87fd-ec3aa94a527d")
 	)
 	(junction
-		(at 73.66 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4e895c54-8b87-49ce-94ed-62ce1eb3f6fb")
-	)
-	(junction
 		(at 134.62 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "58609e7e-b50e-4ea2-87b9-a153e7d4048e")
+	)
+	(junction
+		(at 73.66 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ca8c322-9f77-4b2f-ac72-e4325a7b5cf4")
 	)
 	(junction
 		(at 90.17 128.27)
@@ -1337,12 +1337,6 @@
 		(uuid "a07ae5ec-e380-447a-816d-867e9ae75a31")
 	)
 	(junction
-		(at 73.66 153.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bb8425a0-ceae-4ff1-8d43-75981ef99706")
-	)
-	(junction
 		(at 68.58 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1353,6 +1347,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c8b74a06-b6e2-4cca-8068-01ee8b1961bc")
+	)
+	(junction
+		(at 73.66 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cb8d5423-80f6-43b0-a6d3-22f74b3a8967")
 	)
 	(junction
 		(at 87.63 87.63)
@@ -1642,13 +1642,23 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 128.27) (xy 90.17 128.27)
+			(xy 67.31 128.27) (xy 73.66 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "51a63804-670f-49bc-b496-b928b1f61e9e")
+	)
+	(wire
+		(pts
+			(xy 73.66 153.67) (xy 90.17 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63825ea3-b181-4874-a9df-59ea190c13ab")
 	)
 	(wire
 		(pts
@@ -1729,16 +1739,6 @@
 			(type default)
 		)
 		(uuid "8b12d556-0e78-489f-a4d5-09bd0f1b220a")
-	)
-	(wire
-		(pts
-			(xy 67.31 128.27) (xy 73.66 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "902ed119-9fd4-4397-a120-b1f072f7a206")
 	)
 	(wire
 		(pts
@@ -1912,16 +1912,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 153.67) (xy 90.17 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9b7280d-ffc9-4767-b6b9-df5528f39f96")
-	)
-	(wire
-		(pts
 			(xy 27.94 120.65) (xy 27.94 119.38)
 		)
 		(stroke
@@ -1939,6 +1929,16 @@
 			(type default)
 		)
 		(uuid "c3035f6c-3746-40f2-92e0-c6931d5c2e59")
+	)
+	(wire
+		(pts
+			(xy 73.66 128.27) (xy 90.17 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c39a9c0b-4e3e-4490-bf63-3e1ffe1bf627")
 	)
 	(wire
 		(pts
@@ -2830,7 +2830,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0e39f2c4-c00e-488b-9f53-cc4fe41c21b2")
-		(property "Reference" "DA"
+		(property "Reference" "DA1"
 			(at 29.972 107.95 90)
 			(effects
 				(font
@@ -2912,6 +2912,22 @@
 				)
 				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/3d0a7c2c-13b7-40dc-a124-1971f7813248"
 					(reference "DA7")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/79d13eb6-8fc4-49b4-9e3b-5ba056eeeed6"
+					(reference "DA3")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/8fe56e25-c95e-4a14-a60c-481473bc3114"
+					(reference "DA2")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c309923d-0c8d-4061-a18c-17cdacbbe37e"
+					(reference "DA0")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c3d4a133-ca72-417d-be20-e8d989b5e969"
+					(reference "DA1")
 					(unit 1)
 				)
 				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/ed7cc250-9f84-4c5a-9cfe-1de100dd3de3"
@@ -4129,7 +4145,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9f6dfcf1-d8e4-41f7-90d9-5f8ab78e9d4b")
-		(property "Reference" "RA"
+		(property "Reference" "RA1"
 			(at 29.718 115.316 0)
 			(effects
 				(font
@@ -4202,6 +4218,22 @@
 				)
 				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/3d0a7c2c-13b7-40dc-a124-1971f7813248"
 					(reference "RA7")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/79d13eb6-8fc4-49b4-9e3b-5ba056eeeed6"
+					(reference "RA3")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/8fe56e25-c95e-4a14-a60c-481473bc3114"
+					(reference "RA2")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c309923d-0c8d-4061-a18c-17cdacbbe37e"
+					(reference "RA0")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c3d4a133-ca72-417d-be20-e8d989b5e969"
+					(reference "RA1")
 					(unit 1)
 				)
 				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/ed7cc250-9f84-4c5a-9cfe-1de100dd3de3"
