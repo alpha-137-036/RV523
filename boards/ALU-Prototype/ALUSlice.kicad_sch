@@ -2357,28 +2357,6 @@
 		)
 		(uuid "575f625b-a4a9-4b2d-abd3-cb2a3ff0aaac")
 	)
-	(hierarchical_label "C"
-		(shape input)
-		(at 246.38 100.33 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5cddec76-186f-4c69-b1f2-18c4577b0bc9")
-	)
-	(hierarchical_label "C"
-		(shape output)
-		(at 224.79 123.19 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "61b55cda-8e1e-49ec-810f-a3455c855de5")
-	)
 	(hierarchical_label "B"
 		(shape input)
 		(at 50.8 83.82 180)
@@ -2389,6 +2367,28 @@
 			(justify right)
 		)
 		(uuid "90721a93-c493-4628-bc60-319cf3f098a5")
+	)
+	(hierarchical_label "C"
+		(shape output)
+		(at 224.79 123.19 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a2ae8ce1-a4b9-4dd7-ac5e-135382f3403d")
+	)
+	(hierarchical_label "C"
+		(shape input)
+		(at 246.38 100.33 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b3bace4c-b8e4-41fb-a45c-cff9ea16fecb")
 	)
 	(hierarchical_label "S"
 		(shape input)
@@ -2440,7 +2440,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 165.0917 69.85 0)
 			(effects
 				(font
@@ -2468,6 +2468,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 165.1 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 165.1 76.2 0)
 			(effects
 				(font
@@ -2556,7 +2565,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 194.3017 72.39 0)
 			(effects
 				(font
@@ -2584,6 +2593,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 194.31 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 194.31 78.74 0)
 			(effects
 				(font
@@ -2673,7 +2691,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "~"
 			(at 260.35 106.9974 90)
 			(effects
 				(font
@@ -2683,7 +2701,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
 			(at 256.54 104.14 0)
 			(effects
 				(font
@@ -2712,6 +2730,15 @@
 		)
 		(property "Sim.Pins" "1=K 2=A"
 			(at 256.54 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22355736"
+			(at 256.54 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2764,7 +2791,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "~"
 			(at 48.26 108.2674 90)
 			(effects
 				(font
@@ -2774,7 +2801,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
 			(at 44.45 105.41 0)
 			(effects
 				(font
@@ -2810,6 +2837,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C22355736"
+			(at 44.45 105.41 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "948d7a22-ff20-4261-bc5d-0c45f7446b73")
 		)
@@ -2838,6 +2874,106 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 246.38 104.14 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "325916a3-7530-4fcc-b6bc-8a0244304d47")
+		(property "Reference" "DC1"
+			(at 248.412 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "~"
+			(at 250.19 106.9974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
+			(at 246.38 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 246.38 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 246.38 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 246.38 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22355736"
+			(at 246.38 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6c4a378c-e703-4bd7-a456-c53107c2222c")
+		)
+		(pin "1"
+			(uuid "a1cd94b1-80de-4f10-aae1-0f997d19ac00")
+		)
+		(instances
+			(project "ALU"
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/79d13eb6-8fc4-49b4-9e3b-5ba056eeeed6"
+					(reference "DC3")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/8fe56e25-c95e-4a14-a60c-481473bc3114"
+					(reference "DC2")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c309923d-0c8d-4061-a18c-17cdacbbe37e"
+					(reference "DC0")
+					(unit 1)
+				)
+				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c3d4a133-ca72-417d-be20-e8d989b5e969"
+					(reference "DC1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 246.38 111.76 0)
 		(unit 1)
@@ -2855,7 +2991,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "330"
 			(at 248.92 113.0299 0)
 			(effects
 				(font
@@ -2865,7 +3001,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 244.602 111.76 90)
 			(effects
 				(font
@@ -2937,7 +3073,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "330"
 			(at 57.15 114.2999 0)
 			(effects
 				(font
@@ -2947,7 +3083,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 52.832 113.03 90)
 			(effects
 				(font
@@ -2966,6 +3102,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 54.61 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 54.61 113.03 0)
 			(effects
 				(font
@@ -3019,7 +3164,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "~"
 			(at 270.51 106.9974 90)
 			(effects
 				(font
@@ -3029,7 +3174,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
 			(at 266.7 104.14 0)
 			(effects
 				(font
@@ -3058,6 +3203,15 @@
 		)
 		(property "Sim.Pins" "1=K 2=A"
 			(at 266.7 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22355736"
+			(at 266.7 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3109,7 +3263,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 203.1917 97.79 0)
 			(effects
 				(font
@@ -3137,6 +3291,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 203.2 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 203.2 104.14 0)
 			(effects
 				(font
@@ -3226,7 +3389,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "~"
 			(at 58.42 108.2674 90)
 			(effects
 				(font
@@ -3236,7 +3399,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
 			(at 54.61 105.41 0)
 			(effects
 				(font
@@ -3265,6 +3428,15 @@
 		)
 		(property "Sim.Pins" "1=K 2=A"
 			(at 54.61 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22355736"
+			(at 54.61 105.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3316,7 +3488,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 212.0817 77.47 0)
 			(effects
 				(font
@@ -3344,6 +3516,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 212.09 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 212.09 83.82 0)
 			(effects
 				(font
@@ -3432,7 +3613,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 126.9917 74.93 0)
 			(effects
 				(font
@@ -3460,6 +3641,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 127 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 127 81.28 0)
 			(effects
 				(font
@@ -3549,7 +3739,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "330"
 			(at 259.08 113.0299 0)
 			(effects
 				(font
@@ -3559,7 +3749,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 254.762 111.76 90)
 			(effects
 				(font
@@ -3578,6 +3768,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 256.54 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 256.54 111.76 0)
 			(effects
 				(font
@@ -3631,7 +3830,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "330"
 			(at 269.24 113.0299 0)
 			(effects
 				(font
@@ -3641,7 +3840,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 264.922 111.76 90)
 			(effects
 				(font
@@ -3660,6 +3859,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 266.7 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 266.7 111.76 0)
 			(effects
 				(font
@@ -3713,7 +3921,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "330"
 			(at 46.99 114.2999 0)
 			(effects
 				(font
@@ -3723,7 +3931,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 42.672 113.03 90)
 			(effects
 				(font
@@ -3742,6 +3950,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 44.45 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 44.45 113.03 0)
 			(effects
 				(font
@@ -3794,7 +4011,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 144.7717 62.23 0)
 			(effects
 				(font
@@ -3822,6 +4039,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 144.78 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 144.78 68.58 0)
 			(effects
 				(font
@@ -3910,7 +4136,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 180.3317 91.44 0)
 			(effects
 				(font
@@ -3938,6 +4164,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 180.34 97.79 0)
 			(effects
 				(font
@@ -4026,7 +4261,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 60.9517 74.93 0)
 			(effects
 				(font
@@ -4054,6 +4289,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 60.96 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 60.96 81.28 0)
 			(effects
 				(font
@@ -4143,7 +4387,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 96.52 142.2399 0)
 			(effects
 				(font
@@ -4172,6 +4416,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 90.17 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 90.17 140.97 0)
 			(effects
 				(font
@@ -4260,7 +4513,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 80.0017 81.28 0)
 			(effects
 				(font
@@ -4288,6 +4541,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 80.01 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 80.01 87.63 0)
 			(effects
 				(font
@@ -4376,7 +4638,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 78.7317 62.23 0)
 			(effects
 				(font
@@ -4404,6 +4666,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 78.74 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 78.74 68.58 0)
 			(effects
 				(font
@@ -4492,7 +4763,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 180.3317 105.41 0)
 			(effects
 				(font
@@ -4520,6 +4791,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 180.34 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 180.34 111.76 0)
 			(effects
 				(font
@@ -4608,7 +4888,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 156.2017 93.98 0)
 			(effects
 				(font
@@ -4636,6 +4916,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 156.21 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 156.21 100.33 0)
 			(effects
 				(font
@@ -4725,7 +5014,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 132.08 142.2399 0)
 			(effects
 				(font
@@ -4754,6 +5043,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 125.73 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 125.73 140.97 0)
 			(effects
 				(font
@@ -4843,7 +5141,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 114.3 142.2399 0)
 			(effects
 				(font
@@ -4872,6 +5170,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 107.95 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 107.95 140.97 0)
 			(effects
 				(font
@@ -4960,7 +5267,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 99.0517 69.85 0)
 			(effects
 				(font
@@ -4988,6 +5295,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 99.06 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 99.06 76.2 0)
 			(effects
 				(font
@@ -5060,97 +5376,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 246.38 104.14 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "eb3c9062-816b-4a25-ada9-2e8adc4b7937")
-		(property "Reference" "DC1"
-			(at 248.412 104.14 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "LED"
-			(at 250.19 106.9974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 246.38 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 246.38 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 246.38 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 246.38 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "691124dc-b14b-4b79-9e75-859b1500e31e")
-		)
-		(pin "1"
-			(uuid "f59bfd0d-5fe2-4d35-9eea-80587c4f6d7e")
-		)
-		(instances
-			(project "ALU"
-				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/79d13eb6-8fc4-49b4-9e3b-5ba056eeeed6"
-					(reference "DC3")
-					(unit 1)
-				)
-				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/8fe56e25-c95e-4a14-a60c-481473bc3114"
-					(reference "DC2")
-					(unit 1)
-				)
-				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c309923d-0c8d-4061-a18c-17cdacbbe37e"
-					(reference "DC0")
-					(unit 1)
-				)
-				(path "/ea36d41d-4102-4ac1-86b3-2bd298ff752f/c3d4a133-ca72-417d-be20-e8d989b5e969"
-					(reference "DC1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "74xx:7400")
 		(at 146.05 87.63 0)
 		(unit 3)
@@ -5167,7 +5392,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 146.0417 81.28 0)
 			(effects
 				(font
@@ -5195,6 +5420,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 146.05 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 146.05 87.63 0)
 			(effects
 				(font
@@ -5284,7 +5518,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 80.01 142.2399 0)
 			(effects
 				(font
@@ -5313,6 +5547,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 73.66 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 73.66 140.97 0)
 			(effects
 				(font
@@ -5401,7 +5644,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 156.2017 107.95 0)
 			(effects
 				(font
@@ -5429,6 +5672,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 156.21 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 156.21 114.3 0)
 			(effects
 				(font
@@ -5517,7 +5769,7 @@
 				)
 			)
 		)
-		(property "Value" "7400"
+		(property "Value" "~"
 			(at 194.3017 82.55 0)
 			(effects
 				(font
@@ -5545,6 +5797,15 @@
 			)
 		)
 		(property "Description" "quad 2-input NAND gate"
+			(at 194.31 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5587"
 			(at 194.31 88.9 0)
 			(effects
 				(font

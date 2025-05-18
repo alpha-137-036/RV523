@@ -4004,7 +4004,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_02x17_Odd_Even"
+		(property "Value" "~"
 			(at 87.63 63.5 0)
 			(effects
 				(font
@@ -4032,6 +4032,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x17, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 86.36 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 86.36 87.63 0)
 			(effects
 				(font
@@ -4170,7 +4179,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_02x08_Odd_Even"
+		(property "Value" "~"
 			(at 125.73 27.9399 90)
 			(effects
 				(font
@@ -4200,6 +4209,15 @@
 		)
 		(property "Description" "Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 135.89 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 135.89 27.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4283,7 +4301,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_02x08_Odd_Even"
+		(property "Value" "~"
 			(at 127 177.7999 90)
 			(effects
 				(font
@@ -4313,6 +4331,15 @@
 		)
 		(property "Description" "Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 137.16 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 137.16 177.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4395,7 +4422,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_02x17_Odd_Even"
+		(property "Value" "~"
 			(at 196.85 63.5 0)
 			(effects
 				(font
@@ -4423,6 +4450,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x17, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 195.58 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 195.58 87.63 0)
 			(effects
 				(font
@@ -4616,7 +4652,7 @@
 				(justify right)
 			)
 		)
-		(pin "Cout" output
+		(pin "C" output
 			(at 128.27 148.59 270)
 			(uuid "e56dc906-4475-400e-aa12-7901660375a8")
 			(effects
@@ -4718,7 +4754,7 @@
 				(justify right)
 			)
 		)
-		(pin "Cout" output
+		(pin "C" output
 			(at 128.27 120.65 270)
 			(uuid "f2cbe076-8af6-4fc3-b548-62f47965979c")
 			(effects
@@ -4820,7 +4856,7 @@
 				(justify right)
 			)
 		)
-		(pin "Cout" output
+		(pin "C" output
 			(at 128.27 69.85 270)
 			(uuid "388624a2-8a6b-4f60-a7ce-9ca154dd881d")
 			(effects
@@ -4922,7 +4958,7 @@
 				(justify right)
 			)
 		)
-		(pin "Cout" output
+		(pin "C" output
 			(at 128.27 95.25 270)
 			(uuid "93e5a4f6-8521-4f91-b41b-b3704d23fd1c")
 			(effects
