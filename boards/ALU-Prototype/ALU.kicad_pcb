@@ -763,7 +763,7 @@
 		(path "/14ff7455-f1ee-4719-bd26-1804fd538edb")
 		(sheetname "/")
 		(sheetfile "ALU.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.38 -1.38)
 			(end 0 -1.38)
@@ -1402,7 +1402,7 @@
 		(path "/af7b9305-07e2-4d6b-a197-a8999d8b27c4")
 		(sheetname "/")
 		(sheetfile "ALU.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.38 -1.38)
 			(end 0 -1.38)
@@ -4970,7 +4970,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5184,7 +5184,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6082,7 +6082,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6534,7 +6534,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7224,6 +7224,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C12246"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "15a3a380-7cce-4ae5-a19a-54a3a90f29c0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/8fe56e25-c95e-4a14-a60c-481473bc3114/3e071c41-9785-4afe-b82e-b20ebab37d18")
 		(sheetname "/ALUSlice2/")
@@ -7423,6 +7436,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C12246"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "42160ba0-4223-4537-a09e-b913a7254aab")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/c3d4a133-ca72-417d-be20-e8d989b5e969/3e071c41-9785-4afe-b82e-b20ebab37d18")
 		(sheetname "/ALUSlice1/")
@@ -7618,6 +7644,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C12246"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "40e31e0e-399d-4e38-8086-1685752b9989")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -7822,7 +7861,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8035,7 +8074,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10955,7 +10994,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11407,7 +11446,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11859,7 +11898,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14144,7 +14183,7 @@
 		(path "/3c1de2d4-fd5f-4180-955c-75ca64875f5c")
 		(sheetname "/")
 		(sheetfile "ALU.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 3.92 -1.38)
 			(end 3.92 19.16)
@@ -15728,6 +15767,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C12246"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "50ee2b15-8b6b-4c11-bc99-14ce4ce00b86")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/79d13eb6-8fc4-49b4-9e3b-5ba056eeeed6/3e071c41-9785-4afe-b82e-b20ebab37d18")
 		(sheetname "/ALUSlice3/")
@@ -15928,7 +15980,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16587,7 +16639,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16800,7 +16852,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17030,7 +17082,7 @@
 		(path "/309a300b-8473-4261-bfaa-fe3ca433928e")
 		(sheetname "/")
 		(sheetfile "ALU.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 3.92 -1.38)
 			(end 3.92 19.16)
@@ -17454,7 +17506,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17667,7 +17719,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18119,7 +18171,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18333,7 +18385,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C12246"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
