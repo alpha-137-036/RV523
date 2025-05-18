@@ -496,7 +496,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 0,
+    "annotate_start_num": 6,
     "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
@@ -660,6 +660,22 @@
     [
       "79d13eb6-8fc4-49b4-9e3b-5ba056eeeed6",
       "ALUSlice3"
+    ],
+    [
+      "052a7bbd-97d8-48bc-9bf0-49606b97838a",
+      "ALUSlice4"
+    ],
+    [
+      "ed7cc250-9f84-4c5a-9cfe-1de100dd3de3",
+      "ALUSlice5"
+    ],
+    [
+      "1d7fffa2-6c4e-44a8-af7a-2348c8b92cea",
+      "ALUSlice6"
+    ],
+    [
+      "3d0a7c2c-13b7-40dc-a124-1971f7813248",
+      "ALUSlice7"
     ]
   ],
   "text_variables": {}
