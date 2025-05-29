@@ -1132,7 +1132,7 @@
 		(path "/faecbb41-0c7f-40bd-ae01-8af0dfa711ef")
 		(sheetname "/")
 		(sheetfile "TestBoard.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.38 3.92)
 			(end 1.38 3.92)
@@ -1595,7 +1595,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C160404"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3726,7 +3726,7 @@
 		(path "/1a394611-b4cd-409d-b979-044aa56b508f")
 		(sheetname "/")
 		(sheetfile "TestBoard.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.38 -1.38)
 			(end 0 -1.38)
@@ -4292,7 +4292,7 @@
 		(path "/6c68a11b-9b2d-41a8-950d-78812e741b66")
 		(sheetname "/")
 		(sheetfile "TestBoard.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.38 3.92)
 			(end 1.38 3.92)
@@ -6571,7 +6571,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C283193"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8837,7 +8837,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C160404"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9144,7 +9144,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C283193"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12293,6 +12293,18 @@
 		(at 145.25 68.75 0)
 		(layer "F.SilkS")
 		(uuid "c756ff20-c067-4158-a898-e2dbbc9a2aa8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "RV74-Test-A0"
+		(at 141 90 0)
+		(layer "F.SilkS" knockout)
+		(uuid "cca7a0d1-242c-499b-b6b2-d8dd5b061413")
 		(effects
 			(font
 				(size 1 1)

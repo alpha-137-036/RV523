@@ -13447,7 +13447,7 @@
 		(at 72.39 19.05 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -13567,7 +13567,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C283193"
 			(at 156.21 147.32 90)
 			(effects
 				(font
@@ -13959,7 +13959,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C160404"
 			(at 63.5 121.92 0)
 			(effects
 				(font
@@ -14795,7 +14795,7 @@
 		(at 33.02 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -14994,7 +14994,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C283193"
 			(at 102.87 165.1 90)
 			(effects
 				(font
@@ -15627,7 +15627,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C160404"
 			(at 33.02 121.92 0)
 			(effects
 				(font
@@ -15982,7 +15982,7 @@
 		(at 63.5 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
