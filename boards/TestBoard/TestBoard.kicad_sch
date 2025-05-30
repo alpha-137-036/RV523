@@ -12126,7 +12126,7 @@
 			)
 		)
 	)
-	(global_label "SCK"
+	(global_label "SCL"
 		(shape bidirectional)
 		(at 17.78 45.72 180)
 		(fields_autoplaced yes)
@@ -12138,7 +12138,7 @@
 		)
 		(uuid "51c5490f-1529-40c8-8f67-094a348625c7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 9.934 45.72 0)
+			(at 10.1759 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12170,7 +12170,7 @@
 			)
 		)
 	)
-	(global_label "SCK"
+	(global_label "SCL"
 		(shape bidirectional)
 		(at 72.39 45.72 180)
 		(fields_autoplaced yes)
@@ -12182,7 +12182,7 @@
 		)
 		(uuid "54611ac3-5d86-4b53-8cd8-77a9949f6eff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 64.544 45.72 0)
+			(at 64.7859 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12918,7 +12918,7 @@
 			)
 		)
 	)
-	(global_label "SCK"
+	(global_label "SCL"
 		(shape bidirectional)
 		(at 237.49 45.72 180)
 		(fields_autoplaced yes)
@@ -12930,7 +12930,7 @@
 		)
 		(uuid "bff9ec60-8d66-4020-814d-440a7dac6cf7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 229.644 45.72 0)
+			(at 229.8859 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12940,7 +12940,7 @@
 			)
 		)
 	)
-	(global_label "SCK"
+	(global_label "SCL"
 		(shape bidirectional)
 		(at 127 45.72 180)
 		(fields_autoplaced yes)
@@ -12952,7 +12952,7 @@
 		)
 		(uuid "c23586e9-daae-44ef-9f8d-4149b73dc5f3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.154 45.72 0)
+			(at 119.3959 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12962,7 +12962,7 @@
 			)
 		)
 	)
-	(global_label "SCK"
+	(global_label "SCL"
 		(shape bidirectional)
 		(at 182.88 45.72 180)
 		(fields_autoplaced yes)
@@ -12974,7 +12974,7 @@
 		)
 		(uuid "c26ff059-0320-4b8b-9ea8-e0e1c5412454")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 175.034 45.72 0)
+			(at 175.2759 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13786,7 +13786,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28c1ef7d-e7a6-4871-9608-c3bc2afc4578")
-		(property "Reference" "U8"
+		(property "Reference" "U4"
 			(at 202.8033 36.83 0)
 			(effects
 				(font
@@ -13920,7 +13920,7 @@
 		(instances
 			(project ""
 				(path "/25d744cb-5e70-4540-b8dc-e00c03e0ba41"
-					(reference "U8")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -14100,7 +14100,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5a8d0b86-173a-4743-97a8-00c1bd61b669")
-		(property "Reference" "U10"
+		(property "Reference" "U1"
 			(at 37.7033 36.83 0)
 			(effects
 				(font
@@ -14234,7 +14234,7 @@
 		(instances
 			(project "TestBoard"
 				(path "/25d744cb-5e70-4540-b8dc-e00c03e0ba41"
-					(reference "U10")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -14948,7 +14948,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "864fb551-7136-4405-93e1-9feee9234cbf")
-		(property "Reference" "U6"
+		(property "Reference" "U2"
 			(at 92.3133 36.83 0)
 			(effects
 				(font
@@ -15082,7 +15082,7 @@
 		(instances
 			(project ""
 				(path "/25d744cb-5e70-4540-b8dc-e00c03e0ba41"
-					(reference "U6")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -15098,7 +15098,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8fdbfea9-7520-4b0b-93b8-f02fcb49761f")
-		(property "Reference" "U9"
+		(property "Reference" "U5"
 			(at 257.4133 36.83 0)
 			(effects
 				(font
@@ -15232,7 +15232,7 @@
 		(instances
 			(project ""
 				(path "/25d744cb-5e70-4540-b8dc-e00c03e0ba41"
-					(reference "U9")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -15649,7 +15649,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef4a73ff-27d4-479d-b105-f47f23b4ec80")
-		(property "Reference" "U7"
+		(property "Reference" "U3"
 			(at 146.9233 36.83 0)
 			(effects
 				(font
@@ -15783,7 +15783,7 @@
 		(instances
 			(project ""
 				(path "/25d744cb-5e70-4540-b8dc-e00c03e0ba41"
-					(reference "U7")
+					(reference "U3")
 					(unit 1)
 				)
 			)
