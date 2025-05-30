@@ -13833,6 +13833,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C558584"
+			(at 200.66 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d0807975-bdeb-4c37-9ea0-c72557d0851c")
 		)
@@ -14139,6 +14148,15 @@
 			)
 		)
 		(property "Description" "16-bit I/O expander, I2C, interrupts, w pull-ups, SSOP-28"
+			(at 35.56 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C558584"
 			(at 35.56 63.5 0)
 			(effects
 				(font
@@ -14995,6 +15013,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C558584"
+			(at 90.17 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d0807975-bdeb-4c37-9ea0-c72557d0851c")
 		)
@@ -15137,6 +15164,15 @@
 			)
 		)
 		(property "Description" "16-bit I/O expander, I2C, interrupts, w pull-ups, SSOP-28"
+			(at 255.27 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C558584"
 			(at 255.27 63.5 0)
 			(effects
 				(font
@@ -15688,6 +15724,15 @@
 			)
 		)
 		(property "Description" "16-bit I/O expander, I2C, interrupts, w pull-ups, SSOP-28"
+			(at 144.78 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C558584"
 			(at 144.78 63.5 0)
 			(effects
 				(font
