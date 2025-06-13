@@ -8,24 +8,27 @@ class ALU:
         self.__B = []
         self.__S = []
         for i in range(N):
-            self.__A.append(testboard.get_output_pin(3*i, 0))
-            self.__B.append(testboard.get_output_pin(3*i+1, 0))
-            self.__S.append(testboard.get_input_pin(3*i+2))
+            if i >= 4:
+                i = i + 1
+            self.__A.append(testboard.get_output_pin(128 + 8 * i + 1, 0))
+            self.__B.append(testboard.get_output_pin(128 + 8 * i, 0))
+            self.__S.append(testboard.get_input_pin(128 + 8 * i + 2))
 
-        self.__Cin = testboard.get_output_pin(79, 0)
-        self.__ADD = testboard.get_output_pin(78, 0)
-        self.__E = testboard.get_input_pin(77)
-        self.__SUB = testboard.get_output_pin(76, 0)
-        self.__GNDA = testboard.get_output_pin(75, 1)
-        self.__XOR = testboard.get_output_pin(74, 0)
-        self.__GNDB = testboard.get_output_pin(73, 1)
-        self.__AND = testboard.get_output_pin(72, 0)
-        self.__GNDC = testboard.get_output_pin(71, 1)
-        self.__S31 = testboard.get_input_pin(70)
-        self.__GNDS = testboard.get_output_pin(69, 1)
-        self.__C31 = testboard.get_input_pin(68)
-        self.__GNDR = testboard.get_output_pin(67, 1)
-        self.__nSET0 = testboard.get_output_pin(66, 0)
+        # controls
+        self.__GNDR = testboard.get_opendrain_pin(2)
+        self.__nSET0 = testboard.get_output_pin(3, 0)
+        self.__GNDS = testboard.get_opendrain_pin(4)
+        self.__C31 = testboard.get_input_pin(5)
+        self.__GNDC = testboard.get_opendrain_pin(6)
+        self.__S31 = testboard.get_input_pin(7)
+        self.__GNDB = testboard.get_opendrain_pin(8)
+        self.__AND = testboard.get_output_pin(9, 0)
+        self.__GNDA = testboard.get_opendrain_pin(10)
+        self.__XOR = testboard.get_output_pin(11, 0)
+        self.__E = testboard.get_input_pin(12)
+        self.__SUB = testboard.get_output_pin(13, 0)
+        self.__Cin = testboard.get_output_pin(14, 0)
+        self.__ADD = testboard.get_output_pin(15, 0)
 
     def __set_X(self, X, x):
         for i in range(self.__N):
@@ -68,6 +71,12 @@ class ALU:
     @XOR.setter
     def XOR(self, x):
         self.__XOR.value = x
+    @property
+    def nSET0(self):
+        return self.__nSET0.value
+    @nSET0.setter
+    def nSET0(self, x):
+        self.__nSET0.value = x
 
     def enableLEDs(self, enable):
         for g in [self.__GNDA, self.__GNDB, self.__GNDC, self.__GNDS, self.__GNDR]:
