@@ -10762,7 +10762,7 @@
 		(descr "28-Lead Plastic Shrink Small Outline (SS)-5.30 mm Body [SSOP] (see Microchip Packaging Specification 00000049BS.pdf)")
 		(tags "SSOP 0.65")
 		(property "Reference" "U1"
-			(at 0 -6.25 90)
+			(at 1.2 -6.15 90)
 			(layer "F.SilkS")
 			(uuid "a7487c0a-b04b-43f0-826a-a467ee092ecf")
 			(effects
@@ -13907,8 +13907,8 @@
 		(embedded_fonts no)
 	)
 	(gr_line
-		(start 125.5 82.55)
-		(end 131 82.55)
+		(start 124.8125 82.7)
+		(end 130.9875 82.7)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -13918,23 +13918,13 @@
 	)
 	(gr_line
 		(start 108 82.65)
-		(end 113.5 82.65)
+		(end 114.15 82.65)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(layer "F.SilkS")
 		(uuid "1eaeb3e0-3b85-41d4-9d2f-3a5fe19ee4c8")
-	)
-	(gr_line
-		(start 132 100.75)
-		(end 125 100.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "26cfbd6e-b7e7-4823-a658-7ab46e2879d0")
 	)
 	(gr_line
 		(start 131 77.2)
@@ -13947,7 +13937,7 @@
 		(uuid "2f535f28-7d06-4be0-a58e-e73a1d7bed23")
 	)
 	(gr_line
-		(start 125.45 113.1)
+		(start 124.85 113.1)
 		(end 130.95 113.1)
 		(stroke
 			(width 0.1)
@@ -13958,7 +13948,7 @@
 	)
 	(gr_line
 		(start 131 67.5)
-		(end 125.1 67.5)
+		(end 124.15 67.5)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -13967,7 +13957,7 @@
 		(uuid "32b611ab-19dc-49aa-b831-51d97e05bccb")
 	)
 	(gr_line
-		(start 125.35 57.5)
+		(start 124.825 57.5)
 		(end 130.85 57.5)
 		(stroke
 			(width 0.1)
@@ -13978,7 +13968,7 @@
 	)
 	(gr_line
 		(start 107.95 113.1)
-		(end 113.45 113.1)
+		(end 114.15 113.1)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14008,7 +13998,7 @@
 	)
 	(gr_line
 		(start 108 57.5)
-		(end 113.5 57.5)
+		(end 114.175 57.5)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14018,7 +14008,7 @@
 	)
 	(gr_line
 		(start 107.95 97.9)
-		(end 113.45 97.9)
+		(end 114.15 97.9)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14027,8 +14017,8 @@
 		(uuid "5a82436f-22a2-4eaa-ba0e-e7f35ea19d84")
 	)
 	(gr_line
-		(start 125.45 103.1)
-		(end 130.95 103.1)
+		(start 124.25 103.1)
+		(end 130.9 103.1)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14037,18 +14027,8 @@
 		(uuid "7471ee2c-9e14-47fb-8e37-e4e98d320547")
 	)
 	(gr_line
-		(start 132 75.75)
-		(end 125 75.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "79fd10fc-6fa1-4d6a-8374-c954b5fabda3")
-	)
-	(gr_line
 		(start 108 67.45)
-		(end 113.5 67.45)
+		(end 114.85 67.45)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14078,7 +14058,7 @@
 	)
 	(gr_line
 		(start 130.9 72.7)
-		(end 125 72.7)
+		(end 124.85 72.7)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14087,7 +14067,7 @@
 		(uuid "9860a3f3-0aac-4e92-a6c7-d45586986879")
 	)
 	(gr_line
-		(start 125.4 97.85)
+		(start 124.8 97.85)
 		(end 130.9 97.85)
 		(stroke
 			(width 0.1)
@@ -14097,18 +14077,8 @@
 		(uuid "a618efd9-3aed-4222-9011-e20606ae522d")
 	)
 	(gr_line
-		(start 107 100.75)
-		(end 113.75 100.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "af2cfa80-72d5-456d-a0a9-0aa89282403b")
-	)
-	(gr_line
 		(start 107.95 72.7)
-		(end 113.45 72.7)
+		(end 114.15 72.7)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14128,8 +14098,8 @@
 		(uuid "cad5ff3d-a637-460b-9778-d876789bfb64")
 	)
 	(gr_line
-		(start 107.95 103.1)
-		(end 113.45 103.1)
+		(start 108 103.1)
+		(end 114.15 103.1)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -14139,7 +14109,7 @@
 	)
 	(gr_line
 		(start 107.95 87.9)
-		(end 113.45 87.9)
+		(end 114 87.9)
 		(stroke
 			(width 0.1)
 			(type default)
