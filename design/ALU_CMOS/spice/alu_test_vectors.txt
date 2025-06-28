@@ -1,0 +1,16 @@
+
+
+* t   SUB nSUB A0 A1 A2 A3 A4 A5 A6 A7 B0 B1 B2 B3 B4 B5 B6 B7
+0     0s   1s  0s 1s 0s 1s 0s 1s 0s 1s 1s 1s 1s 1s 0s 0s 0s 0s
+1e-6  1s   0s  1s 1s 1s 1s 1s 1s 1s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+2e-6  1s   0s  1s 1s 1s 1s 1s 1s 0s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+3e-6  1s   0s  1s 1s 1s 1s 1s 1s 1s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+4e-6  1s   0s  1s 1s 1s 1s 1s 1s 0s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+5e-6  1s   0s  1s 1s 1s 1s 1s 1s 1s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+6e-6  1s   0s  1s 1s 1s 1s 1s 1s 0s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+7e-6  1s   0s  1s 1s 1s 1s 1s 1s 1s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+8e-6  1s   0s  1s 1s 1s 1s 1s 1s 0s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+9e-6  1s   0s  1s 1s 1s 1s 1s 1s 1s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+10e-6  1s   0s  1s 1s 1s 1s 1s 1s 0s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+11e-6  1s   0s  1s 1s 1s 1s 1s 1s 1s 1s 0s 1s 1s 0s 1s 1s 1s 1s
+12e-6  1s   0s  1s 1s 1s 1s 1s 1s 0s 1s 0s 1s 1s 0s 1s 1s 1s 1s

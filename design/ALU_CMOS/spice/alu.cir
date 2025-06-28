@@ -67,18 +67,6 @@ XnB B nB NOT
 Xx A B nA nB Y AOI22
 .ENDS XOR
 
-* the input signal for dc and tran simulation
-VA0 A0 0 dc 0 pulse (0 3.3 1u 20n 20n 1u 2u)
-VB0 B0 0 dc 0 pulse (0 3.3 2u 20n 20n 2u 4u)
-VA1 A1 0 dc 0 pulse (0 3.3 4u 20n 20n 4u 8u)
-VB1 B1 0 dc 0 pulse (0 3.3 8u 20n 20n 8u 16u)
-VA2 A2 0 dc 0 pulse (0 3.3 16u 20n 20n 16u 32u)
-VB2 B2 0 dc 0 pulse (0 3.3 32u 20n 20n 32u 64u)
-VA3 A3 0 dc 0 pulse (0 3.3 64u 20n 20n 64u 128u)
-VB3 B3 0 dc 0 pulse (0 3.3 128u 20n 20n 128u 256u)
-VSUB SUB 0 dc 0 pulse (0 3.3 256u 20n 20n 256u 512u)
-VnSUB nSUB 0 dc 0 pulse (0 3.3 0u 20n 20n 512u 1024u)
-
 .SUBCKT SLICE SUB nSUB A B nG P 
 
 XnA A nA NOT
@@ -94,6 +82,15 @@ Xslice0 SUB nSUB A0 B0 nG0 P0 SLICE
 Xslice1 SUB nSUB A1 B1 nG1 P1 SLICE
 Xslice2 SUB nSUB A2 B2 nG2 P2 SLICE
 Xslice3 SUB nSUB A3 B3 nG3 P3 SLICE
+Xslice4 SUB nSUB A4 B4 nG4 P4 SLICE
+Xslice5 SUB nSUB A5 B5 nG5 P5 SLICE
+Xslice6 SUB nSUB A6 B6 nG6 P6 SLICE
+Xslice7 SUB nSUB A7 B7 nG7 P7 SLICE
+
+.SUBCKT CLAH nG1 P1 nG2 P2 nG 
+XG1 nG1 nG2 x1 NAND
+XG2 x1 P2 nG NAND
+.ENDS CLA
 
 .SUBCKT CLA nG1 P1 nG2 P2 nG P 
 XG1 nG1 nG2 x1 NAND
@@ -104,14 +101,45 @@ XP2 x2 nG P NAND
 
 XCLA10 nG0 P0 nG1 P1 nG10 P10 CLA
 XCLA32 nG2 P2 nG3 P3 nG32 P32 CLA
+XCLA54 nG4 P4 nG5 P5 nG54 P54 CLA
+XCLA76 nG6 P6 nG7 P7 nG76 P76 CLA
+
 XCLA30 nG10 P10 nG32 P32 nG30 P30 CLA
+XCLA74 nG54 P54 nG76 P76 nG74 P74 CLA
+
+XCLA70 nG30 P30 nG74 P74 nG70 CLAH
+
+XCLA20 nG10 P10 nG2 P2 nG20 P20 CLA
+
+XCLA40 nG30 P30 nG4 P4 nG40 P40 CLA
+XCLA50 nG30 P30 nG54 P54 nG50 P50 CLA
+
+XCLA64 nG54 P54 nG6 P6 nG64 P64 CLA
+XCLA60 nG30 P30 nG64 P64 nG60 P60 CLA
+
+
+* the input signal for dc and tran simulation
+aIn 
++ [DSUB DnSUB DA0 DA1 DA2 DA3 DA4 DA5 DA6 DA7 DB0 DB1 DB2 DB3 DB4 DB5 DB6 DB7] input_vector
+ .model input_vector d_source(input_file = "alu_test_vectors.txt")
+
+aInBridge 
++[DSUB DnSUB DA0 DA1 DA2 DA3 DA4 DA5 DA6 DA7 DB0 DB1 DB2 DB3 DB4 DB5 DB6 DB7]
++[SUB nSUB A0 A1 A2 A3 A4 A5 A6 A7 B0 B1 B2 B3 B4 B5 B6 B7] dac1
+.model dac1 dac_bridge(out_low=0 out_high=3.3 out_undef=2.2 t_rise=10e-9 t_fall=10e-9  input_load = 5.0e-12)
+
+aOutBridge 
++[nG70 nG60] 
++[DnG70 DnG60] adc1
+.model adc1 adc_bridge(in_low=1 in_high=2)
 
 * simulation commands
-.tran 5n 1024u
+.tran 1n 20u
 
 .control
     run
-    write alu.raw cc I(Vcc) SUB nSUB A0 B0 nG0 P0 A1 B1 nG1 P1 A2 B2 nG2 P2 A3 B3 nG3 P3 nG10 P10 nG32 P32 nG30 P30
+    write alu.raw cc I(Vcc) nG60 nG70
+    eprvcd DSUB DnSUB DA0 DA1 DA2 DA3 DA4 DA5 DA6 DA7 DB0 DB1 DB2 DB3 DB4 DB5 DB6 DB7 DnG60 DnG70 > alu_out.vcd
 .endc
 
 .end
