@@ -1,0 +1,117 @@
+* file alu.cir
+
+.include 2n7002.sub
+.include bss84.sub
+
+* the power supply 3.3 V
+Vcc cc0 0 3.3
+Rcc cc cc0 10
+
+Cdec 0 cc 10u
+
+.global cc
+
+.SUBCKT NOT A Y
+
+XNnA Y A 0 N7002
+XPnA Y A cc BSS84
+.ENDS XOR
+
+.SUBCKT NAND A B Y 
+
+XPA Y A cc BSS84
+XPB Y B cc BSS84
+
+XNA Y A x1 N7002
+XNB x1 B 0 N7002
+.ENDS NAND
+
+.SUBCKT AND A B Y
+Xnand A B nY NAND
+Xinv nY Y NOT
+.ENDS AND
+
+.SUBCKT NOR A B Y
+XPA Y A p1 BSS84
+XPB p1 B cc BSS84
+
+XNA Y A 0 N7002
+XNB Y B 0 N7002
+
+.ENDS NOR
+
+.SUBCKT OR A B Y
+Xnor A B nY NOR
+Xinv nY Y NOT
+.ENDS OR
+
+.SUBCKT AOI22 A1 A2 B1 B2 Y
+
+XN1 xn1 A1 0 N7002
+XN2 Y A2 xn1 N7002
+XN3 xn2 B1 0 N7002
+XN4 Y B2 xn2 N7002
+
+XP1 Y B1 xp BSS84
+XP2 Y B2 xp BSS84
+XP3 xp A1 cc BSS84
+XP4 xp A2 cc BSS84
+
+.ENDS AOI22
+
+.SUBCKT XOR A B Y
+
+XnA A nA NOT
+XnB B nB NOT
+
+Xx A B nA nB Y AOI22
+.ENDS XOR
+
+* the input signal for dc and tran simulation
+VA0 A0 0 dc 0 pulse (0 3.3 1u 20n 20n 1u 2u)
+VB0 B0 0 dc 0 pulse (0 3.3 2u 20n 20n 2u 4u)
+VA1 A1 0 dc 0 pulse (0 3.3 4u 20n 20n 4u 8u)
+VB1 B1 0 dc 0 pulse (0 3.3 8u 20n 20n 8u 16u)
+VA2 A2 0 dc 0 pulse (0 3.3 16u 20n 20n 16u 32u)
+VB2 B2 0 dc 0 pulse (0 3.3 32u 20n 20n 32u 64u)
+VA3 A3 0 dc 0 pulse (0 3.3 64u 20n 20n 64u 128u)
+VB3 B3 0 dc 0 pulse (0 3.3 128u 20n 20n 128u 256u)
+VSUB SUB 0 dc 0 pulse (0 3.3 256u 20n 20n 256u 512u)
+VnSUB nSUB 0 dc 0 pulse (0 3.3 0u 20n 20n 512u 1024u)
+
+.SUBCKT SLICE SUB nSUB A B nG P 
+
+XnA A nA NOT
+
+Xx A SUB nA nSUB AxSUB AOI22
+
+XnG AxSUB B nG NAND
+XP AxSUB B P OR
+
+.ENDS SLICE 
+
+Xslice0 SUB nSUB A0 B0 nG0 P0 SLICE
+Xslice1 SUB nSUB A1 B1 nG1 P1 SLICE
+Xslice2 SUB nSUB A2 B2 nG2 P2 SLICE
+Xslice3 SUB nSUB A3 B3 nG3 P3 SLICE
+
+.SUBCKT CLA nG1 P1 nG2 P2 nG P 
+XG1 nG1 nG2 x1 NAND
+XG2 x1 P2 nG NAND
+XP1 P1 P2 x2 NAND
+XP2 x2 nG P NAND
+.ENDS CLA
+
+XCLA10 nG0 P0 nG1 P1 nG10 P10 CLA
+XCLA32 nG2 P2 nG3 P3 nG32 P32 CLA
+XCLA30 nG10 P10 nG32 P32 nG30 P30 CLA
+
+* simulation commands
+.tran 5n 1024u
+
+.control
+    run
+    write alu.raw cc I(Vcc) SUB nSUB A0 B0 nG0 P0 A1 B1 nG1 P1 A2 B2 nG2 P2 A3 B3 nG3 P3 nG10 P10 nG32 P32 nG30 P30
+.endc
+
+.end
