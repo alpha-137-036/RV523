@@ -1,0 +1,428 @@
+(export 
+  (version "E") 
+  (design 
+    (source "C:\\Users\\Alexa\\IdeaProjects\\RV74\\boards\\Cells-TestBoard\\RVCMOS-Cells-TestBoard\\RVCMOS-Cells-TestBoard.kicad_sch") 
+    (date "2025-06-30T23:08:29+0200") 
+    (tool "Eeschema 9.0.2") 
+    (sheet 
+      (number "1") 
+      (name "/") 
+      (tstamps "/") 
+      (title_block 
+        (title) 
+        (company) 
+        (rev) 
+        (date) 
+        (source "RVCMOS-Cells-TestBoard.kicad_sch") 
+        (comment 
+          (number "1") 
+          (value "")) 
+        (comment 
+          (number "2") 
+          (value "")) 
+        (comment 
+          (number "3") 
+          (value "")) 
+        (comment 
+          (number "4") 
+          (value "")) 
+        (comment 
+          (number "5") 
+          (value "")) 
+        (comment 
+          (number "6") 
+          (value "")) 
+        (comment 
+          (number "7") 
+          (value "")) 
+        (comment 
+          (number "8") 
+          (value "")) 
+        (comment 
+          (number "9") 
+          (value ""))))) 
+  (components 
+    (comp 
+      (ref "U1") 
+      (value "~") 
+      (footprint "RVCMOS:NAND") 
+      (fields 
+        (field 
+          (name "Footprint") "RVCMOS:NAND") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (libsource 
+        (lib "RVCMOS") 
+        (part "NAND") 
+        (description "")) 
+      (property 
+        (name "Sheetname") 
+        (value "Root")) 
+      (property 
+        (name "Sheetfile") 
+        (value "RVCMOS-Cells-TestBoard.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "ace4f352-b716-4795-97e4-f4b704bc21fe")) 
+    (comp 
+      (ref "U2") 
+      (value "~") 
+      (footprint "RVCMOS:NAND") 
+      (fields 
+        (field 
+          (name "Footprint") "RVCMOS:NAND") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (libsource 
+        (lib "RVCMOS") 
+        (part "NAND") 
+        (description "")) 
+      (property 
+        (name "Sheetname") 
+        (value "Root")) 
+      (property 
+        (name "Sheetfile") 
+        (value "RVCMOS-Cells-TestBoard.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "61c23e9e-f710-43d5-92e5-55c20947861a")) 
+    (comp 
+      (ref "U3") 
+      (value "~") 
+      (footprint "RVCMOS:NAND") 
+      (fields 
+        (field 
+          (name "Footprint") "RVCMOS:NAND") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (libsource 
+        (lib "RVCMOS") 
+        (part "NAND") 
+        (description "")) 
+      (property 
+        (name "Sheetname") 
+        (value "Root")) 
+      (property 
+        (name "Sheetfile") 
+        (value "RVCMOS-Cells-TestBoard.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "5bf3cd9e-4536-4820-a4db-bcf40fe40d22")) 
+    (comp 
+      (ref "U4") 
+      (value "~") 
+      (footprint "RVCMOS:NAND") 
+      (fields 
+        (field 
+          (name "Footprint") "RVCMOS:NAND") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (libsource 
+        (lib "RVCMOS") 
+        (part "NAND") 
+        (description "")) 
+      (property 
+        (name "Sheetname") 
+        (value "Root")) 
+      (property 
+        (name "Sheetfile") 
+        (value "RVCMOS-Cells-TestBoard.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "0c408a62-1417-42d9-970c-60b5866e1bbd")) 
+    (comp 
+      (ref "U5") 
+      (value "~") 
+      (footprint "RVCMOS:AOI22") 
+      (fields 
+        (field 
+          (name "Footprint") "RVCMOS:AOI22") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (libsource 
+        (lib "RVCMOS") 
+        (part "AOI22") 
+        (description "")) 
+      (property 
+        (name "Sheetname") 
+        (value "Root")) 
+      (property 
+        (name "Sheetfile") 
+        (value "RVCMOS-Cells-TestBoard.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "a4380b8d-ad75-4516-b50c-17d0b14f3b4b")) 
+    (comp 
+      (ref "U6") 
+      (value "~") 
+      (footprint "RVCMOS:NOT") 
+      (fields 
+        (field 
+          (name "Footprint") "RVCMOS:NOT") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (libsource 
+        (lib "RVCMOS") 
+        (part "NOT") 
+        (description "")) 
+      (property 
+        (name "Sheetname") 
+        (value "Root")) 
+      (property 
+        (name "Sheetfile") 
+        (value "RVCMOS-Cells-TestBoard.kicad_sch")) 
+      (sheetpath 
+        (names "/") 
+        (tstamps "/")) 
+      (tstamps "683784aa-fde1-42b7-8d17-92da5f9e0cae"))) 
+  (libparts 
+    (libpart 
+      (lib "RVCMOS") 
+      (part "AOI22") 
+      (fields 
+        (field 
+          (name "Reference") "U") 
+        (field 
+          (name "Value")) 
+        (field 
+          (name "Footprint") "RVCMOS:AOI22") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (pins 
+        (pin 
+          (num "A") 
+          (name "A") 
+          (type "input")) 
+        (pin 
+          (num "B") 
+          (name "B") 
+          (type "input")) 
+        (pin 
+          (num "C") 
+          (name "C") 
+          (type "input")) 
+        (pin 
+          (num "D") 
+          (name "D") 
+          (type "input")) 
+        (pin 
+          (num "Y") 
+          (name "Y") 
+          (type "output")))) 
+    (libpart 
+      (lib "RVCMOS") 
+      (part "NAND") 
+      (fields 
+        (field 
+          (name "Reference") "U") 
+        (field 
+          (name "Value")) 
+        (field 
+          (name "Footprint")) 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (pins 
+        (pin 
+          (num "A") 
+          (name "A") 
+          (type "input")) 
+        (pin 
+          (num "B") 
+          (name "B") 
+          (type "input")) 
+        (pin 
+          (num "Y") 
+          (name "Y") 
+          (type "output")))) 
+    (libpart 
+      (lib "RVCMOS") 
+      (part "NOT") 
+      (fields 
+        (field 
+          (name "Reference") "U") 
+        (field 
+          (name "Value")) 
+        (field 
+          (name "Footprint") "RVCMOS:NOT") 
+        (field 
+          (name "Datasheet")) 
+        (field 
+          (name "Description"))) 
+      (pins 
+        (pin 
+          (num "A") 
+          (name "A") 
+          (type "input")) 
+        (pin 
+          (num "Y") 
+          (name "Y") 
+          (type "output"))))) 
+  (libraries 
+    (library 
+      (logical "RVCMOS") 
+      (uri "C:/Users/Alexa/IdeaProjects/RV74/design/Cells/RVCMOS.kicad_sym"))) 
+  (nets 
+    (net 
+      (code "1") 
+      (name "A") 
+      (class "Default") 
+      (node 
+        (ref "U2") 
+        (pin "B") 
+        (pinfunction "B") 
+        (pintype "input"))) 
+    (net 
+      (code "2") 
+      (name "A2") 
+      (class "Default") 
+      (node 
+        (ref "U5") 
+        (pin "A") 
+        (pinfunction "A") 
+        (pintype "input"))) 
+    (net 
+      (code "3") 
+      (name "B") 
+      (class "Default") 
+      (node 
+        (ref "U3") 
+        (pin "B") 
+        (pinfunction "B") 
+        (pintype "input"))) 
+    (net 
+      (code "4") 
+      (name "B2") 
+      (class "Default") 
+      (node 
+        (ref "U5") 
+        (pin "C") 
+        (pinfunction "C") 
+        (pintype "input"))) 
+    (net 
+      (code "5") 
+      (name "Net-(U1-PadY)") 
+      (class "Default") 
+      (node 
+        (ref "U1") 
+        (pin "Y") 
+        (pinfunction "Y") 
+        (pintype "output")) 
+      (node 
+        (ref "U2") 
+        (pin "A") 
+        (pinfunction "A") 
+        (pintype "input"))) 
+    (net 
+      (code "6") 
+      (name "Net-(U2-PadY)") 
+      (class "Default") 
+      (node 
+        (ref "U2") 
+        (pin "Y") 
+        (pinfunction "Y") 
+        (pintype "output")) 
+      (node 
+        (ref "U4") 
+        (pin "B") 
+        (pinfunction "B") 
+        (pintype "input"))) 
+    (net 
+      (code "7") 
+      (name "Net-(U3-PadY)") 
+      (class "Default") 
+      (node 
+        (ref "U3") 
+        (pin "Y") 
+        (pinfunction "Y") 
+        (pintype "output")) 
+      (node 
+        (ref "U4") 
+        (pin "A") 
+        (pinfunction "A") 
+        (pintype "input"))) 
+    (net 
+      (code "8") 
+      (name "Net-(U5-PadD)") 
+      (class "Default") 
+      (node 
+        (ref "U5") 
+        (pin "D") 
+        (pinfunction "D") 
+        (pintype "input")) 
+      (node 
+        (ref "U6") 
+        (pin "Y") 
+        (pinfunction "Y") 
+        (pintype "output"))) 
+    (net 
+      (code "9") 
+      (name "S") 
+      (class "Default") 
+      (node 
+        (ref "U1") 
+        (pin "A") 
+        (pinfunction "A") 
+        (pintype "input")) 
+      (node 
+        (ref "U1") 
+        (pin "B") 
+        (pinfunction "B") 
+        (pintype "input")) 
+      (node 
+        (ref "U3") 
+        (pin "A") 
+        (pinfunction "A") 
+        (pintype "input"))) 
+    (net 
+      (code "10") 
+      (name "S2") 
+      (class "Default") 
+      (node 
+        (ref "U5") 
+        (pin "B") 
+        (pinfunction "B") 
+        (pintype "input")) 
+      (node 
+        (ref "U6") 
+        (pin "A") 
+        (pinfunction "A") 
+        (pintype "input"))) 
+    (net 
+      (code "11") 
+      (name "Y") 
+      (class "Default") 
+      (node 
+        (ref "U4") 
+        (pin "Y") 
+        (pinfunction "Y") 
+        (pintype "output"))) 
+    (net 
+      (code "12") 
+      (name "Y2") 
+      (class "Default") 
+      (node 
+        (ref "U5") 
+        (pin "Y") 
+        (pinfunction "Y") 
+        (pintype "output")))))
