@@ -509,7 +509,16 @@
         "Power"
       ]
     },
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Power",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VDD"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
