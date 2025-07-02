@@ -27,7 +27,7 @@ class KicadObject:
             self.__items.append(item)
 
     def __str__(self):
-        return sexpdata.dumps(self.__sexpr)
+        return sexpdata.dumps(self)
 
     def item(self, i):
         return self.__items[i]
@@ -45,7 +45,7 @@ class KicadObject:
     def kclass(self):
         return self.__items[0].value()
 
-    def __getattr__(self, name):
+    def getAttributeByName(self, name):
         if self.__itemsByName == None:
             self.__itemsByName = {}
             for item in self.__items:
@@ -53,6 +53,9 @@ class KicadObject:
                     self.__itemsByName.setdefault(item.kclass, []).append(item) 
         return self.__itemsByName[name]
 
+    def __getattr__(self, name):
+        return self.getAttributeByName(name)
+    
     def clone(self):
         clone = KicadObject([])
         for item in self.__items:
@@ -89,35 +92,93 @@ class KicadObject:
         if not self.kclass == "net":
             raise Exception("Not a net")
         return self.__items[2]
-    
+    def resolveNet(self, resolvedNet):
+        if not self.kclass == "net":
+            raise Exception("Not a net")
+        self.__items[1] = resolvedNet.netID
+        if len(self.__items) > 2:
+            self.__items[2] = resolvedNet.netName
+
 inputBoard = KicadObject(loadFile(inputBoardFile))
 
 cellBoards = {}
 cellBoards["RVCMOS:NOT"] = KicadObject(loadFile("../design/Cells/NOT/NOT.kicad_pcb"))
 cellBoards["RVCMOS:AOI22"] = KicadObject(loadFile("../design/Cells/AOI22/AOI22.kicad_pcb"))
 
+inputNets = {}
+maxNetID = 0
+GND = None
+VDD = None
+for net in inputBoard.net:
+    inputNets[net.netID] = net
+    maxNetID = max(maxNetID, net.netID)
+    if net.netName == "GND":
+        GND = net
+    if net.netName == "VDD":
+        VDD = net
+
+def addBoardNet(name):
+    global maxNetID
+    net = KicadObject([sexpdata.Symbol("net"), maxNetID + 1, name])
+    maxNetID = maxNetID + 1
+    inputNets[net.netID] = net
+    inputBoard.append(net)
+    return net
+
+if GND == None:
+    GND = addBoardNet("GND")
+if VDD == None:
+    VDD = addBoardNet("VDD")
+
 def processCellFootprint(cellBoard, cellFootprint):
     cellFootprint.delete()
+    cellRef = None
+    for prop in cellFootprint.property:
+        if prop.item(1) == "Reference":
+            cellRef = prop.item(2)
     cellBoard = cellBoard.clone()
     cellBoard.processUUIDs(cellFootprint)
+    padsByName = {}
+    for pad in cellFootprint.pad:
+        padName = pad.item(1)
+        padsByName[padName] = pad
     nets = {}
     for net in cellBoard.net:
-        nets[net.item(1)] = net    
+        if net.netName in padsByName:
+            resolvedNet = inputNets[padsByName[net.netName].net[0].netID]
+        elif net.netName == "VDD":
+            # Global nets
+            resolvedNet = VDD
+        elif net.netName == "GND":
+            resolvedNet = GND
+        else:  
+            # Create a new outer net
+            resolvedNet = addBoardNet(cellRef + "." + net.netName)
+        nets[net.netID] = resolvedNet
+
+    def rewriteNetRef(obj):
+        for net in obj.net:
+            net.resolveNet(nets[net.netID])
+
+    # Renumber the nets
+    for net in nets.values():
+        if net.netName in padsByName:
+            # Connected to outer net
+            net.outerID = padsByName[net.netName].net[0].netID 
+
     # Cleanup and adapt the sub-board copy
     for footprint in cellBoard.footprint:
         for pos in footprint.at:
             pos.shift(cellFootprint.at[0])
         for pad in footprint.pad:
-            for net in pad.net:
-                net.delete()
+            rewriteNetRef(pad)
         inputBoard.append(footprint)
     for segment in cellBoard.segment:
             for pos in segment.start:
                 pos.shift(cellFootprint.at[0])
             for pos in segment.end:
                 pos.shift(cellFootprint.at[0])
-            for net in segment.net:
-                net.delete()
+            rewriteNetRef(segment)
             inputBoard.append(segment)
         
     for via in cellBoard.via:
@@ -125,8 +186,7 @@ def processCellFootprint(cellBoard, cellFootprint):
         if net.netName != "":
             for pos in via.at:
                 pos.shift(cellFootprint.at[0])
-            for net in via.net:
-                net.delete()
+            rewriteNetRef(via)
             inputBoard.append(via)
 
 # Get all of the RVCMOS footprints
