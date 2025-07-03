@@ -1,7 +1,7 @@
 import sys
 import sexpdata
-import copy
 import uuid
+import functools
 
 inputBoardFile = sys.argv[1]
 outputBoardFile = sys.argv[2]
@@ -70,8 +70,17 @@ class KicadObject:
         self.__itemsByName = None
 
     def shift(self, relativePosition):
-        self.__items[1] += relativePosition.__items[1]
-        self.__items[2] += relativePosition.__items[2]
+        self.__items[1] = float(self.x + relativePosition.x) / 1000000
+        self.__items[2] = float(self.y + relativePosition.y) / 1000000
+
+    @property
+    def x(self):
+        # Convert to integer nanometer
+        return int(self.__items[1] * 1000000)
+
+    @property
+    def y(self):
+        return int(self.__items[2] * 1000000)
 
     # recursively update all uuid's to combine them with a parent uuid
     def processUUIDs(self, parent):
@@ -99,11 +108,33 @@ class KicadObject:
         if len(self.__items) > 2:
             self.__items[2] = resolvedNet.netName
 
+    @property
+    def courtyardRect(self):
+        for r in self.fp_rect or []:
+            if r.layer[0].item(1) == "F.CrtYd":
+                return r
+        return None
+
+    @property 
+    def position(self):
+        return self.at[0]
+    
+    @property
+    def endX(self):
+        return self.position.x + self.courtyardRect.end[0].x
+    @property
+    def endY(self):
+        return self.position.y + self.courtyardRect.end[0].y
+    
 inputBoard = KicadObject(loadFile(inputBoardFile))
 
 cellBoards = {}
-cellBoards["RVCMOS:NOT"] = KicadObject(loadFile("../design/Cells/NOT/NOT.kicad_pcb"))
-cellBoards["RVCMOS:AOI22"] = KicadObject(loadFile("../design/Cells/AOI22/AOI22.kicad_pcb"))
+
+for cellName in ["NOT", "AOI22"]:
+    cellBoards[f"RVCMOS:{cellName}"] = ( 
+        KicadObject(loadFile(f"../design/Cells/{cellName}/{cellName}.kicad_pcb")), 
+        KicadObject(loadFile(f"../design/Cells/{cellName}/{cellName}_flipped.kicad_pcb")) 
+    )
 
 inputNets = {}
 maxNetID = 0
@@ -130,7 +161,8 @@ if GND == None:
 if VDD == None:
     VDD = addBoardNet("VDD")
 
-def processCellFootprint(cellBoard, cellFootprint):
+def processCellFootprint(cellFootprint):
+    cellBoard = cellBoards[cellFootprint.item(1)][0 if not cellFootprint.flipped else 1]
     cellFootprint.delete()
     cellRef = None
     for prop in cellFootprint.property:
@@ -151,6 +183,8 @@ def processCellFootprint(cellBoard, cellFootprint):
             resolvedNet = VDD
         elif net.netName == "GND":
             resolvedNet = GND
+        elif net.netName == "":
+            resolvedNet = net
         else:  
             # Create a new outer net
             resolvedNet = addBoardNet(cellRef + "." + net.netName)
@@ -158,13 +192,11 @@ def processCellFootprint(cellBoard, cellFootprint):
 
     def rewriteNetRef(obj):
         for net in obj.net:
-            net.resolveNet(nets[net.netID])
-
-    # Renumber the nets
-    for net in nets.values():
-        if net.netName in padsByName:
-            # Connected to outer net
-            net.outerID = padsByName[net.netName].net[0].netID 
+            resolvedNet = nets[net.netID]
+            if resolvedNet.netName:
+                net.resolveNet(resolvedNet)
+            else:
+                net.delete()
 
     # Cleanup and adapt the sub-board copy
     for footprint in cellBoard.footprint:
@@ -183,50 +215,74 @@ def processCellFootprint(cellBoard, cellFootprint):
         
     for via in cellBoard.via:
         net = nets[via.net[0].netID]
-        if net.netName != "":
+        if net.netName:
             for pos in via.at:
                 pos.shift(cellFootprint.at[0])
             rewriteNetRef(via)
             inputBoard.append(via)
 
-# Get all of the RVCMOS footprints
+cellFootprints = []
 
-for obj in inputBoard:
-    if type(obj) is KicadObject and obj.kclass == 'footprint':
-        name = obj.item(1)
-        if name in cellBoards:
-            processCellFootprint(cellBoards[name], obj)
+def analyzeFootprintFlipped():
+    global cellFootprints
+    # Get all cell footprints
+    for obj in inputBoard:
+        if type(obj) is KicadObject and obj.kclass == 'footprint':
+            name = obj.item(1)
+            if name in cellBoards:
+                cellFootprints.append(obj)
+
+    # Sort by top-down, left-right order
+    def compare(p1, p2):
+        if p1.position.y < p2.position.y:
+            return -1
+        elif p1.position.y > p2.position.y:
+            return +1
+        elif p1.position.x < p2.position.x:
+            return -1
+        elif p1.position.x > p2.position.x:
+            return +1
+        else:
+            return 0
+    cellFootprints.sort(key=functools.cmp_to_key(compare))
+
+    # Search for a footprint immediately above p1
+    def searchAbove(p1):
+        for p2 in cellFootprints:
+            if p2 == p1:
+                return None
+            else:
+                if p2.position.x == p1.position.x and p2.endY == p1.position.y:
+                    return p2
+                
+    previous = None
+    for footprint in cellFootprints:
+        if previous == None:
+            footprint.flipped = False
+        else:
+            # Immediately on the right of previous?
+            if previous.position.y == footprint.position.y and previous.endX == footprint.position.x:
+                footprint.flipped = previous.flipped
+            else:
+                # Is there an already considered footprint immediately above?
+                p2 = searchAbove(footprint)
+                if p2:
+                    print("above")
+                    footprint.flipped = not p2.flipped
+                else:
+                    footprint.flipped = False
+        previous = footprint
+    
+    for footprint in cellFootprints:
+        print(f"{footprint.item(1)} @ {footprint.position} => flipped = {footprint.flipped}")
+
+analyzeFootprintFlipped()
+
+# Process all cell footprints
+for cellFootprint in cellFootprints:
+    processCellFootprint(cellFootprint)
 
 saveFile(outputBoardFile, inputBoard)
-
-
-# from kiutils.board import Board
-# from kiutils.footprint import Footprint
-# from kiutils.utils import sexpr
-
-# board = Board().from_file(inputBoard)
-
-# if False:
-#     NOT_board = Board().from_file("../design/Cells/NOT/NOT.kicad_pcb")
-
-#     firstDone = False
-
-#     for footprint in board.footprints:
-#         if footprint.libraryNickname == 'RVCMOS':
-#             if footprint.entryName == 'NOT':
-#                 if not firstDone:
-#                     firstT = Footprint.from_sexpr(sexpr.parse_sexp(NOT_board.footprints[0].to_sexpr()))
-#                     firstT.properties["Reference"] = footprint.properties["Reference"] + "-" + firstT.properties["Reference"]
-#                     firstT.position.X += footprint.position.X
-#                     firstT.position.Y += footprint.position.Y
-#                     for pad in firstT.pads:
-#                         pad.net = None
-#                     board.footprints.append(firstT)
-#                     firstDone = True
-
-# board.to_file(outputBoard)
-
-
 
 
 # # https://stackoverflow.com/a/77256881/1695431
