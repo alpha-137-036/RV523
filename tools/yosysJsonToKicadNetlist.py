@@ -20,7 +20,6 @@ with open(args.outputFilename, 'w') as output:
     output.write("(export (version \"E\")\n")
 
     nets = {}
-    parts = {}
 
     output.write("(components \n")
     for name, cell in topModule["cells"].items():
@@ -32,11 +31,6 @@ with open(args.outputFilename, 'w') as output:
             output.write(f"   (comp (ref \"{name}\")\n")
             footprint = cellModule["attributes"]["footprint"]
             output.write(f"      (footprint \"{footprint}\")\n")
-            if not type in parts.keys():
-                pins = []
-                for pinName, direction in cell["port_directions"].items():
-                    pins.append({"name": pinName, "type": direction})
-                parts[type] = {"name": type, "pins": pins}
             for pin, wireIDs in cell["connections"].items():
                 for wireID in wireIDs:
                     net = nets.setdefault(wireID, {"id": wireID})
@@ -61,18 +55,6 @@ with open(args.outputFilename, 'w') as output:
                 net["name"] = name
             else:
                 net["name"] = name + "." + str(i)
-
-    # output.write("(libparts\n")
-    # for part in parts.values():
-    #     footprint = data["modules"][part['name']]["attributes"]["footprint"]
-    #     (lib,name) = footprint.split(':')
-    #     output.write(f"   (libpart (lib \"{lib}\") (part \"{name}\")\n")
-    #     output.write(f"      (pins\n")
-    #     for pin in part["pins"]:
-    #         output.write(f"         (pin (num \"{pin['name']}\") (name \"{pin['name']}\") (type \"{pin['type']}\"))\n")
-    #     output.write(f"      )")
-    #     output.write("   )\n")
-    # output.write(")\n")
 
     output.write("(nets\n")
     for net in nets.values():
