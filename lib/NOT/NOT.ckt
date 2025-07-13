@@ -1,4 +1,6 @@
-.subckt NOT A Y
-X0 Y A GND N7002
-X1 Y A VDD BSS84
+.inc "../RV523_NMOS.ckt"
+.inc "../RV523_PMOS.ckt"
+.subckt NOT Y A
+ XN1 A 0 Y RV523_NMOS
+ XP1 A VDD Y RV523_PMOS
 .ends

@@ -5,12 +5,12 @@ module NOT(
     supply1 VDD;
     supply0 GND;
 
-    NMOS N1(
+    RV523_NMOS N1(
         .S(GND),
         .D(Y),
         .G(A)
     );
-    PMOS P1(
+    RV523_PMOS P1(
         .S(VDD),
         .D(Y),
         .G(A)

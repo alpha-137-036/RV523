@@ -1,7 +1,95 @@
 {
   "creator": "Yosys 0.33 (git sha1 2584903a060)",
   "modules": {
-    "NMOS": {
+    "NOT": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "NOT.v:1.1-18.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+        "N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NOT.v:8.16-12.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ "0" ]
+          }
+        },
+        "P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NOT.v:13.16-17.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "NOT.v:3.11-3.12"
+          }
+        },
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "NOT.v:0.0-0.0"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "NOT.v:0.0-0.0"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "NOT.v:2.12-2.13"
+          }
+        }
+      }
+    },
+    "RV523_NMOS": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
         "footprint": "Package_TO_SOT_SMD:SOT-523",
@@ -50,95 +138,7 @@
         }
       }
     },
-    "NOT": {
-      "attributes": {
-        "top": "00000000000000000000000000000001",
-        "src": "NOT.v:1.1-18.10"
-      },
-      "ports": {
-        "Y": {
-          "direction": "output",
-          "bits": [ 2 ]
-        },
-        "A": {
-          "direction": "input",
-          "bits": [ 3 ]
-        }
-      },
-      "cells": {
-        "N1": {
-          "hide_name": 0,
-          "type": "NMOS",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOT.v:8.10-12.6"
-          },
-          "port_directions": {
-            "D": "inout",
-            "G": "inout",
-            "S": "inout"
-          },
-          "connections": {
-            "D": [ 2 ],
-            "G": [ 3 ],
-            "S": [ "0" ]
-          }
-        },
-        "P1": {
-          "hide_name": 0,
-          "type": "PMOS",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOT.v:13.10-17.6"
-          },
-          "port_directions": {
-            "D": "inout",
-            "G": "inout",
-            "S": "inout"
-          },
-          "connections": {
-            "D": [ 2 ],
-            "G": [ 3 ],
-            "S": [ "1" ]
-          }
-        }
-      },
-      "netnames": {
-        "A": {
-          "hide_name": 0,
-          "bits": [ 3 ],
-          "attributes": {
-            "src": "NOT.v:3.11-3.12"
-          }
-        },
-        "GND": {
-          "hide_name": 0,
-          "bits": [ "0" ],
-          "attributes": {
-            "src": "NOT.v:0.0-0.0"
-          }
-        },
-        "VDD": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "src": "NOT.v:0.0-0.0"
-          }
-        },
-        "Y": {
-          "hide_name": 0,
-          "bits": [ 2 ],
-          "attributes": {
-            "src": "NOT.v:2.12-2.13"
-          }
-        }
-      }
-    },
-    "PMOS": {
+    "RV523_PMOS": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
         "footprint": "Package_TO_SOT_SMD:SOT-523",

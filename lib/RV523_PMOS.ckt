@@ -1,0 +1,6 @@
+.inc "bss84.sub"
+* SOT-523 pin order 1=G, 2=S, 3=D
+.SUBCKT RV523_PMOS G S D
+    * bss84 model has pin order D  G  S
+    X1 D G S BSS84
+.ENDS

@@ -2,8 +2,6 @@
 
 .include "NOT.ckt"
 .include "pwl_Inputs.sp"
-.include "../2n7002.sub"
-.include "../bss84.sub"
 
 .global VDD
 
@@ -13,7 +11,7 @@ VDD VDD 0 3.3
 Cload Y 0 30p
 
 * Instantiate cell
-XU1 A Y NOT
+XU1 Y A NOT
 
 .TRAN 0.1ns 600ns
 
