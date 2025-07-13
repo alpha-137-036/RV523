@@ -26,6 +26,7 @@ endmodule
 (* techmap_celltype = "NOR" *) 
 (* blackbox *)
 (* footprint = "RV523:NOR" *)
+(* pins = "-,A,B,-,Y" *)
 module NOR (output Y, input A, input B);
     assign Y = A ~| B;
 endmodule
@@ -33,6 +34,7 @@ endmodule
 (* techmap_celltype = "NAND3" *) 
 (* blackbox *)
 (* footprint = "RV523:NAND3" *)
+(* pins="-,A,-,B,-,C,Y" *)
 module NAND3 (output Y, input A, input B, input C);
     assign Y = ~(A & B & C);
 endmodule
@@ -40,6 +42,7 @@ endmodule
 (* techmap_celltype = "NOR3" *) 
 (* blackbox *)
 (* footprint = "RV523:NOR3" *)
+(* pins="-,A,-,B,-,C,Y" *)
 module NOR3 (output Y, input A, input B, input C);
     assign Y = ~(A | B | C);
 endmodule
