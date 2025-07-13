@@ -27,12 +27,12 @@
       "cells": {
         "N1": {
           "hide_name": 0,
-          "type": "NMOS",
+          "type": "RV523_NMOS",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND3.v:11.10-15.6"
+            "src": "NAND3.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -47,12 +47,12 @@
         },
         "N2": {
           "hide_name": 0,
-          "type": "NMOS",
+          "type": "RV523_NMOS",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND3.v:16.10-20.6"
+            "src": "NAND3.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -67,12 +67,12 @@
         },
         "N3": {
           "hide_name": 0,
-          "type": "NMOS",
+          "type": "RV523_NMOS",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND3.v:21.10-25.6"
+            "src": "NAND3.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -87,12 +87,12 @@
         },
         "P1": {
           "hide_name": 0,
-          "type": "PMOS",
+          "type": "RV523_PMOS",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND3.v:26.10-30.6"
+            "src": "NAND3.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -107,12 +107,12 @@
         },
         "P2": {
           "hide_name": 0,
-          "type": "PMOS",
+          "type": "RV523_PMOS",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND3.v:31.10-35.6"
+            "src": "NAND3.v:31.16-35.6"
           },
           "port_directions": {
             "D": "inout",
@@ -127,12 +127,12 @@
         },
         "P3": {
           "hide_name": 0,
-          "type": "PMOS",
+          "type": "RV523_PMOS",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND3.v:36.10-40.6"
+            "src": "NAND3.v:36.16-40.6"
           },
           "port_directions": {
             "D": "inout",
@@ -207,7 +207,7 @@
         }
       }
     },
-    "NMOS": {
+    "RV523_NMOS": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
         "footprint": "Package_TO_SOT_SMD:SOT-523",
@@ -256,7 +256,7 @@
         }
       }
     },
-    "PMOS": {
+    "RV523_PMOS": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
         "footprint": "Package_TO_SOT_SMD:SOT-523",

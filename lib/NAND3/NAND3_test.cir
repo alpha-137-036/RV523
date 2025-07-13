@@ -2,8 +2,6 @@
 
 .include "NAND3.ckt"
 .include "pwl_Inputs.sp"
-.include "../2n7002.sub"
-.include "../bss84.sub"
 
 .global VDD
 
@@ -13,7 +11,7 @@ VDD VDD 0 3.3
 Cload Y 0 30p
 
 * Instantiate NAND gate
-XU1 A B C Y NAND3
+XU1 Y A B C NAND3
 
 .TRAN 0.1ns 11400ns
 
