@@ -7,22 +7,22 @@ module NOR(
     supply0 GND;
     wire C;
 
-    NMOS N1(
+    RV523_NMOS N1(
         .S(GND),
         .D(Y),
         .G(A)
     );
-    NMOS N2(
+    RV523_NMOS N2(
         .S(GND),
         .D(Y),
         .G(B)
     );
-    PMOS P1(
+    RV523_PMOS P1(
         .S(VDD),
         .D(C),
         .G(A)
     );
-    PMOS P2(
+    RV523_PMOS P2(
         .S(C),
         .D(Y),
         .G(B)
