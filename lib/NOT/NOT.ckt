@@ -1,0 +1,4 @@
+.subckt NOT A Y
+X0 Y A GND N7002
+X1 Y A VDD BSS84
+.ends
