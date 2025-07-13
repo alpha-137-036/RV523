@@ -76,9 +76,13 @@ with open(args.outputFilename, 'w') as output:
 
     output.write("(nets\n")
     for net in nets.values():
+        if net['name'] == "GND" or net['name'] == "VDD":
+            netClass = "Power"
+        else:
+            netClass = "Default"
         # gotcha: net with code "0" is not accepted by Kicad. Add one to all net IDs...
         # gotha#2: "0" and "1" are strings, not ints...
-        output.write(f"   (net (code \"{1+int(net['id'])}\") (class \"Default\")")
+        output.write(f"   (net (code \"{1+int(net['id'])}\") (class \"{netClass}\")")
         if "name" in net:
             output.write(f" (name \"{net['name']}\")")
         output.write("\n")

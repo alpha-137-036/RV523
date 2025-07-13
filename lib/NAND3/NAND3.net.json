@@ -1,0 +1,309 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "NAND3": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "NAND3.v:1.1-41.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "N1": {
+          "hide_name": 0,
+          "type": "NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NAND3.v:11.10-15.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 3 ],
+            "S": [ "0" ]
+          }
+        },
+        "N2": {
+          "hide_name": 0,
+          "type": "NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NAND3.v:16.10-20.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 4 ],
+            "S": [ 6 ]
+          }
+        },
+        "N3": {
+          "hide_name": 0,
+          "type": "NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NAND3.v:21.10-25.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 5 ],
+            "S": [ 7 ]
+          }
+        },
+        "P1": {
+          "hide_name": 0,
+          "type": "PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NAND3.v:26.10-30.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        },
+        "P2": {
+          "hide_name": 0,
+          "type": "PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NAND3.v:31.10-35.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 4 ],
+            "S": [ "1" ]
+          }
+        },
+        "P3": {
+          "hide_name": 0,
+          "type": "PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "NAND3.v:36.10-40.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 5 ],
+            "S": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "NAND3.v:3.11-3.12"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "NAND3.v:4.11-4.12"
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "NAND3.v:5.11-5.12"
+          }
+        },
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "NAND3.v:0.0-0.0"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "NAND3.v:0.0-0.0"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "NAND3.v:2.12-2.13"
+          }
+        },
+        "int1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "NAND3.v:9.10-9.14",
+            "unused_bits": "0 "
+          }
+        },
+        "int2": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "NAND3.v:9.16-9.20",
+            "unused_bits": "0 "
+          }
+        }
+      }
+    },
+    "NMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:3.1-11.10"
+      },
+      "ports": {
+        "G": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "D": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:7.11-7.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:5.11-5.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:9.11-9.12"
+          }
+        }
+      }
+    },
+    "PMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:15.1-23.10"
+      },
+      "ports": {
+        "G": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "D": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:17.11-17.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        }
+      }
+    }
+  }
+}
