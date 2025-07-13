@@ -1,4 +1,5 @@
-# generate_1bit_pwl.py
+# generate_3bit_pwl.py
+# Generates PWL waveforms for N inputs covering every possible transitions
 
 VDD = 3.3
 transition_time = 30 # nanoseconds per transition
@@ -17,30 +18,32 @@ def generateInputSequence(n):
 def pwl_entry(signal, time, value):
     return f"{time:.1f}n {VDD if value else 0.0:.1f}V"
 
-def build_pwl():
-    entries_a = []
+def build_pwl(inputNames):
+    entries = [[] for input in inputNames]
 
     def append(time, value):
-        entries_a.append(pwl_entry("A", time, value & 1))
+        for i in range(len(inputNames)):
+            entries[i].append(pwl_entry(inputNames[i], time, (value >> i) & 1))
 
     t = 0
 
     prev = 0
-    for value in generateInputSequence(2):
+    for value in generateInputSequence(1 << len(inputNames)):
         print(f"{t}: -> {value}")
         append(t, prev)
         t += transition_time
         append(t, value)
         t += cycle_time - transition_time
         prev = value
-    return entries_a
+    return entries
 
 def write_pwl(f, entries, node_name):
     f.write(f"* PWL waveform for {node_name}\n")
-    f.write(f"V{node_name} {node_name} 0 PWL(\n  +" + "\n+  ".join(entries) + "\n+)\n")
+    f.write(f"V{node_name} {node_name} 0 PWL({' '.join(entries)})\n")
 
-if __name__ == "__main__":
-    a = build_pwl()
-    with open("pwl_Inputs.sp", 'w') as f:
-        write_pwl(f, a, "A")
-    print("Generated: pwl_Inputs.sp")
+def generate_pwl(filename, inputNames):
+    entries = build_pwl(inputNames)
+    with open(filename, 'w') as f:
+        for i in range(len(inputNames)):
+            write_pwl(f, entries[i], inputNames[i])
+    print(f"Generated: {filename}")
