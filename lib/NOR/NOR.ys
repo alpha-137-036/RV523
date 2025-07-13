@@ -1,0 +1,5 @@
+read_verilog -sv NOR.v ../RV523_MOSFETS.v
+prep -top NOR
+flatten
+write_json NOR.net.json
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py NOR.net.json NOR.net
