@@ -1,0 +1,11 @@
+.subckt NOR3 A B C Y
+X0 Y A 0 N7002
+X1 Y B 0 N7002
+X2 Y C 0 N7002
+X3 Y A int1 BSS84
+X4 int1 B int2 BSS84
+X5 int2 C VDD BSS84
+.ends
+
+
+
