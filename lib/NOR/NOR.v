@@ -1,3 +1,4 @@
+(* pins = "-,A,B,-,Y" *)
 module NOR(
     output Y,
     input A,

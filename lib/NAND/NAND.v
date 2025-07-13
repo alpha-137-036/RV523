@@ -1,3 +1,4 @@
+(* pins = "-,A,B,-,Y" *)
 module NAND(
     output Y,
     input A,

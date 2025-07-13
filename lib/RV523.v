@@ -1,6 +1,5 @@
 (* techmap_celltype = "NOT" *)
 (* blackbox *)
-(* pins = "-,A,Y" *)
 (* footprint = "RV523:NOT" *)
 module NOT (output Y, input A);
     assign Y = ~A;
@@ -8,7 +7,6 @@ endmodule
 
 (* techmap_celltype = "NAND" *) 
 (* blackbox *)
-(* pins = "-,A,B,-,Y" *)
 (* footprint = "RV523:NAND" *)
 module NAND (output Y, input A, input B);
     assign Y = A ~& B;
@@ -26,7 +24,6 @@ endmodule
 (* techmap_celltype = "NOR" *) 
 (* blackbox *)
 (* footprint = "RV523:NOR" *)
-(* pins = "-,A,B,-,Y" *)
 module NOR (output Y, input A, input B);
     assign Y = A ~| B;
 endmodule
@@ -34,7 +31,6 @@ endmodule
 (* techmap_celltype = "NAND3" *) 
 (* blackbox *)
 (* footprint = "RV523:NAND3" *)
-(* pins="-,A,-,B,-,C,Y" *)
 module NAND3 (output Y, input A, input B, input C);
     assign Y = ~(A & B & C);
 endmodule
@@ -42,7 +38,6 @@ endmodule
 (* techmap_celltype = "NOR3" *) 
 (* blackbox *)
 (* footprint = "RV523:NOR3" *)
-(* pins="-,A,-,B,-,C,Y" *)
 module NOR3 (output Y, input A, input B, input C);
     assign Y = ~(A | B | C);
 endmodule
@@ -59,8 +54,8 @@ module OAI21 (output Y, input A, input B, input C);
     assign Y = ~((A | B) & C);
 endmodule
 
-(* techmap_celltype = "AOI22" *) (* blackbox *)
-(* pins = "-,A,-,B,-,C,D,-,Y" *)
+(* techmap_celltype = "AOI22" *)
+(* blackbox *)
 (* footprint = "RV523:AOI22" *)
 module AOI22 (output Y, input A, input B, input C, input D);
     assign Y = ~((A & B) | (C & D));
