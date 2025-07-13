@@ -214,11 +214,11 @@
         "src": "../RV523_MOSFETS.v:3.1-11.10"
       },
       "ports": {
-        "G": {
+        "D": {
           "direction": "inout",
           "bits": [ 2 ]
         },
-        "D": {
+        "G": {
           "direction": "inout",
           "bits": [ 3 ]
         },
@@ -232,18 +232,18 @@
       "netnames": {
         "D": {
           "hide_name": 0,
-          "bits": [ 3 ],
+          "bits": [ 2 ],
           "attributes": {
             "num": "3",
-            "src": "../RV523_MOSFETS.v:7.11-7.12"
+            "src": "../RV523_MOSFETS.v:5.11-5.12"
           }
         },
         "G": {
           "hide_name": 0,
-          "bits": [ 2 ],
+          "bits": [ 3 ],
           "attributes": {
             "num": "1 ",
-            "src": "../RV523_MOSFETS.v:5.11-5.12"
+            "src": "../RV523_MOSFETS.v:7.11-7.12"
           }
         },
         "S": {
@@ -263,11 +263,11 @@
         "src": "../RV523_MOSFETS.v:15.1-23.10"
       },
       "ports": {
-        "G": {
+        "D": {
           "direction": "inout",
           "bits": [ 2 ]
         },
-        "D": {
+        "G": {
           "direction": "inout",
           "bits": [ 3 ]
         },
@@ -281,18 +281,18 @@
       "netnames": {
         "D": {
           "hide_name": 0,
-          "bits": [ 3 ],
+          "bits": [ 2 ],
           "attributes": {
             "num": "3",
-            "src": "../RV523_MOSFETS.v:19.11-19.12"
+            "src": "../RV523_MOSFETS.v:17.11-17.12"
           }
         },
         "G": {
           "hide_name": 0,
-          "bits": [ 2 ],
+          "bits": [ 3 ],
           "attributes": {
             "num": "1 ",
-            "src": "../RV523_MOSFETS.v:17.11-17.12"
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
           }
         },
         "S": {
