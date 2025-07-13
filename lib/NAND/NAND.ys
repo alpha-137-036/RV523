@@ -1,0 +1,5 @@
+read_verilog -sv NAND.v ../RV523_MOSFETS.v
+prep -top NAND
+flatten
+write_json NAND.net.json
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py NAND.net.json NAND.net --spice NAND.ckt

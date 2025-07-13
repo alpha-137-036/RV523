@@ -1,0 +1,8 @@
+.inc "../RV523_NMOS.ckt"
+.inc "../RV523_PMOS.ckt"
+.subckt NAND Y A B
+ XN1 A 0 int1 RV523_NMOS
+ XN2 B int1 Y RV523_NMOS
+ XP1 A VDD Y RV523_PMOS
+ XP2 B VDD Y RV523_PMOS
+.ends
