@@ -8,32 +8,32 @@ module NOR3(
     supply0 GND;
     wire int1, int2;
 
-    NMOS N1(
+    RV523_NMOS N1(
         .S(GND),
         .D(Y),
         .G(A)
     );
-    NMOS N2(
+    RV523_NMOS N2(
         .S(GND),
         .D(Y),
         .G(B)
     );
-    NMOS N3(
+    RV523_NMOS N3(
         .S(GND),
         .D(Y),
         .G(C)
     );
-    PMOS P1(
+    RV523_PMOS P1(
         .S(int1),
         .D(Y),
         .G(A)
     );
-    PMOS P2(
+    RV523_PMOS P2(
         .S(int2),
         .D(int1),
         .G(B)
     );
-    PMOS P3(
+    RV523_PMOS P3(
         .S(VDD),
         .D(int2),
         .G(C)
