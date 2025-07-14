@@ -1,0 +1,25 @@
+* Main ngspice simulation file
+
+.include "D_LATCH.ckt"
+.include "pwl_Inputs.sp"
+
+.global VDD
+
+VDD VDD 0 3.3
+
+* Load capacitor on outputs
+CloadQ Q 0 30p
+CloadnQ nQ 0 30p
+
+* Instantiate D_LATCH gate
+XU1 Q nQ D EN nEN D_LATCH
+
+.TRAN 0.1ns 1200ns
+
+* Simulation control
+.control 
+    run
+    write D_LATCH.raw
+    quit
+.endc
+.END

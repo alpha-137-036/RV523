@@ -1,0 +1,558 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "D_LATCH": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "D_LATCH.v:35.1-61.10"
+      },
+      "ports": {
+        "Q": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "nQ": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "D": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "EN": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "nEN": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "NOT1.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT1 N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:11.16-15.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 4 ],
+            "S": [ "0" ]
+          }
+        },
+        "NOT1.N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT1 N2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:16.16-20.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 5 ],
+            "S": [ 7 ]
+          }
+        },
+        "NOT1.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT1 P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:21.16-25.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 8 ],
+            "G": [ 4 ],
+            "S": [ "1" ]
+          }
+        },
+        "NOT1.P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT1 P2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:26.16-30.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 6 ],
+            "S": [ 8 ]
+          }
+        },
+        "NOT2.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT2 N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:9.16-13.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ "0" ]
+          }
+        },
+        "NOT2.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT2 P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:14.16-18.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        },
+        "NOT3.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT3 N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:11.16-15.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 9 ],
+            "G": [ 2 ],
+            "S": [ "0" ]
+          }
+        },
+        "NOT3.N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT3 N2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:16.16-20.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 6 ],
+            "S": [ 9 ]
+          }
+        },
+        "NOT3.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT3 P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:21.16-25.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 2 ],
+            "S": [ "1" ]
+          }
+        },
+        "NOT3.P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "NOT3 P2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:26.16-30.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 5 ],
+            "S": [ 10 ]
+          }
+        }
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "D_LATCH.v:38.11-38.12"
+          }
+        },
+        "EN": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "D_LATCH.v:39.11-39.13"
+          }
+        },
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "D_LATCH.v:0.0-0.0"
+          }
+        },
+        "NOT1.A": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "NOT1 A",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:4.12-4.13"
+          }
+        },
+        "NOT1.EN": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "NOT1 EN",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:5.12-5.14"
+          }
+        },
+        "NOT1.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "NOT1 GND",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:0.0-0.0"
+          }
+        },
+        "NOT1.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "NOT1 VDD",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:0.0-0.0"
+          }
+        },
+        "NOT1.Y": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "NOT1 Y",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:3.12-3.13"
+          }
+        },
+        "NOT1.intN": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "NOT1 intN",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:10.10-10.14",
+            "unused_bits": "0 "
+          }
+        },
+        "NOT1.intP": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "hdlname": "NOT1 intP",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:10.16-10.20",
+            "unused_bits": "0 "
+          }
+        },
+        "NOT1.nEN": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "NOT1 nEN",
+            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:6.12-6.15"
+          }
+        },
+        "NOT2.A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "NOT2 A",
+            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:4.11-4.12"
+          }
+        },
+        "NOT2.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "NOT2 GND",
+            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:0.0-0.0"
+          }
+        },
+        "NOT2.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "NOT2 VDD",
+            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:0.0-0.0"
+          }
+        },
+        "NOT2.Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "NOT2 Y",
+            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:3.12-3.13"
+          }
+        },
+        "NOT3.A": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "NOT3 A",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:4.12-4.13"
+          }
+        },
+        "NOT3.EN": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "NOT3 EN",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:5.12-5.14"
+          }
+        },
+        "NOT3.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "NOT3 GND",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:0.0-0.0"
+          }
+        },
+        "NOT3.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "NOT3 VDD",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:0.0-0.0"
+          }
+        },
+        "NOT3.Y": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "NOT3 Y",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:3.12-3.13"
+          }
+        },
+        "NOT3.intN": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "NOT3 intN",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:10.10-10.14",
+            "unused_bits": "0 "
+          }
+        },
+        "NOT3.intP": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "hdlname": "NOT3 intP",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:10.16-10.20",
+            "unused_bits": "0 "
+          }
+        },
+        "NOT3.nEN": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "NOT3 nEN",
+            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:6.12-6.15"
+          }
+        },
+        "Q": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "D_LATCH.v:36.12-36.13"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "D_LATCH.v:0.0-0.0"
+          }
+        },
+        "nEN": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "D_LATCH.v:40.11-40.14"
+          }
+        },
+        "nQ": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "D_LATCH.v:37.12-37.14"
+          }
+        }
+      }
+    },
+    "RV523_NMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:3.1-11.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:5.11-5.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:7.11-7.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:9.11-9.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:15.1-23.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:17.11-17.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        }
+      }
+    }
+  }
+}

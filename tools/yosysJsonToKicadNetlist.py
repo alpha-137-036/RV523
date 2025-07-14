@@ -43,8 +43,7 @@ with open(args.outputFilename, 'w') as output:
             output.write(f"      (footprint \"{footprint}\")\n")
             for pin, wireIDs in cell["connections"].items():
                 for wireID in wireIDs:
-                    net = nets.setdefault(wireID, {"id": wireID})
-                    nodes = net.setdefault("nodes", [])
+                    net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
                     pintype = cell["port_directions"][pin]
                     pinData = {
                         "ref": name,
@@ -56,17 +55,27 @@ with open(args.outputFilename, 'w') as output:
                         pinNumber = int(cellModule["netnames"][pin]["attributes"]["num"])
                         pinData["pin"] = pinNumber
                         cells[-1].setdefault("pins", {})[pinNumber] = net
-                    nodes.append(pinData)
+                    net["nodes"].append(pinData)
             output.write("   )\n")
     output.write(")\n")
 
+    for name, portData in topModule["ports"].items():
+        for i, wireID in enumerate(portData["bits"]):
+            net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
+            if "name" not in net:
+                if (len(portData["bits"]) == 1):
+                    net["name"] = name
+                else:
+                    net["name"] = name + "." + str(i)
+
     for name, netData in topModule["netnames"].items():
         for i, wireID in enumerate(netData["bits"]):
-            net = nets.setdefault(wireID, {"id": wireID})
-            if (len(netData["bits"]) == 1):
-                net["name"] = name
-            else:
-                net["name"] = name + "." + str(i)
+            net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
+            if "name" not in net or name == "GND" or name == "VDD":
+                if (len(netData["bits"]) == 1):
+                    net["name"] = name
+                else:
+                    net["name"] = name + "." + str(i)
 
     output.write("(nets\n")
     for net in nets.values():
