@@ -295,7 +295,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "NAND.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
