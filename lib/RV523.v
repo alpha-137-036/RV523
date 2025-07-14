@@ -42,28 +42,30 @@ module NOR3 (output Y, input A, input B, input C);
     assign Y = ~(A | B | C);
 endmodule
 
-(* techmap_celltype = "AOI21" *) (* blackbox *)
+(* techmap_celltype = "AOI21" *)
+(* blackbox *)
 (* footprint = "RV523:AOI21" *)
-module AOI21 (output Y, input A, input B, input C);
-    assign Y = ~((A & B) | C);
+module AOI21 (output Y, input A, input B1, input B2);
+    assign Y = ~(A | (B1 & B2));
 endmodule
 
-(* techmap_celltype = "OAI21" *) (* blackbox *)
+(* techmap_celltype = "OAI21" *)
+(* blackbox *)
 (* footprint = "RV523:OAI21" *)
-module OAI21 (output Y, input A, input B, input C);
-    assign Y = ~((A | B) & C);
+module OAI21 (output Y, input A, input B1, input B2);
+    assign Y = ~(A & (B1 | B2));
 endmodule
 
 (* techmap_celltype = "AOI22" *)
 (* blackbox *)
 (* footprint = "RV523:AOI22" *)
-module AOI22 (output Y, input A, input B, input C, input D);
-    assign Y = ~((A & B) | (C & D));
+module AOI22 (output Y, input A1, input A2, input B1, input B2);
+    assign Y = ~((A1 & A2) | (B1 & B2));
 endmodule
 
 (* techmap_celltype = "OAI22" *) (* blackbox *)
-module OAI22 (output Y, input A, input B, input C, input D);
-    assign Y = ~((A | B) & (C | D));
+module OAI22 (output Y, input A1, input A2, input B1, input B2);
+    assign Y = ~((A1 | A2) & (B1 | B2));
 endmodule
 
 (* techmap_celltype = "AOI221" *) (* blackbox *)
