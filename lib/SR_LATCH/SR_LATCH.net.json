@@ -1,0 +1,350 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "RV523_NMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:3.1-11.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:5.11-5.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:7.11-7.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:9.11-9.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:15.1-23.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:17.11-17.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        }
+      }
+    },
+    "SR_LATCH": {
+      "attributes": {
+        "pins": "-,nR,-,nS,-,Q,-,nQ",
+        "top": "00000000000000000000000000000001",
+        "src": "SR_LATCH.v:2.1-52.10"
+      },
+      "ports": {
+        "Q": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "nQ": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "nS": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "nR": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:12.16-16.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 4 ],
+            "S": [ "0" ]
+          }
+        },
+        "N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:17.16-21.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ 6 ]
+          }
+        },
+        "N3": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:22.16-26.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 5 ],
+            "S": [ "0" ]
+          }
+        },
+        "N4": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:27.16-31.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 2 ],
+            "S": [ 7 ]
+          }
+        },
+        "P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:32.16-36.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 4 ],
+            "S": [ "1" ]
+          }
+        },
+        "P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:37.16-41.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        },
+        "P3": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:42.16-46.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 5 ],
+            "S": [ "1" ]
+          }
+        },
+        "P4": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SR_LATCH.v:47.16-51.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 3 ],
+            "G": [ 2 ],
+            "S": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "SR_LATCH.v:0.0-0.0"
+          }
+        },
+        "Q": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "SR_LATCH.v:3.12-3.13"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "SR_LATCH.v:0.0-0.0"
+          }
+        },
+        "intN1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "SR_LATCH.v:10.10-10.15",
+            "unused_bits": "0 "
+          }
+        },
+        "intN2": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "SR_LATCH.v:10.17-10.22",
+            "unused_bits": "0 "
+          }
+        },
+        "nQ": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "SR_LATCH.v:4.12-4.14"
+          }
+        },
+        "nR": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "SR_LATCH.v:6.11-6.13"
+          }
+        },
+        "nS": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "SR_LATCH.v:5.11-5.13"
+          }
+        }
+      }
+    }
+  }
+}

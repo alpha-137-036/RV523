@@ -1,0 +1,4 @@
+* PWL waveform for nS
+VnS nS 0 PWL(0.0n 3.3V 200.0n 3.3V 230.0n 0.0V 260.0n 0.0V 290.0n 3.3V 600n 3.3V 630n 0.0V 660n 0.0V 690n 3.3V)
+* PWL waveform for nR
+VnR nR 0 PWL(0.0n 3.3V 400.0n 3.3V 430n 0.0V 460.0n 0.0V 490n 3.3V 800n 3.3V 830n 0.0V 860n 0.0V 890n 3.3V )

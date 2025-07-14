@@ -1,0 +1,25 @@
+* Main ngspice simulation file
+
+.include "SR_LATCH.ckt"
+.include "pwl_Inputs.sp"
+
+.global VDD
+
+VDD VDD 0 3.3
+
+* Load capacitor on outputs
+CloadQ Q 0 30p
+CloadnQ nQ 0 30p
+
+* Instantiate SR_LATCH gate
+XU1 Q nQ nS nR SR_LATCH
+
+.TRAN 0.1ns 1000ns
+
+* Simulation control
+.control 
+    run
+    write SR_LATCH.raw
+    quit
+.endc
+.END
