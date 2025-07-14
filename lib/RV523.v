@@ -28,7 +28,13 @@ module NOR (output Y, input A, input B);
     assign Y = A ~| B;
 endmodule
 
-(* techmap_celltype = "NAND3" *) 
+module OR (output Y, input A, input B);
+    wire nY;
+    NOR u1(nY, A, B);
+    NOT u2(Y, nY);
+endmodule
+
+(* techmap_celltype = "NAND3" *)
 (* blackbox *)
 (* footprint = "RV523:NAND3" *)
 module NAND3 (output Y, input A, input B, input C);
