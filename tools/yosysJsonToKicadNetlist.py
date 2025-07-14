@@ -59,23 +59,21 @@ with open(args.outputFilename, 'w') as output:
             output.write("   )\n")
     output.write(")\n")
 
-    for name, portData in topModule["ports"].items():
-        for i, wireID in enumerate(portData["bits"]):
-            net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
-            if "name" not in net:
-                if (len(portData["bits"]) == 1):
-                    net["name"] = name
-                else:
-                    net["name"] = name + "." + str(i)
+    for netKind in ["ports", "netnames"]:
+        for name, netData in topModule[netKind].items():
+            # normalize name
+            if name.endswith(".GND"):
+                name = "GND"
+            if name.endswith(".VDD"):
+                name = "VDD"
+            for i, wireID in enumerate(netData["bits"]):
+                net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
 
-    for name, netData in topModule["netnames"].items():
-        for i, wireID in enumerate(netData["bits"]):
-            net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
-            if "name" not in net or name == "GND" or name == "VDD":
-                if (len(netData["bits"]) == 1):
-                    net["name"] = name
-                else:
-                    net["name"] = name + "." + str(i)
+                if "name" not in net or name == "GND" or name == "VDD":
+                    if (len(netData["bits"]) == 1):
+                        net["name"] = name
+                    else:
+                        net["name"] = name + "." + str(i)
 
     output.write("(nets\n")
     for net in nets.values():
