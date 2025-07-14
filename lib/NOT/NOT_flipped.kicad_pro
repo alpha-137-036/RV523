@@ -282,7 +282,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "NOT.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
