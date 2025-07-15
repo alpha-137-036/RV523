@@ -1,0 +1,87 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "CAP": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "src": "DECAP.v:4.1-10.10"
+      },
+      "ports": {
+        "pin1": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "pin2": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "pin1": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "DECAP.v:6.11-6.15"
+          }
+        },
+        "pin2": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "2",
+            "src": "DECAP.v:8.11-8.15"
+          }
+        }
+      }
+    },
+    "DECAP": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "DECAP.v:12.1-18.10"
+      },
+      "ports": {
+      },
+      "cells": {
+        "C": {
+          "hide_name": 0,
+          "type": "CAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "DECAP.v:17.9-17.34"
+          },
+          "port_directions": {
+            "pin1": "inout",
+            "pin2": "inout"
+          },
+          "connections": {
+            "pin1": [ "0" ],
+            "pin2": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "DECAP.v:0.0-0.0"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "DECAP.v:0.0-0.0"
+          }
+        }
+      }
+    }
+  }
+}

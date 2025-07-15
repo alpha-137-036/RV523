@@ -1,0 +1,15 @@
+(export (version "E")
+(components 
+   (comp (ref "C")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+   )
+)
+(nets
+   (net (code "1") (class "Power") (name "GND")
+      (node (ref "C") (pin "1") (pinfunction "pin1") (pintype "inout"))
+   )
+   (net (code "2") (class "Power") (name "VDD")
+      (node (ref "C") (pin "2") (pinfunction "pin2") (pintype "inout"))
+   )
+)
+)

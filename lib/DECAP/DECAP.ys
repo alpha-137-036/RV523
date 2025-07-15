@@ -1,0 +1,5 @@
+read_verilog -sv DECAP.v
+prep -top DECAP
+flatten
+write_json DECAP.net.json
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py DECAP.net.json DECAP.net
