@@ -1,5 +1,6 @@
 import json
 import argparse
+import re
 
 argParser = argparse.ArgumentParser("Yosys JSON netlist to Kicad netlist")
 argParser.add_argument("filename", help="input Yosys netlist")
@@ -26,6 +27,57 @@ def getTopModule():
             return module
 topModule = getTopModule()
 
+def buildName(baseName, idx):
+    while True:
+        match = re.search("^(.*?)\\[([0-9]+):([0-9]+)\\]$", baseName)
+        if match:
+            baseName = match.group(1)
+            rangeLow = int(match.group(2))
+            rangeHigh = int(match.group(3))
+            if rangeLow <= rangeHigh:
+                idx = rangeHigh - idx
+            else:
+                idx = rangeHigh + idx                    
+        else:
+            return baseName + "." + str(idx)
+
+
+def getPinName(cellNet, pinIdx):
+    bits = cellNet["bits"]
+    if len(bits) == 1:
+        return cellNet["name"]
+    else:
+        offset = cellNet.get("offset", 0)
+        upto = cellNet.get("upto", 0)
+        if upto:
+            pinVerilogNumber = offset + len(bits) - 1 - pinIdx 
+        else:
+            pinVerilogNumber = offset + pinIdx 
+        return buildName(cellNet["name"], pinVerilogNumber)
+    
+def getPinNumber(cellNet, pinIdx):
+    if not "num" in cellNet["attributes"]:
+        return None
+    else:
+        num = cellNet["attributes"]["num"]
+        bits = cellNet["bits"]
+        if len(bits) == 1:
+            return int(num)
+        else:
+            [numFirst, numLast] = num.split(":")
+            numFirst = int(numFirst)
+            numLast = int(numLast)
+            if abs(numLast - numFirst) + 1 != len(bits):
+                raise Exception(f"Mismatch for bus width: {num} vs {len(bits)} bits")
+            upto = cellNet.get("upto", 0)
+            idxInRange = len(bits) - 1 - pinIdx
+            if numFirst <= numLast:
+                pinNumber = numFirst + idxInRange
+            else:
+                pinNumber = numFirst - idxInRange
+            return pinNumber
+
+
 nets = {}
 cells = []
 
@@ -49,17 +101,21 @@ with open(args.outputFilename, 'w') as output:
             footprint = cellModule["attributes"]["footprint"]
             output.write(f"      (footprint \"{footprint}\")\n")
             for pin, wireIDs in cell["connections"].items():
-                for wireID in wireIDs:
-                    net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
+                for wireIdx, wireID in enumerate(wireIDs):
+                    if wireID == "x":
+                        raise Exception(f"cell {cell["name"]} is connected to 'x")
+                    cellNet = cellModule["netnames"][pin]
+                    pinName = getPinName(cellNet, wireIdx)
+                    net = nets.setdefault(wireID, {"toto": True, "id": wireID, "nodes": []})
                     pintype = cell["port_directions"][pin]
                     pinData = {
                         "ref": cell["name"],
-                        "pin": pin,
-                        "pinfunction": pin,
+                        "pin": pinName,
+                        "pinfunction": pinName,
                         "pintype": pintype
                     }
-                    if pin in cellModule["netnames"] and "num" in cellModule["netnames"][pin]["attributes"]:
-                        pinNumber = int(cellModule["netnames"][pin]["attributes"]["num"])
+                    pinNumber = getPinNumber(cellNet, wireIdx)
+                    if pinNumber is not None:
                         pinData["pin"] = pinNumber
                         cells[-1].setdefault("pins", {})[pinNumber] = net
                     net["nodes"].append(pinData)
@@ -81,7 +137,7 @@ with open(args.outputFilename, 'w') as output:
                     if (len(netData["bits"]) == 1):
                         net["name"] = name
                     else:
-                        net["name"] = name + "." + str(i)
+                        net["name"] = buildName(name, i)
 
     output.write("(nets\n")
     for net in nets.values():
