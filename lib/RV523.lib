@@ -38,104 +38,48 @@ library(cells) {
   cell(AOI21) {
       area: 6;
       pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(Y) { direction: output; function: "!((A&B)|C)"; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A|(B1&B2))"; }
   }
   cell(OAI21) {
       area: 6;
       pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(Y) { direction: output; function: "!((A|B)&C)"; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A&(B1|B2))"; }
   }
   cell(AOI22) {
       area: 8;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(Y) { direction: output; function: "!((A&B)|(C&D))"; }
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(Y) { direction: output; function: "!((A1&A2)|(B1&B2))"; }
   }
   cell(OAI22) {
       area: 8;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(Y) { direction: output; function: "!((A|B)&(C|D))"; }
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(Y) { direction: output; function: "!((A1|A2)&(B1|B2))"; }
   }
-  cell(AOI31) {
+  cell(AOI211) {
       area: 8;
       pin(A) { direction: input; }
       pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(Y) { direction: output; function: "!((A&B&C)|D)"; }
+      pin(C1) { direction: input; }
+      pin(C2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A|B|(C1&C2))"; }
   }
-  cell(OAI31) {
+  cell(OAI211) {
       area: 8;
       pin(A) { direction: input; }
       pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(Y) { direction: output; function: "!((A|B|C)&D)"; }
-  }
-  cell(AOI221) {
-      area: 10;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(E) { direction: input; }
-      pin(Y) { direction: output; function: "!((A&B)|(C&D)|E)"; }
-  }
-  cell(OAI221) {
-      area: 10;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(E) { direction: input; }
-      pin(Y) { direction: output; function: "!((A|B)&(C|D)&E)"; }
-  }
-  cell(AOI32) {
-      area: 10;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(E) { direction: input; }
-      pin(Y) { direction: output; function: "!((A&B&C)|(D&E))"; }
-  }
-  cell(OAI32) {
-      area: 10;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(E) { direction: input; }
-      pin(Y) { direction: output; function: "!((A|B|C)&(D|E))"; }
-  }
-  cell(AOI222) {
-      area: 12;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(E) { direction: input; }
-      pin(F) { direction: input; }
-      pin(Y) { direction: output; function: "!((A&B)|(C&D)|(E&F))"; }
-  }
-  cell(OAI222) {
-      area: 12;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(C) { direction: input; }
-      pin(D) { direction: input; }
-      pin(E) { direction: input; }
-      pin(F) { direction: input; }
-      pin(Y) { direction: output; function: "!((A|B)&(C|D)&(E&F))"; }
+      pin(C1) { direction: input; }
+      pin(C2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A&B&(C1|C2))"; }
   }
   cell(DFF_PP0) {
         area: 16;
