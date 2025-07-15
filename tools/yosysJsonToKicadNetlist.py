@@ -14,8 +14,9 @@ with open(args.filename, 'r') as file:
 def processNames():
     for name, module in data["modules"].items():
         module["name"] = name
-        for cellName, cell in module["cells"].items():
-            cell["name"] = cellName
+        for itemKind in ["cells", "ports", "netnames"]:
+            for itemName, item in module[itemKind].items():
+                item["name"] = itemName
 processNames()
 
 # Find the top module
@@ -66,8 +67,9 @@ with open(args.outputFilename, 'w') as output:
     output.write(")\n")
 
     for netKind in ["ports", "netnames"]:
-        for name, netData in topModule[netKind].items():
+        for netData in topModule[netKind].values():
             # normalize name
+            name = netData["name"]
             if name.endswith(".GND"):
                 name = "GND"
             if name.endswith(".VDD"):
