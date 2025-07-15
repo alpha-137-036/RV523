@@ -1,0 +1,269 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "RV523_NMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:3.1-11.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:5.11-5.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:7.11-7.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:9.11-9.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "src": "../RV523_MOSFETS.v:15.1-23.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:17.11-17.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        }
+      }
+    },
+    "TINV": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "TINV.v:2.1-31.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "EN": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "nEN": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "TINV.v:11.16-15.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 3 ],
+            "S": [ "0" ]
+          }
+        },
+        "N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "TINV.v:16.16-20.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 4 ],
+            "S": [ 6 ]
+          }
+        },
+        "P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "TINV.v:21.16-25.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        },
+        "P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "TINV.v:26.16-30.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 5 ],
+            "S": [ 7 ]
+          }
+        }
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "TINV.v:4.12-4.13"
+          }
+        },
+        "EN": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "TINV.v:5.12-5.14"
+          }
+        },
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "TINV.v:0.0-0.0"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "TINV.v:0.0-0.0"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "TINV.v:3.12-3.13"
+          }
+        },
+        "intN": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "TINV.v:10.10-10.14",
+            "unused_bits": "0 "
+          }
+        },
+        "intP": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "TINV.v:10.16-10.20",
+            "unused_bits": "0 "
+          }
+        },
+        "nEN": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "TINV.v:6.12-6.15"
+          }
+        }
+      }
+    }
+  }
+}
