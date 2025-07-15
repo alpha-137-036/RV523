@@ -10,11 +10,13 @@ args = argParser.parse_args()
 with open(args.filename, 'r') as file:
     data = json.load(file)
 
-# Add name of modules to the module data
-def processModules():
+# Add name of modules and cells to the data
+def processNames():
     for name, module in data["modules"].items():
         module["name"] = name
-processModules()
+        for cellName, cell in module["cells"].items():
+            cell["name"] = cellName
+processNames()
 
 # Find the top module
 def getTopModule():
@@ -31,18 +33,18 @@ with open(args.outputFilename, 'w') as output:
     output.write("(export (version \"E\")\n")
 
     output.write("(components \n")
-    for name, cell in topModule["cells"].items():
+    for cell in topModule["cells"].values():
         type = cell["type"]
         if (type != "$scopeinfo"):
             cellModule = data["modules"][type]
             if not cellModule:
                 raise Exception(f"Module {type} not found")
             cells.append({ 
-                "name": name, 
+                "name": cell["name"], 
                 "cellModule": cellModule,
                 "type": type
             })
-            output.write(f"   (comp (ref \"{name}\")\n")
+            output.write(f"   (comp (ref \"{cell["name"]}\")\n")
             footprint = cellModule["attributes"]["footprint"]
             output.write(f"      (footprint \"{footprint}\")\n")
             for pin, wireIDs in cell["connections"].items():
@@ -50,7 +52,7 @@ with open(args.outputFilename, 'w') as output:
                     net = nets.setdefault(wireID, {"id": wireID, "nodes": []})
                     pintype = cell["port_directions"][pin]
                     pinData = {
-                        "ref": name,
+                        "ref": cell["name"],
                         "pin": pin,
                         "pinfunction": pin,
                         "pintype": pintype
