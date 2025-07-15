@@ -1,0 +1,36 @@
+read_verilog -sv alu8_behavioral.sv ../../lib/RV523.v
+
+hierarchy -top adder
+
+#check obious problems in the current design 8combinatorila loops, conflicts, etc.
+check;
+
+#opt_clean with less verbose
+clean;
+
+# translate processes to netlists
+proc;
+
+#extract and optimize finite state machines
+fsm; opt;
+
+#translate memories to basic cells
+memory; opt;
+
+
+techmap;
+synth
+dfflibmap -liberty ../../lib/RV523.lib
+abc -liberty ../../lib/RV523.lib
+techmap -map ../../lib/RV523.v
+
+#functional reduction
+freduce;
+opt_clean;
+
+check
+
+stat -liberty ../../lib/RV523.lib
+
+write_verilog alu8_behavioral_synthesized.v
+write_json alu8_behavioral_synthesized.net.json

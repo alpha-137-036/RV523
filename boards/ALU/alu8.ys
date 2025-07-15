@@ -1,0 +1,9 @@
+read_verilog -sv alu8.sv ../../lib/RV523.v
+
+prep -top adder
+flatten
+opt_clean
+
+stat -liberty ../../lib/RV523.lib
+
+write_json alu8.netlist.json
