@@ -10,14 +10,18 @@ args = argParser.parse_args()
 with open(args.filename, 'r') as file:
     data = json.load(file)
 
-# Find the top module
+# Add name of modules to the module data
+def processModules():
+    for name, module in data["modules"].items():
+        module["name"] = name
+processModules()
 
-for name, module in data["modules"].items():
-    if "top" in module["attributes"]:
-        global topModule
-        global topModuleName
-        topModule = module
-        topModuleName = name
+# Find the top module
+def getTopModule():
+    for module in data["modules"].values():
+        if "top" in module["attributes"]:
+            return module
+topModule = getTopModule()
 
 nets = {}
 cells = []
@@ -99,7 +103,7 @@ if args.spice:
     with open(args.spice, "w") as output:
         output.write(".inc \"../RV523_NMOS.ckt\"\n")
         output.write(".inc \"../RV523_PMOS.ckt\"\n")
-        output.write(f".subckt {topModuleName}")
+        output.write(f".subckt {topModule["name"]}")
         for portName in topModule["ports"]:
             output.write(f" {portName}")
         output.write("\n")
