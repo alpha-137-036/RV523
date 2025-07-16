@@ -1,0 +1,22 @@
+.inc "../RV523_NMOS.ckt"
+.inc "../RV523_PMOS.ckt"
+.subckt D_LATCH_DUAL_READ_PORT D CLK nCLK Q EN1 nEN1 EN2 nEN2 Q1 Q2
+ Xlatch.NOT1.N1 D 0 latch.NOT1.intN RV523_NMOS
+ Xlatch.NOT1.N2 CLK latch.NOT1.intN latch.NOT1.Y RV523_NMOS
+ Xlatch.NOT1.P1 D VDD latch.NOT1.intP RV523_PMOS
+ Xlatch.NOT1.P2 nCLK latch.NOT1.intP latch.NOT1.Y RV523_PMOS
+ Xlatch.NOT2.N1 latch.NOT1.Y 0 Q RV523_NMOS
+ Xlatch.NOT2.P1 latch.NOT1.Y VDD Q RV523_PMOS
+ Xlatch.NOT3.N1 Q 0 latch.NOT3.intN RV523_NMOS
+ Xlatch.NOT3.N2 nCLK latch.NOT3.intN latch.NOT1.Y RV523_NMOS
+ Xlatch.NOT3.P1 Q VDD latch.NOT3.intP RV523_PMOS
+ Xlatch.NOT3.P2 CLK latch.NOT3.intP latch.NOT1.Y RV523_PMOS
+ Xport1.N1 latch.NOT1.Y 0 port1.intN RV523_NMOS
+ Xport1.N2 EN1 port1.intN Q1 RV523_NMOS
+ Xport1.P1 latch.NOT1.Y VDD port1.intP RV523_PMOS
+ Xport1.P2 nEN1 port1.intP Q1 RV523_PMOS
+ Xport2.N1 latch.NOT1.Y 0 port2.intN RV523_NMOS
+ Xport2.N2 EN2 port2.intN Q2 RV523_NMOS
+ Xport2.P1 latch.NOT1.Y VDD port2.intP RV523_PMOS
+ Xport2.P2 nEN2 port2.intP Q2 RV523_PMOS
+.ends
