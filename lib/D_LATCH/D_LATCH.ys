@@ -1,4 +1,4 @@
-read_verilog -sv D_LATCH.v ../NOT/NOT.v ../RV523_MOSFETS.v
+read_verilog -sv D_LATCH.v ../NOT/NOT.v ../TINV/TINV.v ../RV523_MOSFETS.v
 prep -top D_LATCH
 flatten
 write_json D_LATCH.net.json

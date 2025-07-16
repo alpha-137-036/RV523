@@ -4,7 +4,7 @@
     "D_LATCH": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "D_LATCH.v:35.1-61.10"
+        "src": "D_LATCH.v:3.1-29.10"
       },
       "ports": {
         "Q": {
@@ -37,7 +37,7 @@
           "attributes": {
             "hdlname": "NOT1 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:11.16-15.6"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -58,7 +58,7 @@
           "attributes": {
             "hdlname": "NOT1 N2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:16.16-20.6"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -79,7 +79,7 @@
           "attributes": {
             "hdlname": "NOT1 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:21.16-25.6"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -100,7 +100,7 @@
           "attributes": {
             "hdlname": "NOT1 P2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:26.16-30.6"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -121,7 +121,7 @@
           "attributes": {
             "hdlname": "NOT2 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:9.16-13.6"
+            "src": "D_LATCH.v:19.9-22.6|../NOT/NOT.v:9.16-13.6"
           },
           "port_directions": {
             "D": "inout",
@@ -142,7 +142,7 @@
           "attributes": {
             "hdlname": "NOT2 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:14.16-18.6"
+            "src": "D_LATCH.v:19.9-22.6|../NOT/NOT.v:14.16-18.6"
           },
           "port_directions": {
             "D": "inout",
@@ -163,7 +163,7 @@
           "attributes": {
             "hdlname": "NOT3 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:11.16-15.6"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -184,7 +184,7 @@
           "attributes": {
             "hdlname": "NOT3 N2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:16.16-20.6"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -205,7 +205,7 @@
           "attributes": {
             "hdlname": "NOT3 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:21.16-25.6"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -226,7 +226,7 @@
           "attributes": {
             "hdlname": "NOT3 P2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:26.16-30.6"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -245,14 +245,14 @@
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "D_LATCH.v:38.11-38.12"
+            "src": "D_LATCH.v:6.11-6.12"
           }
         },
         "EN": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "D_LATCH.v:39.11-39.13"
+            "src": "D_LATCH.v:7.11-7.13"
           }
         },
         "GND": {
@@ -267,7 +267,7 @@
           "bits": [ 4 ],
           "attributes": {
             "hdlname": "NOT1 A",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:4.12-4.13"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:4.12-4.13"
           }
         },
         "NOT1.EN": {
@@ -275,7 +275,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "NOT1 EN",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:5.12-5.14"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:5.12-5.14"
           }
         },
         "NOT1.GND": {
@@ -283,7 +283,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "NOT1 GND",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:0.0-0.0"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:0.0-0.0"
           }
         },
         "NOT1.VDD": {
@@ -291,7 +291,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "NOT1 VDD",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:0.0-0.0"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:0.0-0.0"
           }
         },
         "NOT1.Y": {
@@ -299,7 +299,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "NOT1 Y",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:3.12-3.13"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:3.12-3.13"
           }
         },
         "NOT1.intN": {
@@ -307,7 +307,7 @@
           "bits": [ 7 ],
           "attributes": {
             "hdlname": "NOT1 intN",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:10.10-10.14",
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:10.10-10.14",
             "unused_bits": "0 "
           }
         },
@@ -316,7 +316,7 @@
           "bits": [ 8 ],
           "attributes": {
             "hdlname": "NOT1 intP",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:10.16-10.20",
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:10.16-10.20",
             "unused_bits": "0 "
           }
         },
@@ -325,7 +325,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "NOT1 nEN",
-            "src": "D_LATCH.v:45.22-50.6|D_LATCH.v:6.12-6.15"
+            "src": "D_LATCH.v:13.10-18.6|../TINV/TINV.v:6.12-6.15"
           }
         },
         "NOT2.A": {
@@ -333,7 +333,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "NOT2 A",
-            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:4.11-4.12"
+            "src": "D_LATCH.v:19.9-22.6|../NOT/NOT.v:4.11-4.12"
           }
         },
         "NOT2.GND": {
@@ -341,7 +341,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "NOT2 GND",
-            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:0.0-0.0"
+            "src": "D_LATCH.v:19.9-22.6|../NOT/NOT.v:0.0-0.0"
           }
         },
         "NOT2.VDD": {
@@ -349,7 +349,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "NOT2 VDD",
-            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:0.0-0.0"
+            "src": "D_LATCH.v:19.9-22.6|../NOT/NOT.v:0.0-0.0"
           }
         },
         "NOT2.Y": {
@@ -357,7 +357,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "NOT2 Y",
-            "src": "D_LATCH.v:51.9-54.6|../NOT/NOT.v:3.12-3.13"
+            "src": "D_LATCH.v:19.9-22.6|../NOT/NOT.v:3.12-3.13"
           }
         },
         "NOT3.A": {
@@ -365,7 +365,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "NOT3 A",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:4.12-4.13"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:4.12-4.13"
           }
         },
         "NOT3.EN": {
@@ -373,7 +373,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "NOT3 EN",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:5.12-5.14"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:5.12-5.14"
           }
         },
         "NOT3.GND": {
@@ -381,7 +381,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "NOT3 GND",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:0.0-0.0"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:0.0-0.0"
           }
         },
         "NOT3.VDD": {
@@ -389,7 +389,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "NOT3 VDD",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:0.0-0.0"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:0.0-0.0"
           }
         },
         "NOT3.Y": {
@@ -397,7 +397,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "NOT3 Y",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:3.12-3.13"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:3.12-3.13"
           }
         },
         "NOT3.intN": {
@@ -405,7 +405,7 @@
           "bits": [ 9 ],
           "attributes": {
             "hdlname": "NOT3 intN",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:10.10-10.14",
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:10.10-10.14",
             "unused_bits": "0 "
           }
         },
@@ -414,7 +414,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "NOT3 intP",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:10.16-10.20",
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:10.16-10.20",
             "unused_bits": "0 "
           }
         },
@@ -423,14 +423,14 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "NOT3 nEN",
-            "src": "D_LATCH.v:55.22-60.6|D_LATCH.v:6.12-6.15"
+            "src": "D_LATCH.v:23.10-28.6|../TINV/TINV.v:6.12-6.15"
           }
         },
         "Q": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "D_LATCH.v:36.12-36.13"
+            "src": "D_LATCH.v:4.12-4.13"
           }
         },
         "VDD": {
@@ -444,14 +444,14 @@
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "D_LATCH.v:40.11-40.14"
+            "src": "D_LATCH.v:8.11-8.14"
           }
         },
         "nQ": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "D_LATCH.v:37.12-37.14"
+            "src": "D_LATCH.v:5.12-5.14"
           }
         }
       }
