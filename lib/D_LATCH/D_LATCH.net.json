@@ -19,11 +19,11 @@
           "direction": "input",
           "bits": [ 4 ]
         },
-        "EN": {
+        "CLK": {
           "direction": "input",
           "bits": [ 5 ]
         },
-        "nEN": {
+        "nCLK": {
           "direction": "input",
           "bits": [ 6 ]
         }
@@ -241,18 +241,18 @@
         }
       },
       "netnames": {
+        "CLK": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "D_LATCH.v:7.11-7.14"
+          }
+        },
         "D": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
             "src": "D_LATCH.v:6.11-6.12"
-          }
-        },
-        "EN": {
-          "hide_name": 0,
-          "bits": [ 5 ],
-          "attributes": {
-            "src": "D_LATCH.v:7.11-7.13"
           }
         },
         "GND": {
@@ -440,11 +440,11 @@
             "src": "D_LATCH.v:0.0-0.0"
           }
         },
-        "nEN": {
+        "nCLK": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "D_LATCH.v:8.11-8.14"
+            "src": "D_LATCH.v:8.11-8.15"
           }
         },
         "nQ": {

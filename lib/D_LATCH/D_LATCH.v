@@ -1,11 +1,11 @@
 
-// Elementary D-LATCH with complementary EN inputs
+// Elementary D-LATCH with complementary CLK enable inputs
 module D_LATCH(
     output Q,
     output nQ,
     input D,
-    input EN,
-    input nEN
+    input CLK,
+    input nCLK
 );
     supply1 VDD;
     supply0 GND;
@@ -13,8 +13,8 @@ module D_LATCH(
     TINV NOT1(
         .A(D),
         .Y(nQ),
-        .EN(EN),
-        .nEN(nEN)
+        .EN(CLK),
+        .nEN(nCLK)
     );
     NOT NOT2(
         .A(nQ),
@@ -23,7 +23,7 @@ module D_LATCH(
     TINV NOT3(
         .A(Q),
         .Y(nQ),
-        .EN(nEN),
-        .nEN(EN)
+        .EN(nCLK),
+        .nEN(CLK)
     );
 endmodule

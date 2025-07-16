@@ -12,7 +12,7 @@ CloadQ Q 0 30p
 CloadnQ nQ 0 30p
 
 * Instantiate D_LATCH gate
-XU1 Q nQ D EN nEN D_LATCH
+XU1 Q nQ D CLK nCLK D_LATCH
 
 .TRAN 0.1ns 1200ns
 
