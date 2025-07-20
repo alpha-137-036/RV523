@@ -22,11 +22,11 @@ library(cells) {
       pin(C) { direction: input; }
       pin(Y) { direction: output; function: "!(A&B&C)"; }
   }
-  cell(NOR) {
+  cell(NOR2) {
       area: 4;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(Y) { direction: output; function: "!(A|B)"; }
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A1|A2)"; }
   }
   cell(NOR3) {
       area: 6;

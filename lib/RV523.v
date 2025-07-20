@@ -21,11 +21,11 @@ module AND (output Y, input A, input B);
     NOT u2(Y, nY);
 endmodule
 
-(* techmap_celltype = "NOR" *) 
+(* techmap_celltype = "NOR2" *)
 (* blackbox *)
-(* footprint = "RV523:NOR" *)
-module NOR (output Y, input A, input B);
-    assign Y = A ~| B;
+(* footprint = "RV523:NOR2" *)
+module NOR2 (output Y, input A1, input A2);
+    assign Y = ~(A1 | A2);
 endmodule
 
 module OR (output Y, input A, input B);
