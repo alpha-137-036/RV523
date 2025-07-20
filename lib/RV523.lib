@@ -9,11 +9,11 @@ library(cells) {
     pin(A) { direction: input; }
     pin(Y) { direction: output; function: "!A"; }
    }
-  cell(NAND) {
+  cell(NAND2) {
       area: 4;
-      pin(A) { direction: input; }
-      pin(B) { direction: input; }
-      pin(Y) { direction: output; function: "!(A&B)"; }
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A1&A2)"; }
   }
   cell(NAND3) {
       area: 6;

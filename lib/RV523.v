@@ -5,11 +5,11 @@ module NOT (output Y, input A);
     assign Y = ~A;
 endmodule
 
-(* techmap_celltype = "NAND" *) 
+(* techmap_celltype = "NAND2" *)
 (* blackbox *)
-(* footprint = "RV523:NAND" *)
-module NAND (output Y, input A, input B);
-    assign Y = A ~& B;
+(* footprint = "RV523:NAND2" *)
+module NAND2 (output Y, input A1, input A2);
+    assign Y = ~(A1 & A2);
 endmodule
 
 // There is no advantage defining a primitive cell for AND: it will anyway be 

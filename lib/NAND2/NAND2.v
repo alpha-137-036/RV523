@@ -1,8 +1,8 @@
-(* pins = "-,A,-,B,Y" *)
-module NAND(
+(* pins = "A1,-,A2,Y" *)
+module NAND2(
     output Y,
-    input A,
-    input B
+    input A1,
+    input A2
 );
     supply1 VDD;
     supply0 GND;
@@ -11,21 +11,21 @@ module NAND(
     RV523_NMOS N1(
         .S(GND),
         .D(int1),
-        .G(A)
+        .G(A1)
     );
     RV523_NMOS N2(
         .S(int1),
         .D(Y),
-        .G(B)
+        .G(A2)
     );
     RV523_PMOS P1(
         .S(VDD),
         .D(Y),
-        .G(A)
+        .G(A1)
     );
     RV523_PMOS P2(
         .S(VDD),
         .D(Y),
-        .G(B)
+        .G(A2)
     );
 endmodule
