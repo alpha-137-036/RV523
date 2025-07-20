@@ -1,9 +1,20 @@
 read_verilog -sv alu8.sv ../../lib/RV523.v
 
-prep -top adder
+synth -top adder
 flatten
+splitnets
 opt_clean
 
-stat -liberty ../../lib/RV523.lib
+techmap;
+synth
+dfflibmap -liberty ../../lib/RV523.lib
+abc -liberty ../../lib/RV523.lib
+techmap -map ../../lib/RV523.v
 
+
+stat -liberty ../../lib/RV523.lib
+ 
+
+write_verilog -noattr -noexpr alu8.netlist.v
 write_json alu8.netlist.json
+write_blif alu8.netlist.blif

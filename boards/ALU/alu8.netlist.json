@@ -1,13 +1,120 @@
 {
-  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
+    "AND": {
+      "attributes": {
+        "footprint": "RV523:AND",
+        "techmap_celltype": "AND",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:18.1-20.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:18.29-18.30"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:18.38-18.39"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:18.20-18.21"
+          }
+        }
+      }
+    },
+    "AND3": {
+      "attributes": {
+        "footprint": "RV523:AND3",
+        "techmap_celltype": "AND3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:46.1-48.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.30-46.31"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.39-46.40"
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.48-46.49"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.21-46.22"
+          }
+        }
+      }
+    },
     "AOI21": {
       "attributes": {
         "footprint": "RV523:AOI21",
         "techmap_celltype": "AOI21",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:54.1-56.10"
+        "src": "../../lib/RV523.v:67.1-69.10"
       },
       "ports": {
         "Y": {
@@ -34,28 +141,28 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:54.31-54.32"
+            "src": "../../lib/RV523.v:67.31-67.32"
           }
         },
         "B1": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:54.40-54.42"
+            "src": "../../lib/RV523.v:67.40-67.42"
           }
         },
         "B2": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:54.50-54.52"
+            "src": "../../lib/RV523.v:67.50-67.52"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:54.22-54.23"
+            "src": "../../lib/RV523.v:67.22-67.23"
           }
         }
       }
@@ -66,7 +173,7 @@
         "techmap_celltype": "AOI211",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:82.1-84.10"
+        "src": "../../lib/RV523.v:95.1-97.10"
       },
       "ports": {
         "Y": {
@@ -97,35 +204,35 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:82.32-82.33"
+            "src": "../../lib/RV523.v:95.32-95.33"
           }
         },
         "B": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:82.41-82.42"
+            "src": "../../lib/RV523.v:95.41-95.42"
           }
         },
         "C1": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:82.50-82.52"
+            "src": "../../lib/RV523.v:95.50-95.52"
           }
         },
         "C2": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "../../lib/RV523.v:82.60-82.62"
+            "src": "../../lib/RV523.v:95.60-95.62"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:82.23-82.24"
+            "src": "../../lib/RV523.v:95.23-95.24"
           }
         }
       }
@@ -135,7 +242,7 @@
         "techmap_celltype": "AOI22",
         "blackbox": "00000000000000000000000000000001",
         "footprint": "RV523:AOI22",
-        "src": "../../lib/RV523.v:68.1-70.10"
+        "src": "../../lib/RV523.v:81.1-83.10"
       },
       "ports": {
         "Y": {
@@ -166,35 +273,35 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:68.31-68.33"
+            "src": "../../lib/RV523.v:81.31-81.33"
           }
         },
         "A2": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:68.41-68.43"
+            "src": "../../lib/RV523.v:81.41-81.43"
           }
         },
         "B1": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:68.51-68.53"
+            "src": "../../lib/RV523.v:81.51-81.53"
           }
         },
         "B2": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "../../lib/RV523.v:68.61-68.63"
+            "src": "../../lib/RV523.v:81.61-81.63"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:68.22-68.23"
+            "src": "../../lib/RV523.v:81.22-81.23"
           }
         }
       }
@@ -253,7 +360,7 @@
         "techmap_celltype": "NAND3",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:40.1-42.10"
+        "src": "../../lib/RV523.v:39.1-41.10"
       },
       "ports": {
         "Y": {
@@ -280,28 +387,28 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:40.31-40.32"
+            "src": "../../lib/RV523.v:39.31-39.32"
           }
         },
         "B": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:40.40-40.41"
+            "src": "../../lib/RV523.v:39.40-39.41"
           }
         },
         "C": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:40.49-40.50"
+            "src": "../../lib/RV523.v:39.49-39.50"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:40.22-40.23"
+            "src": "../../lib/RV523.v:39.22-39.23"
           }
         }
       }
@@ -312,7 +419,7 @@
         "techmap_celltype": "NOR",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:27.1-29.10"
+        "src": "../../lib/RV523.v:25.1-27.10"
       },
       "ports": {
         "Y": {
@@ -335,21 +442,21 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:27.29-27.30"
+            "src": "../../lib/RV523.v:25.29-25.30"
           }
         },
         "B": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:27.38-27.39"
+            "src": "../../lib/RV523.v:25.38-25.39"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:27.20-27.21"
+            "src": "../../lib/RV523.v:25.20-25.21"
           }
         }
       }
@@ -360,7 +467,7 @@
         "techmap_celltype": "NOR3",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:47.1-49.10"
+        "src": "../../lib/RV523.v:53.1-55.10"
       },
       "ports": {
         "Y": {
@@ -387,28 +494,28 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:47.30-47.31"
+            "src": "../../lib/RV523.v:53.30-53.31"
           }
         },
         "B": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:47.39-47.40"
+            "src": "../../lib/RV523.v:53.39-53.40"
           }
         },
         "C": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:47.48-47.49"
+            "src": "../../lib/RV523.v:53.48-53.49"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:47.21-47.22"
+            "src": "../../lib/RV523.v:53.21-53.22"
           }
         }
       }
@@ -455,7 +562,7 @@
         "techmap_celltype": "OAI21",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:61.1-63.10"
+        "src": "../../lib/RV523.v:74.1-76.10"
       },
       "ports": {
         "Y": {
@@ -482,28 +589,28 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:61.31-61.32"
+            "src": "../../lib/RV523.v:74.31-74.32"
           }
         },
         "B1": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:61.40-61.42"
+            "src": "../../lib/RV523.v:74.40-74.42"
           }
         },
         "B2": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:61.50-61.52"
+            "src": "../../lib/RV523.v:74.50-74.52"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:61.22-61.23"
+            "src": "../../lib/RV523.v:74.22-74.23"
           }
         }
       }
@@ -514,7 +621,7 @@
         "techmap_celltype": "OAI211",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:89.1-91.10"
+        "src": "../../lib/RV523.v:102.1-104.10"
       },
       "ports": {
         "Y": {
@@ -545,35 +652,35 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:89.32-89.33"
+            "src": "../../lib/RV523.v:102.32-102.33"
           }
         },
         "B": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:89.41-89.42"
+            "src": "../../lib/RV523.v:102.41-102.42"
           }
         },
         "C1": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:89.50-89.52"
+            "src": "../../lib/RV523.v:102.50-102.52"
           }
         },
         "C2": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "../../lib/RV523.v:89.60-89.62"
+            "src": "../../lib/RV523.v:102.60-102.62"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:89.23-89.24"
+            "src": "../../lib/RV523.v:102.23-102.24"
           }
         }
       }
@@ -584,7 +691,7 @@
         "techmap_celltype": "OAI22",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "../../lib/RV523.v:75.1-77.10"
+        "src": "../../lib/RV523.v:88.1-90.10"
       },
       "ports": {
         "Y": {
@@ -615,35 +722,142 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "../../lib/RV523.v:75.31-75.33"
+            "src": "../../lib/RV523.v:88.31-88.33"
           }
         },
         "A2": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "../../lib/RV523.v:75.41-75.43"
+            "src": "../../lib/RV523.v:88.41-88.43"
           }
         },
         "B1": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "../../lib/RV523.v:75.51-75.53"
+            "src": "../../lib/RV523.v:88.51-88.53"
           }
         },
         "B2": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "../../lib/RV523.v:75.61-75.63"
+            "src": "../../lib/RV523.v:88.61-88.63"
           }
         },
         "Y": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "../../lib/RV523.v:75.22-75.23"
+            "src": "../../lib/RV523.v:88.22-88.23"
+          }
+        }
+      }
+    },
+    "OR": {
+      "attributes": {
+        "footprint": "RV523:OR",
+        "techmap_celltype": "OR",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:32.1-34.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:32.28-32.29"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:32.37-32.38"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:32.19-32.20"
+          }
+        }
+      }
+    },
+    "OR3": {
+      "attributes": {
+        "footprint": "RV523:OR3",
+        "techmap_celltype": "OR3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:60.1-62.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.29-60.30"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.38-60.39"
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.47-60.48"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.20-60.21"
           }
         }
       }
@@ -676,6 +890,23 @@
         }
       },
       "cells": {
+        "genblk1[0].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[0].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -684,7 +915,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -709,7 +940,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -728,7 +959,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -753,7 +984,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -772,7 +1003,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -791,7 +1022,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -810,7 +1041,7 @@
           "attributes": {
             "hdlname": "genblk1[0].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -827,6 +1058,23 @@
             "Y": [ 33 ]
           }
         },
+        "genblk1[1].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[1].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -835,7 +1083,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -860,7 +1108,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -879,7 +1127,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -904,7 +1152,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -923,7 +1171,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -942,7 +1190,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -961,7 +1209,7 @@
           "attributes": {
             "hdlname": "genblk1[1].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -978,6 +1226,23 @@
             "Y": [ 39 ]
           }
         },
+        "genblk1[2].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[2].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -986,7 +1251,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -1011,7 +1276,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -1030,7 +1295,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -1055,7 +1320,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -1074,7 +1339,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -1093,7 +1358,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -1112,7 +1377,7 @@
           "attributes": {
             "hdlname": "genblk1[2].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -1129,6 +1394,23 @@
             "Y": [ 45 ]
           }
         },
+        "genblk1[3].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[3].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -1137,7 +1419,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -1162,7 +1444,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -1181,7 +1463,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -1206,7 +1488,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -1225,7 +1507,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -1244,7 +1526,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -1263,7 +1545,7 @@
           "attributes": {
             "hdlname": "genblk1[3].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -1280,6 +1562,23 @@
             "Y": [ 51 ]
           }
         },
+        "genblk1[4].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[4].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -1288,7 +1587,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -1313,7 +1612,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -1332,7 +1631,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -1357,7 +1656,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -1376,7 +1675,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -1395,7 +1694,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -1414,7 +1713,7 @@
           "attributes": {
             "hdlname": "genblk1[4].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -1431,6 +1730,23 @@
             "Y": [ 57 ]
           }
         },
+        "genblk1[5].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[5].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -1439,7 +1755,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -1464,7 +1780,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -1483,7 +1799,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -1508,7 +1824,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -1527,7 +1843,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -1546,7 +1862,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -1565,7 +1881,7 @@
           "attributes": {
             "hdlname": "genblk1[5].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -1582,6 +1898,23 @@
             "Y": [ 63 ]
           }
         },
+        "genblk1[6].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[6].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -1590,7 +1923,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -1615,7 +1948,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -1634,7 +1967,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -1659,7 +1992,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -1678,7 +2011,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -1697,7 +2030,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -1716,7 +2049,7 @@
           "attributes": {
             "hdlname": "genblk1[6].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -1733,6 +2066,23 @@
             "Y": [ 69 ]
           }
         },
+        "genblk1[7].FA": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "alu8.sv:35.19-35.82",
+            "module": "fulladder",
+            "module_src": "alu8.sv:1.1-21.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "genblk1[7].FA.XAxB": {
           "hide_name": 0,
           "type": "AOI22",
@@ -1741,7 +2091,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:15.11-15.35"
+            "src": "alu8.sv:15.11-15.35"
           },
           "port_directions": {
             "A1": "input",
@@ -1766,7 +2116,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XCin",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:13.9-13.25"
+            "src": "alu8.sv:13.9-13.25"
           },
           "port_directions": {
             "A": "input",
@@ -1785,7 +2135,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XS",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:18.11-18.39"
+            "src": "alu8.sv:18.11-18.39"
           },
           "port_directions": {
             "A1": "input",
@@ -1810,7 +2160,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XnA",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:11.9-11.20"
+            "src": "alu8.sv:11.9-11.20"
           },
           "port_directions": {
             "A": "input",
@@ -1829,7 +2179,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XnAxB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:16.9-16.26"
+            "src": "alu8.sv:16.9-16.26"
           },
           "port_directions": {
             "A": "input",
@@ -1848,7 +2198,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XnB",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:12.9-12.20"
+            "src": "alu8.sv:12.9-12.20"
           },
           "port_directions": {
             "A": "input",
@@ -1867,7 +2217,7 @@
           "attributes": {
             "hdlname": "genblk1[7].FA XnCout",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:20.11-20.41"
+            "src": "alu8.sv:20.11-20.41"
           },
           "port_directions": {
             "A1": "input",
@@ -1912,7 +2262,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "genblk1[0].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[0].FA.AxB": {
@@ -1920,7 +2270,7 @@
           "bits": [ 30 ],
           "attributes": {
             "hdlname": "genblk1[0].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[0].FA.B": {
@@ -1928,7 +2278,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "genblk1[0].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[0].FA.Cin": {
@@ -1936,7 +2286,7 @@
           "bits": [ 31 ],
           "attributes": {
             "hdlname": "genblk1[0].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[0].FA.S": {
@@ -1944,7 +2294,7 @@
           "bits": [ 19 ],
           "attributes": {
             "hdlname": "genblk1[0].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[0].FA.nA": {
@@ -1952,7 +2302,7 @@
           "bits": [ 28 ],
           "attributes": {
             "hdlname": "genblk1[0].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[0].FA.nAxB": {
@@ -1960,7 +2310,7 @@
           "bits": [ 32 ],
           "attributes": {
             "hdlname": "genblk1[0].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[0].FA.nB": {
@@ -1968,7 +2318,7 @@
           "bits": [ 29 ],
           "attributes": {
             "hdlname": "genblk1[0].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[0].FA.nCin": {
@@ -1976,7 +2326,7 @@
           "bits": [ 18 ],
           "attributes": {
             "hdlname": "genblk1[0].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[0].FA.nCout": {
@@ -1984,7 +2334,7 @@
           "bits": [ 33 ],
           "attributes": {
             "hdlname": "genblk1[0].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[1].FA.A": {
@@ -1992,7 +2342,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "genblk1[1].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[1].FA.AxB": {
@@ -2000,7 +2350,7 @@
           "bits": [ 36 ],
           "attributes": {
             "hdlname": "genblk1[1].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[1].FA.B": {
@@ -2008,7 +2358,7 @@
           "bits": [ 11 ],
           "attributes": {
             "hdlname": "genblk1[1].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[1].FA.Cin": {
@@ -2016,7 +2366,7 @@
           "bits": [ 37 ],
           "attributes": {
             "hdlname": "genblk1[1].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[1].FA.S": {
@@ -2024,7 +2374,7 @@
           "bits": [ 20 ],
           "attributes": {
             "hdlname": "genblk1[1].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[1].FA.nA": {
@@ -2032,7 +2382,7 @@
           "bits": [ 34 ],
           "attributes": {
             "hdlname": "genblk1[1].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[1].FA.nAxB": {
@@ -2040,7 +2390,7 @@
           "bits": [ 38 ],
           "attributes": {
             "hdlname": "genblk1[1].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[1].FA.nB": {
@@ -2048,7 +2398,7 @@
           "bits": [ 35 ],
           "attributes": {
             "hdlname": "genblk1[1].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[1].FA.nCin": {
@@ -2056,7 +2406,7 @@
           "bits": [ 33 ],
           "attributes": {
             "hdlname": "genblk1[1].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[1].FA.nCout": {
@@ -2064,7 +2414,7 @@
           "bits": [ 39 ],
           "attributes": {
             "hdlname": "genblk1[1].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[2].FA.A": {
@@ -2072,7 +2422,7 @@
           "bits": [ 4 ],
           "attributes": {
             "hdlname": "genblk1[2].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[2].FA.AxB": {
@@ -2080,7 +2430,7 @@
           "bits": [ 42 ],
           "attributes": {
             "hdlname": "genblk1[2].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[2].FA.B": {
@@ -2088,7 +2438,7 @@
           "bits": [ 12 ],
           "attributes": {
             "hdlname": "genblk1[2].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[2].FA.Cin": {
@@ -2096,7 +2446,7 @@
           "bits": [ 43 ],
           "attributes": {
             "hdlname": "genblk1[2].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[2].FA.S": {
@@ -2104,7 +2454,7 @@
           "bits": [ 21 ],
           "attributes": {
             "hdlname": "genblk1[2].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[2].FA.nA": {
@@ -2112,7 +2462,7 @@
           "bits": [ 40 ],
           "attributes": {
             "hdlname": "genblk1[2].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[2].FA.nAxB": {
@@ -2120,7 +2470,7 @@
           "bits": [ 44 ],
           "attributes": {
             "hdlname": "genblk1[2].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[2].FA.nB": {
@@ -2128,7 +2478,7 @@
           "bits": [ 41 ],
           "attributes": {
             "hdlname": "genblk1[2].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[2].FA.nCin": {
@@ -2136,7 +2486,7 @@
           "bits": [ 39 ],
           "attributes": {
             "hdlname": "genblk1[2].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[2].FA.nCout": {
@@ -2144,7 +2494,7 @@
           "bits": [ 45 ],
           "attributes": {
             "hdlname": "genblk1[2].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[3].FA.A": {
@@ -2152,7 +2502,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "genblk1[3].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[3].FA.AxB": {
@@ -2160,7 +2510,7 @@
           "bits": [ 48 ],
           "attributes": {
             "hdlname": "genblk1[3].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[3].FA.B": {
@@ -2168,7 +2518,7 @@
           "bits": [ 13 ],
           "attributes": {
             "hdlname": "genblk1[3].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[3].FA.Cin": {
@@ -2176,7 +2526,7 @@
           "bits": [ 49 ],
           "attributes": {
             "hdlname": "genblk1[3].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[3].FA.S": {
@@ -2184,7 +2534,7 @@
           "bits": [ 22 ],
           "attributes": {
             "hdlname": "genblk1[3].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[3].FA.nA": {
@@ -2192,7 +2542,7 @@
           "bits": [ 46 ],
           "attributes": {
             "hdlname": "genblk1[3].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[3].FA.nAxB": {
@@ -2200,7 +2550,7 @@
           "bits": [ 50 ],
           "attributes": {
             "hdlname": "genblk1[3].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[3].FA.nB": {
@@ -2208,7 +2558,7 @@
           "bits": [ 47 ],
           "attributes": {
             "hdlname": "genblk1[3].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[3].FA.nCin": {
@@ -2216,7 +2566,7 @@
           "bits": [ 45 ],
           "attributes": {
             "hdlname": "genblk1[3].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[3].FA.nCout": {
@@ -2224,7 +2574,7 @@
           "bits": [ 51 ],
           "attributes": {
             "hdlname": "genblk1[3].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[4].FA.A": {
@@ -2232,7 +2582,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "genblk1[4].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[4].FA.AxB": {
@@ -2240,7 +2590,7 @@
           "bits": [ 54 ],
           "attributes": {
             "hdlname": "genblk1[4].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[4].FA.B": {
@@ -2248,7 +2598,7 @@
           "bits": [ 14 ],
           "attributes": {
             "hdlname": "genblk1[4].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[4].FA.Cin": {
@@ -2256,7 +2606,7 @@
           "bits": [ 55 ],
           "attributes": {
             "hdlname": "genblk1[4].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[4].FA.S": {
@@ -2264,7 +2614,7 @@
           "bits": [ 23 ],
           "attributes": {
             "hdlname": "genblk1[4].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[4].FA.nA": {
@@ -2272,7 +2622,7 @@
           "bits": [ 52 ],
           "attributes": {
             "hdlname": "genblk1[4].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[4].FA.nAxB": {
@@ -2280,7 +2630,7 @@
           "bits": [ 56 ],
           "attributes": {
             "hdlname": "genblk1[4].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[4].FA.nB": {
@@ -2288,7 +2638,7 @@
           "bits": [ 53 ],
           "attributes": {
             "hdlname": "genblk1[4].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[4].FA.nCin": {
@@ -2296,7 +2646,7 @@
           "bits": [ 51 ],
           "attributes": {
             "hdlname": "genblk1[4].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[4].FA.nCout": {
@@ -2304,7 +2654,7 @@
           "bits": [ 57 ],
           "attributes": {
             "hdlname": "genblk1[4].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[5].FA.A": {
@@ -2312,7 +2662,7 @@
           "bits": [ 7 ],
           "attributes": {
             "hdlname": "genblk1[5].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[5].FA.AxB": {
@@ -2320,7 +2670,7 @@
           "bits": [ 60 ],
           "attributes": {
             "hdlname": "genblk1[5].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[5].FA.B": {
@@ -2328,7 +2678,7 @@
           "bits": [ 15 ],
           "attributes": {
             "hdlname": "genblk1[5].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[5].FA.Cin": {
@@ -2336,7 +2686,7 @@
           "bits": [ 61 ],
           "attributes": {
             "hdlname": "genblk1[5].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[5].FA.S": {
@@ -2344,7 +2694,7 @@
           "bits": [ 24 ],
           "attributes": {
             "hdlname": "genblk1[5].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[5].FA.nA": {
@@ -2352,7 +2702,7 @@
           "bits": [ 58 ],
           "attributes": {
             "hdlname": "genblk1[5].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[5].FA.nAxB": {
@@ -2360,7 +2710,7 @@
           "bits": [ 62 ],
           "attributes": {
             "hdlname": "genblk1[5].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[5].FA.nB": {
@@ -2368,7 +2718,7 @@
           "bits": [ 59 ],
           "attributes": {
             "hdlname": "genblk1[5].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[5].FA.nCin": {
@@ -2376,7 +2726,7 @@
           "bits": [ 57 ],
           "attributes": {
             "hdlname": "genblk1[5].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[5].FA.nCout": {
@@ -2384,7 +2734,7 @@
           "bits": [ 63 ],
           "attributes": {
             "hdlname": "genblk1[5].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[6].FA.A": {
@@ -2392,7 +2742,7 @@
           "bits": [ 8 ],
           "attributes": {
             "hdlname": "genblk1[6].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[6].FA.AxB": {
@@ -2400,7 +2750,7 @@
           "bits": [ 66 ],
           "attributes": {
             "hdlname": "genblk1[6].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[6].FA.B": {
@@ -2408,7 +2758,7 @@
           "bits": [ 16 ],
           "attributes": {
             "hdlname": "genblk1[6].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[6].FA.Cin": {
@@ -2416,7 +2766,7 @@
           "bits": [ 67 ],
           "attributes": {
             "hdlname": "genblk1[6].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[6].FA.S": {
@@ -2424,7 +2774,7 @@
           "bits": [ 25 ],
           "attributes": {
             "hdlname": "genblk1[6].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[6].FA.nA": {
@@ -2432,7 +2782,7 @@
           "bits": [ 64 ],
           "attributes": {
             "hdlname": "genblk1[6].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[6].FA.nAxB": {
@@ -2440,7 +2790,7 @@
           "bits": [ 68 ],
           "attributes": {
             "hdlname": "genblk1[6].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[6].FA.nB": {
@@ -2448,7 +2798,7 @@
           "bits": [ 65 ],
           "attributes": {
             "hdlname": "genblk1[6].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[6].FA.nCin": {
@@ -2456,7 +2806,7 @@
           "bits": [ 63 ],
           "attributes": {
             "hdlname": "genblk1[6].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[6].FA.nCout": {
@@ -2464,7 +2814,7 @@
           "bits": [ 69 ],
           "attributes": {
             "hdlname": "genblk1[6].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
         "genblk1[7].FA.A": {
@@ -2472,7 +2822,7 @@
           "bits": [ 9 ],
           "attributes": {
             "hdlname": "genblk1[7].FA A",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:2.11-2.12"
+            "src": "alu8.sv:2.11-2.12"
           }
         },
         "genblk1[7].FA.AxB": {
@@ -2480,7 +2830,7 @@
           "bits": [ 72 ],
           "attributes": {
             "hdlname": "genblk1[7].FA AxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.10-9.13"
+            "src": "alu8.sv:9.10-9.13"
           }
         },
         "genblk1[7].FA.B": {
@@ -2488,7 +2838,7 @@
           "bits": [ 17 ],
           "attributes": {
             "hdlname": "genblk1[7].FA B",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:3.11-3.12"
+            "src": "alu8.sv:3.11-3.12"
           }
         },
         "genblk1[7].FA.Cin": {
@@ -2496,7 +2846,7 @@
           "bits": [ 73 ],
           "attributes": {
             "hdlname": "genblk1[7].FA Cin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.18-8.21"
+            "src": "alu8.sv:8.18-8.21"
           }
         },
         "genblk1[7].FA.S": {
@@ -2504,7 +2854,7 @@
           "bits": [ 26 ],
           "attributes": {
             "hdlname": "genblk1[7].FA S",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:5.12-5.13"
+            "src": "alu8.sv:5.12-5.13"
           }
         },
         "genblk1[7].FA.nA": {
@@ -2512,7 +2862,7 @@
           "bits": [ 70 ],
           "attributes": {
             "hdlname": "genblk1[7].FA nA",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.10-8.12"
+            "src": "alu8.sv:8.10-8.12"
           }
         },
         "genblk1[7].FA.nAxB": {
@@ -2520,7 +2870,7 @@
           "bits": [ 74 ],
           "attributes": {
             "hdlname": "genblk1[7].FA nAxB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:9.15-9.19"
+            "src": "alu8.sv:9.15-9.19"
           }
         },
         "genblk1[7].FA.nB": {
@@ -2528,7 +2878,7 @@
           "bits": [ 71 ],
           "attributes": {
             "hdlname": "genblk1[7].FA nB",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:8.14-8.16"
+            "src": "alu8.sv:8.14-8.16"
           }
         },
         "genblk1[7].FA.nCin": {
@@ -2536,7 +2886,7 @@
           "bits": [ 69 ],
           "attributes": {
             "hdlname": "genblk1[7].FA nCin",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:4.11-4.15"
+            "src": "alu8.sv:4.11-4.15"
           }
         },
         "genblk1[7].FA.nCout": {
@@ -2544,13 +2894,76 @@
           "bits": [ 27 ],
           "attributes": {
             "hdlname": "genblk1[7].FA nCout",
-            "src": "alu8.sv:35.19-35.82|alu8.sv:6.12-6.17"
+            "src": "alu8.sv:6.12-6.17"
           }
         },
-        "nC": {
+        "nC[-1]": {
           "hide_name": 0,
-          "bits": [ 18, 33, 39, 45, 51, 57, 63, 69, 27 ],
+          "bits": [ 18 ],
           "offset": -1,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[0]": {
+          "hide_name": 0,
+          "bits": [ 33 ],
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[1]": {
+          "hide_name": 0,
+          "bits": [ 39 ],
+          "offset": 1,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[2]": {
+          "hide_name": 0,
+          "bits": [ 45 ],
+          "offset": 2,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[3]": {
+          "hide_name": 0,
+          "bits": [ 51 ],
+          "offset": 3,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[4]": {
+          "hide_name": 0,
+          "bits": [ 57 ],
+          "offset": 4,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[5]": {
+          "hide_name": 0,
+          "bits": [ 63 ],
+          "offset": 5,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[6]": {
+          "hide_name": 0,
+          "bits": [ 69 ],
+          "offset": 6,
+          "attributes": {
+            "src": "alu8.sv:31.17-31.19"
+          }
+        },
+        "nC[7]": {
+          "hide_name": 0,
+          "bits": [ 27 ],
+          "offset": 7,
           "attributes": {
             "src": "alu8.sv:31.17-31.19"
           }
