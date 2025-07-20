@@ -1,4 +1,14 @@
 library(RV523) {
+
+    input_threshold_pct_fall : 46;
+    input_threshold_pct_rise : 46;
+    output_threshold_pct_fall : 46;
+    output_threshold_pct_rise : 46;
+    slew_lower_threshold_pct_fall : 20;
+    slew_lower_threshold_pct_rise : 20;
+    slew_upper_threshold_pct_fall : 80;
+    slew_upper_threshold_pct_rise : 80;
+
   cell(BUF) {
     area: 4;
     pin(A) { direction: input; }
