@@ -97,13 +97,13 @@ with open(args.outputFilename, 'w') as output:
                 "cellModule": cellModule,
                 "type": type
             })
-            output.write(f"   (comp (ref \"{cell["name"]}\")\n")
+            output.write(f"   (comp (ref \"{cell['name']}\")\n")
             footprint = cellModule["attributes"]["footprint"]
             output.write(f"      (footprint \"{footprint}\")\n")
             for pin, wireIDs in cell["connections"].items():
                 for wireIdx, wireID in enumerate(wireIDs):
                     if wireID == "x":
-                        raise Exception(f"cell {cell["name"]} is connected to 'x")
+                        raise Exception(f"cell {cell['name']} is connected to 'x")
                     cellNet = cellModule["netnames"][pin]
                     pinName = getPinName(cellNet, wireIdx)
                     net = nets.setdefault(wireID, {"toto": True, "id": wireID, "nodes": []})
@@ -163,17 +163,17 @@ if args.spice:
     with open(args.spice, "w") as output:
         output.write(".inc \"../RV523_NMOS.ckt\"\n")
         output.write(".inc \"../RV523_PMOS.ckt\"\n")
-        output.write(f".subckt {topModule["name"]}")
+        output.write(f".subckt {topModule['name']}")
         for portName in topModule["ports"]:
             output.write(f" {portName}")
         output.write("\n")
         for cell in cells:
-            output.write(f" X{cell["name"]}")
+            output.write(f" X{cell['name']}")
             for pinNumber in sorted(cell["pins"]):
                 netName = cell["pins"][pinNumber]["name"]
                 if netName == "GND":
                     netName = 0
                 output.write(f" {netName}")
-            output.write(f" {cell["type"]}\n")
+            output.write(f" {cell['type']}\n")
 
         output.write(".ends\n")
