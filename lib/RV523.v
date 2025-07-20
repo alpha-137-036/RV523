@@ -37,8 +37,8 @@ endmodule
 (* techmap_celltype = "NAND3" *)
 (* blackbox *)
 (* footprint = "RV523:NAND3" *)
-module NAND3 (output Y, input A, input B, input C);
-    assign Y = ~(A & B & C);
+module NAND3 (output Y, input A1, input A2, input A3);
+    assign Y = ~(A1 & A2 & A3);
 endmodule
 
 (* techmap_celltype = "NOR3" *) 

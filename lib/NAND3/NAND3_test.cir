@@ -11,7 +11,7 @@ VDD VDD 0 3.3
 Cload Y 0 30p
 
 * Instantiate NAND gate
-XU1 Y A B C NAND3
+XU1 Y A1 A2 A3 NAND3
 
 .TRAN 0.1ns 11400ns
 
