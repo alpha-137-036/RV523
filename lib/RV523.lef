@@ -1,0 +1,176 @@
+VERSION 5.7 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+UNITS
+  DATABASE MICRONS 1000 ;
+END UNITS
+
+SITE CoreSite
+  CLASS CORE ;
+  SIZE 1.1 BY 4.4 ;
+END CoreSite
+
+LAYER M1
+    TYPE ROUTING ;
+    DIRECTION HORIZONTAL ;
+    SPACING 0.1 ;
+    WIDTH 0.1 ;
+    PITCH 0.2 ;
+END M1
+LAYER M2
+    TYPE ROUTING ;
+    DIRECTION VERTICAL ;
+    SPACING 0.1 ;
+    WIDTH 0.1 ;
+    PITCH 0.2 ;
+END M2
+
+MACRO NOT
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 2.2 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 1.4 1.7 1.8 2.1 ;
+    END
+  END Y
+END NOT
+
+MACRO NAND2
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 4.4 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 3.6 1.7 4.0 2.1 ;
+    END
+  END Y
+END NAND2
+
+MACRO NOR2
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 4.4 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 3.6 1.7 4.0 2.1 ;
+    END
+  END Y
+END NOR2
+
+MACRO AOI22
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8.8 BY 4.4 ;
+
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN B1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END B1
+
+  PIN B2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 6.9 2.3 7.3 2.7 ;
+    END
+  END B2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 8 1.7 8.4 2.1 ;
+    END
+  END Y
+
+END AOI22
+
+END LIBRARY
