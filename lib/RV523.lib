@@ -1,4 +1,4 @@
-library(cells) {
+library(RV523) {
   cell(BUF) {
     area: 4;
     pin(A) { direction: input; }
@@ -15,6 +15,13 @@ library(cells) {
       pin(A2) { direction: input; }
       pin(Y) { direction: output; function: "!(A1&A2)"; }
   }
+  cell(AND2) {
+      area: 6;
+      pin(A1)  { direction: input; }
+      pin(A2)  { direction: input; }
+      pin(nY) { direction: output; function: "!(A1&A2)"; }
+      pin(Y)  { direction: output; function: "A1&A2"; }
+  }
   cell(NAND3) {
       area: 6;
       pin(A1) { direction: input; }
@@ -22,11 +29,43 @@ library(cells) {
       pin(A3) { direction: input; }
       pin(Y) { direction: output; function: "!(A1&A2&A3)"; }
   }
+  cell(AND3) {
+      area: 8;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(A3) { direction: input; }
+      pin(nY) { direction: output; function: "!(A1&A2&A3)"; }
+      pin(Y) { direction: output; function: "A1&A2&A3"; }
+  }
+  cell(NAND4) {
+      area: 8;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(A3) { direction: input; }
+      pin(A4) { direction: input; }
+      pin(Y) { direction: output; function: "!(A1&A2&A3&A4)"; }
+  }
+  cell(AND4) {
+      area: 10;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(A3) { direction: input; }
+      pin(A4) { direction: input; }
+      pin(nY) { direction: output; function: "!(A1&A2&A3&A4)"; }
+      pin(Y) { direction: output; function: "A1&A2&A3&A4"; }
+  }
   cell(NOR2) {
       area: 4;
       pin(A1) { direction: input; }
       pin(A2) { direction: input; }
       pin(Y) { direction: output; function: "!(A1|A2)"; }
+  }
+  cell(OR2) {
+      area: 6;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(nY) { direction: output; function: "!(A1|A2)"; }
+      pin(Y) { direction: output; function: "A1|A2"; }
   }
   cell(NOR3) {
       area: 6;
@@ -34,6 +73,31 @@ library(cells) {
       pin(A2) { direction: input; }
       pin(A3) { direction: input; }
       pin(Y) { direction: output; function: "!(A1|A2|A3)"; }
+  }
+  cell(OR3) {
+      area: 8;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(A3) { direction: input; }
+      pin(nY) { direction: output; function: "!(A1|A2|A3)"; }
+      pin(Y) { direction: output; function: "A1|A2|A3"; }
+  }
+  cell(NOR4) {
+      area: 8;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(A3) { direction: input; }
+      pin(A4) { direction: input; }
+      pin(Y) { direction: output; function: "!(A1|A2|A3|A4)"; }
+  }
+  cell(OR4) {
+      area: 10;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(A3) { direction: input; }
+      pin(A4) { direction: input; }
+      pin(nY) { direction: output; function: "!(A1|A2|A3|A4)"; }
+      pin(Y) { direction: output; function: "A1|A2|A3|A4"; }
   }
   cell(AOI21) {
       area: 6;
@@ -80,6 +144,44 @@ library(cells) {
       pin(C1) { direction: input; }
       pin(C2) { direction: input; }
       pin(Y) { direction: output; function: "!(A&B&(C1|C2))"; }
+  }
+  cell(AOI221) {
+      area: 10;
+      pin(A) { direction: input; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(C1) { direction: input; }
+      pin(C2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A|(B1&B2)|(C1&C2))"; }
+  }
+  cell(OAI221) {
+      area: 10;
+      pin(A) { direction: input; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(C1) { direction: input; }
+      pin(C2) { direction: input; }
+      pin(Y) { direction: output; function: "!(A&(B1|B2)&(C1|C2))"; }
+  }
+  cell(AOI222) {
+      area: 12;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(C1) { direction: input; }
+      pin(C2) { direction: input; }
+      pin(Y) { direction: output; function: "!((A1&A2)|(B1&B2)|(C1&C2))"; }
+  }
+  cell(OAI222) {
+      area: 12;
+      pin(A1) { direction: input; }
+      pin(A2) { direction: input; }
+      pin(B1) { direction: input; }
+      pin(B2) { direction: input; }
+      pin(C1) { direction: input; }
+      pin(C2) { direction: input; }
+      pin(Y) { direction: output; function: "!((A1|A2)&(B1|B2)&(C1|C2))"; }
   }
   cell(DFF_PP0) {
         area: 16;
