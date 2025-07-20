@@ -6,4 +6,4 @@ sys.path.append(parent_dir)
 
 import generate_pwl_generic
 
-generate_pwl_generic.generate_pwl("pwl_Inputs.sp", ["A", "B", "C"])
+generate_pwl_generic.generate_pwl("pwl_Inputs.sp", ["A1", "A2", "A3"])

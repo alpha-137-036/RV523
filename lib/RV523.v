@@ -44,8 +44,8 @@ endmodule
 (* techmap_celltype = "NOR3" *) 
 (* blackbox *)
 (* footprint = "RV523:NOR3" *)
-module NOR3 (output Y, input A, input B, input C);
-    assign Y = ~(A | B | C);
+module NOR3 (output Y, input A1, input A2, input A3);
+    assign Y = ~(A1 | A2 | A3);
 endmodule
 
 (* techmap_celltype = "AOI21" *)

@@ -11,7 +11,7 @@ VDD VDD 0 3.3
 Cload Y 0 30p
 
 * Instantiate cell
-XU1 Y A B C NOR3
+XU1 Y A1 A2 A3 NOR3
 
 .TRAN 0.1ns 11400ns
 

@@ -146,7 +146,7 @@
 			(justify top)
 		)
 	)
-	(pad "A" thru_hole circle
+	(pad "A1" thru_hole circle
 		(at 0.5 1.9)
 		(size 0.4 0.4)
 		(drill 0.3)
@@ -155,7 +155,7 @@
 		(clearance 0.1)
 		(uuid "ac5873dd-4858-4ef6-96f9-5b6fd380143e")
 	)
-	(pad "B" thru_hole circle
+	(pad "A2" thru_hole circle
 		(at 2.7 1.9)
 		(size 0.4 0.4)
 		(drill 0.3)
@@ -164,7 +164,7 @@
 		(clearance 0.1)
 		(uuid "f52862b9-4a8c-4d09-aa98-ed463136a1e9")
 	)
-	(pad "C" thru_hole circle
+	(pad "A3" thru_hole circle
 		(at 4.9 1.9)
 		(size 0.4 0.4)
 		(drill 0.3)

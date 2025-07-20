@@ -1,9 +1,9 @@
-(* pins="-,A,-,B,-,C,Y" *)
+(* pins="A1,-,A2,-,A3,Y" *)
 module NOR3(
     output Y,
-    input A,
-    input B,
-    input C
+    input A1,
+    input A2,
+    input A3
 );
     supply1 VDD;
     supply0 GND;
@@ -12,31 +12,31 @@ module NOR3(
     RV523_NMOS N1(
         .S(GND),
         .D(Y),
-        .G(A)
+        .G(A1)
     );
     RV523_NMOS N2(
         .S(GND),
         .D(Y),
-        .G(B)
+        .G(A2)
     );
     RV523_NMOS N3(
         .S(GND),
         .D(Y),
-        .G(C)
+        .G(A3)
     );
     RV523_PMOS P1(
         .S(int1),
         .D(Y),
-        .G(A)
+        .G(A1)
     );
     RV523_PMOS P2(
         .S(int2),
         .D(int1),
-        .G(B)
+        .G(A2)
     );
     RV523_PMOS P3(
         .S(VDD),
         .D(int2),
-        .G(C)
+        .G(A3)
     );
 endmodule
