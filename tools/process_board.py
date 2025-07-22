@@ -2,6 +2,8 @@ import sys
 import sexpdata
 import uuid
 import functools
+import os
+import os.path
 
 inputBoardFile = sys.argv[1]
 outputBoardFile = sys.argv[2]
@@ -130,11 +132,14 @@ inputBoard = KicadObject(loadFile(inputBoardFile))
 
 cellBoards = {}
 
-for cellName in ["NOT", "AOI22"]:
-    cellBoards[f"RVCMOS:{cellName}"] = ( 
-        KicadObject(loadFile(f"../design/Cells/{cellName}/{cellName}.kicad_pcb")), 
-        KicadObject(loadFile(f"../design/Cells/{cellName}/{cellName}_flipped.kicad_pcb")) 
-    )
+libDir = f"{os.path.dirname(__file__)}/../lib"
+for cellName in os.listdir(libDir):
+    if os.path.isfile(os.path.join(libDir, f"{cellName}/{cellName}.kicad_pcb")):
+        print(f"Reading library cell {cellName}")
+        cellBoards[f"RV523:{cellName}"] = ( 
+            KicadObject(loadFile(f"{libDir}/{cellName}/{cellName}.kicad_pcb")), 
+            KicadObject(loadFile(f"{libDir}/{cellName}/{cellName}_flipped.kicad_pcb")) 
+        )
 
 inputNets = {}
 maxNetID = 0
