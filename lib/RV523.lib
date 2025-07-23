@@ -164,6 +164,7 @@ library(RV523) {
       pin(C2) { direction: input; }
       pin(Y) { direction: output; function: "!(A|(B1&B2)|(C1&C2))"; }
   }
+/*
   cell(OAI221) {
       area: 10;
       pin(A) { direction: input; }
@@ -193,6 +194,7 @@ library(RV523) {
       pin(C2) { direction: input; }
       pin(Y) { direction: output; function: "!((A1|A2)&(B1|B2)&(C1|C2))"; }
   }
+*/
   cell(DFF_PP0) {
         area: 16;
 		ff(IQ, IQN) {

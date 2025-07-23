@@ -26,6 +26,13 @@ LAYER M2
     PITCH 0.2 ;
 END M2
 
+MACRO DECAP
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 1.1 BY 4.4 ;
+  SITE CoreSite ;
+END DECAP
+
 MACRO NOT
   CLASS CORE ;
   ORIGIN 0 0 ;
@@ -85,6 +92,102 @@ MACRO NAND2
   END Y
 END NAND2
 
+
+MACRO NAND3
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 6.6 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN A3
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END A3
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 5.8 1.7 6.2 2.1 ;
+    END
+  END Y
+END NAND3
+
+MACRO NAND4
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8.8 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN A3
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END A3
+
+  PIN A4
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 6.9 2.3 7.3 2.7 ;
+    END
+  END A4
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 8.0 1.7 8.4 2.1 ;
+    END
+  END Y
+END NAND4
+
 MACRO NOR2
   CLASS CORE ;
   ORIGIN 0 0 ;
@@ -118,6 +221,101 @@ MACRO NOR2
     END
   END Y
 END NOR2
+
+MACRO NOR3
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 6.6 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN A3
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END A3
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 5.8 1.7 6.2 2.1 ;
+    END
+  END Y
+END NOR3
+
+MACRO NOR4
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8.8 BY 4.4 ;
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN A3
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END A3
+
+  PIN A4
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 6.9 2.3 7.3 2.7 ;
+    END
+  END A4
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 8.0 1.7 8.4 2.1 ;
+    END
+  END Y
+END NOR4
 
 MACRO AOI22
   CLASS CORE ;
@@ -172,5 +370,259 @@ MACRO AOI22
   END Y
 
 END AOI22
+
+MACRO OAI22
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8.8 BY 4.4 ;
+
+  SITE CoreSite ;
+
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A1
+
+  PIN A2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END A2
+
+  PIN B1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END B1
+
+  PIN B2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 6.9 2.3 7.3 2.7 ;
+    END
+  END B2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 8 1.7 8.4 2.1 ;
+    END
+  END Y
+
+END OAI22
+
+MACRO AOI211
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8.8 BY 4.4 ;
+
+  SITE CoreSite ;
+
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A
+
+  PIN B
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END B
+
+  PIN C1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END C1
+
+  PIN C2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 6.9 2.3 7.3 2.7 ;
+    END
+  END C2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 8 1.7 8.4 2.1 ;
+    END
+  END Y
+
+END AOI211
+
+MACRO OAI211
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8.8 BY 4.4 ;
+
+  SITE CoreSite ;
+
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A
+
+  PIN B
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END B
+
+  PIN C1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END C1
+
+  PIN C2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 6.9 2.3 7.3 2.7 ;
+    END
+  END C2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 8 1.7 8.4 2.1 ;
+    END
+  END Y
+
+END OAI211
+
+MACRO AOI21
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 6.6 BY 4.4 ;
+
+  SITE CoreSite ;
+
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A
+
+  PIN B1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END B1
+
+  PIN B2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END B2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 5.8 1.7 6.2 2.1 ;
+    END
+  END Y
+
+END AOI21
+
+
+MACRO OAI21
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 6.6 BY 4.4 ;
+
+  SITE CoreSite ;
+
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 0.3 2.3 0.7 2.7 ;
+    END
+  END A
+
+  PIN B1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 2.5 2.3 2.9 2.7 ;
+    END
+  END B1
+
+  PIN B2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 4.7 2.3 5.1 2.7 ;
+    END
+  END B2
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 5.8 1.7 6.2 2.1 ;
+    END
+  END Y
+
+END OAI21
+
 
 END LIBRARY

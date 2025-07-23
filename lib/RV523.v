@@ -61,6 +61,20 @@ module OR3 (output Y, input A1, input A2, input A3);
     assign Y = A1 | A2 | A3;
 endmodule
 
+(* techmap_celltype = "NAND4" *)
+(* blackbox *)
+(* footprint = "RV523:NAND4" *)
+module NAND4 (output Y, input A1, input A2, input A3, input A4);
+    assign Y = ~(A1 & A2 & A3 & A4);
+endmodule
+
+(* techmap_celltype = "NOR4" *)
+(* blackbox *)
+(* footprint = "RV523:NOR4" *)
+module NOR4 (output Y, input A1, input A2, input A3, input A4);
+    assign Y = ~(A1 | A2 | A3 | A4);
+endmodule
+
 (* techmap_celltype = "AOI21" *)
 (* blackbox *)
 (* footprint = "RV523:AOI21" *)
