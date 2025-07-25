@@ -231,52 +231,23 @@ cellFootprints = []
 def analyzeFootprintFlipped():
     global cellFootprints
     # Get all cell footprints
+    # Accumulate footprints by their y coordinates (upper-right corners)
+    footprintsByY = {}
     for obj in inputBoard:
         if type(obj) is KicadObject and obj.kclass == 'footprint':
             name = obj.item(1)
             if name in cellBoards:
                 cellFootprints.append(obj)
+                footprintsByY.setdefault(obj.position.y, []).append(obj)
 
-    # Sort by top-down, left-right order
-    def compare(p1, p2):
-        if p1.position.y < p2.position.y:
-            return -1
-        elif p1.position.y > p2.position.y:
-            return +1
-        elif p1.position.x < p2.position.x:
-            return -1
-        elif p1.position.x > p2.position.x:
-            return +1
-        else:
-            return 0
-    cellFootprints.sort(key=functools.cmp_to_key(compare))
-
-    # Search for a footprint immediately above p1
-    def searchAbove(p1):
-        for p2 in cellFootprints:
-            if p2 == p1:
-                return None
-            else:
-                if p2.position.x == p1.position.x and p2.endY == p1.position.y:
-                    return p2
-                
-    previous = None
-    for footprint in cellFootprints:
-        if previous == None:
-            footprint.flipped = False
-        else:
-            # Immediately on the right of previous?
-            if previous.position.y == footprint.position.y and previous.endX == footprint.position.x:
-                footprint.flipped = previous.flipped
-            else:
-                # Is there an already considered footprint immediately above?
-                p2 = searchAbove(footprint)
-                if p2:
-                    print("above")
-                    footprint.flipped = not p2.flipped
-                else:
-                    footprint.flipped = False
-        previous = footprint
+    # Enumerate the rows by increasing Y coordinates
+    yList = sorted(footprintsByY.keys())
+    # Alternate normal and flipped
+    flipped = False
+    for y in yList:
+        for f in footprintsByY[y]:
+            f.flipped = flipped
+        flipped = not flipped
     
     for footprint in cellFootprints:
         print(f"{footprint.item(1)} @ {footprint.position} => flipped = {footprint.flipped}")

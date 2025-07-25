@@ -17,7 +17,7 @@
 		)
 	)
 	(property "Value" "AOI211"
-		(at 5 1.25 0)
+		(at 4 1.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -57,8 +57,8 @@
 	)
 	(attr smd)
 	(fp_line
-		(start -0.1 0)
-		(end 8.9 0)
+		(start 0 0)
+		(end 8 0)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -67,8 +67,8 @@
 		(uuid "45dd710c-1bf7-4da6-9b21-134537efbd8a")
 	)
 	(fp_line
-		(start -0.1 4.4)
-		(end 8.9 4.4)
+		(start 0 4)
+		(end 8 4)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -78,7 +78,7 @@
 	)
 	(fp_rect
 		(start 0 0)
-		(end 8.8 4.4)
+		(end 8 4)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -88,8 +88,8 @@
 		(uuid "e43b80c5-87d4-4025-a013-989e118303ad")
 	)
 	(fp_circle
-		(center 1.6 2.5)
-		(end 1.8 2.5)
+		(center 1.5 2.3)
+		(end 1.7 2.3)
 		(stroke
 			(width 0)
 			(type solid)
@@ -99,8 +99,8 @@
 		(uuid "ed058055-ac03-4d7e-b15d-47915023a4d5")
 	)
 	(fp_circle
-		(center 3.8 2.5)
-		(end 4 2.5)
+		(center 3.5 2.3)
+		(end 3.7 2.3)
 		(stroke
 			(width 0)
 			(type solid)
@@ -110,8 +110,8 @@
 		(uuid "b0f66fd9-4779-430d-bfcb-d0fdbc646091")
 	)
 	(fp_circle
-		(center 6 2.5)
-		(end 6.2 2.5)
+		(center 5.5 2.3)
+		(end 5.7 2.3)
 		(stroke
 			(width 0)
 			(type solid)
@@ -120,8 +120,8 @@
 		(layer "F.Fab")
 		(uuid "98428796-71f7-46b7-9b72-a4bf9f7436d4")
 	)
-	(fp_text user "AOI211"
-		(at 4.4 0.2 0)
+	(fp_text user "AOI22"
+		(at 4 0.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "8ab69d99-91a8-4734-b2b4-62f9ab06a517")
@@ -134,7 +134,7 @@
 		)
 	)
 	(fp_text user "${REFERENCE}"
-		(at 4.4 4.2 0)
+		(at 4 3.8 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "a026bd4b-ba34-4850-95b7-7da105716a7a")
@@ -147,7 +147,7 @@
 		)
 	)
 	(pad "A" thru_hole circle
-		(at 0.5 1.9)
+		(at 0.5 1.7)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
@@ -156,7 +156,7 @@
 		(uuid "df211f92-24c6-415d-80ed-10035d1e4d05")
 	)
 	(pad "B" thru_hole circle
-		(at 2.7 1.9)
+		(at 2.5 1.7)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
@@ -165,7 +165,7 @@
 		(uuid "05b8d15d-152b-4f0e-8eff-793dccfc03ec")
 	)
 	(pad "C1" thru_hole circle
-		(at 4.9 1.9)
+		(at 4.5 1.7)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
@@ -174,7 +174,7 @@
 		(uuid "7c946dca-2dba-4b80-86ea-1826cedd13c2")
 	)
 	(pad "C2" thru_hole circle
-		(at 7.1 1.9)
+		(at 6.5 1.7)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
@@ -183,7 +183,7 @@
 		(uuid "56bbc5c7-5e32-48ef-9e5e-8ffb314ce68c")
 	)
 	(pad "Y" thru_hole circle
-		(at 8.2 2.5)
+		(at 7.5 2.3)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
