@@ -243,7 +243,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "NAND_flipped.kicad_pro",
+    "filename": "NAND2_flipped.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -295,7 +295,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "NAND.net",
+      "netlist": "NAND2.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",

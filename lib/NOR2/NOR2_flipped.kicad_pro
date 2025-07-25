@@ -230,7 +230,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "NOR_flipped.kicad_pro",
+    "filename": "NOR2_flipped.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -254,7 +254,7 @@
         "wire_width": 6
       },
       {
-        "clearance": 0.2,
+        "clearance": 0.1,
         "name": "Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
