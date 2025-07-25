@@ -211,12 +211,18 @@ def processCellFootprint(cellFootprint):
             rewriteNetRef(pad)
         inputBoard.append(footprint)
     for segment in cellBoard.segment:
-            for pos in segment.start:
-                pos.shift(cellFootprint.at[0])
-            for pos in segment.end:
-                pos.shift(cellFootprint.at[0])
-            rewriteNetRef(segment)
-            inputBoard.append(segment)
+        for pos in segment.start:
+            pos.shift(cellFootprint.at[0])
+        for pos in segment.end:
+            pos.shift(cellFootprint.at[0])
+        rewriteNetRef(segment)
+        inputBoard.append(segment)
+    for rect in cellBoard.gr_rect:
+        for pos in rect.start:
+            pos.shift(cellFootprint.at[0])
+        for pos in rect.end:
+            pos.shift(cellFootprint.at[0])
+        inputBoard.append(rect)
         
     for via in cellBoard.via:
         net = nets[via.net[0].netID]
