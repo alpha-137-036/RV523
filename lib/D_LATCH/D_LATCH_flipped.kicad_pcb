@@ -107,7 +107,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "PMOS"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -296,7 +296,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "PMOS"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -485,7 +485,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "NMOS"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -674,7 +674,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "NMOS"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -863,7 +863,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "PMOS"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1052,7 +1052,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "NMOS"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -1241,7 +1241,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "NMOS"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -1430,7 +1430,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "PMOS"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1619,7 +1619,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "NMOS"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -1808,7 +1808,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "PMOS"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
