@@ -1,0 +1,308 @@
+{
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "RV523_NMOS": {
+      "attributes": {
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "blackbox": "00000000000000000000000000000001",
+        "value": "NMOS",
+        "src": "../RV523_MOSFETS.v:4.1-12.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:6.11-6.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:8.11-8.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:10.11-10.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "blackbox": "00000000000000000000000000000001",
+        "value": "PMOS",
+        "src": "../RV523_MOSFETS.v:17.1-25.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:23.11-23.12"
+          }
+        }
+      }
+    },
+    "SRAM_CELL": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "SRAM_CELL.v:2.1-46.10"
+      },
+      "ports": {
+        "WL": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "BL": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "BLB": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SRAM_CELL.v:13.16-17.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 5 ],
+            "G": [ 6 ],
+            "S": [ "0" ]
+          }
+        },
+        "N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SRAM_CELL.v:24.16-28.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 5 ],
+            "S": [ "0" ]
+          }
+        },
+        "N3": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SRAM_CELL.v:36.16-40.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 5 ],
+            "G": [ 2 ],
+            "S": [ 3 ]
+          }
+        },
+        "N4": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SRAM_CELL.v:41.16-45.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 2 ],
+            "S": [ 7 ]
+          }
+        },
+        "P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SRAM_CELL.v:18.16-22.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 5 ],
+            "G": [ 6 ],
+            "S": [ "1" ]
+          }
+        },
+        "P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "SRAM_CELL.v:29.16-33.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 5 ],
+            "S": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "BL": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "SRAM_CELL.v:4.11-4.13"
+          }
+        },
+        "BLB": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "SRAM_CELL.v:5.11-5.14"
+          }
+        },
+        "BL_B": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "SRAM_CELL.v:42.12-42.16",
+            "unused_bits": "0 "
+          }
+        },
+        "GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "SRAM_CELL.v:0.0-0.0"
+          }
+        },
+        "Q": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "SRAM_CELL.v:10.10-10.11",
+            "unused_bits": "0 "
+          }
+        },
+        "Q_N": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "SRAM_CELL.v:10.13-10.16",
+            "unused_bits": "0 "
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "SRAM_CELL.v:0.0-0.0"
+          }
+        },
+        "WL": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "SRAM_CELL.v:3.11-3.13"
+          }
+        }
+      }
+    }
+  }
+}
