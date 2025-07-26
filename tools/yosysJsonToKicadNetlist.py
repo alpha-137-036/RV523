@@ -100,6 +100,9 @@ with open(args.outputFilename, 'w') as output:
             output.write(f"   (comp (ref \"{cell['name']}\")\n")
             footprint = cellModule["attributes"]["footprint"]
             output.write(f"      (footprint \"{footprint}\")\n")
+            value = cellModule["attributes"].get("value")
+            if value:
+                output.write(f"      (value \"{value}\")\n")
             for pin, wireIDs in cell["connections"].items():
                 for wireIdx, wireID in enumerate(wireIDs):
                     if wireID == "x":
