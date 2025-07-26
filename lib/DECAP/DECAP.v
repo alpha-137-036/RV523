@@ -1,6 +1,7 @@
 
 (* blackbox *)
 (* footprint="Capacitor_SMD:C_0402_1005Metric" *)
+(* value="0.1u" *)
 module CAP(
     (* num="1" *)
     inout pin1,

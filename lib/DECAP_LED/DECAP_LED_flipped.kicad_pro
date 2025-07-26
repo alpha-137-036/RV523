@@ -230,7 +230,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "DECAP_flipped.kicad_pro",
+    "filename": "DECAP_LED_flipped.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -265,7 +265,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "DECAP_LED.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",

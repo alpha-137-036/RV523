@@ -2,6 +2,7 @@
 (components 
    (comp (ref "DECAP.C")
       (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (value "0.1u")
    )
    (comp (ref "L")
       (footprint "LED_SMD:LED_0402_1005Metric")

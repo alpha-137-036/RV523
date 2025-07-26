@@ -310,7 +310,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "0.1u"
 			(at 0 1.16 90)
 			(layer "F.Fab")
 			(hide yes)

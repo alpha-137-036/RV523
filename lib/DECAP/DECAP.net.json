@@ -3,9 +3,10 @@
   "modules": {
     "CAP": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "footprint": "Capacitor_SMD:C_0402_1005Metric",
-        "src": "DECAP.v:4.1-10.10"
+        "blackbox": "00000000000000000000000000000001",
+        "value": "0.1u",
+        "src": "DECAP.v:5.1-11.10"
       },
       "ports": {
         "pin1": {
@@ -25,7 +26,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "1 ",
-            "src": "DECAP.v:6.11-6.15"
+            "src": "DECAP.v:7.11-7.15"
           }
         },
         "pin2": {
@@ -33,7 +34,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "2",
-            "src": "DECAP.v:8.11-8.15"
+            "src": "DECAP.v:9.11-9.15"
           }
         }
       }
@@ -41,7 +42,7 @@
     "DECAP": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "DECAP.v:12.1-18.10"
+        "src": "DECAP.v:13.1-19.10"
       },
       "ports": {
       },
@@ -54,7 +55,7 @@
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "DECAP.v:17.9-17.34"
+            "src": "DECAP.v:18.9-18.34"
           },
           "port_directions": {
             "pin1": "inout",

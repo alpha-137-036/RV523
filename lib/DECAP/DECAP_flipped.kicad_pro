@@ -265,7 +265,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "DECAP.net",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",

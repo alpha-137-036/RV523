@@ -98,7 +98,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "0.1u"
 			(at 0 1.16 90)
 			(layer "F.Fab")
 			(uuid "7cdd3e07-3ba8-4dde-ba61-d5ddcec8c83a")
