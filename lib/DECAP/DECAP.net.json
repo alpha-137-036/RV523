@@ -1,5 +1,5 @@
 {
-  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
     "CAP": {
       "attributes": {
