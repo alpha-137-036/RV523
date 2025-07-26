@@ -149,3 +149,20 @@ module DECAP_LED (
     input A,
     inout LED_GND);
 endmodule
+
+(* techmap_celltype = "D_LATCH" *)
+(* blackbox *)
+(* footprint = "RV523:D_LATCH" *)
+module D_LATCH (
+    input D,
+    input CLK,
+    input nCLK,
+    output nQ,
+    output Q);
+
+    always_latch begin
+        if (CLK && !nCLK) begin
+            Q = D;
+        end
+    end
+endmodule
