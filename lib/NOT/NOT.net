@@ -2,9 +2,11 @@
 (components 
    (comp (ref "N1")
       (footprint "Package_TO_SOT_SMD:SOT-523")
+      (value "NMOS")
    )
    (comp (ref "P1")
       (footprint "Package_TO_SOT_SMD:SOT-523")
+      (value "PMOS")
    )
 )
 (nets

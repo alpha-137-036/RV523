@@ -1,5 +1,5 @@
 {
-  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
     "AOI211": {
       "attributes": {
@@ -269,9 +269,10 @@
     },
     "RV523_NMOS": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "footprint": "Package_TO_SOT_SMD:SOT-523",
-        "src": "../RV523_MOSFETS.v:3.1-11.10"
+        "blackbox": "00000000000000000000000000000001",
+        "value": "NMOS",
+        "src": "../RV523_MOSFETS.v:4.1-12.10"
       },
       "ports": {
         "D": {
@@ -295,7 +296,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "3",
-            "src": "../RV523_MOSFETS.v:5.11-5.12"
+            "src": "../RV523_MOSFETS.v:6.11-6.12"
           }
         },
         "G": {
@@ -303,7 +304,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "1 ",
-            "src": "../RV523_MOSFETS.v:7.11-7.12"
+            "src": "../RV523_MOSFETS.v:8.11-8.12"
           }
         },
         "S": {
@@ -311,16 +312,17 @@
           "bits": [ 4 ],
           "attributes": {
             "num": "2",
-            "src": "../RV523_MOSFETS.v:9.11-9.12"
+            "src": "../RV523_MOSFETS.v:10.11-10.12"
           }
         }
       }
     },
     "RV523_PMOS": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "footprint": "Package_TO_SOT_SMD:SOT-523",
-        "src": "../RV523_MOSFETS.v:15.1-23.10"
+        "blackbox": "00000000000000000000000000000001",
+        "value": "PMOS",
+        "src": "../RV523_MOSFETS.v:17.1-25.10"
       },
       "ports": {
         "D": {
@@ -344,7 +346,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "3",
-            "src": "../RV523_MOSFETS.v:17.11-17.12"
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
           }
         },
         "G": {
@@ -352,7 +354,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "1 ",
-            "src": "../RV523_MOSFETS.v:19.11-19.12"
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
           }
         },
         "S": {
@@ -360,7 +362,7 @@
           "bits": [ 4 ],
           "attributes": {
             "num": "2",
-            "src": "../RV523_MOSFETS.v:21.11-21.12"
+            "src": "../RV523_MOSFETS.v:23.11-23.12"
           }
         }
       }
