@@ -116,3 +116,17 @@ endmodule
 module OAI211 (output Y, input A, input B, input C1, input C2);
     assign Y = ~(A & B & (C1 | C2));
 endmodule
+
+(* techmap_celltype = "DECAP" *)
+(* blackbox *)
+(* footprint = "RV523:DECAP" *)
+module DECAP ();
+endmodule
+
+(* techmap_celltype = "DECAP_LED" *)
+(* blackbox *)
+(* footprint = "RV523:DECAP_LED" *)
+module DECAP_LED (
+    input A,
+    inout LED_GND);
+endmodule

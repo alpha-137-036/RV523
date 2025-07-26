@@ -33,6 +33,30 @@ MACRO DECAP
   SITE CoreSite ;
 END DECAP
 
+MACRO DECAP_LED
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 2 BY 4 ;
+  SITE CoreSite ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 1.1 0.55 1.5 0.95 ;
+    END
+  END A
+
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER M1 ;
+      RECT 1.1 3.05 1.5 3.45 ;
+    END
+  END Y
+END DECAP_LED
+
 MACRO NOT
   CLASS CORE ;
   ORIGIN 0 0 ;

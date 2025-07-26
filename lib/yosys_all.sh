@@ -1,1 +1,1 @@
-for y in */*.ys; do (cd TINV && yosys TINV.ys ) ; done
+for y in */*.ys; do (cd $(dirname $y) && yosys $(basename $y) ) ; done
