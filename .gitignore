@@ -1,4 +1,6 @@
 **/__pycache__/
 env/
-/lib/*/fp-info-cache
-/lib/*/*.kicad_prl
+**/fp-info-cache
+**/*.kicad_prl
+**/*.kicad_*.lck
+**/*-backups
