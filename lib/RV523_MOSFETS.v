@@ -1,5 +1,6 @@
 (* blackbox *)
 (* footprint="Package_TO_SOT_SMD:SOT-523" *)
+(* value="NMOS" *)
 module RV523_NMOS(
     (* num="3" *)
     inout D,
@@ -12,6 +13,7 @@ endmodule
 
 (* blackbox *)
 (* footprint="Package_TO_SOT_SMD:SOT-523" *)
+(* value="PMOS" *)
 module RV523_PMOS(
     (* num="3" *)
     inout D,
