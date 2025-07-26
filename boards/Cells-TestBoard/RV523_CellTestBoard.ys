@@ -1,0 +1,8 @@
+read_verilog -sv RV523_CellTestBoard.sv ../../lib/RV523.v
+hierarchy -top RV523_CellTestBoard
+proc; opt; clean
+flatten
+splitnets -ports -driver
+flatten
+write_json RV523_CellTestBoard.net.json
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py RV523_CellTestBoard.net.json RV523_CellTestBoard.kicad.net

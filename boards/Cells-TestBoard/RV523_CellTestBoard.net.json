@@ -1,0 +1,1853 @@
+{
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "AND2": {
+      "attributes": {
+        "footprint": "RV523:AND2",
+        "techmap_celltype": "AND2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:18.1-20.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:18.30-18.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:18.40-18.42"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:18.21-18.22"
+          }
+        }
+      }
+    },
+    "AND3": {
+      "attributes": {
+        "footprint": "RV523:AND3",
+        "techmap_celltype": "AND3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:46.1-48.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.30-46.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.40-46.42"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.50-46.52"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:46.21-46.22"
+          }
+        }
+      }
+    },
+    "AOI21": {
+      "attributes": {
+        "footprint": "RV523:AOI21",
+        "techmap_celltype": "AOI21",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:81.1-83.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:81.31-81.32"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:81.40-81.42"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:81.50-81.52"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:81.22-81.23"
+          }
+        }
+      }
+    },
+    "AOI211": {
+      "attributes": {
+        "footprint": "RV523:AOI211",
+        "techmap_celltype": "AOI211",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:109.1-111.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "C2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:109.32-109.33"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:109.41-109.42"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:109.50-109.52"
+          }
+        },
+        "C2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:109.60-109.62"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:109.23-109.24"
+          }
+        }
+      }
+    },
+    "AOI22": {
+      "attributes": {
+        "footprint": "RV523:AOI22",
+        "techmap_celltype": "AOI22",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:95.1-97.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:95.31-95.33"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:95.41-95.43"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:95.51-95.53"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:95.61-95.63"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:95.22-95.23"
+          }
+        }
+      }
+    },
+    "DECAP": {
+      "attributes": {
+        "techmap_celltype": "DECAP",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:DECAP",
+        "src": "../../lib/RV523.v:123.1-124.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "DECAP_LED": {
+      "attributes": {
+        "footprint": "RV523:DECAP_LED",
+        "techmap_celltype": "DECAP_LED",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:129.1-132.10"
+      },
+      "ports": {
+        "A": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "LED_GND": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:130.11-130.12"
+          }
+        },
+        "LED_GND": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:131.11-131.18"
+          }
+        }
+      }
+    },
+    "NAND2": {
+      "attributes": {
+        "techmap_celltype": "NAND2",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:NAND2",
+        "src": "../../lib/RV523.v:11.1-13.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:11.31-11.33"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:11.41-11.43"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:11.22-11.23"
+          }
+        }
+      }
+    },
+    "NAND3": {
+      "attributes": {
+        "techmap_celltype": "NAND3",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:NAND3",
+        "src": "../../lib/RV523.v:39.1-41.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:39.31-39.33"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:39.41-39.43"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:39.51-39.53"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:39.22-39.23"
+          }
+        }
+      }
+    },
+    "NAND4": {
+      "attributes": {
+        "techmap_celltype": "NAND4",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:NAND4",
+        "src": "../../lib/RV523.v:67.1-69.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:67.31-67.33"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:67.41-67.43"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:67.51-67.53"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:67.61-67.63"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:67.22-67.23"
+          }
+        }
+      }
+    },
+    "NOR2": {
+      "attributes": {
+        "techmap_celltype": "NOR2",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:NOR2",
+        "src": "../../lib/RV523.v:25.1-27.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:25.30-25.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:25.40-25.42"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:25.21-25.22"
+          }
+        }
+      }
+    },
+    "NOR3": {
+      "attributes": {
+        "techmap_celltype": "NOR3",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:NOR3",
+        "src": "../../lib/RV523.v:53.1-55.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:53.30-53.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:53.40-53.42"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:53.50-53.52"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:53.21-53.22"
+          }
+        }
+      }
+    },
+    "NOR4": {
+      "attributes": {
+        "footprint": "RV523:NOR4",
+        "techmap_celltype": "NOR4",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:74.1-76.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:74.30-74.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:74.40-74.42"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:74.50-74.52"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:74.60-74.62"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:74.21-74.22"
+          }
+        }
+      }
+    },
+    "NOT": {
+      "attributes": {
+        "techmap_celltype": "NOT",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "RV523:NOT",
+        "src": "../../lib/RV523.v:4.1-6.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:4.29-4.30"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:4.20-4.21"
+          }
+        }
+      }
+    },
+    "OAI21": {
+      "attributes": {
+        "footprint": "RV523:OAI21",
+        "techmap_celltype": "OAI21",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:88.1-90.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:88.31-88.32"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:88.40-88.42"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:88.50-88.52"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:88.22-88.23"
+          }
+        }
+      }
+    },
+    "OAI211": {
+      "attributes": {
+        "footprint": "RV523:OAI211",
+        "techmap_celltype": "OAI211",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:116.1-118.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "C2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:116.32-116.33"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:116.41-116.42"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:116.50-116.52"
+          }
+        },
+        "C2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:116.60-116.62"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:116.23-116.24"
+          }
+        }
+      }
+    },
+    "OAI22": {
+      "attributes": {
+        "footprint": "RV523:OAI22",
+        "techmap_celltype": "OAI22",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:102.1-104.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:102.31-102.33"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:102.41-102.43"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:102.51-102.53"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:102.61-102.63"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:102.22-102.23"
+          }
+        }
+      }
+    },
+    "OR2": {
+      "attributes": {
+        "footprint": "RV523:OR2",
+        "techmap_celltype": "OR2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:32.1-34.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:32.29-32.31"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:32.39-32.41"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:32.20-32.21"
+          }
+        }
+      }
+    },
+    "OR3": {
+      "attributes": {
+        "footprint": "RV523:OR3",
+        "techmap_celltype": "OR3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523.v:60.1-62.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.29-60.31"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.39-60.41"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.49-60.51"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523.v:60.20-60.21"
+          }
+        }
+      }
+    },
+    "PinHeader2x32": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Connector_PinHeader_2.54mm:PinHeader_2x32_P2.54mm_Vertical",
+        "src": "RV523_CellTestBoard.sv:4.1-8.10"
+      },
+      "ports": {
+        "pins": {
+          "direction": "inout",
+          "offset": 1,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "pins": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
+          "offset": 1,
+          "attributes": {
+            "num": "64:1",
+            "src": "RV523_CellTestBoard.sv:6.18-6.22"
+          }
+        }
+      }
+    },
+    "RV523_CellTestBoard": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "RV523_CellTestBoard.sv:10.1-123.10"
+      },
+      "ports": {
+      },
+      "cells": {
+        "DECAP_1": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:19.11-19.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_2": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:38.11-38.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_3": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:50.11-50.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_4": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:62.11-62.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_5": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:74.11-74.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_6": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:86.11-86.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_7": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:100.11-100.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "DECAP_8": {
+          "hide_name": 0,
+          "type": "DECAP",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:114.11-114.20"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "J1": {
+          "hide_name": 0,
+          "type": "PinHeader2x32",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:16.19-16.36"
+          },
+          "port_directions": {
+            "pins": "inout"
+          },
+          "connections": {
+            "pins": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ]
+          }
+        },
+        "NAND2_1": {
+          "hide_name": 0,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:39.11-43.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 10 ],
+            "A2": [ 11 ],
+            "Y": [ 12 ]
+          }
+        },
+        "NAND2_2": {
+          "hide_name": 0,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:44.11-48.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 13 ],
+            "A2": [ 14 ],
+            "Y": [ 15 ]
+          }
+        },
+        "NAND2_3": {
+          "hide_name": 0,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:51.11-55.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 16 ],
+            "A2": [ 17 ],
+            "Y": [ 18 ]
+          }
+        },
+        "NAND2_4": {
+          "hide_name": 0,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:56.11-60.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 19 ],
+            "A2": [ 20 ],
+            "Y": [ 21 ]
+          }
+        },
+        "NAND3_1": {
+          "hide_name": 0,
+          "type": "NAND3",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:87.11-92.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 34 ],
+            "A2": [ 35 ],
+            "A3": [ 36 ],
+            "Y": [ 37 ]
+          }
+        },
+        "NAND3_2": {
+          "hide_name": 0,
+          "type": "NAND3",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:93.11-98.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 38 ],
+            "A2": [ 39 ],
+            "A3": [ 40 ],
+            "Y": [ 41 ]
+          }
+        },
+        "NAND4_1": {
+          "hide_name": 0,
+          "type": "NAND4",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:115.11-121.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "A4": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 50 ],
+            "A2": [ 51 ],
+            "A3": [ 52 ],
+            "A4": [ 53 ],
+            "Y": [ 54 ]
+          }
+        },
+        "NOR2_1": {
+          "hide_name": 0,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:63.10-67.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 22 ],
+            "A2": [ 23 ],
+            "Y": [ 24 ]
+          }
+        },
+        "NOR2_2": {
+          "hide_name": 0,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:68.10-72.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 25 ],
+            "A2": [ 26 ],
+            "Y": [ 27 ]
+          }
+        },
+        "NOR2_3": {
+          "hide_name": 0,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:75.10-79.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 28 ],
+            "A2": [ 29 ],
+            "Y": [ 30 ]
+          }
+        },
+        "NOR2_4": {
+          "hide_name": 0,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:80.10-84.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 31 ],
+            "A2": [ 32 ],
+            "Y": [ 33 ]
+          }
+        },
+        "NOR3_1": {
+          "hide_name": 0,
+          "type": "NOR3",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:101.10-106.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 42 ],
+            "A2": [ 43 ],
+            "A3": [ 44 ],
+            "Y": [ 45 ]
+          }
+        },
+        "NOR3_2": {
+          "hide_name": 0,
+          "type": "NOR3",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:107.10-112.6"
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 46 ],
+            "A2": [ 47 ],
+            "A3": [ 48 ],
+            "Y": [ 49 ]
+          }
+        },
+        "NOT_1": {
+          "hide_name": 0,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:20.9-23.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "Y": [ 3 ]
+          }
+        },
+        "NOT_2": {
+          "hide_name": 0,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:24.9-27.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "Y": [ 5 ]
+          }
+        },
+        "NOT_3": {
+          "hide_name": 0,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:28.9-31.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "Y": [ 7 ]
+          }
+        },
+        "NOT_4": {
+          "hide_name": 0,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "RV523_CellTestBoard.sv:32.9-35.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "Y": [ 9 ]
+          }
+        }
+      },
+      "netnames": {
+        "J1pins[10:9]": {
+          "hide_name": 0,
+          "bits": [ 10, 11 ],
+          "offset": 9,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[11]": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "offset": 11,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[13:12]": {
+          "hide_name": 0,
+          "bits": [ 13, 14 ],
+          "offset": 12,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[14]": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "offset": 14,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[16:15]": {
+          "hide_name": 0,
+          "bits": [ 16, 17 ],
+          "offset": 15,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[17]": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "offset": 17,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[19:18]": {
+          "hide_name": 0,
+          "bits": [ 19, 20 ],
+          "offset": 18,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[1]": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "offset": 1,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[20]": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "offset": 20,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[22:21]": {
+          "hide_name": 0,
+          "bits": [ 22, 23 ],
+          "offset": 21,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[23]": {
+          "hide_name": 0,
+          "bits": [ 24 ],
+          "offset": 23,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[25:24]": {
+          "hide_name": 0,
+          "bits": [ 25, 26 ],
+          "offset": 24,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[26]": {
+          "hide_name": 0,
+          "bits": [ 27 ],
+          "offset": 26,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[28:27]": {
+          "hide_name": 0,
+          "bits": [ 28, 29 ],
+          "offset": 27,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[29]": {
+          "hide_name": 0,
+          "bits": [ 30 ],
+          "offset": 29,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[2]": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "offset": 2,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[31:30]": {
+          "hide_name": 0,
+          "bits": [ 31, 32 ],
+          "offset": 30,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[32]": {
+          "hide_name": 0,
+          "bits": [ 33 ],
+          "offset": 32,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[35:33]": {
+          "hide_name": 0,
+          "bits": [ 34, 35, 36 ],
+          "offset": 33,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[36]": {
+          "hide_name": 0,
+          "bits": [ 37 ],
+          "offset": 36,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[39:37]": {
+          "hide_name": 0,
+          "bits": [ 38, 39, 40 ],
+          "offset": 37,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[3]": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "offset": 3,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[40]": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "offset": 40,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[43:41]": {
+          "hide_name": 0,
+          "bits": [ 42, 43, 44 ],
+          "offset": 41,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[44]": {
+          "hide_name": 0,
+          "bits": [ 45 ],
+          "offset": 44,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[47:45]": {
+          "hide_name": 0,
+          "bits": [ 46, 47, 48 ],
+          "offset": 45,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[48]": {
+          "hide_name": 0,
+          "bits": [ 49 ],
+          "offset": 48,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[4]": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "offset": 4,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[52:49]": {
+          "hide_name": 0,
+          "bits": [ 50, 51, 52, 53 ],
+          "offset": 49,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[53]": {
+          "hide_name": 0,
+          "bits": [ 54 ],
+          "offset": 53,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[5]": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "offset": 5,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[64:54]": {
+          "hide_name": 0,
+          "bits": [ 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
+          "offset": 54,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[6]": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "offset": 6,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[7]": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "offset": 7,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        },
+        "J1pins[8]": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "offset": 8,
+          "attributes": {
+            "src": "RV523_CellTestBoard.sv:12.16-12.22"
+          }
+        }
+      }
+    }
+  }
+}
