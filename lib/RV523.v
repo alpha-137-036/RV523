@@ -5,6 +5,25 @@ module NOT (output Y, input A);
     assign Y = ~A;
 endmodule
 
+(* techmap_celltype = "TINV" *)
+(* blackbox *)
+(* footprint = "RV523:TINV" *)
+module TINV (
+    output Y, 
+    input  A,
+    input  EN,
+    input  nEN);
+
+    always_comb begin
+        if (EN && !nEN) begin
+            Y <= !A;
+        end
+        if (EN && nEN) begin
+            Y <= 'X;
+        end
+    end
+endmodule
+
 (* techmap_celltype = "NAND2" *)
 (* blackbox *)
 (* footprint = "RV523:NAND2" *)
