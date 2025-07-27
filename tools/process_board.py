@@ -33,7 +33,9 @@ class KicadObject:
 
     def item(self, i):
         return self.__items[i]
-    
+    def setItem(self, i, value):
+        self.__items[i] = value
+
     # Mark this object as deleted, in which case it won't get returned by the iterator
     def delete(self):
         self.__deleted = True
@@ -209,6 +211,11 @@ def processCellFootprint(cellFootprint):
             pos.shift(cellFootprint.at[0])
         for pad in footprint.pad:
             rewriteNetRef(pad)
+        # rewrite footprint reference to make it unique in the outer board
+        for prop in footprint.property:
+            if prop.item(1) == "Reference":
+                prop.setItem(2, cellRef + "." + prop.item(2))
+
         inputBoard.append(footprint)
     for segment in cellBoard.segment:
         for pos in segment.start:
