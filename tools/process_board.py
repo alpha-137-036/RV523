@@ -53,7 +53,7 @@ class KicadObject:
             for item in self.__items:
                 if type(item) is KicadObject:
                     self.__itemsByName.setdefault(item.kclass, []).append(item) 
-        return self.__itemsByName[name]
+        return self.__itemsByName.get(name, [])
 
     def __getattr__(self, name):
         return self.getAttributeByName(name)

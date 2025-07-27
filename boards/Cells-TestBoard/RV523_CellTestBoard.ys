@@ -1,4 +1,4 @@
-read_verilog -sv RV523_CellTestBoard.sv ../../lib/RV523.v
+read_verilog -sv RV523_CellTestBoard.sv ../../lib/RV523.v ../../lib/RV523_MOSFETS.v
 hierarchy -top RV523_CellTestBoard
 proc; opt; clean
 flatten
