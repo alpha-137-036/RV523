@@ -1,17 +1,16 @@
 * Main ngspice simulation file
 
+.include "../RV523_global.sp"
 .include "AOI211.ckt"
 .include "pwl_Inputs.sp"
 
-.global VDD
-
-VDD VDD 0 3.3
+VDD VDD 0 {vdd}
 
 * Load capacitor on output
 Cload Y 0 30p
 
 * Instantiate gate
-XU1 Y A B C1 C2 AOI211
+XU1 Y A B C1 C2 VDD 0 AOI211
 
 .TRAN 0.1ns 48200ns
 

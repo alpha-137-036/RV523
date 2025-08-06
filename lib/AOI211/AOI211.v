@@ -1,4 +1,3 @@
-(* pins = "-,A,-,B,-,C1,-,C2,Y" *)
 module AOI211(
     output Y,
     input A,
