@@ -164,18 +164,17 @@ with open(args.outputFilename, 'w') as output:
 if args.spice:
     print(f"Writing {args.spice}")
     with open(args.spice, "w") as output:
-        output.write(".inc \"../RV523_NMOS.ckt\"\n")
-        output.write(".inc \"../RV523_PMOS.ckt\"\n")
         output.write(f".subckt {topModule['name']}")
         for portName in topModule["ports"]:
             output.write(f" {portName}")
+        output.write(" VDD VSS")
         output.write("\n")
         for cell in cells:
             output.write(f" X{cell['name']}")
             for pinNumber in sorted(cell["pins"]):
                 netName = cell["pins"][pinNumber]["name"]
                 if netName == "GND":
-                    netName = 0
+                    netName = "VSS"
                 output.write(f" {netName}")
             output.write(f" {cell['type']}\n")
 
