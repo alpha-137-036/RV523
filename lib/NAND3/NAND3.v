@@ -1,4 +1,3 @@
-(* pins="-,A,-,B,-,C,Y" *)
 module NAND3(
     output Y,
     input A1,
