@@ -3,7 +3,7 @@
   "modules": {
     "RV523_NMOS": {
       "attributes": {
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
         "value": "NMOS",
         "src": "../RV523_MOSFETS.v:4.1-12.10"
@@ -53,7 +53,7 @@
     },
     "RV523_PMOS": {
       "attributes": {
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
         "value": "PMOS",
         "src": "../RV523_MOSFETS.v:17.1-25.10"
