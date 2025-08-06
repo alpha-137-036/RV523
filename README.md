@@ -1,2 +1,3 @@
-# RV74
-An implementation of RV32I using elementary logic gates (74xx series)
+# RV523
+An implementation of a Risc-V CPU using only discrete transistors in SOT-523 packages.
+
