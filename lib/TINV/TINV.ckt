@@ -1,7 +1,5 @@
-.inc "../RV523_NMOS.ckt"
-.inc "../RV523_PMOS.ckt"
-.subckt TINV Y A EN nEN
- XN1 A 0 intN RV523_NMOS
+.subckt TINV Y A EN nEN VDD VSS
+ XN1 A VSS intN RV523_NMOS
  XN2 EN intN Y RV523_NMOS
  XP1 A VDD intP RV523_PMOS
  XP2 nEN intP Y RV523_PMOS
