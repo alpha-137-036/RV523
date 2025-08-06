@@ -1,4 +1,3 @@
-(* pins = "-,A,Y" *)
 module NOT(
     output Y,
     input A

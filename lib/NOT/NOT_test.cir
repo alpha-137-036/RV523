@@ -1,17 +1,16 @@
 * Main ngspice simulation file
 
+.include "../RV523_global.sp"
 .include "NOT.ckt"
 .include "pwl_Inputs.sp"
 
-.global VDD
-
-VDD VDD 0 3.3
+VDD VDD 0 {vdd}
 
 * Load capacitor on output
 Cload Y 0 30p
 
 * Instantiate cell
-XU1 Y A NOT
+XU1 Y A VDD 0 NOT
 
 .TRAN 0.1ns 600ns
 
