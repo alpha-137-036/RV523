@@ -1,7 +1,6 @@
 # generate_3bit_pwl.py
 # Generates PWL waveforms for N inputs covering every possible transitions
 
-VDD = 3.3
 transition_time = 30 # nanoseconds per transition
 cycle_time = 200 # nanoseconds per cycle
 
@@ -16,7 +15,7 @@ def generateInputSequence(n):
     return sequence
 
 def pwl_entry(signal, time, value):
-    return f"{time:.1f}n {VDD if value else 0.0:.1f}V"
+    return f"{time:.1f}n {'{vdd}' if value else '0V'}"
 
 def build_pwl(inputNames):
     entries = [[] for input in inputNames]
