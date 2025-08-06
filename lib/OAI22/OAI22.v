@@ -1,4 +1,3 @@
-(* pins = "-,A1,-,A2,-,B1,-,B2,Y" *)
 module OAI22(
     output Y,
     input A1,
