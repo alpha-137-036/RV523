@@ -3,9 +3,8 @@
   "modules": {
     "NAND2": {
       "attributes": {
-        "pins": "A1,-,A2,Y",
         "top": "00000000000000000000000000000001",
-        "src": "NAND2.v:2.1-31.10"
+        "src": "NAND2.v:1.1-30.10"
       },
       "ports": {
         "Y": {
@@ -29,7 +28,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND2.v:11.16-15.6"
+            "src": "NAND2.v:10.16-14.6"
           },
           "port_directions": {
             "D": "inout",
@@ -49,7 +48,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND2.v:16.16-20.6"
+            "src": "NAND2.v:15.16-19.6"
           },
           "port_directions": {
             "D": "inout",
@@ -69,7 +68,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND2.v:21.16-25.6"
+            "src": "NAND2.v:20.16-24.6"
           },
           "port_directions": {
             "D": "inout",
@@ -89,7 +88,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NAND2.v:26.16-30.6"
+            "src": "NAND2.v:25.16-29.6"
           },
           "port_directions": {
             "D": "inout",
@@ -108,14 +107,14 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "NAND2.v:4.11-4.13"
+            "src": "NAND2.v:3.11-3.13"
           }
         },
         "A2": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "NAND2.v:5.11-5.13"
+            "src": "NAND2.v:4.11-4.13"
           }
         },
         "GND": {
@@ -136,14 +135,14 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "NAND2.v:3.12-3.13"
+            "src": "NAND2.v:2.12-2.13"
           }
         },
         "int1": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "NAND2.v:9.10-9.14",
+            "src": "NAND2.v:8.10-8.14",
             "unused_bits": "0 "
           }
         }
@@ -151,7 +150,7 @@
     },
     "RV523_NMOS": {
       "attributes": {
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
         "value": "NMOS",
         "src": "../RV523_MOSFETS.v:4.1-12.10"
@@ -201,7 +200,7 @@
     },
     "RV523_PMOS": {
       "attributes": {
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
         "value": "PMOS",
         "src": "../RV523_MOSFETS.v:17.1-25.10"
