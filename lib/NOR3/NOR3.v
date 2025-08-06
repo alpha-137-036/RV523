@@ -1,4 +1,3 @@
-(* pins="A1,-,A2,-,A3,Y" *)
 module NOR3(
     output Y,
     input A1,

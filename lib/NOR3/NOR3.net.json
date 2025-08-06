@@ -3,9 +3,8 @@
   "modules": {
     "NOR3": {
       "attributes": {
-        "pins": "A1,-,A2,-,A3,Y",
         "top": "00000000000000000000000000000001",
-        "src": "NOR3.v:2.1-42.10"
+        "src": "NOR3.v:1.1-41.10"
       },
       "ports": {
         "Y": {
@@ -33,7 +32,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOR3.v:12.16-16.6"
+            "src": "NOR3.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -53,7 +52,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOR3.v:17.16-21.6"
+            "src": "NOR3.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -73,7 +72,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOR3.v:22.16-26.6"
+            "src": "NOR3.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -93,7 +92,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOR3.v:27.16-31.6"
+            "src": "NOR3.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -113,7 +112,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOR3.v:32.16-36.6"
+            "src": "NOR3.v:31.16-35.6"
           },
           "port_directions": {
             "D": "inout",
@@ -133,7 +132,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "NOR3.v:37.16-41.6"
+            "src": "NOR3.v:36.16-40.6"
           },
           "port_directions": {
             "D": "inout",
@@ -152,21 +151,21 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "NOR3.v:4.11-4.13"
+            "src": "NOR3.v:3.11-3.13"
           }
         },
         "A2": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "NOR3.v:5.11-5.13"
+            "src": "NOR3.v:4.11-4.13"
           }
         },
         "A3": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "NOR3.v:6.11-6.13"
+            "src": "NOR3.v:5.11-5.13"
           }
         },
         "GND": {
@@ -187,14 +186,14 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "NOR3.v:3.12-3.13"
+            "src": "NOR3.v:2.12-2.13"
           }
         },
         "int1": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "NOR3.v:10.10-10.14",
+            "src": "NOR3.v:9.10-9.14",
             "unused_bits": "0 "
           }
         },
@@ -202,7 +201,7 @@
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "NOR3.v:10.16-10.20",
+            "src": "NOR3.v:9.16-9.20",
             "unused_bits": "0 "
           }
         }
@@ -210,7 +209,7 @@
     },
     "RV523_NMOS": {
       "attributes": {
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
         "value": "NMOS",
         "src": "../RV523_MOSFETS.v:4.1-12.10"
@@ -260,7 +259,7 @@
     },
     "RV523_PMOS": {
       "attributes": {
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
         "value": "PMOS",
         "src": "../RV523_MOSFETS.v:17.1-25.10"
