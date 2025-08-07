@@ -23,7 +23,7 @@ library (RV523) {
 
   /* Operating Conditions */
   nom_process : 1;
-  nom_voltage : 3.3;
+  nom_voltage : 5;
   nom_temperature : 25;
 
   /* Table Templates */
@@ -44,14 +44,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A) {
       direction : input;
@@ -210,14 +202,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A1) {
       direction : input;
@@ -424,14 +408,6 @@ library (RV523) {
       voltage_name : VSS;
       pg_type : primary_ground;
     }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
-    }
     pin (A) {
       direction : input;
       capacitance : 49.182771;
@@ -637,14 +613,6 @@ library (RV523) {
       voltage_name : VSS;
       pg_type : primary_ground;
     }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
-    }
     pin (A1) {
       direction : input;
       capacitance : 49.812366;
@@ -755,14 +723,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A1) {
       direction : input;
@@ -921,14 +881,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A1) {
       direction : input;
@@ -1135,14 +1087,6 @@ library (RV523) {
       voltage_name : VSS;
       pg_type : primary_ground;
     }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
-    }
     pin (A1) {
       direction : input;
       capacitance : 49.183898;
@@ -1253,14 +1197,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A1) {
       direction : input;
@@ -1419,14 +1355,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A1) {
       direction : input;
@@ -1633,14 +1561,6 @@ library (RV523) {
       voltage_name : VSS;
       pg_type : primary_ground;
     }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
-    }
     pin (A) {
       direction : input;
       capacitance : 49.185567;
@@ -1704,14 +1624,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A) {
       direction : input;
@@ -1870,14 +1782,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A1) {
       direction : input;
@@ -2083,14 +1987,6 @@ library (RV523) {
     pg_pin (VSS) {
       voltage_name : VSS;
       pg_type : primary_ground;
-    }
-    pg_pin (VPW) {
-      voltage_name : VPW;
-      pg_type : pwell;
-    }
-    pg_pin (VNW) {
-      voltage_name : VNW;
-      pg_type : nwell;
     }
     pin (A) {
       direction : input;
