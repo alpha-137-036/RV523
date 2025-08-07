@@ -34,6 +34,12 @@ library (RV523) {
     index_2 ("50, 100, 150, 300, 500");
   }
 
+    cell(BUF) {
+      area: 4;
+      pin(A) { direction: input; }
+      pin(Y) { direction: output; function: "A"; }
+    }
+
   /* AOI21 */
   cell (AOI21) {
     area : 6;
