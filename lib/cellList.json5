@@ -1,0 +1,21 @@
+[
+    "NOT",
+    "TINV",
+    "NAND2",
+    "NAND3",
+    "NAND4",
+    "NOR2",
+    "NOR3",
+    "NOR4",
+    "AOI21",
+    "AOI22",
+    "AOI211",
+    "OAI21",
+    "OAI22",
+    "OAI211",
+    "D_LATCH",
+    "D_LATCH_DUAL_READ_PORT",
+    "D_FLIP_FLOP",
+    "DECAP",
+    "DECAP_LED"
+]
