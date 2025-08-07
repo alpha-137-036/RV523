@@ -1,5 +1,0 @@
-read_verilog -sv SR_LATCH.v ../RV523_MOSFETS.v
-prep -top SR_LATCH
-flatten
-write_json SR_LATCH.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py SR_LATCH.net.json SR_LATCH.net --spice SR_LATCH.ckt

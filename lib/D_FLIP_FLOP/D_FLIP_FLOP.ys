@@ -1,5 +1,0 @@
-read_verilog -sv D_FLIP_FLOP.v ../RV523_MOSFETS.v
-prep -top D_FLIP_FLOP
-flatten
-write_json D_FLIP_FLOP.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py D_FLIP_FLOP.net.json D_FLIP_FLOP.net --spice D_FLIP_FLOP.ckt

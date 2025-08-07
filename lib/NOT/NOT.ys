@@ -1,5 +1,0 @@
-read_verilog -sv NOT.v ../RV523_MOSFETS.v
-prep -top NOT
-flatten
-write_json NOT.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py NOT.net.json NOT.net --spice NOT.ckt

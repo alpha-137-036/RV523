@@ -210,6 +210,108 @@
         }
       }
     },
+    "RV523_NMOS": {
+      "attributes": {
+        "value": "NMOS",
+        "footprint": "RV523:SOT523",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:4.1-12.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:6.11-6.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:8.11-8.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:10.11-10.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "value": "PMOS",
+        "footprint": "RV523:SOT523",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:17.1-25.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:23.11-23.12"
+          }
+        }
+      }
+    },
     "Resistor_330": {
       "attributes": {
         "footprint": "Resistor_SMD:R_0402_1005Metric",

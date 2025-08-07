@@ -6,4 +6,15 @@ with open("cellList.json5") as f:
 
 for cellName in cellList:
     print(f"================================= {cellName}")
-    subprocess.run(cwd=cellName, args=["yosys", cellName + ".ys"])
+    yosysScript = f"""
+        read_verilog -sv {cellName}.v ../RV523_MOSFETS.v
+        prep -top {cellName}
+        flatten
+        write_json {cellName}.net.json
+        exec -- python3 ../../tools/yosysJsonToKicadNetlist.py {cellName}.net.json {cellName}.net --spice {cellName}.ckt        
+    """
+    subprocess.run(cwd=cellName, args=[
+        "yosys", 
+        "-p",
+        yosysScript
+    ])

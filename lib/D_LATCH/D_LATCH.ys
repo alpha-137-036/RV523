@@ -1,5 +1,0 @@
-read_verilog -sv D_LATCH.v ../RV523_MOSFETS.v
-prep -top D_LATCH
-flatten
-write_json D_LATCH.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py D_LATCH.net.json D_LATCH.net --spice D_LATCH.ckt

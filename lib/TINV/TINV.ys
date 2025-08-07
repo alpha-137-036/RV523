@@ -1,5 +1,0 @@
-read_verilog -sv TINV.v ../RV523_MOSFETS.v
-prep -top TINV
-flatten
-write_json TINV.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py TINV.net.json TINV.net --spice TINV.ckt

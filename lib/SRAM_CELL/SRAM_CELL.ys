@@ -1,5 +1,0 @@
-read_verilog -sv SRAM_CELL.v ../RV523_MOSFETS.v
-prep -top SRAM_CELL
-flatten
-write_json SRAM_CELL.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py SRAM_CELL.net.json SRAM_CELL.net

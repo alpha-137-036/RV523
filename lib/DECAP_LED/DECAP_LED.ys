@@ -1,5 +1,0 @@
-read_verilog -sv DECAP_LED.v
-prep -top DECAP_LED
-flatten
-write_json DECAP_LED.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py DECAP_LED.net.json DECAP_LED.net

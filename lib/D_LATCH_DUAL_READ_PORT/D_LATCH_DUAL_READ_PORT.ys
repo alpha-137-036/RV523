@@ -1,5 +1,0 @@
-read_verilog -sv D_LATCH_DUAL_READ_PORT.v ../RV523_MOSFETS.v
-prep -top D_LATCH_DUAL_READ_PORT
-flatten
-write_json D_LATCH_DUAL_READ_PORT.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py D_LATCH_DUAL_READ_PORT.net.json D_LATCH_DUAL_READ_PORT.net --spice D_LATCH_DUAL_READ_PORT.ckt

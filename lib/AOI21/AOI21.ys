@@ -1,5 +1,0 @@
-read_verilog -sv AOI21.v ../RV523_MOSFETS.v
-prep -top AOI21
-flatten
-write_json AOI21.net.json
-exec -- python3 ../../tools/yosysJsonToKicadNetlist.py AOI21.net.json AOI21.net --spice AOI21.ckt
