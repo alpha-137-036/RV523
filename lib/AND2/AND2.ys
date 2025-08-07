@@ -1,0 +1,5 @@
+read_verilog -sv AND2.v ../RV523_MOSFETS.v
+prep -top AND2
+flatten
+write_json AND2.net.json
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py AND2.net.json AND2.net --spice AND2.ckt
