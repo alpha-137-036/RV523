@@ -1,4 +1,4 @@
-read_verilog -sv alu8.sv ../../lib/RV523.v
+read_verilog -sv alu8.sv ../../lib/RV523_blackbox.v
 
 synth -top adder
 flatten
@@ -9,7 +9,7 @@ techmap;
 synth
 dfflibmap -liberty ../../lib/RV523.lib
 abc -liberty ../../lib/RV523.lib
-techmap -map ../../lib/RV523.v
+techmap -map ../../lib/RV523_blackbox.v
 
 
 stat -liberty ../../lib/RV523.lib

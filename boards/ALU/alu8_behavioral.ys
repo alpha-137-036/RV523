@@ -1,4 +1,4 @@
-read_verilog -sv alu8_behavioral.sv ../../lib/RV523.v
+read_verilog -sv alu8_behavioral.sv
 
 hierarchy -top adder
 
@@ -22,15 +22,22 @@ techmap;
 synth
 dfflibmap -liberty ../../lib/RV523.lib
 abc -liberty ../../lib/RV523.lib
-techmap -map ../../lib/RV523.v
+techmap -map ../../lib/RV523_blackbox.v
 
 #functional reduction
 freduce;
 opt_clean;
+opt_merge;
 
 check
 
 stat -liberty ../../lib/RV523.lib
 
-write_verilog alu8_behavioral_synthesized.v
+# TODO: track original name in an attribute
+
+rename -enumerate  *
+
+write_verilog -norename -v alu8_behavioral_synthesized.v
 write_json alu8_behavioral_synthesized.net.json
+
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py alu8_behavioral_synthesized.net.json alu8_behavioral_synthesized.kicad.net
