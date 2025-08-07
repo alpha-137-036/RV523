@@ -1,3 +1,4 @@
+`include "../DECAP/DECAP.v"
 
 (* blackbox *)
 (* footprint="Resistor_SMD:R_0402_1005Metric" *)

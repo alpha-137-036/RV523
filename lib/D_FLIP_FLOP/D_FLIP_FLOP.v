@@ -1,21 +1,23 @@
+`include "../D_LATCH/D_LATCH.v"
+
 module D_FLIP_FLOP(
     output Q,
     output nQ,
     input D,
-    input EN,
-    input nEN
+    input CLK,
+    input nCLK
 );
     wire Q1;
     D_LATCH master(
         .D(D),
-        .EN(nEN),
-        .nEN(EN),
+        .CLK(nCLK),
+        .nCLK(CLK),
         .Q(Q1)
     );
     D_LATCH slave(
         .D(Q1),
-        .EN(EN),
-        .nEN(nEN),
+        .CLK(CLK),
+        .nCLK(nCLK),
         .Q(Q),
         .nQ(nQ)
     );

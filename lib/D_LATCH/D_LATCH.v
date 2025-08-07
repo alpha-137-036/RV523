@@ -1,3 +1,5 @@
+`include "../NOT/NOT.v"
+`include "../TINV/TINV.v"
 
 // Elementary D-LATCH with complementary CLK enable inputs
 module D_LATCH(

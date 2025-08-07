@@ -1,24 +1,22 @@
-.inc "../RV523_NMOS.ckt"
-.inc "../RV523_PMOS.ckt"
-.subckt D_FLIP_FLOP Q nQ D EN nEN
- Xmaster.NOT1.N1 D 0 master.NOT1.intN RV523_NMOS
- Xmaster.NOT1.N2 nEN master.NOT1.intN master.NOT1.Y RV523_NMOS
+.subckt D_FLIP_FLOP Q nQ D CLK nCLK VDD VSS
+ Xmaster.NOT1.N1 D VSS master.NOT1.intN RV523_NMOS
+ Xmaster.NOT1.N2 nCLK master.NOT1.intN master.NOT1.Y RV523_NMOS
  Xmaster.NOT1.P1 D VDD master.NOT1.intP RV523_PMOS
- Xmaster.NOT1.P2 EN master.NOT1.intP master.NOT1.Y RV523_PMOS
- Xmaster.NOT2.N1 master.NOT1.Y 0 Q1 RV523_NMOS
+ Xmaster.NOT1.P2 CLK master.NOT1.intP master.NOT1.Y RV523_PMOS
+ Xmaster.NOT2.N1 master.NOT1.Y VSS Q1 RV523_NMOS
  Xmaster.NOT2.P1 master.NOT1.Y VDD Q1 RV523_PMOS
- Xmaster.NOT3.N1 Q1 0 master.NOT3.intN RV523_NMOS
- Xmaster.NOT3.N2 EN master.NOT3.intN master.NOT1.Y RV523_NMOS
+ Xmaster.NOT3.N1 Q1 VSS master.NOT3.intN RV523_NMOS
+ Xmaster.NOT3.N2 CLK master.NOT3.intN master.NOT1.Y RV523_NMOS
  Xmaster.NOT3.P1 Q1 VDD master.NOT3.intP RV523_PMOS
- Xmaster.NOT3.P2 nEN master.NOT3.intP master.NOT1.Y RV523_PMOS
- Xslave.NOT1.N1 Q1 0 slave.NOT1.intN RV523_NMOS
- Xslave.NOT1.N2 EN slave.NOT1.intN nQ RV523_NMOS
+ Xmaster.NOT3.P2 nCLK master.NOT3.intP master.NOT1.Y RV523_PMOS
+ Xslave.NOT1.N1 Q1 VSS slave.NOT1.intN RV523_NMOS
+ Xslave.NOT1.N2 CLK slave.NOT1.intN nQ RV523_NMOS
  Xslave.NOT1.P1 Q1 VDD slave.NOT1.intP RV523_PMOS
- Xslave.NOT1.P2 nEN slave.NOT1.intP nQ RV523_PMOS
- Xslave.NOT2.N1 nQ 0 Q RV523_NMOS
+ Xslave.NOT1.P2 nCLK slave.NOT1.intP nQ RV523_PMOS
+ Xslave.NOT2.N1 nQ VSS Q RV523_NMOS
  Xslave.NOT2.P1 nQ VDD Q RV523_PMOS
- Xslave.NOT3.N1 Q 0 slave.NOT3.intN RV523_NMOS
- Xslave.NOT3.N2 nEN slave.NOT3.intN nQ RV523_NMOS
+ Xslave.NOT3.N1 Q VSS slave.NOT3.intN RV523_NMOS
+ Xslave.NOT3.N2 nCLK slave.NOT3.intN nQ RV523_NMOS
  Xslave.NOT3.P1 Q VDD slave.NOT3.intP RV523_PMOS
- Xslave.NOT3.P2 EN slave.NOT3.intP nQ RV523_PMOS
+ Xslave.NOT3.P2 CLK slave.NOT3.intP nQ RV523_PMOS
 .ends

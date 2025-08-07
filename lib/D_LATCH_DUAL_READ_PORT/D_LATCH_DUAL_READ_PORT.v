@@ -1,3 +1,4 @@
+`include "../D_LATCH/D_LATCH.v"
 
 // Elementary D-LATCH with complementary CLK inputs
 // and two tristate read ports

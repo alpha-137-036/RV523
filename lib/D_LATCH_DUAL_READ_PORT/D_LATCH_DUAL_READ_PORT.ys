@@ -1,4 +1,4 @@
-read_verilog -sv D_LATCH_DUAL_READ_PORT.v ../NOT/NOT.v ../TINV/TINV.v ../D_LATCH/D_LATCH.v ../RV523_MOSFETS.v
+read_verilog -sv D_LATCH_DUAL_READ_PORT.v ../RV523_MOSFETS.v
 prep -top D_LATCH_DUAL_READ_PORT
 flatten
 write_json D_LATCH_DUAL_READ_PORT.net.json

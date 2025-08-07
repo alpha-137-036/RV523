@@ -4,7 +4,7 @@
     "D_LATCH": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "D_LATCH.v:3.1-29.10"
+        "src": "D_LATCH.v:5.1-31.10"
       },
       "ports": {
         "Q": {
@@ -37,7 +37,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "D_LATCH.v:13.10-18.6",
+            "cell_src": "D_LATCH.v:15.10-20.6",
             "module": "TINV",
             "module_src": "../TINV/TINV.v:2.1-31.10"
           },
@@ -138,7 +138,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "D_LATCH.v:19.9-22.6",
+            "cell_src": "D_LATCH.v:21.9-24.6",
             "module": "NOT",
             "module_src": "../NOT/NOT.v:1.1-18.10"
           },
@@ -197,7 +197,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "D_LATCH.v:23.10-28.6",
+            "cell_src": "D_LATCH.v:25.10-30.6",
             "module": "TINV",
             "module_src": "../TINV/TINV.v:2.1-31.10"
           },
@@ -296,14 +296,14 @@
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "D_LATCH.v:7.11-7.14"
+            "src": "D_LATCH.v:9.11-9.14"
           }
         },
         "D": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "D_LATCH.v:6.11-6.12"
+            "src": "D_LATCH.v:8.11-8.12"
           }
         },
         "GND": {
@@ -481,7 +481,7 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "D_LATCH.v:4.12-4.13"
+            "src": "D_LATCH.v:6.12-6.13"
           }
         },
         "VDD": {
@@ -495,14 +495,14 @@
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "D_LATCH.v:8.11-8.15"
+            "src": "D_LATCH.v:10.11-10.15"
           }
         },
         "nQ": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "D_LATCH.v:5.12-5.14"
+            "src": "D_LATCH.v:7.12-7.14"
           }
         }
       }

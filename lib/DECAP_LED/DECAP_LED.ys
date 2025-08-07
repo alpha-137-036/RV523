@@ -1,4 +1,4 @@
-read_verilog -sv DECAP_LED.v ../DECAP/DECAP.v
+read_verilog -sv DECAP_LED.v
 prep -top DECAP_LED
 flatten
 write_json DECAP_LED.net.json

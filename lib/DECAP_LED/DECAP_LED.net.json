@@ -42,7 +42,7 @@
     "DECAP_LED": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "DECAP_LED.v:25.1-36.10"
+        "src": "DECAP_LED.v:26.1-37.10"
       },
       "ports": {
         "A": {
@@ -64,7 +64,7 @@
           "attributes": {
             "cell_keep": "00000000000000000000000000000001",
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "DECAP_LED.v:31.11-31.18",
+            "cell_src": "DECAP_LED.v:32.11-32.18",
             "module": "DECAP",
             "module_src": "../DECAP/DECAP.v:13.1-19.10"
           },
@@ -101,7 +101,7 @@
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "DECAP_LED.v:35.9-35.34"
+            "src": "DECAP_LED.v:36.9-36.34"
           },
           "port_directions": {
             "anode": "inout",
@@ -120,7 +120,7 @@
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "DECAP_LED.v:33.18-33.45"
+            "src": "DECAP_LED.v:34.18-34.45"
           },
           "port_directions": {
             "pin1": "inout",
@@ -137,7 +137,7 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "DECAP_LED.v:26.11-26.12"
+            "src": "DECAP_LED.v:27.11-27.12"
           }
         },
         "DECAP.GND": {
@@ -160,14 +160,14 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "DECAP_LED.v:27.11-27.18"
+            "src": "DECAP_LED.v:28.11-28.18"
           }
         },
         "i": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "DECAP_LED.v:29.10-29.11",
+            "src": "DECAP_LED.v:30.10-30.11",
             "unused_bits": "0 "
           }
         }
@@ -177,7 +177,7 @@
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
         "footprint": "LED_SMD:LED_0402_1005Metric",
-        "src": "DECAP_LED.v:16.1-22.10"
+        "src": "DECAP_LED.v:17.1-23.10"
       },
       "ports": {
         "cathode": {
@@ -197,7 +197,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "2",
-            "src": "DECAP_LED.v:20.11-20.16"
+            "src": "DECAP_LED.v:21.11-21.16"
           }
         },
         "cathode": {
@@ -205,7 +205,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "1 ",
-            "src": "DECAP_LED.v:18.11-18.18"
+            "src": "DECAP_LED.v:19.11-19.18"
           }
         }
       }
@@ -215,7 +215,7 @@
         "footprint": "Resistor_SMD:R_0402_1005Metric",
         "blackbox": "00000000000000000000000000000001",
         "value": "330",
-        "src": "DECAP_LED.v:5.1-11.10"
+        "src": "DECAP_LED.v:6.1-12.10"
       },
       "ports": {
         "pin1": {
@@ -235,7 +235,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "1 ",
-            "src": "DECAP_LED.v:7.11-7.15"
+            "src": "DECAP_LED.v:8.11-8.15"
           }
         },
         "pin2": {
@@ -243,7 +243,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "2",
-            "src": "DECAP_LED.v:9.11-9.15"
+            "src": "DECAP_LED.v:10.11-10.15"
           }
         }
       }

@@ -1,10 +1,10 @@
 {
-  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
     "D_FLIP_FLOP": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "D_FLIP_FLOP.v:1.1-22.10"
+        "src": "D_FLIP_FLOP.v:3.1-24.10"
       },
       "ports": {
         "Q": {
@@ -19,16 +19,51 @@
           "direction": "input",
           "bits": [ 4 ]
         },
-        "EN": {
+        "CLK": {
           "direction": "input",
           "bits": [ 5 ]
         },
-        "nEN": {
+        "nCLK": {
           "direction": "input",
           "bits": [ 6 ]
         }
       },
       "cells": {
+        "master": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "D_FLIP_FLOP.v:11.13-16.6",
+            "module": "D_LATCH",
+            "module_src": "../D_LATCH/D_LATCH.v:5.1-31.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "master.NOT1": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "../D_LATCH/D_LATCH.v:15.10-20.6",
+            "hdlname": "master NOT1",
+            "module": "TINV",
+            "module_src": "../TINV/TINV.v:2.1-31.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "master.NOT1.N1": {
           "hide_name": 0,
           "type": "RV523_NMOS",
@@ -37,7 +72,7 @@
           "attributes": {
             "hdlname": "master NOT1 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:11.16-15.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -58,7 +93,7 @@
           "attributes": {
             "hdlname": "master NOT1 N2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:16.16-20.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -79,7 +114,7 @@
           "attributes": {
             "hdlname": "master NOT1 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:21.16-25.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -100,7 +135,7 @@
           "attributes": {
             "hdlname": "master NOT1 P2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:26.16-30.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -113,6 +148,24 @@
             "S": [ 9 ]
           }
         },
+        "master.NOT2": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "../D_LATCH/D_LATCH.v:21.9-24.6",
+            "hdlname": "master NOT2",
+            "module": "NOT",
+            "module_src": "../NOT/NOT.v:1.1-18.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "master.NOT2.N1": {
           "hide_name": 0,
           "type": "RV523_NMOS",
@@ -121,7 +174,7 @@
           "attributes": {
             "hdlname": "master NOT2 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../NOT/NOT.v:9.16-13.6|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:8.16-12.6"
           },
           "port_directions": {
             "D": "inout",
@@ -142,7 +195,7 @@
           "attributes": {
             "hdlname": "master NOT2 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../NOT/NOT.v:14.16-18.6|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:13.16-17.6"
           },
           "port_directions": {
             "D": "inout",
@@ -155,6 +208,24 @@
             "S": [ "1" ]
           }
         },
+        "master.NOT3": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "../D_LATCH/D_LATCH.v:25.10-30.6",
+            "hdlname": "master NOT3",
+            "module": "TINV",
+            "module_src": "../TINV/TINV.v:2.1-31.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "master.NOT3.N1": {
           "hide_name": 0,
           "type": "RV523_NMOS",
@@ -163,7 +234,7 @@
           "attributes": {
             "hdlname": "master NOT3 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:11.16-15.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -184,7 +255,7 @@
           "attributes": {
             "hdlname": "master NOT3 N2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:16.16-20.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -205,7 +276,7 @@
           "attributes": {
             "hdlname": "master NOT3 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:21.16-25.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -226,7 +297,7 @@
           "attributes": {
             "hdlname": "master NOT3 P2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:26.16-30.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -239,6 +310,41 @@
             "S": [ 12 ]
           }
         },
+        "slave": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "D_FLIP_FLOP.v:17.13-23.6",
+            "module": "D_LATCH",
+            "module_src": "../D_LATCH/D_LATCH.v:5.1-31.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "slave.NOT1": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "../D_LATCH/D_LATCH.v:15.10-20.6",
+            "hdlname": "slave NOT1",
+            "module": "TINV",
+            "module_src": "../TINV/TINV.v:2.1-31.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "slave.NOT1.N1": {
           "hide_name": 0,
           "type": "RV523_NMOS",
@@ -247,7 +353,7 @@
           "attributes": {
             "hdlname": "slave NOT1 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:11.16-15.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -268,7 +374,7 @@
           "attributes": {
             "hdlname": "slave NOT1 N2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:16.16-20.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -289,7 +395,7 @@
           "attributes": {
             "hdlname": "slave NOT1 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:21.16-25.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -310,7 +416,7 @@
           "attributes": {
             "hdlname": "slave NOT1 P2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:26.16-30.6|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -323,6 +429,24 @@
             "S": [ 14 ]
           }
         },
+        "slave.NOT2": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "../D_LATCH/D_LATCH.v:21.9-24.6",
+            "hdlname": "slave NOT2",
+            "module": "NOT",
+            "module_src": "../NOT/NOT.v:1.1-18.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "slave.NOT2.N1": {
           "hide_name": 0,
           "type": "RV523_NMOS",
@@ -331,7 +455,7 @@
           "attributes": {
             "hdlname": "slave NOT2 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../NOT/NOT.v:9.16-13.6|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:8.16-12.6"
           },
           "port_directions": {
             "D": "inout",
@@ -352,7 +476,7 @@
           "attributes": {
             "hdlname": "slave NOT2 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../NOT/NOT.v:14.16-18.6|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:13.16-17.6"
           },
           "port_directions": {
             "D": "inout",
@@ -365,6 +489,24 @@
             "S": [ "1" ]
           }
         },
+        "slave.NOT3": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "../D_LATCH/D_LATCH.v:25.10-30.6",
+            "hdlname": "slave NOT3",
+            "module": "TINV",
+            "module_src": "../TINV/TINV.v:2.1-31.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
         "slave.NOT3.N1": {
           "hide_name": 0,
           "type": "RV523_NMOS",
@@ -373,7 +515,7 @@
           "attributes": {
             "hdlname": "slave NOT3 N1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:11.16-15.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:11.16-15.6"
           },
           "port_directions": {
             "D": "inout",
@@ -394,7 +536,7 @@
           "attributes": {
             "hdlname": "slave NOT3 N2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:16.16-20.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:16.16-20.6"
           },
           "port_directions": {
             "D": "inout",
@@ -415,7 +557,7 @@
           "attributes": {
             "hdlname": "slave NOT3 P1",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:21.16-25.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:21.16-25.6"
           },
           "port_directions": {
             "D": "inout",
@@ -436,7 +578,7 @@
           "attributes": {
             "hdlname": "slave NOT3 P2",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:26.16-30.6|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:26.16-30.6"
           },
           "port_directions": {
             "D": "inout",
@@ -451,32 +593,40 @@
         }
       },
       "netnames": {
+        "CLK": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "D_FLIP_FLOP.v:7.11-7.14"
+          }
+        },
         "D": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "D_FLIP_FLOP.v:4.11-4.12"
-          }
-        },
-        "EN": {
-          "hide_name": 0,
-          "bits": [ 5 ],
-          "attributes": {
-            "src": "D_FLIP_FLOP.v:5.11-5.13"
+            "src": "D_FLIP_FLOP.v:6.11-6.12"
           }
         },
         "Q": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "D_FLIP_FLOP.v:2.12-2.13"
+            "src": "D_FLIP_FLOP.v:4.12-4.13"
           }
         },
         "Q1": {
           "hide_name": 0,
           "bits": [ 10 ],
           "attributes": {
-            "src": "D_FLIP_FLOP.v:8.10-8.12"
+            "src": "D_FLIP_FLOP.v:10.10-10.12"
+          }
+        },
+        "master.CLK": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "master CLK",
+            "src": "../D_LATCH/D_LATCH.v:9.11-9.14"
           }
         },
         "master.D": {
@@ -484,15 +634,7 @@
           "bits": [ 4 ],
           "attributes": {
             "hdlname": "master D",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:38.11-38.12"
-          }
-        },
-        "master.EN": {
-          "hide_name": 0,
-          "bits": [ 6 ],
-          "attributes": {
-            "hdlname": "master EN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:39.11-39.13"
+            "src": "../D_LATCH/D_LATCH.v:8.11-8.12"
           }
         },
         "master.GND": {
@@ -500,7 +642,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "master GND",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:0.0-0.0"
+            "src": "../D_LATCH/D_LATCH.v:0.0-0.0"
           }
         },
         "master.NOT1.A": {
@@ -508,7 +650,7 @@
           "bits": [ 4 ],
           "attributes": {
             "hdlname": "master NOT1 A",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:4.12-4.13|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:4.12-4.13"
           }
         },
         "master.NOT1.EN": {
@@ -516,7 +658,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "master NOT1 EN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:5.12-5.14|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:5.12-5.14"
           }
         },
         "master.NOT1.GND": {
@@ -524,7 +666,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "master NOT1 GND",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "master.NOT1.VDD": {
@@ -532,7 +674,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "master NOT1 VDD",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "master.NOT1.Y": {
@@ -540,7 +682,7 @@
           "bits": [ 8 ],
           "attributes": {
             "hdlname": "master NOT1 Y",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:3.12-3.13|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:3.12-3.13"
           }
         },
         "master.NOT1.intN": {
@@ -548,7 +690,7 @@
           "bits": [ 7 ],
           "attributes": {
             "hdlname": "master NOT1 intN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:10.10-10.14|../D_LATCH/D_LATCH.v:45.22-50.6",
+            "src": "../TINV/TINV.v:10.10-10.14",
             "unused_bits": "0 "
           }
         },
@@ -557,7 +699,7 @@
           "bits": [ 9 ],
           "attributes": {
             "hdlname": "master NOT1 intP",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:10.16-10.20|../D_LATCH/D_LATCH.v:45.22-50.6",
+            "src": "../TINV/TINV.v:10.16-10.20",
             "unused_bits": "0 "
           }
         },
@@ -566,7 +708,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "master NOT1 nEN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:6.12-6.15|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:6.12-6.15"
           }
         },
         "master.NOT2.A": {
@@ -574,7 +716,7 @@
           "bits": [ 8 ],
           "attributes": {
             "hdlname": "master NOT2 A",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../NOT/NOT.v:4.11-4.12|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:3.11-3.12"
           }
         },
         "master.NOT2.GND": {
@@ -582,7 +724,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "master NOT2 GND",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../NOT/NOT.v:0.0-0.0|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:0.0-0.0"
           }
         },
         "master.NOT2.VDD": {
@@ -590,7 +732,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "master NOT2 VDD",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../NOT/NOT.v:0.0-0.0|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:0.0-0.0"
           }
         },
         "master.NOT2.Y": {
@@ -598,7 +740,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "master NOT2 Y",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../NOT/NOT.v:3.12-3.13|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:2.12-2.13"
           }
         },
         "master.NOT3.A": {
@@ -606,7 +748,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "master NOT3 A",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:4.12-4.13|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:4.12-4.13"
           }
         },
         "master.NOT3.EN": {
@@ -614,7 +756,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "master NOT3 EN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:5.12-5.14|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:5.12-5.14"
           }
         },
         "master.NOT3.GND": {
@@ -622,7 +764,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "master NOT3 GND",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "master.NOT3.VDD": {
@@ -630,7 +772,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "master NOT3 VDD",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "master.NOT3.Y": {
@@ -638,7 +780,7 @@
           "bits": [ 8 ],
           "attributes": {
             "hdlname": "master NOT3 Y",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:3.12-3.13|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:3.12-3.13"
           }
         },
         "master.NOT3.intN": {
@@ -646,7 +788,7 @@
           "bits": [ 11 ],
           "attributes": {
             "hdlname": "master NOT3 intN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:10.10-10.14|../D_LATCH/D_LATCH.v:55.22-60.6",
+            "src": "../TINV/TINV.v:10.10-10.14",
             "unused_bits": "0 "
           }
         },
@@ -655,7 +797,7 @@
           "bits": [ 12 ],
           "attributes": {
             "hdlname": "master NOT3 intP",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:10.16-10.20|../D_LATCH/D_LATCH.v:55.22-60.6",
+            "src": "../TINV/TINV.v:10.16-10.20",
             "unused_bits": "0 "
           }
         },
@@ -664,7 +806,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "master NOT3 nEN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:6.12-6.15|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:6.12-6.15"
           }
         },
         "master.Q": {
@@ -672,7 +814,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "master Q",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:36.12-36.13"
+            "src": "../D_LATCH/D_LATCH.v:6.12-6.13"
           }
         },
         "master.VDD": {
@@ -680,15 +822,15 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "master VDD",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:0.0-0.0"
+            "src": "../D_LATCH/D_LATCH.v:0.0-0.0"
           }
         },
-        "master.nEN": {
+        "master.nCLK": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "hdlname": "master nEN",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:40.11-40.14"
+            "hdlname": "master nCLK",
+            "src": "../D_LATCH/D_LATCH.v:10.11-10.15"
           }
         },
         "master.nQ": {
@@ -696,21 +838,29 @@
           "bits": [ 8 ],
           "attributes": {
             "hdlname": "master nQ",
-            "src": "D_FLIP_FLOP.v:9.13-14.6|../D_LATCH/D_LATCH.v:37.12-37.14"
+            "src": "../D_LATCH/D_LATCH.v:7.12-7.14"
           }
         },
-        "nEN": {
+        "nCLK": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "D_FLIP_FLOP.v:6.11-6.14"
+            "src": "D_FLIP_FLOP.v:8.11-8.15"
           }
         },
         "nQ": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "D_FLIP_FLOP.v:3.12-3.14"
+            "src": "D_FLIP_FLOP.v:5.12-5.14"
+          }
+        },
+        "slave.CLK": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "slave CLK",
+            "src": "../D_LATCH/D_LATCH.v:9.11-9.14"
           }
         },
         "slave.D": {
@@ -718,15 +868,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "slave D",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:38.11-38.12"
-          }
-        },
-        "slave.EN": {
-          "hide_name": 0,
-          "bits": [ 5 ],
-          "attributes": {
-            "hdlname": "slave EN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:39.11-39.13"
+            "src": "../D_LATCH/D_LATCH.v:8.11-8.12"
           }
         },
         "slave.GND": {
@@ -734,7 +876,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "slave GND",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:0.0-0.0"
+            "src": "../D_LATCH/D_LATCH.v:0.0-0.0"
           }
         },
         "slave.NOT1.A": {
@@ -742,7 +884,7 @@
           "bits": [ 10 ],
           "attributes": {
             "hdlname": "slave NOT1 A",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:4.12-4.13|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:4.12-4.13"
           }
         },
         "slave.NOT1.EN": {
@@ -750,7 +892,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "slave NOT1 EN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:5.12-5.14|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:5.12-5.14"
           }
         },
         "slave.NOT1.GND": {
@@ -758,7 +900,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "slave NOT1 GND",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "slave.NOT1.VDD": {
@@ -766,7 +908,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "slave NOT1 VDD",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "slave.NOT1.Y": {
@@ -774,7 +916,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "slave NOT1 Y",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:3.12-3.13|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:3.12-3.13"
           }
         },
         "slave.NOT1.intN": {
@@ -782,7 +924,7 @@
           "bits": [ 13 ],
           "attributes": {
             "hdlname": "slave NOT1 intN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:10.10-10.14|../D_LATCH/D_LATCH.v:45.22-50.6",
+            "src": "../TINV/TINV.v:10.10-10.14",
             "unused_bits": "0 "
           }
         },
@@ -791,7 +933,7 @@
           "bits": [ 14 ],
           "attributes": {
             "hdlname": "slave NOT1 intP",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:10.16-10.20|../D_LATCH/D_LATCH.v:45.22-50.6",
+            "src": "../TINV/TINV.v:10.16-10.20",
             "unused_bits": "0 "
           }
         },
@@ -800,7 +942,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "slave NOT1 nEN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:6.12-6.15|../D_LATCH/D_LATCH.v:45.22-50.6"
+            "src": "../TINV/TINV.v:6.12-6.15"
           }
         },
         "slave.NOT2.A": {
@@ -808,7 +950,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "slave NOT2 A",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../NOT/NOT.v:4.11-4.12|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:3.11-3.12"
           }
         },
         "slave.NOT2.GND": {
@@ -816,7 +958,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "slave NOT2 GND",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../NOT/NOT.v:0.0-0.0|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:0.0-0.0"
           }
         },
         "slave.NOT2.VDD": {
@@ -824,7 +966,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "slave NOT2 VDD",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../NOT/NOT.v:0.0-0.0|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:0.0-0.0"
           }
         },
         "slave.NOT2.Y": {
@@ -832,7 +974,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "slave NOT2 Y",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../NOT/NOT.v:3.12-3.13|../D_LATCH/D_LATCH.v:51.9-54.6"
+            "src": "../NOT/NOT.v:2.12-2.13"
           }
         },
         "slave.NOT3.A": {
@@ -840,7 +982,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "slave NOT3 A",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:4.12-4.13|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:4.12-4.13"
           }
         },
         "slave.NOT3.EN": {
@@ -848,7 +990,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "slave NOT3 EN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:5.12-5.14|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:5.12-5.14"
           }
         },
         "slave.NOT3.GND": {
@@ -856,7 +998,7 @@
           "bits": [ "0" ],
           "attributes": {
             "hdlname": "slave NOT3 GND",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "slave.NOT3.VDD": {
@@ -864,7 +1006,7 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "slave NOT3 VDD",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:0.0-0.0|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:0.0-0.0"
           }
         },
         "slave.NOT3.Y": {
@@ -872,7 +1014,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "slave NOT3 Y",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:3.12-3.13|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:3.12-3.13"
           }
         },
         "slave.NOT3.intN": {
@@ -880,7 +1022,7 @@
           "bits": [ 15 ],
           "attributes": {
             "hdlname": "slave NOT3 intN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:10.10-10.14|../D_LATCH/D_LATCH.v:55.22-60.6",
+            "src": "../TINV/TINV.v:10.10-10.14",
             "unused_bits": "0 "
           }
         },
@@ -889,7 +1031,7 @@
           "bits": [ 16 ],
           "attributes": {
             "hdlname": "slave NOT3 intP",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:10.16-10.20|../D_LATCH/D_LATCH.v:55.22-60.6",
+            "src": "../TINV/TINV.v:10.16-10.20",
             "unused_bits": "0 "
           }
         },
@@ -898,7 +1040,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "slave NOT3 nEN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:6.12-6.15|../D_LATCH/D_LATCH.v:55.22-60.6"
+            "src": "../TINV/TINV.v:6.12-6.15"
           }
         },
         "slave.Q": {
@@ -906,7 +1048,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "slave Q",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:36.12-36.13"
+            "src": "../D_LATCH/D_LATCH.v:6.12-6.13"
           }
         },
         "slave.VDD": {
@@ -914,15 +1056,15 @@
           "bits": [ "1" ],
           "attributes": {
             "hdlname": "slave VDD",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:0.0-0.0"
+            "src": "../D_LATCH/D_LATCH.v:0.0-0.0"
           }
         },
-        "slave.nEN": {
+        "slave.nCLK": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "hdlname": "slave nEN",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:40.11-40.14"
+            "hdlname": "slave nCLK",
+            "src": "../D_LATCH/D_LATCH.v:10.11-10.15"
           }
         },
         "slave.nQ": {
@@ -930,16 +1072,17 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "slave nQ",
-            "src": "D_FLIP_FLOP.v:15.13-21.6|../D_LATCH/D_LATCH.v:37.12-37.14"
+            "src": "../D_LATCH/D_LATCH.v:7.12-7.14"
           }
         }
       }
     },
     "RV523_NMOS": {
       "attributes": {
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
-        "src": "../RV523_MOSFETS.v:3.1-11.10"
+        "value": "NMOS",
+        "src": "../RV523_MOSFETS.v:4.1-12.10"
       },
       "ports": {
         "D": {
@@ -963,7 +1106,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "3",
-            "src": "../RV523_MOSFETS.v:5.11-5.12"
+            "src": "../RV523_MOSFETS.v:6.11-6.12"
           }
         },
         "G": {
@@ -971,7 +1114,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "1 ",
-            "src": "../RV523_MOSFETS.v:7.11-7.12"
+            "src": "../RV523_MOSFETS.v:8.11-8.12"
           }
         },
         "S": {
@@ -979,16 +1122,17 @@
           "bits": [ 4 ],
           "attributes": {
             "num": "2",
-            "src": "../RV523_MOSFETS.v:9.11-9.12"
+            "src": "../RV523_MOSFETS.v:10.11-10.12"
           }
         }
       }
     },
     "RV523_PMOS": {
       "attributes": {
+        "footprint": "RV523:SOT523",
         "blackbox": "00000000000000000000000000000001",
-        "footprint": "Package_TO_SOT_SMD:SOT-523",
-        "src": "../RV523_MOSFETS.v:15.1-23.10"
+        "value": "PMOS",
+        "src": "../RV523_MOSFETS.v:17.1-25.10"
       },
       "ports": {
         "D": {
@@ -1012,7 +1156,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "3",
-            "src": "../RV523_MOSFETS.v:17.11-17.12"
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
           }
         },
         "G": {
@@ -1020,7 +1164,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "1 ",
-            "src": "../RV523_MOSFETS.v:19.11-19.12"
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
           }
         },
         "S": {
@@ -1028,7 +1172,7 @@
           "bits": [ 4 ],
           "attributes": {
             "num": "2",
-            "src": "../RV523_MOSFETS.v:21.11-21.12"
+            "src": "../RV523_MOSFETS.v:23.11-23.12"
           }
         }
       }

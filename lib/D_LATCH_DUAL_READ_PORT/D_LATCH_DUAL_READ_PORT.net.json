@@ -4,7 +4,7 @@
     "D_LATCH_DUAL_READ_PORT": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "D_LATCH_DUAL_READ_PORT.v:4.1-36.10"
+        "src": "D_LATCH_DUAL_READ_PORT.v:5.1-37.10"
       },
       "ports": {
         "D": {
@@ -57,9 +57,9 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "D_LATCH_DUAL_READ_PORT.v:17.13-23.6",
+            "cell_src": "D_LATCH_DUAL_READ_PORT.v:18.13-24.6",
             "module": "D_LATCH",
-            "module_src": "../D_LATCH/D_LATCH.v:3.1-29.10"
+            "module_src": "../D_LATCH/D_LATCH.v:5.1-31.10"
           },
           "port_directions": {
           },
@@ -74,7 +74,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "../D_LATCH/D_LATCH.v:13.10-18.6",
+            "cell_src": "../D_LATCH/D_LATCH.v:15.10-20.6",
             "hdlname": "latch NOT1",
             "module": "TINV",
             "module_src": "../TINV/TINV.v:2.1-31.10"
@@ -176,7 +176,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "../D_LATCH/D_LATCH.v:19.9-22.6",
+            "cell_src": "../D_LATCH/D_LATCH.v:21.9-24.6",
             "hdlname": "latch NOT2",
             "module": "NOT",
             "module_src": "../NOT/NOT.v:1.1-18.10"
@@ -236,7 +236,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "../D_LATCH/D_LATCH.v:23.10-28.6",
+            "cell_src": "../D_LATCH/D_LATCH.v:25.10-30.6",
             "hdlname": "latch NOT3",
             "module": "TINV",
             "module_src": "../TINV/TINV.v:2.1-31.10"
@@ -338,7 +338,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "D_LATCH_DUAL_READ_PORT.v:24.10-29.6",
+            "cell_src": "D_LATCH_DUAL_READ_PORT.v:25.10-30.6",
             "module": "TINV",
             "module_src": "../TINV/TINV.v:2.1-31.10"
           },
@@ -439,7 +439,7 @@
           },
           "attributes": {
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "D_LATCH_DUAL_READ_PORT.v:30.10-35.6",
+            "cell_src": "D_LATCH_DUAL_READ_PORT.v:31.10-36.6",
             "module": "TINV",
             "module_src": "../TINV/TINV.v:2.1-31.10"
           },
@@ -538,49 +538,49 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:6.11-6.14"
+            "src": "D_LATCH_DUAL_READ_PORT.v:7.11-7.14"
           }
         },
         "D": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:5.11-5.12"
+            "src": "D_LATCH_DUAL_READ_PORT.v:6.11-6.12"
           }
         },
         "EN1": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:9.11-9.14"
+            "src": "D_LATCH_DUAL_READ_PORT.v:10.11-10.14"
           }
         },
         "EN2": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:11.11-11.14"
+            "src": "D_LATCH_DUAL_READ_PORT.v:12.11-12.14"
           }
         },
         "Q": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:8.12-8.13"
+            "src": "D_LATCH_DUAL_READ_PORT.v:9.12-9.13"
           }
         },
         "Q1": {
           "hide_name": 0,
           "bits": [ 10 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:13.12-13.14"
+            "src": "D_LATCH_DUAL_READ_PORT.v:14.12-14.14"
           }
         },
         "Q2": {
           "hide_name": 0,
           "bits": [ 11 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:14.12-14.14"
+            "src": "D_LATCH_DUAL_READ_PORT.v:15.12-15.14"
           }
         },
         "latch.CLK": {
@@ -588,7 +588,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "latch CLK",
-            "src": "../D_LATCH/D_LATCH.v:7.11-7.14"
+            "src": "../D_LATCH/D_LATCH.v:9.11-9.14"
           }
         },
         "latch.D": {
@@ -596,7 +596,7 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "latch D",
-            "src": "../D_LATCH/D_LATCH.v:6.11-6.12"
+            "src": "../D_LATCH/D_LATCH.v:8.11-8.12"
           }
         },
         "latch.GND": {
@@ -776,7 +776,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "latch Q",
-            "src": "../D_LATCH/D_LATCH.v:4.12-4.13"
+            "src": "../D_LATCH/D_LATCH.v:6.12-6.13"
           }
         },
         "latch.VDD": {
@@ -792,7 +792,7 @@
           "bits": [ 4 ],
           "attributes": {
             "hdlname": "latch nCLK",
-            "src": "../D_LATCH/D_LATCH.v:8.11-8.15"
+            "src": "../D_LATCH/D_LATCH.v:10.11-10.15"
           }
         },
         "latch.nQ": {
@@ -800,35 +800,35 @@
           "bits": [ 13 ],
           "attributes": {
             "hdlname": "latch nQ",
-            "src": "../D_LATCH/D_LATCH.v:5.12-5.14"
+            "src": "../D_LATCH/D_LATCH.v:7.12-7.14"
           }
         },
         "nCLK": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:7.11-7.15"
+            "src": "D_LATCH_DUAL_READ_PORT.v:8.11-8.15"
           }
         },
         "nEN1": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:10.11-10.15"
+            "src": "D_LATCH_DUAL_READ_PORT.v:11.11-11.15"
           }
         },
         "nEN2": {
           "hide_name": 0,
           "bits": [ 9 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:12.11-12.15"
+            "src": "D_LATCH_DUAL_READ_PORT.v:13.11-13.15"
           }
         },
         "nQ": {
           "hide_name": 0,
           "bits": [ 13 ],
           "attributes": {
-            "src": "D_LATCH_DUAL_READ_PORT.v:16.10-16.12"
+            "src": "D_LATCH_DUAL_READ_PORT.v:17.10-17.12"
           }
         },
         "port1.A": {
