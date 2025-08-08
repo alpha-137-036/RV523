@@ -1,0 +1,13 @@
+{
+    width: 4, 
+
+    inputs: ["A", "EN", "nEN"],
+    outputs: ["Y"],
+
+    pins: {
+        "A": 1,
+        "EN": 2,
+        "nEN": 3,
+        "Y": 4 
+    }
+}

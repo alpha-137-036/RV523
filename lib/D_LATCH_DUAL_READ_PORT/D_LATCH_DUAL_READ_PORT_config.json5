@@ -1,0 +1,19 @@
+{
+    width: 18, 
+
+    inputs: ["D", "CLK", "nCLK", "EN1", "nEN1", "EN2", "nEN2"],
+    outputs: ["Q", "Q1", "Q2"],
+
+    pins: {
+        "D": 1,
+        "CLK": 3,
+        "nCLK": 5,
+        "Q": 10,
+        "EN1": 12, 
+        "nEN1": 13,
+        "Q1": 14,
+        "EN2": 16, 
+        "nEN2": 17, 
+        "Q2": 18
+    }
+}

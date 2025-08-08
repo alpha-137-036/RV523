@@ -1,0 +1,14 @@
+{
+    width: 10, 
+
+    inputs: ["D", "CLK", "nCLK"],
+    outputs: ["Q", "nQ"],
+
+    pins: {
+        "D": 1,
+        "CLK": 3,
+        "nCLK": 5,
+        "nQ": 8,
+        "Q": 10 
+    }
+}
