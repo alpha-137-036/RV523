@@ -26,7 +26,7 @@ MACRO NOT
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 1.3 2.05 1.7 2.45 ;
+          RECT 1.3 1.55 1.7 1.95 ;
       END
   END Y
         
@@ -53,7 +53,7 @@ MACRO TINV
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 1.3 2.05 1.7 2.45 ;
+          RECT 1.3 1.55 1.7 1.95 ;
       END
   END EN
         
@@ -71,7 +71,7 @@ MACRO TINV
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 3.3 2.05 3.7 2.45 ;
+          RECT 3.3 1.55 3.7 1.95 ;
       END
   END Y
         
@@ -107,7 +107,7 @@ MACRO NAND2
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 3.3 2.05 3.7 2.45 ;
+          RECT 3.3 1.55 3.7 1.95 ;
       END
   END Y
         
@@ -143,7 +143,7 @@ MACRO AND2
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 5.3 2.05 5.7 2.45 ;
+          RECT 5.3 1.55 5.7 1.95 ;
       END
   END Y
         
@@ -188,7 +188,7 @@ MACRO NAND3
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 5.3 2.05 5.7 2.45 ;
+          RECT 5.3 1.55 5.7 1.95 ;
       END
   END Y
         
@@ -242,7 +242,7 @@ MACRO NAND4
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END Y
         
@@ -278,7 +278,7 @@ MACRO NOR2
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 3.3 2.05 3.7 2.45 ;
+          RECT 3.3 1.55 3.7 1.95 ;
       END
   END Y
         
@@ -323,7 +323,7 @@ MACRO NOR3
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 5.3 2.05 5.7 2.45 ;
+          RECT 5.3 1.55 5.7 1.95 ;
       END
   END Y
         
@@ -377,7 +377,7 @@ MACRO NOR4
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END Y
         
@@ -422,7 +422,7 @@ MACRO AOI21
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 5.3 2.05 5.7 2.45 ;
+          RECT 5.3 1.55 5.7 1.95 ;
       END
   END Y
         
@@ -476,7 +476,7 @@ MACRO AOI22
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END Y
         
@@ -530,7 +530,7 @@ MACRO AOI211
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END Y
         
@@ -575,7 +575,7 @@ MACRO OAI21
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 5.3 2.05 5.7 2.45 ;
+          RECT 5.3 1.55 5.7 1.95 ;
       END
   END Y
         
@@ -629,7 +629,7 @@ MACRO OAI22
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END Y
         
@@ -683,7 +683,7 @@ MACRO OAI211
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END Y
         
@@ -728,7 +728,7 @@ MACRO D_LATCH
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 7.3 2.05 7.7 2.45 ;
+          RECT 7.3 1.55 7.7 1.95 ;
       END
   END nQ
         
@@ -737,7 +737,7 @@ MACRO D_LATCH
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 9.3 2.05 9.7 2.45 ;
+          RECT 9.3 1.55 9.7 1.95 ;
       END
   END Q
         
@@ -782,7 +782,7 @@ MACRO D_LATCH_DUAL_READ_PORT
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 9.3 2.05 9.7 2.45 ;
+          RECT 9.3 1.55 9.7 1.95 ;
       END
   END Q
         
@@ -791,7 +791,7 @@ MACRO D_LATCH_DUAL_READ_PORT
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 11.3 2.05 11.7 2.45 ;
+          RECT 11.3 1.55 11.7 1.95 ;
       END
   END EN1
         
@@ -809,7 +809,7 @@ MACRO D_LATCH_DUAL_READ_PORT
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 13.3 2.05 13.7 2.45 ;
+          RECT 13.3 1.55 13.7 1.95 ;
       END
   END Q1
         
@@ -818,7 +818,7 @@ MACRO D_LATCH_DUAL_READ_PORT
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 15.3 2.05 15.7 2.45 ;
+          RECT 15.3 1.55 15.7 1.95 ;
       END
   END EN2
         
@@ -836,7 +836,7 @@ MACRO D_LATCH_DUAL_READ_PORT
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 17.3 2.05 17.7 2.45 ;
+          RECT 17.3 1.55 17.7 1.95 ;
       END
   END Q2
         

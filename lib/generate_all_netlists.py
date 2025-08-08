@@ -40,7 +40,7 @@ MACRO {cellName}
         if pinName in config["outputs"]:
             direction = "DIRECTION OUTPUT ;"
         pinX = pinConfig - 0.5
-        pinY = 2.25 if pinConfig % 1 == 0 else 1.75
+        pinY = 1.75 if pinConfig % 2 == 0 else 2.25
         cell_lef += f"""
   PIN {pinName}
       {direction}
