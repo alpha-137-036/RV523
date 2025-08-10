@@ -65,7 +65,7 @@ for cellName in cellList:
         write_json {cellName}.net.json
         exec -- python3 ../../tools/yosysJsonToKicadNetlist.py {cellName}.net.json {cellName}.net --spice {cellName}.ckt        
     """
-    subprocess.run(cwd=cellName, args=[
+    subprocess.check_output(cwd=cellName, args=[
         "yosys", 
         "-p",
         yosysScript
