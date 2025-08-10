@@ -310,6 +310,21 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "OAI33" *)
+(* footprint = "RV523:OAI33" *)
+module OAI33(
+    output Y,
+    input A1,
+    input A2,
+    input A3,
+    input B1,
+    input B2,
+    input B3
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "XOR2" *)
 (* footprint = "RV523:XOR2" *)
 module XOR2(

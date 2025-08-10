@@ -235,6 +235,18 @@ module OAI32(
     assign Y = ~((A1 | A2 | A3) & (B1 | B2));
 endmodule
 
+module OAI33(
+    output Y,
+    input A1,
+    input A2,
+    input A3,
+    input B1,
+    input B2,
+    input B3
+);
+    assign Y = ~((A1 | A2 | A3) & (B1 | B2 | B3));
+endmodule
+
 module XOR2(
     output Y,
     input A,
