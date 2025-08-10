@@ -1,0 +1,1 @@
+python ~/CharLib/charlib/characterizer/runRV523.py run RV523_cells.json5 RV523_CharLib_Settings.yaml

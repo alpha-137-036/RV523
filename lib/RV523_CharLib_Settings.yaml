@@ -1,5 +1,6 @@
 settings:
     lib_name:           RV523
+    results_dir:        "."
     units:
         # Specify all units for clarity, even though only resistance differs from the default
         time:               ns
