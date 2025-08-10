@@ -3,6 +3,7 @@
 
     inputs: ["A"],
     outputs: ["Y"],
+    functions: ["Y = !A"],
 
     pins: {
         "A": 1,

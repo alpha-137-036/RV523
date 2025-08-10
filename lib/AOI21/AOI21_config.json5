@@ -3,6 +3,7 @@
 
     inputs: ["A", "B1", "B2"],
     outputs: ["Y"],
+    functions: ["Y = !(A | (B1 & B2))"],
 
     pins: {
         "A": 1,
