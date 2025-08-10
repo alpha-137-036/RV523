@@ -65,6 +65,13 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "AND3" *)
+(* footprint = "RV523:AND3" *)
+module AND3 (output Y, input A1, input A2, input A3);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "NAND4" *)
 (* footprint = "RV523:NAND4" *)
 module NAND4(

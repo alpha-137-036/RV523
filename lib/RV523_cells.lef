@@ -221,6 +221,51 @@ MACRO NAND3
         
 END NAND3
 
+MACRO AND3
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A1
+        
+  PIN A2
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 2.3 2.05 2.7 2.45 ;
+      END
+  END A2
+        
+  PIN A3
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 4.3 2.05 4.7 2.45 ;
+      END
+  END A3
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 7.3 1.55 7.7 1.95 ;
+      END
+  END Y
+        
+END AND3
+
 MACRO NAND4
   CLASS CORE ;
   ORIGIN 0 0 ;

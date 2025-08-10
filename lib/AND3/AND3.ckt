@@ -1,0 +1,10 @@
+.subckt AND3 Y A1 A2 A3 VDD VSS
+ Xnand1.N1 A1 VSS nand1.int1 RV523_NMOS
+ Xnand1.N2 A2 nand1.int1 nand1.int2 RV523_NMOS
+ Xnand1.N3 A3 nand1.int2 nY RV523_NMOS
+ Xnand1.P1 A1 VDD nY RV523_PMOS
+ Xnand1.P2 A2 VDD nY RV523_PMOS
+ Xnand1.P3 A3 VDD nY RV523_PMOS
+ Xnot1.N1 nY VSS Y RV523_NMOS
+ Xnot1.P1 nY VDD Y RV523_PMOS
+.ends
