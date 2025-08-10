@@ -103,6 +103,13 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "OR2" *)
+(* footprint = "RV523:OR2" *)
+module OR2 (output Y, input A1, input A2);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "NOR3" *)
 (* footprint = "RV523:NOR3" *)
 module NOR3(
@@ -111,6 +118,13 @@ module NOR3(
     input A2,
     input A3
 );
+endmodule
+
+                    
+(* blackbox *)
+(* techmap_celltype = "OR3" *)
+(* footprint = "RV523:OR3" *)
+module OR3 (output Y, input A1, input A2, input A3);
 endmodule
 
                     
@@ -124,6 +138,13 @@ module NOR4(
     input A3,
     input A4
 );
+endmodule
+
+                    
+(* blackbox *)
+(* techmap_celltype = "OR4" *)
+(* footprint = "RV523:OR4" *)
+module OR4 (output Y, input A1, input A2, input A3, input A4);
 endmodule
 
                     

@@ -79,6 +79,10 @@ module NOR2(
     assign Y = ~(A1 | A2);
 endmodule
 
+module OR2 (output Y, input A1, input A2);
+    assign Y = A1 | A2;
+endmodule
+
 module NOR3(
     output Y,
     input A1,
@@ -86,6 +90,10 @@ module NOR3(
     input A3
 );
     assign Y = ~(A1 | A2 | A3);
+endmodule
+
+module OR3 (output Y, input A1, input A2, input A3);
+    assign Y = A1 | A2 | A3;
 endmodule
 
 module NOR4(
@@ -96,6 +104,10 @@ module NOR4(
     input A4
 );
     assign Y = ~(A1 | A2 | A3 | A4);
+endmodule
+
+module OR4 (output Y, input A1, input A2, input A3, input A4);
+    assign Y = A1 | A2 | A3 | A4;
 endmodule
 
 module AOI21(

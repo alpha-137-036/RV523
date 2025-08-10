@@ -1,0 +1,13 @@
+{
+    width: 6, 
+
+    inputs: ["A1", "A2"],
+    outputs: ["Y"],
+    functions: ["Y = A1 | A2"],
+
+    pins: {
+        "A1": 1,
+        "A2": 3,
+        "Y": 6 
+    }
+}
