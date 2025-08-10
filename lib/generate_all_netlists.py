@@ -8,7 +8,7 @@ def warning(msg):
     warnings.append(msg)
     print(f"WARNING: {msg}")
 
-with open("cellList.json5") as f:
+with open("RV523_cells.json5") as f:
     cellList = json5.decode(f.read())
 
 RV523_behavioral = ""
