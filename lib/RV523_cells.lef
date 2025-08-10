@@ -689,6 +689,42 @@ MACRO OAI211
         
 END OAI211
 
+MACRO XOR2
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 12 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A
+        
+  PIN B
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 2.3 2.05 2.7 2.45 ;
+      END
+  END B
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 7.3 1.55 7.7 1.95 ;
+      END
+  END Y
+        
+END XOR2
+
 MACRO D_LATCH
   CLASS CORE ;
   ORIGIN 0 0 ;

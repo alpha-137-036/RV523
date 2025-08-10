@@ -41,7 +41,7 @@ module AND2(
 );
 endmodule
 
-
+                    
 (* blackbox *)
 (* techmap_celltype = "NAND3" *)
 (* footprint = "RV523:NAND3" *)
@@ -175,6 +175,17 @@ module OAI211(
     input B,
     input C1,
     input C2
+);
+endmodule
+
+                    
+(* blackbox *)
+(* techmap_celltype = "XOR2" *)
+(* footprint = "RV523:XOR2" *)
+module XOR2(
+    output Y,
+    input A,
+    input B
 );
 endmodule
 

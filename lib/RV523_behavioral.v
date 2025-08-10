@@ -141,6 +141,14 @@ module OAI211(
     assign Y = ~(A & B & (C1 | C2));
 endmodule
 
+module XOR2(
+    output Y,
+    input A,
+    input B
+);
+    assign Y = A ^ B;
+endmodule
+
 `include "../NOT/NOT.v"
 `include "../TINV/TINV.v"
 
