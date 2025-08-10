@@ -85,6 +85,13 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "AND4" *)
+(* footprint = "RV523:AND4" *)
+module AND4 (output Y, input A1, input A2, input A3, input A4);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "NOR2" *)
 (* footprint = "RV523:NOR2" *)
 module NOR2(

@@ -1,0 +1,15 @@
+{
+    width: 10, 
+
+    inputs: ["A1", "A2", "A3", "A4"],
+    outputs: ["Y"],
+    functions: ["Y = A1 & A2 & A3 & A4"],
+
+    pins: {
+        "A1": 1,
+        "A2": 3,
+        "A3": 5,
+        "A4": 7,
+        "Y": 10 
+    }
+}

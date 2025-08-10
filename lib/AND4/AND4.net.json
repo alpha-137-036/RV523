@@ -1,0 +1,538 @@
+{
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "AND4": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "AND4.v:4.1-14.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "nand1": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "AND4.v:12.11-12.60",
+            "module": "NAND4",
+            "module_src": "../NAND4/NAND4.v:1.1-52.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "nand1.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:12.16-16.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 3 ],
+            "S": [ "0" ]
+          }
+        },
+        "nand1.N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 N2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:17.16-21.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 8 ],
+            "G": [ 4 ],
+            "S": [ 7 ]
+          }
+        },
+        "nand1.N3": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 N3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:22.16-26.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 9 ],
+            "G": [ 5 ],
+            "S": [ 8 ]
+          }
+        },
+        "nand1.N4": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 N4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:27.16-31.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 6 ],
+            "S": [ 9 ]
+          }
+        },
+        "nand1.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:32.16-36.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        },
+        "nand1.P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 P2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:37.16-41.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 4 ],
+            "S": [ "1" ]
+          }
+        },
+        "nand1.P3": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 P3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:42.16-46.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 5 ],
+            "S": [ "1" ]
+          }
+        },
+        "nand1.P4": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "nand1 P4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NAND4/NAND4.v:47.16-51.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 6 ],
+            "S": [ "1" ]
+          }
+        },
+        "not1": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "AND4.v:13.9-13.28",
+            "module": "NOT",
+            "module_src": "../NOT/NOT.v:1.1-18.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "not1.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "not1 N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NOT/NOT.v:8.16-12.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 10 ],
+            "S": [ "0" ]
+          }
+        },
+        "not1.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "not1 P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NOT/NOT.v:13.16-17.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 10 ],
+            "S": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "AND4.v:6.11-6.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "AND4.v:7.11-7.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "AND4.v:8.11-8.13"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "AND4.v:9.11-9.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "AND4.v:5.12-5.13"
+          }
+        },
+        "nY": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "AND4.v:11.10-11.12"
+          }
+        },
+        "nand1.A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "nand1 A1",
+            "src": "../NAND4/NAND4.v:3.11-3.13"
+          }
+        },
+        "nand1.A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "nand1 A2",
+            "src": "../NAND4/NAND4.v:4.11-4.13"
+          }
+        },
+        "nand1.A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "nand1 A3",
+            "src": "../NAND4/NAND4.v:5.11-5.13"
+          }
+        },
+        "nand1.A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "nand1 A4",
+            "src": "../NAND4/NAND4.v:6.11-6.13"
+          }
+        },
+        "nand1.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "nand1 GND",
+            "src": "../NAND4/NAND4.v:0.0-0.0"
+          }
+        },
+        "nand1.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "nand1 VDD",
+            "src": "../NAND4/NAND4.v:0.0-0.0"
+          }
+        },
+        "nand1.Y": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "hdlname": "nand1 Y",
+            "src": "../NAND4/NAND4.v:2.12-2.13"
+          }
+        },
+        "nand1.int1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "nand1 int1",
+            "src": "../NAND4/NAND4.v:10.10-10.14",
+            "unused_bits": "0 "
+          }
+        },
+        "nand1.int2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "hdlname": "nand1 int2",
+            "src": "../NAND4/NAND4.v:10.16-10.20",
+            "unused_bits": "0 "
+          }
+        },
+        "nand1.int3": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "nand1 int3",
+            "src": "../NAND4/NAND4.v:10.22-10.26",
+            "unused_bits": "0 "
+          }
+        },
+        "not1.A": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "hdlname": "not1 A",
+            "src": "../NOT/NOT.v:3.11-3.12"
+          }
+        },
+        "not1.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "not1 GND",
+            "src": "../NOT/NOT.v:0.0-0.0"
+          }
+        },
+        "not1.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "not1 VDD",
+            "src": "../NOT/NOT.v:0.0-0.0"
+          }
+        },
+        "not1.Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "not1 Y",
+            "src": "../NOT/NOT.v:2.12-2.13"
+          }
+        }
+      }
+    },
+    "RV523_NMOS": {
+      "attributes": {
+        "footprint": "RV523:SOT523",
+        "blackbox": "00000000000000000000000000000001",
+        "value": "NMOS",
+        "src": "../RV523_MOSFETS.v:4.1-12.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:6.11-6.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:8.11-8.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:10.11-10.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "footprint": "RV523:SOT523",
+        "blackbox": "00000000000000000000000000000001",
+        "value": "PMOS",
+        "src": "../RV523_MOSFETS.v:17.1-25.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:23.11-23.12"
+          }
+        }
+      }
+    }
+  }
+}
