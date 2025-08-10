@@ -1,0 +1,12 @@
+{
+    width: 4, 
+
+    inputs: ["A"],
+    outputs: ["Y"],
+    functions: ["Y = A"],
+
+    pins: {
+        "A": 1,
+        "Y": 4 
+    }
+}

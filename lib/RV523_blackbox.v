@@ -1,5 +1,15 @@
 
 (* blackbox *)
+(* techmap_celltype = "BUF" *)
+(* footprint = "RV523:BUF" *)
+module BUF(
+    output Y,
+    input A
+);
+endmodule
+
+
+(* blackbox *)
 (* techmap_celltype = "NOT" *)
 (* footprint = "RV523:NOT" *)
 module NOT(

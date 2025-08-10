@@ -1,3 +1,10 @@
+module BUF(
+    output Y,
+    input A
+);
+    assign Y = A;
+endmodule
+
 module NOT(
     output Y,
     input A
