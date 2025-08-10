@@ -1,0 +1,15 @@
+{
+    width: 8, 
+
+    inputs: ["A1", "A2", "A3", "B"],
+    outputs: ["Y"],
+    functions: ["Y = !((A1 | A2 | A3) & B)"],
+    
+    pins: {
+        "A1": 1,
+        "A2": 3,
+        "A3": 5,
+        "B":  7,
+        "Y":  8 
+    }
+}
