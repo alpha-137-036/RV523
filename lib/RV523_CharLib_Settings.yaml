@@ -1,0 +1,31 @@
+settings:
+    lib_name:           RV523
+    units:
+        # Specify all units for clarity, even though only resistance differs from the default
+        time:               ns
+        voltage:            V
+        current:            uA
+        pulling_resistance: kOhm
+        leakage_power:      nW
+        capacitive_load:    pF
+        energy:             fJ
+    nom_voltage: 5
+    named_nodes:
+        vss:
+            name:       VSS
+            voltage:    0
+        vdd:
+            name:       VDD
+            voltage:    5
+    cell_defaults:
+        models:  
+            - RV523_NMOS.ckt
+            - RV523_PMOS.ckt
+        slews:  [1.5, 4, 8, 20, 40]
+        loads:  [50, 100, 150, 300, 500]
+        setup_time_range: [0.01, 5]
+        hold_time_range: [0.01, 5]
+        
+        simulation_timestep: 0.1 # ns
+        # plots: all
+        #plots:  none
