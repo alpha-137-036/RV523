@@ -247,6 +247,18 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "MUX2" *)
+(* footprint = "RV523:MUX2" *)
+module MUX2(
+    output Y,
+    input I0,
+    input I1,
+    input S
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "D_LATCH" *)
 (* footprint = "RV523:D_LATCH" *)
 module D_LATCH(

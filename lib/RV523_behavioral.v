@@ -184,6 +184,15 @@ module XNOR2(
     assign Y = ~(A ^ B);
 endmodule
 
+module MUX2(
+    output Y,
+    input I0,
+    input I1,
+    input S
+);
+    assign Y = S ? I0 : I1;
+endmodule
+
 `include "../NOT/NOT.v"
 `include "../TINV/TINV.v"
 
