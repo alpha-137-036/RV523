@@ -156,6 +156,14 @@ module XOR2(
     assign Y = A ^ B;
 endmodule
 
+module XNOR2(
+    output Y,
+    input A,
+    input B
+);
+    assign Y = ~(A ^ B);
+endmodule
+
 `include "../NOT/NOT.v"
 `include "../TINV/TINV.v"
 

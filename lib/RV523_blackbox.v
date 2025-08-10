@@ -8,7 +8,7 @@ module BUF(
 );
 endmodule
 
-
+                    
 (* blackbox *)
 (* techmap_celltype = "NOT" *)
 (* footprint = "RV523:NOT" *)
@@ -193,6 +193,17 @@ endmodule
 (* techmap_celltype = "XOR2" *)
 (* footprint = "RV523:XOR2" *)
 module XOR2(
+    output Y,
+    input A,
+    input B
+);
+endmodule
+
+                    
+(* blackbox *)
+(* techmap_celltype = "XNOR2" *)
+(* footprint = "RV523:XNOR2" *)
+module XNOR2(
     output Y,
     input A,
     input B

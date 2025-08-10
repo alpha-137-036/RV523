@@ -16,6 +16,7 @@
     "OAI22",
     "OAI211",
     "XOR2",
+    "XNOR2",
     "D_LATCH",
     "D_LATCH_DUAL_READ_PORT",
     "D_FLIP_FLOP",
