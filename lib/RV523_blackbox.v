@@ -254,6 +254,35 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "OAI221" *)
+(* footprint = "RV523:OAI221" *)
+module OAI221(
+    output Y,
+    input A1,
+    input A2,
+    input B1,
+    input B2,
+    input C
+);
+endmodule
+
+                    
+(* blackbox *)
+(* techmap_celltype = "OAI222" *)
+(* footprint = "RV523:OAI222" *)
+module OAI222(
+    output Y,
+    input A1,
+    input A2,
+    input B1,
+    input B2,
+    input C1,
+    input C2
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "XOR2" *)
 (* footprint = "RV523:XOR2" *)
 module XOR2(

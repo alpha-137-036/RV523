@@ -191,6 +191,29 @@ module OAI211(
     assign Y = ~(A & B & (C1 | C2));
 endmodule
 
+module OAI221(
+    output Y,
+    input A1,
+    input A2,
+    input B1,
+    input B2,
+    input C
+);
+    assign Y = !((A1 | A2) & (B1 | B2) & C);
+endmodule
+
+module OAI222(
+    output Y,
+    input A1,
+    input A2,
+    input B1,
+    input B2,
+    input C1,
+    input C2
+);
+    assign Y = !((A1 | A2) & (B1 | B2) & (C1 | C2));
+endmodule
+
 module XOR2(
     output Y,
     input A,
