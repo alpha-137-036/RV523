@@ -1,14 +1,12 @@
 .subckt XNOR2 Y A B VDD VSS
- Xaoi.N1 A VSS aoi.intA RV523_NMOS
- Xaoi.N2 aoi.A2 aoi.intA Y RV523_NMOS
- Xaoi.N3 aoi.B1 VSS aoi.intB RV523_NMOS
- Xaoi.N4 B aoi.intB Y RV523_NMOS
- Xaoi.P1 A aoi.intP Y RV523_PMOS
- Xaoi.P2 aoi.A2 aoi.intP Y RV523_PMOS
- Xaoi.P3 aoi.B1 VDD aoi.intP RV523_PMOS
- Xaoi.P4 B VDD aoi.intP RV523_PMOS
- XnotA.N1 A VSS aoi.B1 RV523_NMOS
- XnotA.P1 A VDD aoi.B1 RV523_PMOS
- XnotB.N1 B VSS aoi.A2 RV523_NMOS
- XnotB.P1 B VDD aoi.A2 RV523_PMOS
+ XN1 A VSS sndNA RV523_NMOS
+ XN2 B sndNA inand RV523_NMOS
+ XN3 A VSS nmid RV523_NMOS
+ XN4 B VSS nmid RV523_NMOS
+ XN5 inand nmid Y RV523_NMOS
+ XP1 A VDD inand RV523_PMOS
+ XP2 B VDD inand RV523_PMOS
+ XP3 A VDD sndPA RV523_PMOS
+ XP4 B sndPA Y RV523_PMOS
+ XP5 inand VDD Y RV523_PMOS
 .ends

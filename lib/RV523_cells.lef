@@ -1448,7 +1448,7 @@ END XOR2
 MACRO XNOR2
   CLASS CORE ;
   ORIGIN 0 0 ;
-  SIZE 12 BY 4 ;
+  SIZE 10 BY 4 ;
 
   SITE CoreSite ;
     
