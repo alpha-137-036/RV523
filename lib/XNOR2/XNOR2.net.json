@@ -104,7 +104,7 @@
     "XNOR2": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "XNOR2.v:4.1-31.10"
+        "src": "XNOR2.v:1.1-30.10"
       },
       "ports": {
         "Y": {
@@ -128,7 +128,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:14.16-14.45"
+            "src": "XNOR2.v:13.16-13.45"
           },
           "port_directions": {
             "D": "inout",
@@ -148,7 +148,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:15.16-15.47"
+            "src": "XNOR2.v:14.16-14.47"
           },
           "port_directions": {
             "D": "inout",
@@ -168,7 +168,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:16.16-16.44"
+            "src": "XNOR2.v:15.16-15.44"
           },
           "port_directions": {
             "D": "inout",
@@ -188,7 +188,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:17.16-17.44"
+            "src": "XNOR2.v:16.16-16.44"
           },
           "port_directions": {
             "D": "inout",
@@ -208,7 +208,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:18.16-18.46"
+            "src": "XNOR2.v:17.16-17.46"
           },
           "port_directions": {
             "D": "inout",
@@ -228,7 +228,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:20.16-20.45"
+            "src": "XNOR2.v:19.16-19.45"
           },
           "port_directions": {
             "D": "inout",
@@ -248,7 +248,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:21.16-21.45"
+            "src": "XNOR2.v:20.16-20.45"
           },
           "port_directions": {
             "D": "inout",
@@ -268,7 +268,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:22.16-22.45"
+            "src": "XNOR2.v:21.16-21.45"
           },
           "port_directions": {
             "D": "inout",
@@ -288,7 +288,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:23.16-23.43"
+            "src": "XNOR2.v:22.16-22.43"
           },
           "port_directions": {
             "D": "inout",
@@ -308,7 +308,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "XNOR2.v:24.16-24.45"
+            "src": "XNOR2.v:23.16-23.45"
           },
           "port_directions": {
             "D": "inout",
@@ -327,14 +327,14 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "XNOR2.v:6.11-6.12"
+            "src": "XNOR2.v:3.11-3.12"
           }
         },
         "B": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "XNOR2.v:7.11-7.12"
+            "src": "XNOR2.v:4.11-4.12"
           }
         },
         "GND": {
@@ -355,14 +355,14 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "XNOR2.v:5.12-5.13"
+            "src": "XNOR2.v:2.12-2.13"
           }
         },
         "inand": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "XNOR2.v:12.17-12.22",
+            "src": "XNOR2.v:11.17-11.22",
             "unused_bits": "0 "
           }
         },
@@ -370,7 +370,7 @@
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "XNOR2.v:12.24-12.28",
+            "src": "XNOR2.v:11.24-11.28",
             "unused_bits": "0 "
           }
         },
@@ -378,7 +378,7 @@
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "XNOR2.v:12.10-12.15",
+            "src": "XNOR2.v:11.10-11.15",
             "unused_bits": "0 "
           }
         },
@@ -386,7 +386,7 @@
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "XNOR2.v:12.30-12.35",
+            "src": "XNOR2.v:11.30-11.35",
             "unused_bits": "0 "
           }
         }

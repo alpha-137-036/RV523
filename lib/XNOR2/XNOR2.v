@@ -1,6 +1,3 @@
-`include "../NAND2/NAND2.v"
-`include "../OAI21/OAI21.v"
-
 module XNOR2(
     output Y,
     input A,
@@ -8,6 +5,8 @@ module XNOR2(
 );
     supply0 GND;
     supply1 VDD;
+
+    // Copied and adapted from https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd/blob/ac7fb61f06e6470b94e8afdf7c25268f62fbd7b1/cells/xnor2/sky130_fd_sc_hd__xnor2_1.cdl
 
     wire sndNA, inand, nmid, sndPA;
     
