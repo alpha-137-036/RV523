@@ -17,7 +17,7 @@
 		)
 	)
 	(property "Value" "NAND4"
-		(at 0 1 0)
+		(at 4.0 1.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -87,6 +87,7 @@
 		(layer "F.CrtYd")
 		(uuid "3be1defb-ba8b-42fd-a5db-cfde7b0f5425")
 	)
+	
 	(fp_circle
 		(center 1.5 2.25)
 		(end 1.7 2.25)
@@ -96,32 +97,35 @@
 		)
 		(fill yes)
 		(layer "F.Fab")
-		(uuid "64446a57-b9ed-4652-84dc-aeb5edc34696")
+		(uuid "38e74fd7-0151-58f4-9524-2992f76217a7")
 	)
+	
 	(fp_circle
 		(center 3.5 2.25)
 		(end 3.7 2.25)
 		(stroke
 			(width 0)
-			(type solid)
+			(type default)
 		)
 		(fill yes)
 		(layer "F.Fab")
-		(uuid "661b2c90-e04d-4f7c-9a06-3d6d4665e63e")
+		(uuid "045cad3f-a2ca-5180-bfe4-c75300d63571")
 	)
+	
 	(fp_circle
 		(center 5.5 2.25)
 		(end 5.7 2.25)
 		(stroke
 			(width 0)
-			(type solid)
+			(type default)
 		)
 		(fill yes)
 		(layer "F.Fab")
-		(uuid "b67eea8d-877f-4e65-874d-22defc790a84")
+		(uuid "72fb78ed-3979-5171-bc8b-bc76784e068f")
 	)
+	
 	(fp_text user "${REFERENCE}"
-		(at 4 3.8 0)
+		(at 4.0 3.8 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "115ba2a5-8fff-4f93-bfd4-335164624244")
@@ -134,7 +138,7 @@
 		)
 	)
 	(fp_text user "NAND4"
-		(at 4 0.2 0)
+		(at 4.0 0.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "987d0147-082b-4170-901b-a73560471252")
@@ -146,6 +150,7 @@
 			(justify top)
 		)
 	)
+	
 	(pad "A1" thru_hole circle
 		(at 0.5 1.75)
 		(size 0.4 0.4)
@@ -153,8 +158,9 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "ac5873dd-4858-4ef6-96f9-5b6fd380143e")
+		(uuid "b3573a52-4fcc-52ee-8aed-5b89927934a5")
 	)
+	
 	(pad "A2" thru_hole circle
 		(at 2.5 1.75)
 		(size 0.4 0.4)
@@ -162,8 +168,9 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "f52862b9-4a8c-4d09-aa98-ed463136a1e9")
+		(uuid "16438360-a5c3-50e4-8faf-d03a98e72bd4")
 	)
+	
 	(pad "A3" thru_hole circle
 		(at 4.5 1.75)
 		(size 0.4 0.4)
@@ -171,8 +178,9 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "46793002-f924-4913-bc2e-acf896118788")
+		(uuid "30b1bd44-9b02-5828-bbc1-7f7dc81f19b1")
 	)
+	
 	(pad "A4" thru_hole circle
 		(at 6.5 1.75)
 		(size 0.4 0.4)
@@ -180,8 +188,9 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "d44b535e-4b97-4117-870b-900633822589")
+		(uuid "7fbab532-8786-5da8-bc29-f9dc4475abff")
 	)
+	
 	(pad "Y" thru_hole circle
 		(at 7.5 2.25)
 		(size 0.4 0.4)
@@ -189,7 +198,8 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "8e45480a-3a59-47dc-9d8d-a0ff35dc791e")
+		(uuid "464188cb-980a-5303-abbc-59a805c0bfc5")
 	)
+	
 	(embedded_fonts no)
 )

@@ -1,4 +1,4 @@
-(footprint "AOI211"
+(footprint "D_LATCH_DUAL_READ_PORT"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -16,8 +16,8 @@
 			)
 		)
 	)
-	(property "Value" "AOI211"
-		(at 4.0 1.25 0)
+	(property "Value" "D_LATCH_DUAL_READ_PORT"
+		(at 9.0 1.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -58,7 +58,7 @@
 	(attr smd)
 	(fp_line
 		(start 0 0)
-		(end 8 0)
+		(end 18 0)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -68,7 +68,7 @@
 	)
 	(fp_line
 		(start 0 4)
-		(end 8 4)
+		(end 18 4)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -78,7 +78,7 @@
 	)
 	(fp_rect
 		(start 0 0)
-		(end 8 4)
+		(end 18 4)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -124,8 +124,68 @@
 		(uuid "72fb78ed-3979-5171-bc8b-bc76784e068f")
 	)
 	
+	(fp_circle
+		(center 6.5 1.75)
+		(end 6.7 1.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "69c6d04a-26ea-5dfe-9c3c-fa0d5223063f")
+	)
+	
+	(fp_circle
+		(center 7.5 2.25)
+		(end 7.7 2.25)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "ae8adf41-26c0-57e3-876e-4ec47340bc34")
+	)
+	
+	(fp_circle
+		(center 8.5 1.75)
+		(end 8.7 1.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "bac634bc-f38d-5c27-bf9b-56073df95d93")
+	)
+	
+	(fp_circle
+		(center 10.5 1.75)
+		(end 10.7 1.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "ba6a4f19-d00b-5f82-9bfa-8ced8eb93b0d")
+	)
+	
+	(fp_circle
+		(center 14.5 1.75)
+		(end 14.7 1.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "2441150b-4817-5118-9cae-3d68f54e2067")
+	)
+	
 	(fp_text user "${REFERENCE}"
-		(at 4.0 3.8 0)
+		(at 9.0 3.8 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "115ba2a5-8fff-4f93-bfd4-335164624244")
@@ -137,8 +197,8 @@
 			(justify bottom)
 		)
 	)
-	(fp_text user "AOI211"
-		(at 4.0 0.2 0)
+	(fp_text user "D_LATCH_DUAL_READ_PORT"
+		(at 9.0 0.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "987d0147-082b-4170-901b-a73560471252")
@@ -151,54 +211,104 @@
 		)
 	)
 	
-	(pad "A" thru_hole circle
+	(pad "D" thru_hole circle
 		(at 0.5 1.75)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "5441651d-3f10-596d-9789-3e2f7dbe6cf8")
+		(uuid "661f4f49-6e44-5ec4-a674-a49e0e976b3d")
 	)
 	
-	(pad "B" thru_hole circle
+	(pad "CLK" thru_hole circle
 		(at 2.5 1.75)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "84ca8a3b-b483-5be5-8d55-7c1f318b8015")
+		(uuid "73b47d83-0776-5578-aac0-3d8476dcc108")
 	)
 	
-	(pad "C1" thru_hole circle
+	(pad "nCLK" thru_hole circle
 		(at 4.5 1.75)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "1cc7167d-daa8-541b-baf8-dbc4e0030a48")
+		(uuid "946a78f8-71a4-50cb-bee5-b9da51aa2c28")
 	)
 	
-	(pad "C2" thru_hole circle
-		(at 6.5 1.75)
+	(pad "Q" thru_hole circle
+		(at 9.5 2.25)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "4f274fa2-65e6-54b9-8698-5d710197725d")
+		(uuid "31acb2a0-faba-5db7-a560-9b4b91110c01")
 	)
 	
-	(pad "Y" thru_hole circle
-		(at 7.5 2.25)
+	(pad "EN1" thru_hole circle
+		(at 11.5 2.25)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "464188cb-980a-5303-abbc-59a805c0bfc5")
+		(uuid "bc5c16cd-f84c-5fbc-a673-4474026578eb")
+	)
+	
+	(pad "nEN1" thru_hole circle
+		(at 12.5 1.75)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "7644d89e-f711-5a5a-a162-b946e43ad907")
+	)
+	
+	(pad "Q1" thru_hole circle
+		(at 13.5 2.25)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "a32bff69-954d-5976-b406-74066c83294d")
+	)
+	
+	(pad "EN2" thru_hole circle
+		(at 15.5 2.25)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "0c4abc23-0157-50ac-8a1a-2c62031f2b1a")
+	)
+	
+	(pad "nEN2" thru_hole circle
+		(at 16.5 1.75)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "2e68d0d3-a13d-59f4-bbfa-79064e5c5f2a")
+	)
+	
+	(pad "Q2" thru_hole circle
+		(at 17.5 2.25)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "528386e8-94d0-5b8b-9602-e6a9f8894919")
 	)
 	
 	(embedded_fonts no)

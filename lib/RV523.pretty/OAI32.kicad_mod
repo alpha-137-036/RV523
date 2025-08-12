@@ -1,4 +1,4 @@
-(footprint "AOI21"
+(footprint "OAI32"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -16,8 +16,8 @@
 			)
 		)
 	)
-	(property "Value" "AOI21"
-		(at 3.0 1.25 0)
+	(property "Value" "OAI32"
+		(at 5.0 1.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -58,7 +58,7 @@
 	(attr smd)
 	(fp_line
 		(start 0 0)
-		(end 6 0)
+		(end 10 0)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -68,7 +68,7 @@
 	)
 	(fp_line
 		(start 0 4)
-		(end 6 4)
+		(end 10 4)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -78,7 +78,7 @@
 	)
 	(fp_rect
 		(start 0 0)
-		(end 6 4)
+		(end 10 4)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -112,8 +112,32 @@
 		(uuid "045cad3f-a2ca-5180-bfe4-c75300d63571")
 	)
 	
+	(fp_circle
+		(center 5.5 2.25)
+		(end 5.7 2.25)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "72fb78ed-3979-5171-bc8b-bc76784e068f")
+	)
+	
+	(fp_circle
+		(center 7.5 2.25)
+		(end 7.7 2.25)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "ae8adf41-26c0-57e3-876e-4ec47340bc34")
+	)
+	
 	(fp_text user "${REFERENCE}"
-		(at 3.0 3.8 0)
+		(at 5.0 3.8 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "115ba2a5-8fff-4f93-bfd4-335164624244")
@@ -125,8 +149,8 @@
 			(justify bottom)
 		)
 	)
-	(fp_text user "AOI21"
-		(at 3.0 0.2 0)
+	(fp_text user "OAI32"
+		(at 5.0 0.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "987d0147-082b-4170-901b-a73560471252")
@@ -159,8 +183,18 @@
 		(uuid "16438360-a5c3-50e4-8faf-d03a98e72bd4")
 	)
 	
-	(pad "B1" thru_hole circle
+	(pad "A3" thru_hole circle
 		(at 4.5 1.75)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "30b1bd44-9b02-5828-bbc1-7f7dc81f19b1")
+	)
+	
+	(pad "B1" thru_hole circle
+		(at 6.5 1.75)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
@@ -169,8 +203,18 @@
 		(uuid "417c1a27-dbca-5408-bce3-41d99a187ab7")
 	)
 	
+	(pad "B2" thru_hole circle
+		(at 8.5 1.75)
+		(size 0.4 0.4)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(clearance 0.1)
+		(uuid "2a195333-5496-5af3-88db-034908f7cfec")
+	)
+	
 	(pad "Y" thru_hole circle
-		(at 5.5 2.25)
+		(at 9.5 2.25)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")

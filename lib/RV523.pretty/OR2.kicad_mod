@@ -1,4 +1,4 @@
-(footprint "AOI21"
+(footprint "OR2"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -16,7 +16,7 @@
 			)
 		)
 	)
-	(property "Value" "AOI21"
+	(property "Value" "OR2"
 		(at 3.0 1.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
@@ -112,6 +112,18 @@
 		(uuid "045cad3f-a2ca-5180-bfe4-c75300d63571")
 	)
 	
+	(fp_circle
+		(center 4.5 1.75)
+		(end 4.7 1.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "76bc6281-c6f3-52dc-b2b5-cdfd323d4b16")
+	)
+	
 	(fp_text user "${REFERENCE}"
 		(at 3.0 3.8 0)
 		(unlocked yes)
@@ -125,7 +137,7 @@
 			(justify bottom)
 		)
 	)
-	(fp_text user "AOI21"
+	(fp_text user "OR2"
 		(at 3.0 0.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
@@ -157,16 +169,6 @@
 		(remove_unused_layers no)
 		(clearance 0.1)
 		(uuid "16438360-a5c3-50e4-8faf-d03a98e72bd4")
-	)
-	
-	(pad "B1" thru_hole circle
-		(at 4.5 1.75)
-		(size 0.4 0.4)
-		(drill 0.3)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(clearance 0.1)
-		(uuid "417c1a27-dbca-5408-bce3-41d99a187ab7")
 	)
 	
 	(pad "Y" thru_hole circle

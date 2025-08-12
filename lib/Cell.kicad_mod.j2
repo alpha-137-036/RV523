@@ -1,4 +1,4 @@
-(footprint "AOI21"
+(footprint "{{name}}"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -16,8 +16,8 @@
 			)
 		)
 	)
-	(property "Value" "AOI21"
-		(at 3.0 1.25 0)
+	(property "Value" "{{name}}"
+		(at {{width/2}} 1.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -58,7 +58,7 @@
 	(attr smd)
 	(fp_line
 		(start 0 0)
-		(end 6 0)
+		(end {{width}} 0)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -68,7 +68,7 @@
 	)
 	(fp_line
 		(start 0 4)
-		(end 6 4)
+		(end {{width}} 4)
 		(stroke
 			(width 0.2)
 			(type solid)
@@ -78,7 +78,7 @@
 	)
 	(fp_rect
 		(start 0 0)
-		(end 6 4)
+		(end {{width}} 4)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -87,33 +87,21 @@
 		(layer "F.CrtYd")
 		(uuid "3be1defb-ba8b-42fd-a5db-cfde7b0f5425")
 	)
-	
+	{% for via in via_sites %}
 	(fp_circle
-		(center 1.5 2.25)
-		(end 1.7 2.25)
+		(center {{via.x}} {{via.y}})
+		(end {{via.x + 0.2}} {{via.y}})
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(fill yes)
 		(layer "F.Fab")
-		(uuid "38e74fd7-0151-58f4-9524-2992f76217a7")
+		(uuid "{{via.uuid}}")
 	)
-	
-	(fp_circle
-		(center 3.5 2.25)
-		(end 3.7 2.25)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill yes)
-		(layer "F.Fab")
-		(uuid "045cad3f-a2ca-5180-bfe4-c75300d63571")
-	)
-	
+	{% endfor %}
 	(fp_text user "${REFERENCE}"
-		(at 3.0 3.8 0)
+		(at {{width / 2}} 3.8 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "115ba2a5-8fff-4f93-bfd4-335164624244")
@@ -125,8 +113,8 @@
 			(justify bottom)
 		)
 	)
-	(fp_text user "AOI21"
-		(at 3.0 0.2 0)
+	(fp_text user "{{name}}"
+		(at {{width / 2}} 0.2 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "987d0147-082b-4170-901b-a73560471252")
@@ -138,46 +126,16 @@
 			(justify top)
 		)
 	)
-	
-	(pad "A1" thru_hole circle
-		(at 0.5 1.75)
+	{% for pad in pads %}
+	(pad "{{pad.name}}" thru_hole circle
+		(at {{pad.x}} {{pad.y}})
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(clearance 0.1)
-		(uuid "b3573a52-4fcc-52ee-8aed-5b89927934a5")
+		(uuid "{{pad.uuid}}")
 	)
-	
-	(pad "A2" thru_hole circle
-		(at 2.5 1.75)
-		(size 0.4 0.4)
-		(drill 0.3)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(clearance 0.1)
-		(uuid "16438360-a5c3-50e4-8faf-d03a98e72bd4")
-	)
-	
-	(pad "B1" thru_hole circle
-		(at 4.5 1.75)
-		(size 0.4 0.4)
-		(drill 0.3)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(clearance 0.1)
-		(uuid "417c1a27-dbca-5408-bce3-41d99a187ab7")
-	)
-	
-	(pad "Y" thru_hole circle
-		(at 5.5 2.25)
-		(size 0.4 0.4)
-		(drill 0.3)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(clearance 0.1)
-		(uuid "464188cb-980a-5303-abbc-59a805c0bfc5")
-	)
-	
+	{% endfor %}
 	(embedded_fonts no)
 )
