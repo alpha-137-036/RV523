@@ -1,0 +1,16 @@
+.subckt MAJ3 Y A1 A2 A3 VDD VSS
+ Xaoi.N1 A1 VSS aoi.intA RV523_NMOS
+ Xaoi.N2 A2 aoi.intA Y_N RV523_NMOS
+ Xaoi.N3 A2 VSS aoi.intB RV523_NMOS
+ Xaoi.N4 A3 aoi.intB Y_N RV523_NMOS
+ Xaoi.N5 A3 VSS aoi.intC RV523_NMOS
+ Xaoi.N6 A1 aoi.intC Y_N RV523_NMOS
+ Xaoi.P1 A1 aoi.intP Y_N RV523_PMOS
+ Xaoi.P2 A2 aoi.intP Y_N RV523_PMOS
+ Xaoi.P3 A2 aoi.intQ aoi.intP RV523_PMOS
+ Xaoi.P4 A3 aoi.intQ aoi.intP RV523_PMOS
+ Xaoi.P5 A3 VDD aoi.intQ RV523_PMOS
+ Xaoi.P6 A1 VDD aoi.intQ RV523_PMOS
+ XnotY.N1 Y_N VSS Y RV523_NMOS
+ XnotY.P1 Y_N VDD Y RV523_PMOS
+.ends

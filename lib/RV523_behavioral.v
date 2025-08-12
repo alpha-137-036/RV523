@@ -210,6 +210,15 @@ module AOI222(
     assign Y = ~((A1 & A2) | (B1 & B2) | (C1 & C2));
 endmodule
 
+module MAJ3(
+    output Y,
+    input A1,
+    input A2,
+    input A3
+);
+    assign Y = (A1 & A2) | (A2 & A3) | (A3 & A1);
+endmodule
+
 module OAI21(
     output Y,
     input A,
@@ -217,6 +226,15 @@ module OAI21(
     input B2
 );
     assign Y = ~(A & (B1 | B2));
+endmodule
+
+module OA21(
+    output Y,
+    input A,
+    input B1,
+    input B2
+);
+    assign Y = A & (B1 | B2);
 endmodule
 
 module OAI22(

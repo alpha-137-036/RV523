@@ -1184,6 +1184,51 @@ MACRO AOI222
         
 END AOI222
 
+MACRO MAJ3
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 14 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A1
+        
+  PIN A2
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 2.3 2.05 2.7 2.45 ;
+      END
+  END A2
+        
+  PIN A3
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 4.3 2.05 4.7 2.45 ;
+      END
+  END A3
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 13.3 1.55 13.7 1.95 ;
+      END
+  END Y
+        
+END MAJ3
+
 MACRO OAI21
   CLASS CORE ;
   ORIGIN 0 0 ;
@@ -1228,6 +1273,51 @@ MACRO OAI21
   END Y
         
 END OAI21
+
+MACRO OA21
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 8 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A
+        
+  PIN B1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 2.3 2.05 2.7 2.45 ;
+      END
+  END B1
+        
+  PIN B2
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 4.3 2.05 4.7 2.45 ;
+      END
+  END B2
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 7.3 1.55 7.7 1.95 ;
+      END
+  END Y
+        
+END OA21
 
 MACRO OAI22
   CLASS CORE ;

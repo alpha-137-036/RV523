@@ -1,0 +1,645 @@
+{
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "MAJ3": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "MAJ3.v:4.1-13.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "aoi": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "MAJ3.v:11.12-11.78",
+            "module": "AOI222",
+            "module_src": "../AOI222/AOI222.v:1.1-74.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "aoi.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:14.16-18.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 6 ],
+            "G": [ 3 ],
+            "S": [ "0" ]
+          }
+        },
+        "aoi.N2": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi N2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:19.16-23.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 4 ],
+            "S": [ 6 ]
+          }
+        },
+        "aoi.N3": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi N3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:24.16-28.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 8 ],
+            "G": [ 4 ],
+            "S": [ "0" ]
+          }
+        },
+        "aoi.N4": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi N4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:29.16-33.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 5 ],
+            "S": [ 8 ]
+          }
+        },
+        "aoi.N5": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi N5",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:34.16-38.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 9 ],
+            "G": [ 5 ],
+            "S": [ "0" ]
+          }
+        },
+        "aoi.N6": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi N6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:39.16-43.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 3 ],
+            "S": [ 9 ]
+          }
+        },
+        "aoi.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:44.16-48.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 3 ],
+            "S": [ 10 ]
+          }
+        },
+        "aoi.P2": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi P2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:49.16-53.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 7 ],
+            "G": [ 4 ],
+            "S": [ 10 ]
+          }
+        },
+        "aoi.P3": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi P3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:54.16-58.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 4 ],
+            "S": [ 11 ]
+          }
+        },
+        "aoi.P4": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi P4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:59.16-63.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 10 ],
+            "G": [ 5 ],
+            "S": [ 11 ]
+          }
+        },
+        "aoi.P5": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi P5",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:64.16-68.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 11 ],
+            "G": [ 5 ],
+            "S": [ "1" ]
+          }
+        },
+        "aoi.P6": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "aoi P6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../AOI222/AOI222.v:69.16-73.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 11 ],
+            "G": [ 3 ],
+            "S": [ "1" ]
+          }
+        },
+        "notY": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "MAJ3.v:12.9-12.29",
+            "module": "NOT",
+            "module_src": "../NOT/NOT.v:1.1-18.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "notY.N1": {
+          "hide_name": 0,
+          "type": "RV523_NMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "notY N1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NOT/NOT.v:8.16-12.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 7 ],
+            "S": [ "0" ]
+          }
+        },
+        "notY.P1": {
+          "hide_name": 0,
+          "type": "RV523_PMOS",
+          "parameters": {
+          },
+          "attributes": {
+            "hdlname": "notY P1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "../NOT/NOT.v:13.16-17.6"
+          },
+          "port_directions": {
+            "D": "inout",
+            "G": "inout",
+            "S": "inout"
+          },
+          "connections": {
+            "D": [ 2 ],
+            "G": [ 7 ],
+            "S": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "MAJ3.v:6.11-6.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "MAJ3.v:7.11-7.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "MAJ3.v:8.11-8.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "MAJ3.v:5.12-5.13"
+          }
+        },
+        "Y_N": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "MAJ3.v:10.10-10.13"
+          }
+        },
+        "aoi.A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "aoi A1",
+            "src": "../AOI222/AOI222.v:3.11-3.13"
+          }
+        },
+        "aoi.A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "aoi A2",
+            "src": "../AOI222/AOI222.v:4.11-4.13"
+          }
+        },
+        "aoi.B1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "aoi B1",
+            "src": "../AOI222/AOI222.v:5.11-5.13"
+          }
+        },
+        "aoi.B2": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "aoi B2",
+            "src": "../AOI222/AOI222.v:6.11-6.13"
+          }
+        },
+        "aoi.C1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "aoi C1",
+            "src": "../AOI222/AOI222.v:7.11-7.13"
+          }
+        },
+        "aoi.C2": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "aoi C2",
+            "src": "../AOI222/AOI222.v:8.11-8.13"
+          }
+        },
+        "aoi.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "aoi GND",
+            "src": "../AOI222/AOI222.v:0.0-0.0"
+          }
+        },
+        "aoi.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "aoi VDD",
+            "src": "../AOI222/AOI222.v:0.0-0.0"
+          }
+        },
+        "aoi.Y": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "aoi Y",
+            "src": "../AOI222/AOI222.v:2.12-2.13"
+          }
+        },
+        "aoi.intA": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "aoi intA",
+            "src": "../AOI222/AOI222.v:12.10-12.14",
+            "unused_bits": "0 "
+          }
+        },
+        "aoi.intB": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "hdlname": "aoi intB",
+            "src": "../AOI222/AOI222.v:12.16-12.20",
+            "unused_bits": "0 "
+          }
+        },
+        "aoi.intC": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "aoi intC",
+            "src": "../AOI222/AOI222.v:12.22-12.26",
+            "unused_bits": "0 "
+          }
+        },
+        "aoi.intP": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "hdlname": "aoi intP",
+            "src": "../AOI222/AOI222.v:12.28-12.32",
+            "unused_bits": "0 "
+          }
+        },
+        "aoi.intQ": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "hdlname": "aoi intQ",
+            "src": "../AOI222/AOI222.v:12.34-12.38",
+            "unused_bits": "0 "
+          }
+        },
+        "notY.A": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "notY A",
+            "src": "../NOT/NOT.v:3.11-3.12"
+          }
+        },
+        "notY.GND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "hdlname": "notY GND",
+            "src": "../NOT/NOT.v:0.0-0.0"
+          }
+        },
+        "notY.VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "hdlname": "notY VDD",
+            "src": "../NOT/NOT.v:0.0-0.0"
+          }
+        },
+        "notY.Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "notY Y",
+            "src": "../NOT/NOT.v:2.12-2.13"
+          }
+        }
+      }
+    },
+    "RV523_NMOS": {
+      "attributes": {
+        "footprint": "RV523:SOT523",
+        "blackbox": "00000000000000000000000000000001",
+        "value": "NMOS",
+        "src": "../RV523_MOSFETS.v:4.1-12.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:6.11-6.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:8.11-8.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:10.11-10.12"
+          }
+        }
+      }
+    },
+    "RV523_PMOS": {
+      "attributes": {
+        "footprint": "RV523:SOT523",
+        "blackbox": "00000000000000000000000000000001",
+        "value": "PMOS",
+        "src": "../RV523_MOSFETS.v:17.1-25.10"
+      },
+      "ports": {
+        "D": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "G": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "S": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "D": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "3",
+            "src": "../RV523_MOSFETS.v:19.11-19.12"
+          }
+        },
+        "G": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:21.11-21.12"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:23.11-23.12"
+          }
+        }
+      }
+    }
+  }
+}

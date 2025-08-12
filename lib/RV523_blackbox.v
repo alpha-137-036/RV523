@@ -279,9 +279,33 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "MAJ3" *)
+(* footprint = "RV523:MAJ3" *)
+module MAJ3(
+    output Y,
+    input A1,
+    input A2,
+    input A3
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "OAI21" *)
 (* footprint = "RV523:OAI21" *)
 module OAI21(
+    output Y,
+    input A,
+    input B1,
+    input B2
+);
+endmodule
+
+                    
+(* blackbox *)
+(* techmap_celltype = "OA21" *)
+(* footprint = "RV523:OA21" *)
+module OA21(
     output Y,
     input A,
     input B1,

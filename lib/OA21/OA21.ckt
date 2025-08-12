@@ -1,0 +1,10 @@
+.subckt OA21 Y A B1 B2 VDD VSS
+ Xnot1.N1 Y_N VSS Y RV523_NMOS
+ Xnot1.P1 Y_N VDD Y RV523_PMOS
+ Xoai.N1 A VSS oai.intN RV523_NMOS
+ Xoai.N2 B1 oai.intN Y_N RV523_NMOS
+ Xoai.N3 B2 oai.intN Y_N RV523_NMOS
+ Xoai.P1 A VDD Y_N RV523_PMOS
+ Xoai.P2 B1 VDD oai.intB RV523_PMOS
+ Xoai.P3 B2 oai.intB Y_N RV523_PMOS
+.ends
