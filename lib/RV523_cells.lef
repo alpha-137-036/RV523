@@ -860,6 +860,69 @@ MACRO AOI221
         
 END AOI221
 
+MACRO AOI2111
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 10 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A1
+        
+  PIN A2
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 2.3 2.05 2.7 2.45 ;
+      END
+  END A2
+        
+  PIN B1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 4.3 2.05 4.7 2.45 ;
+      END
+  END B1
+        
+  PIN C1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 6.3 2.05 6.7 2.45 ;
+      END
+  END C1
+        
+  PIN D1
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 8.3 2.05 8.7 2.45 ;
+      END
+  END D1
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 9.3 1.55 9.7 1.95 ;
+      END
+  END Y
+        
+END AOI2111
+
 MACRO AOI222
   CLASS CORE ;
   ORIGIN 0 0 ;
