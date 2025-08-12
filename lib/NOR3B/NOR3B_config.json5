@@ -1,0 +1,14 @@
+{
+    width: 8, 
+
+    inputs: ["A1", "A2", "A3_N"],
+    outputs: ["Y"],
+    functions: ["Y = !(A1 | A2 | (~A3_N))"],
+
+    pins: {
+        "A1": 1,
+        "A2": 3,
+        "A3_N": 5,
+        "Y": 8 
+    }
+}

@@ -159,6 +159,18 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "NOR3B" *)
+(* footprint = "RV523:NOR3B" *)
+module NOR3B(
+    output Y,
+    input A1,
+    input A2,
+    input A3_N
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "OR3" *)
 (* footprint = "RV523:OR3" *)
 module OR3 (output Y, input A1, input A2, input A3);

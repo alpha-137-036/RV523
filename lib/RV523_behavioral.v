@@ -120,6 +120,15 @@ module NOR3(
     assign Y = ~(A1 | A2 | A3);
 endmodule
 
+module NOR3B(
+    output Y,
+    input A1,
+    input A2,
+    input A3_N
+);
+    assign Y = ~(A1 | A2 | (~A3_N));
+endmodule
+
 module OR3 (output Y, input A1, input A2, input A3);
     assign Y = A1 | A2 | A3;
 endmodule
