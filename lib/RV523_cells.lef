@@ -464,6 +464,60 @@ MACRO AND4
         
 END AND4
 
+MACRO AND4B
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 12 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A1_N
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A1_N
+        
+  PIN A2
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 4.3 2.05 4.7 2.45 ;
+      END
+  END A2
+        
+  PIN A3
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 6.3 2.05 6.7 2.45 ;
+      END
+  END A3
+        
+  PIN A4
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 8.3 2.05 8.7 2.45 ;
+      END
+  END A4
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 11.3 1.55 11.7 1.95 ;
+      END
+  END Y
+        
+END AND4B
+
 MACRO NOR2
   CLASS CORE ;
   ORIGIN 0 0 ;

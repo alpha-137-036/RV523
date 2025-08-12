@@ -1,0 +1,14 @@
+.subckt AND4B Y A1_N A2 A3 A4 VDD VSS
+ Xand4.nand1.N1 A1 VSS and4.nand1.int1 RV523_NMOS
+ Xand4.nand1.N2 A2 and4.nand1.int1 and4.nand1.int2 RV523_NMOS
+ Xand4.nand1.N3 A3 and4.nand1.int2 and4.nand1.int3 RV523_NMOS
+ Xand4.nand1.N4 A4 and4.nand1.int3 and4.nY RV523_NMOS
+ Xand4.nand1.P1 A1 VDD and4.nY RV523_PMOS
+ Xand4.nand1.P2 A2 VDD and4.nY RV523_PMOS
+ Xand4.nand1.P3 A3 VDD and4.nY RV523_PMOS
+ Xand4.nand1.P4 A4 VDD and4.nY RV523_PMOS
+ Xand4.not1.N1 and4.nY VSS Y RV523_NMOS
+ Xand4.not1.P1 and4.nY VDD Y RV523_PMOS
+ Xnot1.N1 A1_N VSS A1 RV523_NMOS
+ Xnot1.P1 A1_N VDD A1 RV523_PMOS
+.ends
