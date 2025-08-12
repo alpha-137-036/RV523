@@ -1,14 +1,14 @@
 {
     width: 6, 
 
-    inputs: ["A", "B1", "B2"],
+    inputs: ["A1", "A2", "B1"],
     outputs: ["Y"],
-    functions: ["Y = !(A | (B1 & B2))"],
+    functions: ["Y = !((A1 & A2) | B1)"],
 
     pins: {
-        "A": 1,
-        "B1": 3,
-        "B2": 5,
+        "A1": 1,
+        "A2": 3,
+        "B1": 5,
         "Y": 6 
     }
 }
