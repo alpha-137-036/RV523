@@ -10,7 +10,7 @@ VDD VDD 0 {vdd}
 Cload Y 0 30p
 
 * Instantiate gate
-XU1 Y A B1 B2 VDD 0 AOI21
+XU1 Y A1 A2 B1 VDD 0 AOI21
 
 .TRAN 0.1ns 11400ns
 
