@@ -1430,7 +1430,7 @@ MACRO XOR2
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 2.3 2.05 2.7 2.45 ;
+          RECT 4.3 2.05 4.7 2.45 ;
       END
   END B
         
@@ -1466,7 +1466,7 @@ MACRO XNOR2
       USE SIGNAL ;
       PORT
           LAYER M1 ;
-          RECT 2.3 2.05 2.7 2.45 ;
+          RECT 4.3 2.05 4.7 2.45 ;
       END
   END B
         

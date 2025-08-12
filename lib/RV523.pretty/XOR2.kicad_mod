@@ -101,6 +101,18 @@
 	)
 	
 	(fp_circle
+		(center 2.5 1.75)
+		(end 2.7 1.75)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "3174efd0-98d2-5499-8606-2fa88c37a10d")
+	)
+	
+	(fp_circle
 		(center 3.5 2.25)
 		(end 3.7 2.25)
 		(stroke
@@ -110,18 +122,6 @@
 		(fill yes)
 		(layer "F.Fab")
 		(uuid "045cad3f-a2ca-5180-bfe4-c75300d63571")
-	)
-	
-	(fp_circle
-		(center 4.5 1.75)
-		(end 4.7 1.75)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill yes)
-		(layer "F.Fab")
-		(uuid "76bc6281-c6f3-52dc-b2b5-cdfd323d4b16")
 	)
 	
 	(fp_circle
@@ -149,6 +149,18 @@
 	)
 	
 	(fp_circle
+		(center 7.5 2.25)
+		(end 7.7 2.25)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "ae8adf41-26c0-57e3-876e-4ec47340bc34")
+	)
+	
+	(fp_circle
 		(center 8.5 1.75)
 		(end 8.7 1.75)
 		(stroke
@@ -158,18 +170,6 @@
 		(fill yes)
 		(layer "F.Fab")
 		(uuid "bac634bc-f38d-5c27-bf9b-56073df95d93")
-	)
-	
-	(fp_circle
-		(center 9.5 2.25)
-		(end 9.7 2.25)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill yes)
-		(layer "F.Fab")
-		(uuid "1e6ecd6c-9f67-5188-b8b2-655080b3a76c")
 	)
 	
 	(fp_text user "${REFERENCE}"
@@ -210,7 +210,7 @@
 	)
 	
 	(pad "B" thru_hole circle
-		(at 2.5 1.75)
+		(at 4.5 1.75)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
@@ -220,7 +220,7 @@
 	)
 	
 	(pad "Y" thru_hole circle
-		(at 7.5 2.25)
+		(at 9.5 2.25)
 		(size 0.4 0.4)
 		(drill 0.3)
 		(layers "*.Cu" "*.Mask")
