@@ -42,6 +42,17 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "NAND2B" *)
+(* footprint = "RV523:NAND2B" *)
+module NAND2B(
+    output Y,
+    input A_N,
+    input B
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "AND2" *)
 (* footprint = "RV523:AND2" *)
 module AND2(

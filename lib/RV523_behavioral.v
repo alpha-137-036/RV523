@@ -36,6 +36,14 @@ module NAND2(
     assign Y = ~(A1 & A2);
 endmodule
 
+module NAND2B(
+    output Y,
+    input A_N,
+    input B
+);
+    assign Y = ~( ~A_N & B);
+endmodule
+
 module AND2(
     output Y,
     input A1,

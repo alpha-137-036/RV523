@@ -140,6 +140,42 @@ MACRO NAND2
         
 END NAND2
 
+MACRO NAND2B
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 6 BY 4 ;
+
+  SITE CoreSite ;
+    
+  PIN A_N
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A_N
+        
+  PIN B
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 4.3 2.05 4.7 2.45 ;
+      END
+  END B
+        
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 5.3 1.55 5.7 1.95 ;
+      END
+  END Y
+        
+END NAND2B
+
 MACRO AND2
   CLASS CORE ;
   ORIGIN 0 0 ;
