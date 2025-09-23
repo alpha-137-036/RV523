@@ -1,6 +1,8 @@
 settings:
     lib_name:           RV523
     results_dir:        "."
+    multithreaded:      true
+    #simulator:          ngspice-subprocess
     units:
         # Specify all units for clarity, even though only resistance differs from the default
         time:               ns
@@ -17,13 +19,13 @@ settings:
             voltage:    0
         vdd:
             name:       VDD
-            voltage:    5
+            voltage:    3.3
     cell_defaults:
         models:  
-            - RV523_NMOS.ckt
-            - RV523_PMOS.ckt
-        slews:  [1.5, 4, 8, 20, 40]
-        loads:  [50, 100, 150, 300, 500]
+            - Transistors/RV523_NMOS.ckt
+            - Transistors/RV523_PMOS.ckt
+        slews:  [2, 4, 8, 20, 40]
+        loads:  [20, 50, 100, 200, 400]
         setup_time_range: [0.01, 5]
         hold_time_range: [0.01, 5]
         
