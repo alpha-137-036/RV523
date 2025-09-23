@@ -1,0 +1,26 @@
+
+
+*---------- 2N7002T Spice Model (HXY, LCSC C7507460) ----------
+.SUBCKT N7002T 10 20 30 
+*     TERMINALS:  D  G  S
+M1 10 20 30 30 NMOS1 L = 1E-006 W = 1E-006 
+* Simple MOS1 model for 2N7002T
+* VTO and KP measured on the bench
+.model NMOS1 NMOS 
++ LEVEL=3 
++ VTO=1.395
++ KP=0.014
++ RD=1
++ RS=1
+
+* Capacitance from datasheet, not measured
+* Capacitances from datasheet
+* Cgd = Crss = 5pF
+CGD 10 20 5e-12
+* Cds = Coss - Cgd. Coss=25pF
+CDS 10 30 20e-12
+* Cgs = Ciss - Cgd. Ciss=50pF
+CGS 20 30 45e-12
+
+
+.ENDS

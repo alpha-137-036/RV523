@@ -1,0 +1,25 @@
+
+
+*---------- SP2005KT5 Spice Model (SILIUP, LCSC C41355141) ----------
+.SUBCKT SP2006KT5 10 20 30 
+*     TERMINALS:  D  G  S
+M1 10 20 30 30 PMOS1 L = 1E-006 W = 1E-006 
+* Simple MOS3 model for SP2006KT5
+* VTO and KP measured on the bench
+* capacitance estimated
+.model PMOS1 PMOS
++ LEVEL=3 
++ VTO=-0.506
++ KP=0.010
++ RD=0.85
++ RS=0.85
+
+* Capacitances from datasheet
+* Cgd = Crss = 9pF
+CGD 10 20 9e-12
+* Cds = Coss - Cgd. Coss=15pF
+CDS 10 30 6e-12
+* Cgs = Ciss - Cgd. Ciss=113pF
+CGS 20 30 113e-12
+
+.ENDS
