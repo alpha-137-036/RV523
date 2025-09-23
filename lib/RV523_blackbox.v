@@ -250,6 +250,20 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "AOI311" *)
+(* footprint = "RV523:AOI311" *)
+module AOI311(
+    output Y,
+    input A1,
+    input A2,
+    input A3,
+    input B1,
+    input C1
+);
+endmodule
+
+                    
+(* blackbox *)
 (* techmap_celltype = "AOI2111" *)
 (* footprint = "RV523:AOI2111" *)
 module AOI2111(
