@@ -1,6 +1,6 @@
 read_verilog -sv alu8.sv ../../lib/RV523_blackbox.v
 
-synth -top adder
+synth -top alu8
 flatten
 splitnets
 opt_clean
@@ -17,4 +17,3 @@ stat -liberty ../../lib/RV523.lib
 
 write_verilog -noattr -noexpr alu8.netlist.v
 write_json alu8.netlist.json
-write_blif alu8.netlist.blif

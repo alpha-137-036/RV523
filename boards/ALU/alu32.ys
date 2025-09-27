@@ -1,0 +1,11 @@
+read_verilog -sv alu8.netlist.v alu32.sv ../../lib/RV523_blackbox.v
+
+synth -top alu32
+flatten
+splitnets
+opt_clean
+
+stat -liberty ../../lib/RV523.lib
+
+write_verilog -noattr -noexpr alu32.netlist.v
+write_json alu32.netlist.json
