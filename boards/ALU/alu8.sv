@@ -9,7 +9,7 @@ module cla_generator
 );
 if (N == 1) begin
 	assign nG[0] = ~(A[0] & B[0]);
-	assign nP[0] = ~(A[0] | B[0]);
+	assign nP[0] = ~(A[0] ^ B[0]);
 end else begin
 	parameter K = N/2;
 	wire [N-1:K]nGh, nPh;
@@ -39,53 +39,40 @@ endmodule
 
 module alu8
 (
-	input [7:0] A,
-	input [7:0] B,
-	// input nGm8m1,
-	// input nGm24m9,
-	input nCin,
+	input  [7:0] A,
+	input  [7:0] B,
+	input  [3:0] north,
 	output [7:0] S,
-	// output nG07_o,
-	// output nGm87_o,
-	// output nGm24m9_o,
-	// output nGm247_o
-	output nCout
+	output [3:0] south
 );
-	wire [7:-1]nG;
-	wire [7:-1]nP;
+	genvar i;
+
+	wire [7:-1] nG0;
+	wire [7:-1] nP0;
+
+	wire nGm8m1, nGm16m1, nGm24m1, nGm32m1, nG07, nGm87, nGm167, nGm247;
 	
-	assign nP[-1] = 1;
-	assign nG[-1] = nCin;
+	assign { nGm8m1, nGm16m1, nGm24m1, nGm32m1 } = north;
 	
 	cla_generator #(.N(8)) u_cla(
-		.A(A), .B(B), .nG(nG[7:0]), .nP(nP[7:0])
+		.A(A), .B(B), .nG(nG0[7:0]), .nP(nP0[7:0])
 	);
-	
-	wire [8:0]nC;
-	
-	genvar i;
-	for (i = 0; i <= 8; i++) begin
-		assign nC[i] = nG[i-1] & (nP[i-1] | nCin);
-	end
-	for (i = 0; i < 8; i++) begin
-		assign S[i] = A[i] ^ B[i] ^ ~nC[i];
-	end
-	assign nCout = nC[8];
-	
-	// wire [7:0]nGm8;
 
-	// genvar i;
+	assign nG07    = nG0[7];
+	assign nGm87   = nG07 & (nP0[7] | nGm8m1);
+	assign nGm167  = nG07 & (nP0[7] | nGm16m1);
+	assign nG0[-1] = 1'b1;
+	assign nP0[-1] = 1'b1;
+	wire [7:-1]nGm24;
+	assign nGm24[-1] = nGm24m1;
+
+
+	for (i = 0; i < 8; i++) begin
+		assign nGm24[i] = nG0[i] & (nP0[i] | nGm24m1);
+		assign S[i]     = A[i] ^ B[i] ^ ~nGm24[i-1];
+	end
+	assign nGm247  = nGm24[7];
 	
-	// for (i = 0; i < 8; i++) begin
-		// assign nGm8[i] = nG0[i] & (nP0[i] | nGm8m1);
-	// end
-	
-	// assign nG07_o = nG0[7];
-	// assign nGm87_o = nGm8[7];
-	
-	// genvar i;
-	// for (i = 0; i < 8; i++) begin
-		// assign S[i] = A[i] ^ B[i] ^ ~nG[i-1];
-	// end
+	assign south = { nG07, nGm87, nGm167, nGm247};
 	
 endmodule
