@@ -271,8 +271,8 @@ module AOI2111(
     input A1,
     input A2,
     input B1,
-    input B2,
-    input C
+    input C1,
+    input D1
 );
 endmodule
 
