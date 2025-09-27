@@ -25,6 +25,9 @@ module alu32_tb();
 		A = 32'h80000000;
 		B = 32'h80000000;
 		#1;
+		A = 32'h1234FFFF;
+		B = 32'h00000001;
+		#1;
 	end
 	
 endmodule

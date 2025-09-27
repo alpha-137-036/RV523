@@ -9,7 +9,7 @@ module cla_generator
 );
 if (N == 1) begin
 	assign nG[0] = ~(A[0] & B[0]);
-	assign nP[0] = ~(A[0] ^ B[0]);
+	assign nP[0] = ~(A[0] | B[0]);
 end else begin
 	parameter K = N/2;
 	wire [N-1:K]nGh, nPh;
