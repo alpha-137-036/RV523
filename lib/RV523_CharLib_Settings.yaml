@@ -24,8 +24,8 @@ settings:
         models:  
             - Transistors/RV523_NMOS.ckt
             - Transistors/RV523_PMOS.ckt
-        slews:  [2, 4, 8, 20, 40]
-        loads:  [20, 50, 100, 200, 400]
+        slews:  [10, 20, 40, 100, 150]
+        loads:  [50, 100, 200, 400, 600, 800, 1000]
         setup_time_range: [0.01, 5]
         hold_time_range: [0.01, 5]
         
