@@ -1,8 +1,10 @@
 module alu32_tb();
+	operation_t op;
 	logic [31:0]A, B, S;
 	logic nCout;
 
 	alu32 u_alu(
+		.op(op),
 		.A(A), .B(B), .S(S), .nCout(nCout)
 	);
 
@@ -13,6 +15,7 @@ module alu32_tb();
 	end
 
 	initial begin
+		op.carry_propagate = 1;
 		A = 32'h444FFFCF;
 		B = 32'h00000001;
 		#1;

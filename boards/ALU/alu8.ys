@@ -1,4 +1,4 @@
-read_verilog -sv alu8.sv ../../lib/RV523_blackbox.v
+read_verilog -sv alu_typedefs.sv alu8.sv ../../lib/RV523_blackbox.v
 
 synth -top alu8
 flatten

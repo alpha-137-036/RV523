@@ -1,4 +1,4 @@
-read_verilog -sv alu8.netlist.v alu32.sv ../../lib/RV523_blackbox.v
+read_verilog -sv alu_typedefs.sv alu8.netlist.v alu32.sv ../../lib/RV523_blackbox.v
 
 synth -top alu32
 flatten

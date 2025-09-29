@@ -2,19 +2,21 @@ module cla_generator
 #(
 	parameter N = 8
 )(
+	input operation_t op,
 	input [N-1:0]A,
 	input [N-1:0]B,
 	output [N-1:0]nG,
 	output [N-1:0]nP
 );
 if (N == 1) begin
-	assign nG[0] = ~(A[0] & B[0]);
+	assign nG[0] = op.carry_propagate == 1 ? ~(A[0] & B[0]) : 1'b1;
 	assign nP[0] = ~(A[0] | B[0]);
 end else begin
 	parameter K = N/2;
 	wire [N-1:K]nGh, nPh;
 
 	cla_generator #(.N(K)) u_low(
+		.op(op),
 		.A(A[K-1:0]),
 		.B(B[K-1:0]),
 		.nG(nG[K-1:0]),
@@ -22,6 +24,7 @@ end else begin
 	);
 
 	cla_generator #(.N(N-K)) u_high(
+		.op(op),
 		.A(A[N-1:K]),
 		.B(B[N-1:K]),
 		.nG(nGh[N-1:K]),
@@ -39,6 +42,7 @@ endmodule
 
 module alu8
 (
+	input operation_t op,
 	input  [7:0] A,
 	input  [7:0] B,
 	input  [3:0] north,
@@ -55,6 +59,7 @@ module alu8
 	assign { nGm8m1, nGm16m1, nGm24m1, nGm32m1 } = north;
 	
 	cla_generator #(.N(8)) u_cla(
+		.op(op),
 		.A(A), .B(B), .nG(nG0[7:0]), .nP(nP0[7:0])
 	);
 
