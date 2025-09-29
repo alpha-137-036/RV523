@@ -174,12 +174,83 @@ module alu8(A, B, north, S, south, op);
   wire _170_;
   wire _171_;
   wire _172_;
+  wire _173_;
+  wire _174_;
+  wire _175_;
+  wire _176_;
+  wire _177_;
+  wire _178_;
+  wire _179_;
+  wire _180_;
+  wire _181_;
+  wire _182_;
+  wire _183_;
+  wire _184_;
+  wire _185_;
+  wire _186_;
+  wire _187_;
+  wire _188_;
+  wire _189_;
+  wire _190_;
+  wire _191_;
+  wire _192_;
+  wire _193_;
+  wire _194_;
+  wire _195_;
+  wire _196_;
+  wire _197_;
+  wire _198_;
+  wire _199_;
+  wire _200_;
+  wire _201_;
+  wire _202_;
+  wire _203_;
+  wire _204_;
+  wire _205_;
+  wire _206_;
+  wire _207_;
+  wire _208_;
+  wire _209_;
+  wire _210_;
+  wire _211_;
   input [7:0] A;
   wire [7:0] A;
   input [7:0] B;
   wire [7:0] B;
   output [7:0] S;
   wire [7:0] S;
+  wire \i[0] ;
+  wire \i[10] ;
+  wire \i[11] ;
+  wire \i[12] ;
+  wire \i[13] ;
+  wire \i[14] ;
+  wire \i[15] ;
+  wire \i[16] ;
+  wire \i[17] ;
+  wire \i[18] ;
+  wire \i[19] ;
+  wire \i[1] ;
+  wire \i[20] ;
+  wire \i[21] ;
+  wire \i[22] ;
+  wire \i[23] ;
+  wire \i[24] ;
+  wire \i[25] ;
+  wire \i[26] ;
+  wire \i[27] ;
+  wire \i[28] ;
+  wire \i[29] ;
+  wire \i[2] ;
+  wire \i[30] ;
+  wire \i[31] ;
+  wire \i[3] ;
+  wire \i[4] ;
+  wire \i[5] ;
+  wire \i[6] ;
+  wire \i[7] ;
+  wire \i[8] ;
+  wire \i[9] ;
   wire nG07;
   wire \nG0[-1] ;
   wire \nG0[7] ;
@@ -195,8 +266,8 @@ module alu8(A, B, north, S, south, op);
   wire \nP0[-1] ;
   input [3:0] north;
   wire [3:0] north;
-  input [1:0] op;
-  wire [1:0] op;
+  input [2:0] op;
+  wire [2:0] op;
   output [3:0] south;
   wire [3:0] south;
   wire \u_cla.A[0] ;
@@ -231,12 +302,15 @@ module alu8(A, B, north, S, south, op);
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.B[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.B[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.op[2] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_high.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.A[1] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.B[0] ;
@@ -245,14 +319,18 @@ module alu8(A, B, north, S, south, op);
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.B[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.B[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.op[2] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_high.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_high.genblk1.u_low.op[2] ;
   wire \u_cla.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_low.A[1] ;
   wire \u_cla.genblk1.u_low.A[2] ;
@@ -269,12 +347,15 @@ module alu8(A, B, north, S, south, op);
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.B[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.B[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.op[2] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_low.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.A[1] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.B[0] ;
@@ -283,375 +364,491 @@ module alu8(A, B, north, S, south, op);
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.B[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.op[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.op[1] ;
+  wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.op[2] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.A[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.B[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.op[2] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_low.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_low.genblk1.u_low.op[2] ;
   wire \u_cla.genblk1.u_low.op[0] ;
   wire \u_cla.genblk1.u_low.op[1] ;
+  wire \u_cla.genblk1.u_low.op[2] ;
   wire \u_cla.nG[7] ;
   wire \u_cla.op[0] ;
   wire \u_cla.op[1] ;
-  NOT _173_ (
-    .A(_172_),
-    .Y(_114_)
-  );
-  NOT _174_ (
-    .A(_171_),
-    .Y(_115_)
-  );
-  NOT _175_ (
-    .A(_170_),
-    .Y(_116_)
-  );
-  NOT _176_ (
-    .A(_169_),
-    .Y(_117_)
-  );
-  NAND3 _177_ (
-    .A1(_172_),
-    .A2(_086_),
-    .A3(_094_),
-    .Y(_118_)
-  );
-  NAND3 _178_ (
-    .A1(_172_),
-    .A2(_087_),
-    .A3(_095_),
-    .Y(_119_)
-  );
-  NAND2 _179_ (
-    .A1(_118_),
-    .A2(_119_),
-    .Y(_120_)
-  );
-  NOR2 _180_ (
-    .A1(_088_),
-    .A2(_096_),
-    .Y(_121_)
-  );
-  OAI222 _181_ (
-    .A1(_089_),
-    .A2(_097_),
-    .B1(_088_),
-    .B2(_096_),
-    .C1(_087_),
-    .C2(_095_),
-    .Y(_122_)
-  );
-  NOT _182_ (
-    .A(_122_),
-    .Y(_123_)
-  );
-  NAND2 _183_ (
-    .A1(_089_),
-    .A2(_097_),
-    .Y(_124_)
-  );
-  NAND2 _184_ (
-    .A1(_088_),
-    .A2(_096_),
-    .Y(_125_)
-  );
-  NOT _185_ (
-    .A(_125_),
-    .Y(_126_)
-  );
-  OAI21 _186_ (
-    .A(_172_),
-    .B1(_089_),
-    .B2(_097_),
-    .Y(_127_)
-  );
-  AOI21 _187_ (
-    .A1(_124_),
-    .A2(_125_),
-    .B1(_127_),
-    .Y(_128_)
-  );
-  AOI21 _188_ (
-    .A1(_120_),
-    .A2(_123_),
-    .B1(_128_),
-    .Y(_129_)
-  );
-  NOR2 _189_ (
-    .A1(_093_),
-    .A2(_101_),
-    .Y(_130_)
-  );
-  NOR2 _190_ (
-    .A1(_092_),
-    .A2(_100_),
-    .Y(_131_)
-  );
-  OR2 _191_ (
-    .A1(_092_),
-    .A2(_100_),
-    .Y(_132_)
-  );
-  OR2 _192_ (
-    .A1(_091_),
-    .A2(_099_),
-    .Y(_133_)
-  );
-  NOR2 _193_ (
-    .A1(_090_),
-    .A2(_098_),
-    .Y(_134_)
-  );
-  OAI21 _194_ (
-    .A(_133_),
-    .B1(_098_),
-    .B2(_090_),
-    .Y(_135_)
-  );
-  NOR3 _195_ (
-    .A1(_130_),
-    .A2(_131_),
-    .A3(_135_),
-    .Y(_136_)
-  );
-  NAND2B _196_ (
-    .A_N(_129_),
-    .B(_136_),
-    .Y(_137_)
-  );
-  NAND2 _197_ (
-    .A1(_090_),
-    .A2(_098_),
-    .Y(_138_)
-  );
-  NOT _198_ (
-    .A(_138_),
-    .Y(_139_)
-  );
-  NAND2 _199_ (
-    .A1(_091_),
-    .A2(_099_),
-    .Y(_140_)
-  );
-  NAND2 _200_ (
-    .A1(_138_),
-    .A2(_140_),
-    .Y(_141_)
-  );
-  NAND3 _201_ (
-    .A1(_172_),
-    .A2(_133_),
-    .A3(_141_),
-    .Y(_142_)
-  );
-  OR3 _202_ (
-    .A1(_130_),
-    .A2(_131_),
-    .A3(_142_),
-    .Y(_143_)
-  );
-  NAND2 _203_ (
-    .A1(_093_),
-    .A2(_101_),
-    .Y(_144_)
-  );
-  NAND2 _204_ (
-    .A1(_092_),
-    .A2(_100_),
-    .Y(_145_)
-  );
-  NAND2 _205_ (
-    .A1(_144_),
-    .A2(_145_),
-    .Y(_146_)
-  );
-  NAND2 _206_ (
-    .A1(_172_),
-    .A2(_146_),
+  wire \u_cla.op[2] ;
+  NOT _212_ (
+    .A(_206_),
     .Y(_147_)
   );
-  OAI211 _207_ (
-    .A(_137_),
-    .B(_143_),
-    .C1(_147_),
-    .C2(_130_),
+  NOT _213_ (
+    .A(_211_),
     .Y(_148_)
   );
-  NOT _208_ (
-    .A(_148_),
-    .Y(_110_)
-  );
-  NOR2 _209_ (
-    .A1(_086_),
-    .A2(_094_),
+  NOT _214_ (
+    .A(_208_),
     .Y(_149_)
   );
-  NOR3B _210_ (
-    .A1(_122_),
-    .A2(_149_),
-    .A3_N(_136_),
+  NOT _215_ (
+    .A(_207_),
     .Y(_150_)
   );
-  AOI21 _211_ (
-    .A1(_115_),
-    .A2(_150_),
-    .B1(_148_),
-    .Y(_113_)
-  );
-  AOI21 _212_ (
-    .A1(_116_),
-    .A2(_150_),
-    .B1(_148_),
-    .Y(_111_)
-  );
-  XOR2 _213_ (
-    .A(_086_),
-    .B(_094_),
+  NOR2 _216_ (
+    .A1(_114_),
+    .A2(_122_),
     .Y(_151_)
   );
-  XNOR2 _214_ (
-    .A(_169_),
-    .B(_151_),
-    .Y(_102_)
-  );
-  XNOR2 _215_ (
-    .A(_087_),
-    .B(_095_),
+  NOT _217_ (
+    .A(_151_),
     .Y(_152_)
   );
-  NOR2 _216_ (
-    .A1(_169_),
-    .A2(_149_),
+  NOR2 _218_ (
+    .A1(_113_),
+    .A2(_121_),
     .Y(_153_)
   );
-  OAI21 _217_ (
-    .A(_118_),
-    .B1(_149_),
-    .B2(_169_),
+  NOT _219_ (
+    .A(_153_),
     .Y(_154_)
   );
-  XNOR2 _218_ (
-    .A(_152_),
-    .B(_154_),
-    .Y(_103_)
-  );
-  NOR2 _219_ (
-    .A1(_121_),
-    .A2(_126_),
+  NOR2 _220_ (
+    .A1(_151_),
+    .A2(_153_),
     .Y(_155_)
   );
-  OAI22 _220_ (
-    .A1(_087_),
-    .A2(_095_),
-    .B1(_120_),
-    .B2(_153_),
+  OR2 _221_ (
+    .A1(_112_),
+    .A2(_120_),
     .Y(_156_)
   );
-  XNOR2 _221_ (
-    .A(_155_),
-    .B(_156_),
-    .Y(_104_)
-  );
-  XNOR2 _222_ (
-    .A(_089_),
-    .B(_097_),
+  OR2 _222_ (
+    .A1(_111_),
+    .A2(_119_),
     .Y(_157_)
   );
-  OAI22 _223_ (
-    .A1(_114_),
-    .A2(_125_),
-    .B1(_156_),
-    .B2(_121_),
+  NOR2 _223_ (
+    .A1(_110_),
+    .A2(_118_),
     .Y(_158_)
   );
-  XNOR2 _224_ (
-    .A(_157_),
-    .B(_158_),
-    .Y(_105_)
-  );
-  NOR2 _225_ (
-    .A1(_134_),
-    .A2(_139_),
+  NOT _224_ (
+    .A(_158_),
     .Y(_159_)
   );
-  NOR3 _226_ (
-    .A1(_169_),
-    .A2(_122_),
-    .A3(_149_),
+  OAI211 _225_ (
+    .A(_156_),
+    .B(_157_),
+    .C1(_110_),
+    .C2(_118_),
     .Y(_160_)
   );
-  AOI211 _227_ (
-    .A(_128_),
-    .B(_160_),
-    .C1(_120_),
-    .C2(_123_),
+  NOR2 _226_ (
+    .A1(_109_),
+    .A2(_117_),
     .Y(_161_)
   );
-  XNOR2 _228_ (
-    .A(_159_),
-    .B(_161_),
-    .Y(_106_)
-  );
-  NAND2 _229_ (
-    .A1(_133_),
-    .A2(_140_),
+  NOT _227_ (
+    .A(_161_),
     .Y(_162_)
   );
-  OAI22 _230_ (
-    .A1(_114_),
-    .A2(_138_),
-    .B1(_161_),
-    .B2(_134_),
+  NAND2 _228_ (
+    .A1(_110_),
+    .A2(_118_),
     .Y(_163_)
   );
-  XNOR2 _231_ (
-    .A(_162_),
-    .B(_163_),
-    .Y(_107_)
-  );
-  NAND2 _232_ (
-    .A1(_132_),
-    .A2(_145_),
+  NAND2 _229_ (
+    .A1(_109_),
+    .A2(_117_),
     .Y(_164_)
   );
-  OAI21 _233_ (
-    .A(_142_),
-    .B1(_161_),
-    .B2(_135_),
+  AOI22 _230_ (
+    .A1(_110_),
+    .A2(_118_),
+    .B1(_109_),
+    .B2(_117_),
     .Y(_165_)
   );
-  XNOR2 _234_ (
+  OAI21 _231_ (
     .A(_164_),
-    .B(_165_),
-    .Y(_108_)
-  );
-  AOI21 _235_ (
-    .A1(_117_),
-    .A2(_150_),
-    .B1(_148_),
-    .Y(_112_)
-  );
-  XOR2 _236_ (
-    .A(_093_),
-    .B(_101_),
+    .B1(_161_),
+    .B2(_206_),
     .Y(_166_)
   );
-  NOR2 _237_ (
-    .A1(_114_),
-    .A2(_145_),
+  OA21 _232_ (
+    .A(_165_),
+    .B1(_161_),
+    .B2(_206_),
     .Y(_167_)
   );
-  AOI21 _238_ (
-    .A1(_132_),
-    .A2(_165_),
-    .B1(_167_),
+  NAND2 _233_ (
+    .A1(_112_),
+    .A2(_120_),
     .Y(_168_)
   );
-  XNOR2 _239_ (
-    .A(_166_),
-    .B(_168_),
-    .Y(_109_)
+  NAND2 _234_ (
+    .A1(_111_),
+    .A2(_119_),
+    .Y(_169_)
   );
+  NAND2B _235_ (
+    .A_N(_169_),
+    .B(_156_),
+    .Y(_170_)
+  );
+  AND2 _236_ (
+    .A1(_168_),
+    .A2(_170_),
+    .Y(_171_)
+  );
+  OAI211 _237_ (
+    .A(_168_),
+    .B(_170_),
+    .C1(_160_),
+    .C2(_167_),
+    .Y(_172_)
+  );
+  NAND2 _238_ (
+    .A1(_114_),
+    .A2(_122_),
+    .Y(_173_)
+  );
+  NAND2 _239_ (
+    .A1(_113_),
+    .A2(_121_),
+    .Y(_174_)
+  );
+  AOI21 _240_ (
+    .A1(_173_),
+    .A2(_174_),
+    .B1(_151_),
+    .Y(_175_)
+  );
+  AOI21 _241_ (
+    .A1(_155_),
+    .A2(_172_),
+    .B1(_175_),
+    .Y(_176_)
+  );
+  NOR2 _242_ (
+    .A1(_148_),
+    .A2(_176_),
+    .Y(_177_)
+  );
+  NAND2 _243_ (
+    .A1(_115_),
+    .A2(_123_),
+    .Y(_178_)
+  );
+  NAND2B _244_ (
+    .A_N(_210_),
+    .B(_209_),
+    .Y(_179_)
+  );
+  NOR2 _245_ (
+    .A1(_115_),
+    .A2(_123_),
+    .Y(_180_)
+  );
+  NOT _246_ (
+    .A(_180_),
+    .Y(_181_)
+  );
+  NAND3 _247_ (
+    .A1(_178_),
+    .A2(_179_),
+    .A3(_181_),
+    .Y(_182_)
+  );
+  OAI21 _248_ (
+    .A(_182_),
+    .B1(_178_),
+    .B2(_210_),
+    .Y(_183_)
+  );
+  XOR2 _249_ (
+    .A(_177_),
+    .B(_183_),
+    .Y(_131_)
+  );
+  NAND2 _250_ (
+    .A1(_211_),
+    .A2(_181_),
+    .Y(_184_)
+  );
+  AOI21 _251_ (
+    .A1(_176_),
+    .A2(_178_),
+    .B1(_184_),
+    .Y(_185_)
+  );
+  NAND2 _252_ (
+    .A1(_116_),
+    .A2(_124_),
+    .Y(_186_)
+  );
+  NOR2 _253_ (
+    .A1(_116_),
+    .A2(_124_),
+    .Y(_187_)
+  );
+  NAND2 _254_ (
+    .A1(_179_),
+    .A2(_186_),
+    .Y(_188_)
+  );
+  OAI22 _255_ (
+    .A1(_210_),
+    .A2(_186_),
+    .B1(_187_),
+    .B2(_188_),
+    .Y(_189_)
+  );
+  XOR2 _256_ (
+    .A(_185_),
+    .B(_189_),
+    .Y(_132_)
+  );
+  NAND2 _257_ (
+    .A1(_211_),
+    .A2(_172_),
+    .Y(_190_)
+  );
+  OAI22 _258_ (
+    .A1(_148_),
+    .A2(_174_),
+    .B1(_190_),
+    .B2(_153_),
+    .Y(_191_)
+  );
+  NAND3 _259_ (
+    .A1(_152_),
+    .A2(_173_),
+    .A3(_179_),
+    .Y(_192_)
+  );
+  OAI21 _260_ (
+    .A(_192_),
+    .B1(_173_),
+    .B2(_210_),
+    .Y(_193_)
+  );
+  XOR2 _261_ (
+    .A(_191_),
+    .B(_193_),
+    .Y(_130_)
+  );
+  NAND3 _262_ (
+    .A1(_154_),
+    .A2(_174_),
+    .A3(_179_),
+    .Y(_194_)
+  );
+  OAI21 _263_ (
+    .A(_194_),
+    .B1(_174_),
+    .B2(_210_),
+    .Y(_195_)
+  );
+  XNOR2 _264_ (
+    .A(_190_),
+    .B(_195_),
+    .Y(_129_)
+  );
+  NOR2 _265_ (
+    .A1(_148_),
+    .A2(_169_),
+    .Y(_196_)
+  );
+  NOR3 _266_ (
+    .A1(_148_),
+    .A2(_158_),
+    .A3(_167_),
+    .Y(_197_)
+  );
+  AOI21 _267_ (
+    .A1(_157_),
+    .A2(_197_),
+    .B1(_196_),
+    .Y(_198_)
+  );
+  NAND3 _268_ (
+    .A1(_156_),
+    .A2(_168_),
+    .A3(_179_),
+    .Y(_199_)
+  );
+  OAI21 _269_ (
+    .A(_199_),
+    .B1(_168_),
+    .B2(_210_),
+    .Y(_200_)
+  );
+  XNOR2 _270_ (
+    .A(_198_),
+    .B(_200_),
+    .Y(_128_)
+  );
+  NAND3 _271_ (
+    .A1(_157_),
+    .A2(_169_),
+    .A3(_179_),
+    .Y(_201_)
+  );
+  OAI21 _272_ (
+    .A(_201_),
+    .B1(_169_),
+    .B2(_210_),
+    .Y(_202_)
+  );
+  XOR2 _273_ (
+    .A(_197_),
+    .B(_202_),
+    .Y(_127_)
+  );
+  NAND2 _274_ (
+    .A1(_211_),
+    .A2(_166_),
+    .Y(_203_)
+  );
+  NAND3 _275_ (
+    .A1(_159_),
+    .A2(_163_),
+    .A3(_179_),
+    .Y(_204_)
+  );
+  OAI21 _276_ (
+    .A(_204_),
+    .B1(_163_),
+    .B2(_210_),
+    .Y(_205_)
+  );
+  XNOR2 _277_ (
+    .A(_203_),
+    .B(_205_),
+    .Y(_126_)
+  );
+  NAND2 _278_ (
+    .A1(_147_),
+    .A2(_211_),
+    .Y(_137_)
+  );
+  NAND3 _279_ (
+    .A1(_162_),
+    .A2(_164_),
+    .A3(_179_),
+    .Y(_138_)
+  );
+  OAI21 _280_ (
+    .A(_138_),
+    .B1(_164_),
+    .B2(_210_),
+    .Y(_139_)
+  );
+  XNOR2 _281_ (
+    .A(_137_),
+    .B(_139_),
+    .Y(_125_)
+  );
+  OA21 _282_ (
+    .A(_171_),
+    .B1(_165_),
+    .B2(_160_),
+    .Y(_140_)
+  );
+  NOR2 _283_ (
+    .A1(_180_),
+    .A2(_187_),
+    .Y(_141_)
+  );
+  NAND2 _284_ (
+    .A1(_155_),
+    .A2(_141_),
+    .Y(_142_)
+  );
+  OAI21 _285_ (
+    .A(_186_),
+    .B1(_187_),
+    .B2(_178_),
+    .Y(_143_)
+  );
+  AOI21 _286_ (
+    .A1(_175_),
+    .A2(_141_),
+    .B1(_143_),
+    .Y(_144_)
+  );
+  OAI21 _287_ (
+    .A(_144_),
+    .B1(_142_),
+    .B2(_140_),
+    .Y(_145_)
+  );
+  NOT _288_ (
+    .A(_145_),
+    .Y(_133_)
+  );
+  NOR3 _289_ (
+    .A1(_160_),
+    .A2(_161_),
+    .A3(_142_),
+    .Y(_146_)
+  );
+  AOI21 _290_ (
+    .A1(_149_),
+    .A2(_146_),
+    .B1(_145_),
+    .Y(_136_)
+  );
+  AOI21 _291_ (
+    .A1(_150_),
+    .A2(_146_),
+    .B1(_145_),
+    .Y(_134_)
+  );
+  AOI21 _292_ (
+    .A1(_147_),
+    .A2(_146_),
+    .B1(_145_),
+    .Y(_135_)
+  );
+  assign \i[0]  = 1'h0;
+  assign \i[10]  = 1'h0;
+  assign \i[11]  = 1'h0;
+  assign \i[12]  = 1'h0;
+  assign \i[13]  = 1'h0;
+  assign \i[14]  = 1'h0;
+  assign \i[15]  = 1'h0;
+  assign \i[16]  = 1'h0;
+  assign \i[17]  = 1'h0;
+  assign \i[18]  = 1'h0;
+  assign \i[19]  = 1'h0;
+  assign \i[1]  = 1'h0;
+  assign \i[20]  = 1'h0;
+  assign \i[21]  = 1'h0;
+  assign \i[22]  = 1'h0;
+  assign \i[23]  = 1'h0;
+  assign \i[24]  = 1'h0;
+  assign \i[25]  = 1'h0;
+  assign \i[26]  = 1'h0;
+  assign \i[27]  = 1'h0;
+  assign \i[28]  = 1'h0;
+  assign \i[29]  = 1'h0;
+  assign \i[2]  = 1'h0;
+  assign \i[30]  = 1'h0;
+  assign \i[31]  = 1'h0;
+  assign \i[3]  = 1'h1;
+  assign \i[4]  = 1'h0;
+  assign \i[5]  = 1'h0;
+  assign \i[6]  = 1'h0;
+  assign \i[7]  = 1'h0;
+  assign \i[8]  = 1'h0;
+  assign \i[9]  = 1'h0;
+  assign \nG0[-1]  = 1'h1;
+  assign \nG0[7]  = nG07;
+  assign nGm16m1 = north[2];
   assign \nGm24[-1]  = north[1];
   assign \nGm24[7]  = nGm247;
   assign nGm24m1 = north[1];
@@ -689,16 +886,17 @@ module alu8(A, B, north, S, south, op);
   assign \u_cla.genblk1.u_high.genblk1.u_high.B[1]  = B[7];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.A[0]  = A[7];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.B[0]  = B[7];
-  assign nGm16m1 = north[2];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.A[0]  = A[6];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.B[0]  = B[6];
-  assign \nG0[7]  = nG07;
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.genblk1.u_high.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.genblk1.u_high.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_high.genblk1.u_low.A[0]  = A[4];
   assign \u_cla.genblk1.u_high.genblk1.u_low.A[1]  = A[5];
   assign \u_cla.genblk1.u_high.genblk1.u_low.B[0]  = B[4];
@@ -707,15 +905,18 @@ module alu8(A, B, north, S, south, op);
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.B[0]  = B[5];
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.A[0]  = A[4];
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.B[0]  = B[4];
-  assign \nG0[-1]  = 1'h1;
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.genblk1.u_low.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.genblk1.u_high.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.A[0]  = A[0];
   assign \u_cla.genblk1.u_low.A[1]  = A[1];
   assign \u_cla.genblk1.u_low.A[2]  = A[2];
@@ -732,12 +933,15 @@ module alu8(A, B, north, S, south, op);
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.B[0]  = B[3];
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.A[0]  = A[2];
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.B[0]  = B[2];
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.genblk1.u_high.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.genblk1.u_low.A[0]  = A[0];
   assign \u_cla.genblk1.u_low.genblk1.u_low.A[1]  = A[1];
   assign \u_cla.genblk1.u_low.genblk1.u_low.B[0]  = B[0];
@@ -746,47 +950,54 @@ module alu8(A, B, north, S, south, op);
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.B[0]  = B[1];
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_high.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.A[0]  = A[0];
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.B[0]  = B[0];
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.genblk1.u_low.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.genblk1.u_low.op[0]  = op[0];
   assign \u_cla.genblk1.u_low.op[1]  = op[1];
+  assign \u_cla.genblk1.u_low.op[2]  = op[2];
   assign \u_cla.nG[7]  = nG07;
   assign \u_cla.op[0]  = op[0];
   assign \u_cla.op[1]  = op[1];
-  assign _172_ = op[1];
-  assign _093_ = A[7];
-  assign _101_ = B[7];
-  assign _092_ = A[6];
-  assign _100_ = B[6];
-  assign _091_ = A[5];
-  assign _099_ = B[5];
-  assign _090_ = A[4];
-  assign _098_ = B[4];
-  assign _089_ = A[3];
-  assign _097_ = B[3];
-  assign _088_ = A[2];
-  assign _096_ = B[2];
-  assign _087_ = A[1];
-  assign _095_ = B[1];
-  assign _086_ = A[0];
-  assign _094_ = B[0];
-  assign nG07 = _110_;
-  assign _171_ = north[3];
-  assign nGm87 = _113_;
-  assign _170_ = north[2];
-  assign nGm167 = _111_;
-  assign _169_ = north[1];
-  assign S[0] = _102_;
-  assign S[1] = _103_;
-  assign S[2] = _104_;
-  assign S[3] = _105_;
-  assign S[4] = _106_;
-  assign S[5] = _107_;
-  assign S[6] = _108_;
-  assign nGm247 = _112_;
-  assign S[7] = _109_;
+  assign \u_cla.op[2]  = op[2];
+  assign _115_ = A[6];
+  assign _123_ = B[6];
+  assign _209_ = op[0];
+  assign _210_ = op[1];
+  assign _114_ = A[5];
+  assign _122_ = B[5];
+  assign _113_ = A[4];
+  assign _121_ = B[4];
+  assign _112_ = A[3];
+  assign _120_ = B[3];
+  assign _111_ = A[2];
+  assign _119_ = B[2];
+  assign _110_ = A[1];
+  assign _118_ = B[1];
+  assign _109_ = A[0];
+  assign _117_ = B[0];
+  assign _206_ = north[1];
+  assign _211_ = op[2];
+  assign S[6] = _131_;
+  assign _116_ = A[7];
+  assign _124_ = B[7];
+  assign S[7] = _132_;
+  assign S[5] = _130_;
+  assign S[4] = _129_;
+  assign S[3] = _128_;
+  assign S[2] = _127_;
+  assign S[1] = _126_;
+  assign S[0] = _125_;
+  assign nG07 = _133_;
+  assign _208_ = north[3];
+  assign nGm87 = _136_;
+  assign _207_ = north[2];
+  assign nGm167 = _134_;
+  assign nGm247 = _135_;
 endmodule

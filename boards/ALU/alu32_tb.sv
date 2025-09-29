@@ -15,7 +15,9 @@ module alu32_tb();
 	end
 
 	initial begin
-		op.carry_propagate = 1;
+		op.carry_propagate = 0;
+		op._xor = 0;
+		op._and = 0;
 		A = 32'h444FFFCF;
 		B = 32'h00000001;
 		#1;

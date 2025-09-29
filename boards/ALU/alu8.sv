@@ -9,7 +9,7 @@ module cla_generator
 	output [N-1:0]nP
 );
 if (N == 1) begin
-	assign nG[0] = op.carry_propagate == 1 ? ~(A[0] & B[0]) : 1'b1;
+	assign nG[0] = ~(A[0] & B[0]);
 	assign nP[0] = ~(A[0] | B[0]);
 end else begin
 	parameter K = N/2;
@@ -43,18 +43,19 @@ endmodule
 module alu8
 (
 	input operation_t op,
-	input  [7:0] A,
-	input  [7:0] B,
-	input  [3:0] north,
-	output [7:0] S,
-	output [3:0] south
+	input  logic [7:0] A,
+	input  logic [7:0] B,
+	input  logic [3:0] north,
+	output logic [7:0] S,
+	output logic [3:0] south
 );
-	genvar i;
+	integer i;
 
-	wire [7:-1] nG0;
-	wire [7:-1] nP0;
+	logic [7:-1] nG0;
+	logic [7:-1] nP0;
+	logic [7:-1]nGm24;
 
-	wire nGm8m1, nGm16m1, nGm24m1, nGm32m1, nG07, nGm87, nGm167, nGm247;
+	logic nGm8m1, nGm16m1, nGm24m1, nGm32m1, nG07, nGm87, nGm167, nGm247;
 	
 	assign { nGm8m1, nGm16m1, nGm24m1, nGm32m1 } = north;
 	
@@ -63,20 +64,29 @@ module alu8
 		.A(A), .B(B), .nG(nG0[7:0]), .nP(nP0[7:0])
 	);
 
-	assign nG07    = nG0[7];
-	assign nGm87   = nG07 & (nP0[7] | nGm8m1);
-	assign nGm167  = nG07 & (nP0[7] | nGm16m1);
-	assign nG0[-1] = 1'b1;
-	assign nP0[-1] = 1'b1;
-	wire [7:-1]nGm24;
-	assign nGm24[-1] = nGm24m1;
+	always_comb begin
+		nG07    = nG0[7];
+		nGm87   = nG07 & (nP0[7] | nGm8m1);
+		nGm167  = nG07 & (nP0[7] | nGm16m1);
+		nG0[-1] = 1'b1;
+		nP0[-1] = 1'b1;
+		nGm24[-1] = nGm24m1;
 
-
-	for (i = 0; i < 8; i++) begin
-		assign nGm24[i] = nG0[i] & (nP0[i] | nGm24m1);
-		assign S[i]     = A[i] ^ B[i] ^ ~nGm24[i-1];
+		for (i = 0; i < 8; i++) begin
+			nGm24[i] = nG0[i] & (nP0[i] | nGm24m1);
+			if (op._xor) begin
+				S[i] = A[i] ^ B[i];
+			end else if (op._and) begin
+				S[i] = A[i] & B[i];
+			end else begin 
+				S[i] = A[i] | B[i];
+			end
+			if (op.carry_propagate) begin
+				S[i] = S[i] ^ ~nGm24[i-1];
+			end
+		end
+		nGm247  = nGm24[7];
 	end
-	assign nGm247  = nGm24[7];
 	
 	assign south = { nG07, nGm87, nGm167, nGm247};
 	
