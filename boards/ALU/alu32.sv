@@ -43,5 +43,7 @@ module alu32(
 	);
 
 	assign nCout = port4[0];
+	
+	assign op.bit0 = nCout;
 
 endmodule

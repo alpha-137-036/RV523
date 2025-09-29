@@ -5,6 +5,11 @@ flatten
 splitnets
 opt_clean
 
+opt -full
+
+opt_reduce
+opt_expr
+
 techmap;
 synth
 dfflibmap -liberty ../../lib/RV523.lib

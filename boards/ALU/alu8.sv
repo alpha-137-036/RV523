@@ -3,14 +3,27 @@ module cla_generator
 	parameter N = 8
 )(
 	input operation_t op,
-	input [N-1:0]A,
-	input [N-1:0]B,
-	output [N-1:0]nG,
-	output [N-1:0]nP
+	input logic [N-1:0]A,
+	input logic [N-1:0]B,
+	output logic [N-1:0]nG,
+	output logic [N-1:0]nP
 );
 if (N == 1) begin
-	assign nG[0] = ~(A[0] & B[0]);
-	assign nP[0] = ~(A[0] | B[0]);
+	always_comb begin
+		if (op.sub) begin
+			// 0 1 => generate
+			// 0 0 or 1 1 => propagate
+			// 1 0 => neither propagate nor generate
+			nG[0] = ~(~A[0] & B[0]);
+			nP[0] = ~(~A[0] | B[0]);
+		end else begin
+			// 1 1 => generate
+			// 1 0 or 0 1 => propagate
+			// 0 0 => neither propagate nor generate
+			nG[0] = ~(A[0] & B[0]);
+			nP[0] = ~(A[0] | B[0]);
+		end
+	end
 end else begin
 	parameter K = N/2;
 	wire [N-1:K]nGh, nPh;
@@ -31,10 +44,12 @@ end else begin
 		.nP(nPh[N-1:K])
 	);
 	
-	genvar i;
-	for (i = K; i < N; i++) begin
-		assign nP[i] = nPh[i] | nP[K-1];
-		assign nG[i] = nGh[i] & (nPh[i] | nG[K-1]);
+	integer i;
+	always_comb begin
+		for (i = K; i < N; i++) begin
+			nP[i] = nPh[i] | nP[K-1];
+			nG[i] = nGh[i] & (nPh[i] | nG[K-1]);
+		end
 	end
 end	
 
@@ -81,7 +96,10 @@ module alu8
 			end else begin 
 				S[i] = A[i] | B[i];
 			end
-			if (op.carry_propagate) begin
+			if (op.set0) begin
+				S[i] = op.bit0;
+			end
+			if (op.carry) begin
 				S[i] = S[i] ^ ~nGm24[i-1];
 			end
 		end
