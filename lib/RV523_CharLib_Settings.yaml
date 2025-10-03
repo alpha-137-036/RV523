@@ -12,7 +12,7 @@ settings:
         leakage_power:      nW
         capacitive_load:    pF
         energy:             fJ
-    nom_voltage: 5
+    nom_voltage: 3.3
     named_nodes:
         vss:
             name:       VSS

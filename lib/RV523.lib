@@ -23,7 +23,7 @@ library (RV523) {
 
   /* Operating Conditions */
   nom_process : 1;
-  nom_voltage : 5;
+  nom_voltage : 3.3;
   nom_temperature : 25;
 
   /* Table Templates */
