@@ -134,7 +134,7 @@ endmodule
 module NOR2(
     output Y,
     input A1,
-    input A2,
+    input A2
 );
 endmodule
 
