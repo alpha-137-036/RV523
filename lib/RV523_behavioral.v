@@ -349,9 +349,6 @@ module MUX2(
     assign Y = S ? I0 : I1;
 endmodule
 
-`include "../NOT/NOT.v"
-`include "../TINV/TINV.v"
-
 // Elementary D-LATCH with complementary CLK enable inputs
 module D_LATCH(
     output Q,
