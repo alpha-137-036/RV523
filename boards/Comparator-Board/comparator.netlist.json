@@ -1,0 +1,3901 @@
+{
+  "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "AND2": {
+      "attributes": {
+        "footprint": "RV523:AND2",
+        "techmap_celltype": "AND2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:58.1-63.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:60.11-60.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:61.11-61.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:59.12-59.13"
+          }
+        }
+      }
+    },
+    "AND3": {
+      "attributes": {
+        "footprint": "RV523:AND3",
+        "techmap_celltype": "AND3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:81.1-82.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:81.30-81.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:81.40-81.42"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:81.50-81.52"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:81.21-81.22"
+          }
+        }
+      }
+    },
+    "AND4": {
+      "attributes": {
+        "footprint": "RV523:AND4",
+        "techmap_celltype": "AND4",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:114.1-115.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:114.30-114.32"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:114.40-114.42"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:114.50-114.52"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:114.60-114.62"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:114.21-114.22"
+          }
+        }
+      }
+    },
+    "AND4B": {
+      "attributes": {
+        "footprint": "RV523:AND4B",
+        "techmap_celltype": "AND4B",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:121.1-128.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1_N": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1_N": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:123.11-123.15"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:124.11-124.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:125.11-125.13"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:126.11-126.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:122.12-122.13"
+          }
+        }
+      }
+    },
+    "AOI21": {
+      "attributes": {
+        "footprint": "RV523:AOI21",
+        "techmap_celltype": "AOI21",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:203.1-209.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:205.11-205.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:206.11-206.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:207.11-207.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:204.12-204.13"
+          }
+        }
+      }
+    },
+    "AOI211": {
+      "attributes": {
+        "footprint": "RV523:AOI211",
+        "techmap_celltype": "AOI211",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:228.1-235.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "C2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:230.11-230.12"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:231.11-231.12"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:232.11-232.13"
+          }
+        },
+        "C2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:233.11-233.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:229.12-229.13"
+          }
+        }
+      }
+    },
+    "AOI2111": {
+      "attributes": {
+        "footprint": "RV523:AOI2111",
+        "techmap_celltype": "AOI2111",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:269.1-277.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "D1": {
+          "direction": "input",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:271.11-271.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:272.11-272.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:273.11-273.13"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:274.11-274.13"
+          }
+        },
+        "D1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:275.11-275.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:270.12-270.13"
+          }
+        }
+      }
+    },
+    "AOI22": {
+      "attributes": {
+        "footprint": "RV523:AOI22",
+        "techmap_celltype": "AOI22",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:215.1-222.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:217.11-217.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:218.11-218.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:219.11-219.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:220.11-220.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:216.12-216.13"
+          }
+        }
+      }
+    },
+    "AOI221": {
+      "attributes": {
+        "footprint": "RV523:AOI221",
+        "techmap_celltype": "AOI221",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:241.1-249.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:243.11-243.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:244.11-244.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:245.11-245.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:246.11-246.13"
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:247.11-247.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:242.12-242.13"
+          }
+        }
+      }
+    },
+    "AOI222": {
+      "attributes": {
+        "footprint": "RV523:AOI222",
+        "techmap_celltype": "AOI222",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:283.1-292.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "C2": {
+          "direction": "input",
+          "bits": [ 8 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:285.11-285.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:286.11-286.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:287.11-287.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:288.11-288.13"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:289.11-289.13"
+          }
+        },
+        "C2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:290.11-290.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:284.12-284.13"
+          }
+        }
+      }
+    },
+    "AOI311": {
+      "attributes": {
+        "footprint": "RV523:AOI311",
+        "techmap_celltype": "AOI311",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:255.1-263.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:257.11-257.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:258.11-258.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:259.11-259.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:260.11-260.13"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:261.11-261.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:256.12-256.13"
+          }
+        }
+      }
+    },
+    "BUF": {
+      "attributes": {
+        "footprint": "RV523:BUF",
+        "techmap_celltype": "BUF",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:5.1-9.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:7.11-7.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:6.12-6.13"
+          }
+        }
+      }
+    },
+    "DECAP": {
+      "attributes": {
+        "footprint": "RV523:DECAP",
+        "techmap_celltype": "DECAP",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:478.1-479.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "DECAP_LED": {
+      "attributes": {
+        "footprint": "RV523:DECAP_LED",
+        "techmap_celltype": "DECAP_LED",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:485.1-489.10"
+      },
+      "ports": {
+        "A": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "LED_GND": {
+          "direction": "input",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:486.11-486.12"
+          }
+        },
+        "LED_GND": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:487.11-487.18"
+          }
+        }
+      }
+    },
+    "D_LATCH": {
+      "attributes": {
+        "footprint": "RV523:D_LATCH",
+        "techmap_celltype": "D_LATCH",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:465.1-472.10"
+      },
+      "ports": {
+        "Q": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "nQ": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "D": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "CLK": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "nCLK": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "CLK": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:469.11-469.14"
+          }
+        },
+        "D": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:468.11-468.12"
+          }
+        },
+        "Q": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:466.12-466.13"
+          }
+        },
+        "nCLK": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:470.11-470.15"
+          }
+        },
+        "nQ": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:467.12-467.14"
+          }
+        }
+      }
+    },
+    "MAJ3": {
+      "attributes": {
+        "footprint": "RV523:MAJ3",
+        "techmap_celltype": "MAJ3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:298.1-304.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:300.11-300.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:301.11-301.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:302.11-302.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:299.12-299.13"
+          }
+        }
+      }
+    },
+    "MUX2": {
+      "attributes": {
+        "footprint": "RV523:MUX2",
+        "techmap_celltype": "MUX2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:453.1-459.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "I0": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "I1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "S": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "I0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:455.11-455.13"
+          }
+        },
+        "I1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:456.11-456.13"
+          }
+        },
+        "S": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:457.11-457.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:454.12-454.13"
+          }
+        }
+      }
+    },
+    "NAND2": {
+      "attributes": {
+        "footprint": "RV523:NAND2",
+        "techmap_celltype": "NAND2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:36.1-41.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:38.11-38.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:39.11-39.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:37.12-37.13"
+          }
+        }
+      }
+    },
+    "NAND2B": {
+      "attributes": {
+        "footprint": "RV523:NAND2B",
+        "techmap_celltype": "NAND2B",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:47.1-52.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A_N": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A_N": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:49.11-49.14"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:50.11-50.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:48.12-48.13"
+          }
+        }
+      }
+    },
+    "NAND3": {
+      "attributes": {
+        "footprint": "RV523:NAND3",
+        "techmap_celltype": "NAND3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:69.1-75.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:71.11-71.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:72.11-72.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:73.11-73.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:70.12-70.13"
+          }
+        }
+      }
+    },
+    "NAND4": {
+      "attributes": {
+        "footprint": "RV523:NAND4",
+        "techmap_celltype": "NAND4",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:88.1-95.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:90.11-90.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:91.11-91.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:92.11-92.13"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:93.11-93.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:89.12-89.13"
+          }
+        }
+      }
+    },
+    "NAND4B": {
+      "attributes": {
+        "footprint": "RV523:NAND4B",
+        "techmap_celltype": "NAND4B",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:101.1-108.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1_N": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1_N": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:103.11-103.15"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:104.11-104.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:105.11-105.13"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:106.11-106.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:102.12-102.13"
+          }
+        }
+      }
+    },
+    "NOR2": {
+      "attributes": {
+        "footprint": "RV523:NOR2",
+        "techmap_celltype": "NOR2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:134.1-139.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:136.11-136.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:137.11-137.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:135.12-135.13"
+          }
+        }
+      }
+    },
+    "NOR3": {
+      "attributes": {
+        "footprint": "RV523:NOR3",
+        "techmap_celltype": "NOR3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:152.1-158.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:154.11-154.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:155.11-155.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:156.11-156.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:153.12-153.13"
+          }
+        }
+      }
+    },
+    "NOR3B": {
+      "attributes": {
+        "footprint": "RV523:NOR3B",
+        "techmap_celltype": "NOR3B",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:164.1-170.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3_N": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:166.11-166.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:167.11-167.13"
+          }
+        },
+        "A3_N": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:168.11-168.15"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:165.12-165.13"
+          }
+        }
+      }
+    },
+    "NOR4": {
+      "attributes": {
+        "footprint": "RV523:NOR4",
+        "techmap_celltype": "NOR4",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:183.1-190.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:185.11-185.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:186.11-186.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:187.11-187.13"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:188.11-188.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:184.12-184.13"
+          }
+        }
+      }
+    },
+    "NOT": {
+      "attributes": {
+        "footprint": "RV523:NOT",
+        "techmap_celltype": "NOT",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:15.1-19.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:17.11-17.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:16.12-16.13"
+          }
+        }
+      }
+    },
+    "OA21": {
+      "attributes": {
+        "footprint": "RV523:OA21",
+        "techmap_celltype": "OA21",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:322.1-328.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:324.11-324.12"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:325.11-325.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:326.11-326.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:323.12-323.13"
+          }
+        }
+      }
+    },
+    "OAI21": {
+      "attributes": {
+        "footprint": "RV523:OAI21",
+        "techmap_celltype": "OAI21",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:310.1-316.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:312.11-312.12"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:313.11-313.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:314.11-314.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:311.12-311.13"
+          }
+        }
+      }
+    },
+    "OAI211": {
+      "attributes": {
+        "footprint": "RV523:OAI211",
+        "techmap_celltype": "OAI211",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:347.1-354.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "C2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:349.11-349.12"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:350.11-350.12"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:351.11-351.13"
+          }
+        },
+        "C2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:352.11-352.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:348.12-348.13"
+          }
+        }
+      }
+    },
+    "OAI22": {
+      "attributes": {
+        "footprint": "RV523:OAI22",
+        "techmap_celltype": "OAI22",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:334.1-341.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:336.11-336.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:337.11-337.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:338.11-338.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:339.11-339.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:335.12-335.13"
+          }
+        }
+      }
+    },
+    "OAI221": {
+      "attributes": {
+        "footprint": "RV523:OAI221",
+        "techmap_celltype": "OAI221",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:360.1-368.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:362.11-362.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:363.11-363.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:364.11-364.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:365.11-365.13"
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:366.11-366.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:361.12-361.13"
+          }
+        }
+      }
+    },
+    "OAI222": {
+      "attributes": {
+        "footprint": "RV523:OAI222",
+        "techmap_celltype": "OAI222",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:374.1-383.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "C1": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "C2": {
+          "direction": "input",
+          "bits": [ 8 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:376.11-376.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:377.11-377.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:378.11-378.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:379.11-379.13"
+          }
+        },
+        "C1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:380.11-380.13"
+          }
+        },
+        "C2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:381.11-381.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:375.12-375.13"
+          }
+        }
+      }
+    },
+    "OAI31": {
+      "attributes": {
+        "footprint": "RV523:OAI31",
+        "techmap_celltype": "OAI31",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:389.1-396.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:391.11-391.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:392.11-392.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:393.11-393.13"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:394.11-394.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:390.12-390.13"
+          }
+        }
+      }
+    },
+    "OAI32": {
+      "attributes": {
+        "footprint": "RV523:OAI32",
+        "techmap_celltype": "OAI32",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:402.1-410.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:404.11-404.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:405.11-405.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:406.11-406.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:407.11-407.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:408.11-408.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:403.12-403.13"
+          }
+        }
+      }
+    },
+    "OAI33": {
+      "attributes": {
+        "footprint": "RV523:OAI33",
+        "techmap_celltype": "OAI33",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:416.1-425.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "B1": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "B2": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "B3": {
+          "direction": "input",
+          "bits": [ 8 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:418.11-418.13"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:419.11-419.13"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:420.11-420.13"
+          }
+        },
+        "B1": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:421.11-421.13"
+          }
+        },
+        "B2": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:422.11-422.13"
+          }
+        },
+        "B3": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:423.11-423.13"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:417.12-417.13"
+          }
+        }
+      }
+    },
+    "OR2": {
+      "attributes": {
+        "footprint": "RV523:OR2",
+        "techmap_celltype": "OR2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:145.1-146.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:145.29-145.31"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:145.39-145.41"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:145.20-145.21"
+          }
+        }
+      }
+    },
+    "OR3": {
+      "attributes": {
+        "footprint": "RV523:OR3",
+        "techmap_celltype": "OR3",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:176.1-177.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:176.29-176.31"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:176.39-176.41"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:176.49-176.51"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:176.20-176.21"
+          }
+        }
+      }
+    },
+    "OR4": {
+      "attributes": {
+        "footprint": "RV523:OR4",
+        "techmap_celltype": "OR4",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:196.1-197.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "A2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "A3": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A4": {
+          "direction": "input",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:196.29-196.31"
+          }
+        },
+        "A2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:196.39-196.41"
+          }
+        },
+        "A3": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:196.49-196.51"
+          }
+        },
+        "A4": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:196.59-196.61"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:196.20-196.21"
+          }
+        }
+      }
+    },
+    "TINV": {
+      "attributes": {
+        "footprint": "RV523:TINV",
+        "techmap_celltype": "TINV",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:25.1-30.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "EN": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "nEN": {
+          "direction": "input",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:27.12-27.13"
+          }
+        },
+        "EN": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:28.12-28.14"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:26.12-26.13"
+          }
+        },
+        "nEN": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:29.12-29.15"
+          }
+        }
+      }
+    },
+    "XNOR2": {
+      "attributes": {
+        "footprint": "RV523:XNOR2",
+        "techmap_celltype": "XNOR2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:442.1-447.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:444.11-444.12"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:445.11-445.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:443.12-443.13"
+          }
+        }
+      }
+    },
+    "XOR2": {
+      "attributes": {
+        "footprint": "RV523:XOR2",
+        "techmap_celltype": "XOR2",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../../lib/RV523_blackbox.v:431.1-436.10"
+      },
+      "ports": {
+        "Y": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:433.11-433.12"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:434.11-434.12"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "../../lib/RV523_blackbox.v:432.12-432.13"
+          }
+        }
+      }
+    },
+    "comparator": {
+      "attributes": {
+        "dynports": "00000000000000000000000000000001",
+        "top": "00000000000000000000000000000001",
+        "src": "comparator.sv:1.1-21.10"
+      },
+      "parameter_default_values": {
+        "N": "00000000000000000000000000001000"
+      },
+      "ports": {
+        "A": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+        },
+        "U": {
+          "direction": "input",
+          "bits": [ 18 ]
+        },
+        "EQ": {
+          "direction": "output",
+          "bits": [ 19 ]
+        },
+        "LT": {
+          "direction": "output",
+          "bits": [ 20 ]
+        }
+      },
+      "cells": {
+        "$abc$443$auto$blifparse.cc:396:parse_blif$444": {
+          "hide_name": 1,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$445": {
+          "hide_name": 1,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 22 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$446": {
+          "hide_name": 1,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "Y": [ 23 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$447": {
+          "hide_name": 1,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$448": {
+          "hide_name": 1,
+          "type": "NOT",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$449": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 8 ],
+            "B": [ 16 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$450": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 16 ],
+            "B": [ 8 ],
+            "Y": [ 27 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$451": {
+          "hide_name": 1,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 9 ],
+            "A2": [ 25 ],
+            "Y": [ 28 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$452": {
+          "hide_name": 1,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 9 ],
+            "A2": [ 25 ],
+            "Y": [ 29 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$453": {
+          "hide_name": 1,
+          "type": "XNOR2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 17 ],
+            "Y": [ 30 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$454": {
+          "hide_name": 1,
+          "type": "AND3",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 26 ],
+            "A2": [ 27 ],
+            "A3": [ 30 ],
+            "Y": [ 31 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$455": {
+          "hide_name": 1,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 24 ],
+            "A2": [ 15 ],
+            "Y": [ 32 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$456": {
+          "hide_name": 1,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 24 ],
+            "A2": [ 15 ],
+            "Y": [ 33 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$457": {
+          "hide_name": 1,
+          "type": "XNOR2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 14 ],
+            "Y": [ 34 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$458": {
+          "hide_name": 1,
+          "type": "NAND4B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1_N": "input",
+            "A2": "input",
+            "A3": "input",
+            "A4": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1_N": [ 32 ],
+            "A2": [ 33 ],
+            "A3": [ 34 ],
+            "A4": [ 31 ],
+            "Y": [ 35 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$459": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 13 ],
+            "B": [ 5 ],
+            "Y": [ 36 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$460": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 12 ],
+            "B": [ 4 ],
+            "Y": [ 37 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$461": {
+          "hide_name": 1,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 36 ],
+            "A2": [ 37 ],
+            "Y": [ 38 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$462": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 5 ],
+            "B": [ 13 ],
+            "Y": [ 39 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$463": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 4 ],
+            "B": [ 12 ],
+            "Y": [ 40 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$464": {
+          "hide_name": 1,
+          "type": "AND4",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "A4": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 36 ],
+            "A2": [ 37 ],
+            "A3": [ 39 ],
+            "A4": [ 40 ],
+            "Y": [ 41 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$465": {
+          "hide_name": 1,
+          "type": "AOI22",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "B1": "input",
+            "B2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 21 ],
+            "A2": [ 10 ],
+            "B1": [ 22 ],
+            "B2": [ 11 ],
+            "Y": [ 42 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$466": {
+          "hide_name": 1,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 22 ],
+            "A2": [ 11 ],
+            "Y": [ 43 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$467": {
+          "hide_name": 1,
+          "type": "NAND2B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A_N": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A_N": [ 10 ],
+            "B": [ 2 ],
+            "Y": [ 44 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$468": {
+          "hide_name": 1,
+          "type": "NAND4B",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1_N": "input",
+            "A2": "input",
+            "A3": "input",
+            "A4": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1_N": [ 43 ],
+            "A2": [ 44 ],
+            "A3": [ 41 ],
+            "A4": [ 42 ],
+            "Y": [ 45 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$469": {
+          "hide_name": 1,
+          "type": "NOR2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 35 ],
+            "A2": [ 45 ],
+            "Y": [ 19 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$470": {
+          "hide_name": 1,
+          "type": "OAI21",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B1": "input",
+            "B2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41 ],
+            "B1": [ 42 ],
+            "B2": [ 43 ],
+            "Y": [ 46 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$471": {
+          "hide_name": 1,
+          "type": "NAND2",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 38 ],
+            "A2": [ 39 ],
+            "Y": [ 47 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$472": {
+          "hide_name": 1,
+          "type": "AOI21",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "B1": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 46 ],
+            "A2": [ 47 ],
+            "B1": [ 35 ],
+            "Y": [ 48 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$473": {
+          "hide_name": 1,
+          "type": "AOI22",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "B1": "input",
+            "B2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 18 ],
+            "A2": [ 29 ],
+            "B1": [ 30 ],
+            "B2": [ 27 ],
+            "Y": [ 49 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$474": {
+          "hide_name": 1,
+          "type": "AOI211",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "C1": "input",
+            "C2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23 ],
+            "B": [ 14 ],
+            "C1": [ 24 ],
+            "C2": [ 15 ],
+            "Y": [ 50 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$475": {
+          "hide_name": 1,
+          "type": "OA21",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B1": "input",
+            "B2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 31 ],
+            "B1": [ 32 ],
+            "B2": [ 50 ],
+            "Y": [ 51 ]
+          }
+        },
+        "$abc$443$auto$blifparse.cc:396:parse_blif$476": {
+          "hide_name": 1,
+          "type": "OAI32",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A1": "input",
+            "A2": "input",
+            "A3": "input",
+            "B1": "input",
+            "B2": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A1": [ 48 ],
+            "A2": [ 49 ],
+            "A3": [ 51 ],
+            "B1": [ 28 ],
+            "B2": [ 18 ],
+            "Y": [ 20 ]
+          }
+        }
+      },
+      "netnames": {
+        "$abc$392$new_n20": {
+          "hide_name": 1,
+          "bits": [ 52 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n21": {
+          "hide_name": 1,
+          "bits": [ 53 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n22": {
+          "hide_name": 1,
+          "bits": [ 54 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n23": {
+          "hide_name": 1,
+          "bits": [ 55 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n24": {
+          "hide_name": 1,
+          "bits": [ 56 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n25": {
+          "hide_name": 1,
+          "bits": [ 57 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n26": {
+          "hide_name": 1,
+          "bits": [ 58 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n27": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n28": {
+          "hide_name": 1,
+          "bits": [ 60 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n29": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n30": {
+          "hide_name": 1,
+          "bits": [ 62 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n31": {
+          "hide_name": 1,
+          "bits": [ 63 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n32": {
+          "hide_name": 1,
+          "bits": [ 64 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n33": {
+          "hide_name": 1,
+          "bits": [ 65 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n35": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n36": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n38": {
+          "hide_name": 1,
+          "bits": [ 68 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n39": {
+          "hide_name": 1,
+          "bits": [ 69 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n41": {
+          "hide_name": 1,
+          "bits": [ 70 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n42": {
+          "hide_name": 1,
+          "bits": [ 71 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n43": {
+          "hide_name": 1,
+          "bits": [ 72 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n45": {
+          "hide_name": 1,
+          "bits": [ 73 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n46": {
+          "hide_name": 1,
+          "bits": [ 74 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n47": {
+          "hide_name": 1,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n48": {
+          "hide_name": 1,
+          "bits": [ 76 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n51": {
+          "hide_name": 1,
+          "bits": [ 77 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n52": {
+          "hide_name": 1,
+          "bits": [ 78 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n53": {
+          "hide_name": 1,
+          "bits": [ 79 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n54": {
+          "hide_name": 1,
+          "bits": [ 80 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n55": {
+          "hide_name": 1,
+          "bits": [ 81 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n56": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n58": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n59": {
+          "hide_name": 1,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n60": {
+          "hide_name": 1,
+          "bits": [ 85 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n61": {
+          "hide_name": 1,
+          "bits": [ 86 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n62": {
+          "hide_name": 1,
+          "bits": [ 87 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n63": {
+          "hide_name": 1,
+          "bits": [ 88 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n64": {
+          "hide_name": 1,
+          "bits": [ 89 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n65": {
+          "hide_name": 1,
+          "bits": [ 90 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n66": {
+          "hide_name": 1,
+          "bits": [ 91 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n67": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$abc$392$new_n72": {
+          "hide_name": 1,
+          "bits": [ 93 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$A[0]": {
+          "hide_name": 1,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[1]": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[2]": {
+          "hide_name": 1,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[3]": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[4]": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[5]": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[6]": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$A[7]": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "$abc$443$B[0]": {
+          "hide_name": 1,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[1]": {
+          "hide_name": 1,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[2]": {
+          "hide_name": 1,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[3]": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[4]": {
+          "hide_name": 1,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[5]": {
+          "hide_name": 1,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[6]": {
+          "hide_name": 1,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$B[7]": {
+          "hide_name": 1,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "$abc$443$EQ": {
+          "hide_name": 1,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "comparator.sv:9.19-9.21"
+          }
+        },
+        "$abc$443$LT": {
+          "hide_name": 1,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "comparator.sv:10.19-10.21"
+          }
+        },
+        "$abc$443$U": {
+          "hide_name": 1,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "comparator.sv:8.19-8.20"
+          }
+        },
+        "$abc$443$new_n20": {
+          "hide_name": 1,
+          "bits": [ 21 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n21": {
+          "hide_name": 1,
+          "bits": [ 22 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n22": {
+          "hide_name": 1,
+          "bits": [ 23 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n23": {
+          "hide_name": 1,
+          "bits": [ 24 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n24": {
+          "hide_name": 1,
+          "bits": [ 25 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n25": {
+          "hide_name": 1,
+          "bits": [ 26 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n26": {
+          "hide_name": 1,
+          "bits": [ 27 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n27": {
+          "hide_name": 1,
+          "bits": [ 28 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n28": {
+          "hide_name": 1,
+          "bits": [ 29 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n29": {
+          "hide_name": 1,
+          "bits": [ 30 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n30": {
+          "hide_name": 1,
+          "bits": [ 31 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n31": {
+          "hide_name": 1,
+          "bits": [ 32 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n32": {
+          "hide_name": 1,
+          "bits": [ 33 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n33": {
+          "hide_name": 1,
+          "bits": [ 34 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n34": {
+          "hide_name": 1,
+          "bits": [ 35 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n35": {
+          "hide_name": 1,
+          "bits": [ 36 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n36": {
+          "hide_name": 1,
+          "bits": [ 37 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n37": {
+          "hide_name": 1,
+          "bits": [ 38 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n38": {
+          "hide_name": 1,
+          "bits": [ 39 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n39": {
+          "hide_name": 1,
+          "bits": [ 40 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n40": {
+          "hide_name": 1,
+          "bits": [ 41 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n41": {
+          "hide_name": 1,
+          "bits": [ 42 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n42": {
+          "hide_name": 1,
+          "bits": [ 43 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n43": {
+          "hide_name": 1,
+          "bits": [ 44 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n44": {
+          "hide_name": 1,
+          "bits": [ 45 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n46": {
+          "hide_name": 1,
+          "bits": [ 46 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n47": {
+          "hide_name": 1,
+          "bits": [ 47 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n48": {
+          "hide_name": 1,
+          "bits": [ 48 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n49": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n50": {
+          "hide_name": 1,
+          "bits": [ 50 ],
+          "attributes": {
+          }
+        },
+        "$abc$443$new_n51": {
+          "hide_name": 1,
+          "bits": [ 51 ],
+          "attributes": {
+          }
+        },
+        "A": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "comparator.sv:6.19-6.20"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "comparator.sv:7.19-7.20"
+          }
+        },
+        "EQ": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "comparator.sv:9.19-9.21"
+          }
+        },
+        "LT": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "comparator.sv:10.19-10.21"
+          }
+        },
+        "U": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "comparator.sv:8.19-8.20"
+          }
+        }
+      }
+    }
+  }
+}

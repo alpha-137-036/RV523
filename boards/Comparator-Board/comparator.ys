@@ -1,0 +1,45 @@
+read_verilog -sv comparator.sv
+read_verilog -lib ../../lib/RV523_blackbox.v
+
+hierarchy -top comparator
+
+#check obvious problems in the current design 8combinatorila loops, conflicts, etc.
+check;
+
+#opt_clean with less verbose
+clean;
+
+
+# translate processes to netlists
+proc;
+
+#extract and optimize finite state machines
+fsm; opt;
+
+#translate memories to basic cells
+memory; opt;
+
+
+opt -full
+
+opt_reduce
+opt_expr
+
+techmap;
+synth
+dfflibmap -liberty ../../lib/RV523.lib
+abc -liberty ../../lib/RV523.lib
+
+stat -liberty ../../lib/RV523.lib
+#abc -liberty ./sky130_fd_sc_hd__tt_025C_1v80.lib
+#stat -liberty ./sky130_fd_sc_hd__tt_025C_1v80.lib
+
+
+techmap -map ../../lib/RV523_blackbox.v
+
+stat -liberty ../../lib/RV523.lib
+
+write_json comparator.netlist.json
+#show -format svg -prefix ./comparator_gold.netlist
+write_verilog comparator.netlist.v
+
