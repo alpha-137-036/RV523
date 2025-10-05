@@ -4,6 +4,11 @@ module comparator_tb
 )
 ();
 
+    initial begin
+        $dumpfile("iverilog/comparator_tb.vcd");
+        $dumpvars(0);
+    end
+
     logic [N-1:0] A, B;
     logic U;
     logic EQ;

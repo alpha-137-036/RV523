@@ -2,6 +2,7 @@ read_verilog -sv comparator.sv
 read_verilog -lib ../../lib/RV523_blackbox.v
 
 hierarchy -top comparator
+flatten
 
 #check obvious problems in the current design 8combinatorila loops, conflicts, etc.
 check;
