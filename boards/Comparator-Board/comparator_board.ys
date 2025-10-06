@@ -1,0 +1,11 @@
+read_verilog -sv comparator.netlist.v comparator_board.sv
+read_verilog -lib ../../lib/RV523_blackbox.v
+
+hierarchy -top comparator_board
+proc; opt; clean
+flatten
+splitnets -ports -driver
+flatten
+write_json comparator_board.net.json
+exec -- python3 ../../tools/yosysJsonToKicadNetlist.py comparator_board.net.json comparator_board.kicad.net
+
