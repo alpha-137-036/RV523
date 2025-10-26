@@ -16,10 +16,16 @@ M1 10 20 30 30 PMOS1 L = 1E-006 W = 1E-006
 
 * Capacitances from datasheet
 * Cgd = Crss = 9pF
-CGD 10 20 9e-12
+* CGD 10 20 9e-12
 * Cds = Coss - Cgd. Coss=15pF
-CDS 10 30 6e-12
+* CDS 10 30 6e-12
 * Cgs = Ciss - Cgd. Ciss=113pF
-CGS 20 30 113e-12
+* CGS 20 30 113e-12
+
+* TEST: divide capacitances by 10
+CGD 10 20 9e-13
+CDS 10 30 6e-13
+CGS 20 30 113e-13
+
 
 .ENDS

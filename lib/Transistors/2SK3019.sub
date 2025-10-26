@@ -16,11 +16,17 @@ M1 10 20 30 30 NMOS1 L = 1E-006 W = 1E-006
 * Capacitance from datasheet, not measured
 * Capacitances from datasheet
 * Cgd = Crss = 4pF
-CGD 10 20 4e-12
+* CGD 10 20 4e-12
 * Cds = Coss - Cgd. Coss=9pF
-CDS 10 30 5e-12
+* CDS 10 30 5e-12
 * Cgs = Ciss - Cgd. Ciss=13pF
-CGS 20 30 9e-12
+* CGS 20 30 9e-12
+
+* TEST: divide capacitances by 10
+CGD 10 20 4e-13
+CDS 10 30 5e-13
+CGS 20 30 9e-13
+
 
 
 .ENDS

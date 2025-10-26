@@ -1,4 +1,4 @@
-.inc "RV523_NMOS.ckt"
-.inc "RV523_PMOS.ckt"
+.inc "Transistors/RV523_NMOS.ckt"
+.inc "Transistors/RV523_PMOS.ckt"
 
-.PARAM vdd=5V
+.PARAM vdd=3.3V
