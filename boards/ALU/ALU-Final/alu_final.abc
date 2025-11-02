@@ -1,0 +1,8 @@
+strash
+dch
+map -A 0.1
+topo
+stime -c
+buffer -c
+upsize -c
+dnsize -c

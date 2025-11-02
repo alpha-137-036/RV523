@@ -1,0 +1,17 @@
+read_verilog -sv ../alu_typedefs.sv cla.sv ../../../lib/RV523_blackbox.v
+
+synth -top cla
+flatten
+#splitnets
+
+opt
+techmap
+opt
+
+abc -liberty ../../../lib/RV523.lib -script cla.abc
+techmap -map ../../../lib/RV523_blackbox.v
+
+stat -liberty ../../../lib/RV523.lib 
+
+write_verilog -noattr -noexpr cla.netlist.v
+write_json cla.netlist.json

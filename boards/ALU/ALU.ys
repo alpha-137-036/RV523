@@ -1,0 +1,33 @@
+read_verilog -sv alu_typedefs.sv ALU.sv CLA/cla.netlist.v Shifter/shifter1.netlist.v Shifter/shifter2.netlist.v ALU-Final/alu_final.netlist.v 
+read_verilog -lib ../../lib/RV523_blackbox.v
+
+hierarchy -top ALU
+flatten -noscopeinfo
+
+#check obvious problems in the current design 8combinatorila loops, conflicts, etc.
+check;
+
+#opt_clean with less verbose
+clean;
+
+
+# translate processes to netlists
+proc;
+
+#extract and optimize finite state machines
+fsm; opt;
+
+#translate memories to basic cells
+memory; opt;
+
+
+opt -full
+
+opt_reduce
+opt_expr
+
+stat -liberty ../../lib/RV523.lib
+
+write_json ALU.netlist.json
+write_verilog ALU.netlist.v
+

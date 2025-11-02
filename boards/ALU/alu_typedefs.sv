@@ -1,9 +1,10 @@
 typedef struct packed {
-	logic carry;
+    logic add;
 	logic sub;
-	logic nSub;
 	logic _xor;
 	logic _and;
-	logic set0;
-	logic bit0;
+	logic slt;
+    logic u;
+    logic rev1, rev1_n;
+    logic rev2, rev2_n;
 } operation_t;

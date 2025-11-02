@@ -1,0 +1,5 @@
+read_liberty ../../../lib/RV523.lib
+read_verilog cla.netlist.v
+link_design cla
+read_sdc cla.constraints.sdc
+report_checks -fields {capacitance slew } -path_delay min_max

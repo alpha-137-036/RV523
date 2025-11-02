@@ -1,0 +1,37 @@
+read_verilog -sv ../alu_typedefs.sv shifter.sv
+read_verilog -lib ../../../lib/RV523_blackbox.v
+
+hierarchy -top shifter2
+flatten -noscopeinfo
+
+#check obvious problems in the current design 8combinatorila loops, conflicts, etc.
+check;
+
+#opt_clean with less verbose
+clean;
+
+
+# translate processes to netlists
+proc;
+
+#extract and optimize finite state machines
+fsm; opt;
+
+#translate memories to basic cells
+memory; opt;
+
+
+opt -full
+
+opt_reduce
+opt_expr
+
+techmap;
+dfflibmap -liberty ../../../lib/RV523.lib
+abc -script shifter.abc -liberty ../../../lib/RV523.lib
+
+stat -liberty ../../../lib/RV523.lib
+
+write_json shifter2.netlist.json
+write_verilog shifter2.netlist.v
+
