@@ -10,7 +10,7 @@ opt
 
 abc -liberty ../../../lib/RV523.lib -script cla.abc
 techmap -map ../../../lib/RV523_blackbox.v
-
+rename -hide
 stat -liberty ../../../lib/RV523.lib 
 
 write_verilog -noattr -noexpr cla.netlist.v

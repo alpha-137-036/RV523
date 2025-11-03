@@ -10,7 +10,6 @@ check;
 #opt_clean with less verbose
 clean;
 
-
 # translate processes to netlists
 proc;
 
@@ -31,6 +30,8 @@ dfflibmap -liberty ../../../lib/RV523.lib
 abc -script shifter.abc -liberty ../../../lib/RV523.lib
 
 stat -liberty ../../../lib/RV523.lib
+
+rename -hide
 
 write_json shifter1.netlist.json
 write_verilog shifter1.netlist.v

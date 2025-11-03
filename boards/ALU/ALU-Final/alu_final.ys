@@ -30,6 +30,8 @@ techmap;
 dfflibmap -liberty ../../../lib/RV523.lib
 abc -script alu_final.abc -liberty ../../../lib/RV523.lib
 
+rename -hide
+
 stat -liberty ../../../lib/RV523.lib
 
 write_json alu_final.netlist.json

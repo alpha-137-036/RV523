@@ -29,6 +29,7 @@ opt_expr
 techmap;
 dfflibmap -liberty ../../../lib/RV523.lib
 abc -script shifter.abc -liberty ../../../lib/RV523.lib
+rename -hide
 
 stat -liberty ../../../lib/RV523.lib
 
