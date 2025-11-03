@@ -5,20 +5,28 @@ module cla
 	input operation_t op,
 	input logic [N-1:0]A,
 	input logic [N-1:0]B,
-    output logic [N-1:0]AG,
-    output logic LT
+    output logic [N-1:0]BG,
+    output logic G31
 );
-    always_comb begin
-        integer i;
-        logic [N-1:0] a;
-        a = ({N{op.add}} & A) | ({N{op.sub}} & ~A);
-        logic [N-1:0] G;
-        for (i = 0; i < N; i++) begin
-            logic [i+1:0]S;
-            S = a[i:0] + B[i:0];
-            G[i] = S[i+1];
-            AG[i] = a[i] ^ G[i];
-        end
-        LT = op.u ? G[N-1] : G[N-2];
+    logic [N-1:0] a;
+    logic [N-1:0] G;
+    //assign a = ({N{op.add}} & A) | ({N{op.sub}} & ~A);
+    genvar i;
+    for (i = 0; i < N; i++) begin
+        AOI22 u_a(
+            .A1(op.add), .A2(~A[i]),
+            .B1(op.sub), .B2(A[i]),
+            .Y(a[i]));
+        // assign a[i] = ~((op.add & ~A[i]) | (op.sub & A[i]));
     end
+    assign G[-1] = 0;
+    for (i = 0; i < N; i++) begin
+        logic [i+1:0]S;
+        assign S = a[i:0] + B[i:0];
+        assign G[i] = S[i+1];
+        assign BG[i] = B[i] ^ ( i == 0 ? 0 : G[i-1]);
+    end
+    assign G31 = G[N-1];
+    
+    // assign BG = (a + B) ^ A;
 endmodule

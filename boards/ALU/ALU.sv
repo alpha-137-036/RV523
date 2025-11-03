@@ -6,37 +6,34 @@ module ALU
     input operation_t op,
     input logic [N-1:0]A,
     input logic [N-1:0]B,
-    output logic [N-1:0]Y,
-    output logic LT,
-    output logic EQ
+    output logic [N-1:0]Y
 );
-    logic LT;
-    logic [N-1:0] AG;
+    logic [N-1:0] BG;
     logic [N-1:0] S;
+    logic G31;
     cla u_cla(
         .op(op), 
         .A(A), .B(B),
-        .AG(AG),
-        .LT(LT)
+        .BG(BG),
+        .G31(G31)
     );
     
     alu_final u_final(
         .op(op),
-        .A(AG),
-        .B(B),
+        .A(A),
+        .B(BG),
+        .G31(G31),
         .SHIFT(S),
-        .LT(LT),
-        .Y(Y),
-        .EQ(EQ));
+        .Y(Y));
 
     logic S0;
     logic [N-1:0]Y3;
     shifter1 u_shift1(
-        .A(A), .B(B[2:0]), .op(op), .SIGNED(SIGNED), .S0(S0), .Y(Y3)
+        .A(A), .B(B[1:0]), .op(op), .S0(S0), .Y(Y3)
     );
     
     shifter2 u_shift2(
-        .A(Y3), .B(B[4:3]), .op(op), .SIGNED(SIGNED), .S0(S0), .Y(S)
+        .A(Y3), .B(B[4:2]), .op(op), .S0(S0), .Y(S)
     );
 
 endmodule

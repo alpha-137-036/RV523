@@ -24,7 +24,7 @@ endmodule
 
 module swapper
 #(
-    parameter N = 32,
+    parameter N = 32
 )(
     input  logic [N-1:0]A,
     input  logic SWAP,
@@ -62,17 +62,15 @@ module shifter1
         .A(A), .Y(S[0]),
         .SWAP(op.rev1), .SWAP_N(op.rev1_n)
     );
+    assign S0 = op.shift_u ? 1'b0 : A[N-1];
     for (k = 0; k < K; k++) begin
         shift_stage #(.K(1 << k)) u_stage(
             .A(S[k]), .Y(S[k+1]), 
             .SHIFT(B[k]), .SHIFT_N(~B[k]), 
-            .FILL(op.u ? (k % 1 == 1 ? S0 : ~S0) : 0)
+            .FILL(k[0] == 0 ? ~S0 : S0)
         );
     end
-    always_comb begin
-        Y = S[K];
-        S0 = S[0][0];
-    end
+    assign Y = S[K];
 endmodule
 
 module shifter2
@@ -96,7 +94,7 @@ module shifter2
         shift_stage #(.K(1 << k)) u_stage(
             .A(S[k]), .Y(S[k+1]), 
             .SHIFT(B[k]), .SHIFT_N(~B[k]), 
-            .FILL(op.u ? (k & 1 == 1 ? S0 : ~S0) : 0)
+            .FILL(k[0] == 0 ? ~S0 : S0)
         );
     end
     swapper u_swap_out(
