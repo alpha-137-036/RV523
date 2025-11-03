@@ -1,6 +1,6 @@
 strash
-dc2
-map -A 0.5
+dc2 -b
+map -v -B 1
 topo
 stime -c
 buffer -c
