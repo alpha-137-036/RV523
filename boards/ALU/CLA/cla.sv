@@ -19,7 +19,6 @@ module cla
             .Y(a[i]));
         // assign a[i] = ~((op.add & ~A[i]) | (op.sub & A[i]));
     end
-    assign G[-1] = 0;
     for (i = 0; i < N; i++) begin
         logic [i+1:0]S;
         assign S = a[i:0] + B[i:0];

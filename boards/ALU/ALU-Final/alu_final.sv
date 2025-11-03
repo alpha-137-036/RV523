@@ -18,11 +18,11 @@ module alu_final
     input  logic [N-1:0]A,
     input  logic [N-1:0]B,
     input  logic G31,
-    input  logic [N-1:0]SHIFT,
+    input  logic [N-1:0]F,
     output logic [N-1:0]Y
 );
     always_comb begin
-        Y = ~SHIFT;
+        Y = ~F;
         if (op.seq)  Y[0] |= (A ^ B) == 0;
         if (op.slt)  Y[0] |= A[N-1] ^ B[N-1];
         if (op.sltu) Y[0] |= G31;

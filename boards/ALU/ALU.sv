@@ -9,7 +9,7 @@ module ALU
     output logic [N-1:0]Y
 );
     logic [N-1:0] BG;
-    logic [N-1:0] S;
+    logic [N-1:0] F;
     logic G31;
     cla u_cla(
         .op(op), 
@@ -23,17 +23,17 @@ module ALU
         .A(A),
         .B(BG),
         .G31(G31),
-        .SHIFT(S),
+        .F(F),
         .Y(Y));
 
-    logic S0;
-    logic [N-1:0]Y3;
+    logic A0;
+    logic [N-1:0]F3;
     shifter1 u_shift1(
-        .A(A), .B(B[1:0]), .op(op), .S0(S0), .Y(Y3)
+        .A(A), .B(B[1:0]), .op(op), .A0(A0), .F(F3)
     );
     
     shifter2 u_shift2(
-        .A(Y3), .B(B[4:2]), .op(op), .S0(S0), .Y(S)
+        .A(F3), .B(B[4:2]), .op(op), .A0(A0), .F(F)
     );
 
 endmodule
