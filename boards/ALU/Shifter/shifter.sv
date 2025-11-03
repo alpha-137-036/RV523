@@ -17,9 +17,6 @@ module shift_stage
             .Y(Y[i]));
         // assign Y[i] = ~((SHIFT_N & A[i]) | (SHIFT & (i < K ? FILL : A[i-K]))); 
     end
-    // always_comb begin
-        // Y = ~(({N{SHIFT_N}} & A) | ({N{SHIFT}} & (A << K)));
-    // end
 endmodule
 
 module swapper
@@ -33,11 +30,11 @@ module swapper
 );  
     genvar i;
     for (i = 0; i < N; i++) begin
-        AOI22 u_aoi22(
-            .A1(SWAP_N), .A2(A[i]),
-            .B1(SWAP),   .B2(A[N-1-i]),
-            .Y(Y[i]));
-        // assign Y[i] = ~((SWAP_N & A[i]) | (SWAP & A[N-1-i])); 
+        // AOI22 u_aoi22(
+            // .A1(SWAP_N), .A2(A[i]),
+            // .B1(SWAP),   .B2(A[N-1-i]),
+            // .Y(Y[i]));
+        assign Y[i] = ~((SWAP_N & A[i]) | (SWAP & A[N-1-i])); 
     end
     
     // always_comb begin

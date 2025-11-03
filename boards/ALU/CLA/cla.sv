@@ -10,14 +10,13 @@ module cla
 );
     logic [N-1:0] a;
     logic [N-1:0] G;
-    //assign a = ({N{op.add}} & A) | ({N{op.sub}} & ~A);
     genvar i;
     for (i = 0; i < N; i++) begin
-        AOI22 u_a(
-            .A1(op.add), .A2(~A[i]),
-            .B1(op.sub), .B2(A[i]),
-            .Y(a[i]));
-        // assign a[i] = ~((op.add & ~A[i]) | (op.sub & A[i]));
+        // AOI22 u_a(
+            // .A1(op.add), .A2(~A[i]),
+            // .B1(op.sub), .B2(A[i]),
+            // .Y(a[i]));
+         assign a[i] = ~((op.add & ~A[i]) | (op.sub & A[i]));
     end
     for (i = 0; i < N; i++) begin
         logic [i+1:0]S;
