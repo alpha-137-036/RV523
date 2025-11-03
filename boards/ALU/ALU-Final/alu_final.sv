@@ -19,7 +19,8 @@ module alu_final
     input  logic [N-1:0]B,
     input  logic G31,
     input  logic [N-1:0]F,
-    output logic [N-1:0]Y
+    output logic [N-1:0]Y,
+    output logic A0
 );
     always_comb begin
         Y = ~F;
@@ -29,4 +30,5 @@ module alu_final
         if (op._xor) Y |= A ^ B;
         if (op._and) Y |= A & B;
     end
+    assign A0 = op.shift_u ? 1'b0 : A[N-1];
 endmodule

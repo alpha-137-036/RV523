@@ -48,10 +48,10 @@ module shifter1
     parameter K = 2
 )(
     input  operation_t op,
+    input  logic A0,
     input  logic [N-1:0]A,
     input  logic [K-1:0]B,
-    output logic [N-1:0]F,
-    output logic A0
+    output logic [N-1:0]F
 );  
     logic [N-1:0]Fk   [K:0];
     genvar k;
@@ -59,7 +59,6 @@ module shifter1
         .A(A), .Y(Fk[0]),
         .SWAP(op.rev1), .SWAP_N(op.rev1_n)
     );
-    assign A0 = op.shift_u ? 1'b0 : A[N-1];
     for (k = 0; k < K; k++) begin
         shift_stage #(.K(1 << k)) u_stage(
             .A(Fk[k]), .Y(Fk[k+1]), 
@@ -84,9 +83,7 @@ module shifter2
 );
     logic [N-1:0]Fk    [K:K0];
     genvar k;
-    always_comb begin
-        Fk[K0] = A;
-    end
+    assign Fk[K0] = A;
     for (k = K0; k < K; k++) begin
         shift_stage #(.K(1 << k)) u_stage(
             .A(Fk[k]), .Y(Fk[k+1]), 

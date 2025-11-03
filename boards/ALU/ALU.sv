@@ -11,6 +11,8 @@ module ALU
     logic [N-1:0] BG;
     logic [N-1:0] F;
     logic G31;
+    logic A0;
+    logic [N-1:0]F3;
     cla u_cla(
         .op(op), 
         .A(A), .B(B),
@@ -23,11 +25,10 @@ module ALU
         .A(A),
         .B(BG),
         .G31(G31),
+        .A0(A0),
         .F(F),
         .Y(Y));
 
-    logic A0;
-    logic [N-1:0]F3;
     shifter1 u_shift1(
         .A(A), .B(B[1:0]), .op(op), .A0(A0), .F(F3)
     );
