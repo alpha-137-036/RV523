@@ -30,7 +30,7 @@ module ALU
         .Y(Y));
 
     shifter1 u_shift1(
-        .A(A), .B(B[1:0]), .op(op), .A0(A0), .F(F3)
+        .A(A), .B(B[1:0]), .rev1(op.rev1), .rev1_n(op.rev1_n), .A0(A0), .F(F3)
     );
     
     shifter2 u_shift2(

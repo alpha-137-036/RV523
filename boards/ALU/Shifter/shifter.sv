@@ -47,7 +47,8 @@ module shifter1
     parameter N = 32,
     parameter K = 2
 )(
-    input  operation_t op,
+    input  logic rev1,
+    input  logic rev1_n,
     input  logic A0,
     input  logic [N-1:0]A,
     input  logic [K-1:0]B,
@@ -57,7 +58,7 @@ module shifter1
     genvar k;
     swapper u_swap_in(
         .A(A), .Y(Fk[0]),
-        .SWAP(op.rev1), .SWAP_N(op.rev1_n)
+        .SWAP(rev1), .SWAP_N(rev1_n)
     );
     for (k = 0; k < K; k++) begin
         shift_stage #(.K(1 << k)) u_stage(
