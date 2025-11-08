@@ -1,0 +1,577 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN shifter1 ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 100000 100000 ) ;
+ROW ROW_0 CoreSite 10000 10000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_1 CoreSite 10000 14000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_2 CoreSite 10000 18000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_3 CoreSite 10000 22000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_4 CoreSite 10000 26000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_5 CoreSite 10000 30000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_6 CoreSite 10000 34000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_7 CoreSite 10000 38000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_8 CoreSite 10000 42000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_9 CoreSite 10000 46000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_10 CoreSite 10000 50000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_11 CoreSite 10000 54000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_12 CoreSite 10000 58000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_13 CoreSite 10000 62000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_14 CoreSite 10000 66000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_15 CoreSite 10000 70000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_16 CoreSite 10000 74000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_17 CoreSite 10000 78000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_18 CoreSite 10000 82000 N DO 64 BY 1 STEP 1000 0 ;
+ROW ROW_19 CoreSite 10000 86000 N DO 64 BY 1 STEP 1000 0 ;
+TRACKS X 0 DO 1000 STEP 100 LAYER M1 ;
+TRACKS Y 0 DO 1000 STEP 100 LAYER M1 ;
+TRACKS X 0 DO 1000 STEP 100 LAYER M2 ;
+TRACKS Y 0 DO 1000 STEP 100 LAYER M2 ;
+TRACKS X 0 DO 1000 STEP 100 LAYER M3 ;
+TRACKS Y 0 DO 1000 STEP 100 LAYER M3 ;
+TRACKS X 0 DO 1000 STEP 100 LAYER M4 ;
+TRACKS Y 0 DO 1000 STEP 100 LAYER M4 ;
+COMPONENTS 99 ;
+    - _185_ AOI22 + PLACED ( 43000 46000 ) N ;
+    - _186_ AOI22 + PLACED ( 47000 42000 ) N ;
+    - _187_ AOI22 + PLACED ( 47000 38000 ) N ;
+    - _188_ AOI22 + PLACED ( 55000 38000 ) N ;
+    - _189_ AOI22 + PLACED ( 66000 42000 ) N ;
+    - _190_ AOI22 + PLACED ( 66000 50000 ) N ;
+    - _191_ AOI22 + PLACED ( 63000 38000 ) N ;
+    - _192_ AOI22 + PLACED ( 66000 30000 ) N ;
+    - _193_ AOI22 + PLACED ( 58000 30000 ) N ;
+    - _194_ AOI22 + PLACED ( 66000 46000 ) N ;
+    - _195_ AOI22 + PLACED ( 58000 42000 ) N ;
+    - _196_ AOI22 + PLACED ( 51000 46000 ) N ;
+    - _197_ AOI22 + PLACED ( 50000 50000 ) N ;
+    - _198_ AOI22 + PLACED ( 47000 58000 ) N ;
+    - _199_ AOI22 + PLACED ( 43000 62000 ) N ;
+    - _200_ AOI22 + PLACED ( 58000 50000 ) N ;
+    - _201_ AOI22 + PLACED ( 39000 58000 ) N ;
+    - _202_ AOI22 + PLACED ( 35000 54000 ) N ;
+    - _203_ AOI22 + PLACED ( 33000 62000 ) N ;
+    - _204_ AOI22 + PLACED ( 23000 58000 ) N ;
+    - _205_ AOI22 + PLACED ( 25000 62000 ) N ;
+    - _206_ AOI22 + PLACED ( 19000 54000 ) N ;
+    - _207_ AOI22 + PLACED ( 19000 46000 ) N ;
+    - _208_ AOI22 + PLACED ( 15000 42000 ) N ;
+    - _209_ AOI22 + PLACED ( 23000 50000 ) N ;
+    - _210_ AOI22 + PLACED ( 27000 46000 ) N ;
+    - _211_ AOI22 + PLACED ( 66000 34000 ) N ;
+    - _212_ AOI22 + PLACED ( 22000 34000 ) N ;
+    - _213_ AOI22 + PLACED ( 31000 58000 ) N ;
+    - _214_ AOI22 + PLACED ( 39000 42000 ) N ;
+    - _215_ AOI22 + PLACED ( 39000 38000 ) N ;
+    - _216_ AOI22 + PLACED ( 46000 54000 ) N ;
+    - _217_ NOT + PLACED ( 27000 86000 ) N ;
+    - _218_ NOT + PLACED ( 40000 86000 ) N ;
+    - _219_ NOT + PLACED ( 56000 86000 ) N ;
+    - _220_ AOI22 + PLACED ( 48000 86000 ) N ;
+    - _221_ AOI22 + PLACED ( 36000 78000 ) N ;
+    - _222_ AOI22 + PLACED ( 33000 74000 ) N ;
+    - _223_ AOI22 + PLACED ( 25000 74000 ) N ;
+    - _224_ AOI22 + PLACED ( 24000 66000 ) N ;
+    - _225_ AOI22 + PLACED ( 26000 70000 ) N ;
+    - _226_ AOI22 + PLACED ( 27000 54000 ) N ;
+    - _227_ AOI22 + PLACED ( 23000 42000 ) N ;
+    - _228_ AOI22 + PLACED ( 23000 38000 ) N ;
+    - _229_ AOI22 + PLACED ( 30000 34000 ) N ;
+    - _230_ AOI22 + PLACED ( 28000 26000 ) N ;
+    - _231_ AOI22 + PLACED ( 58000 82000 ) N ;
+    - _232_ AOI22 + PLACED ( 26000 30000 ) N ;
+    - _233_ AOI22 + PLACED ( 24000 22000 ) N ;
+    - _234_ AOI22 + PLACED ( 42000 30000 ) N ;
+    - _235_ AOI22 + PLACED ( 39000 26000 ) N ;
+    - _236_ AOI22 + PLACED ( 47000 26000 ) N ;
+    - _237_ AOI22 + PLACED ( 43000 18000 ) N ;
+    - _238_ AOI22 + PLACED ( 46000 10000 ) N ;
+    - _239_ AOI22 + PLACED ( 46000 14000 ) N ;
+    - _240_ AOI22 + PLACED ( 54000 14000 ) N ;
+    - _241_ AOI22 + PLACED ( 66000 10000 ) N ;
+    - _242_ AOI22 + PLACED ( 66000 82000 ) N ;
+    - _243_ AOI22 + PLACED ( 64000 14000 ) N ;
+    - _244_ AOI22 + PLACED ( 61000 26000 ) N ;
+    - _245_ AOI22 + PLACED ( 66000 54000 ) N ;
+    - _246_ AOI22 + PLACED ( 58000 54000 ) N ;
+    - _247_ AOI22 + PLACED ( 55000 58000 ) N ;
+    - _248_ AOI22 + PLACED ( 55000 70000 ) N ;
+    - _249_ AOI22 + PLACED ( 51000 62000 ) N ;
+    - _250_ AOI22 + PLACED ( 47000 82000 ) N ;
+    - _251_ AOI22 + PLACED ( 44000 78000 ) N ;
+    - _252_ AOI22 + PLACED ( 58000 86000 ) N ;
+    - _253_ AOI22 + PLACED ( 51000 74000 ) N ;
+    - _254_ AOI22 + PLACED ( 44000 70000 ) N ;
+    - _255_ AOI22 + PLACED ( 43000 74000 ) N ;
+    - _256_ AOI22 + PLACED ( 43000 66000 ) N ;
+    - _257_ AOI22 + PLACED ( 36000 70000 ) N ;
+    - _258_ AOI22 + PLACED ( 35000 66000 ) N ;
+    - _259_ AOI22 + PLACED ( 33000 50000 ) N ;
+    - _260_ AOI22 + PLACED ( 31000 42000 ) N ;
+    - _261_ AOI22 + PLACED ( 35000 46000 ) N ;
+    - _262_ AOI22 + PLACED ( 34000 30000 ) N ;
+    - _263_ AOI22 + PLACED ( 66000 74000 ) N ;
+    - _264_ AOI22 + PLACED ( 31000 38000 ) N ;
+    - _265_ AOI22 + PLACED ( 32000 22000 ) N ;
+    - _266_ AOI22 + PLACED ( 43000 34000 ) N ;
+    - _267_ AOI22 + PLACED ( 35000 18000 ) N ;
+    - _268_ AOI22 + PLACED ( 53000 34000 ) N ;
+    - _269_ AOI22 + PLACED ( 40000 22000 ) N ;
+    - _270_ AOI22 + PLACED ( 50000 30000 ) N ;
+    - _271_ AOI22 + PLACED ( 48000 22000 ) N ;
+    - _272_ AOI22 + PLACED ( 51000 18000 ) N ;
+    - _273_ AOI22 + PLACED ( 56000 22000 ) N ;
+    - _274_ AOI22 + PLACED ( 66000 86000 ) N ;
+    - _275_ AOI22 + PLACED ( 66000 18000 ) N ;
+    - _276_ AOI22 + PLACED ( 64000 22000 ) N ;
+    - _277_ AOI22 + PLACED ( 66000 66000 ) N ;
+    - _278_ AOI22 + PLACED ( 66000 78000 ) N ;
+    - _279_ AOI22 + PLACED ( 66000 62000 ) N ;
+    - _280_ AOI22 + PLACED ( 63000 70000 ) N ;
+    - _281_ AOI22 + PLACED ( 63000 58000 ) N ;
+    - _282_ AOI22 + PLACED ( 56000 78000 ) N ;
+    - _283_ AOI22 + PLACED ( 58000 66000 ) N ;
+END COMPONENTS
+PINS 69 ;
+    - A0 + NET A0 + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 34500 ) N ;
+    - A[0] + NET A[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 67500 ) N ;
+    - A[10] + NET A[10] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 57500 ) N ;
+    - A[11] + NET A[11] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 56500 ) N ;
+    - A[12] + NET A[12] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 55500 ) N ;
+    - A[13] + NET A[13] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 54500 ) N ;
+    - A[14] + NET A[14] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 53500 ) N ;
+    - A[15] + NET A[15] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 52500 ) N ;
+    - A[16] + NET A[16] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 51500 ) N ;
+    - A[17] + NET A[17] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 50500 ) N ;
+    - A[18] + NET A[18] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 49500 ) N ;
+    - A[19] + NET A[19] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 48500 ) N ;
+    - A[1] + NET A[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 66500 ) N ;
+    - A[20] + NET A[20] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 47500 ) N ;
+    - A[21] + NET A[21] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 46500 ) N ;
+    - A[22] + NET A[22] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 45500 ) N ;
+    - A[23] + NET A[23] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 44500 ) N ;
+    - A[24] + NET A[24] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 43500 ) N ;
+    - A[25] + NET A[25] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 42500 ) N ;
+    - A[26] + NET A[26] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 41500 ) N ;
+    - A[27] + NET A[27] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 40500 ) N ;
+    - A[28] + NET A[28] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 39500 ) N ;
+    - A[29] + NET A[29] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 38500 ) N ;
+    - A[2] + NET A[2] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 65500 ) N ;
+    - A[30] + NET A[30] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 37500 ) N ;
+    - A[31] + NET A[31] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 36500 ) N ;
+    - A[3] + NET A[3] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 64500 ) N ;
+    - A[4] + NET A[4] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 63500 ) N ;
+    - A[5] + NET A[5] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 62500 ) N ;
+    - A[6] + NET A[6] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 61500 ) N ;
+    - A[7] + NET A[7] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 60500 ) N ;
+    - A[8] + NET A[8] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 59500 ) N ;
+    - A[9] + NET A[9] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 58500 ) N ;
+    - B[0] + NET B[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 35500 ) N ;
+    - B[1] + NET B[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 35000 ) N ;
+    - F[0] + NET _084_[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 67000 ) N ;
+    - F[10] + NET _084_[10] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 57000 ) N ;
+    - F[11] + NET _084_[11] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 56000 ) N ;
+    - F[12] + NET _084_[12] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 55000 ) N ;
+    - F[13] + NET _084_[13] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 54000 ) N ;
+    - F[14] + NET _084_[14] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 53000 ) N ;
+    - F[15] + NET _084_[15] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 52000 ) N ;
+    - F[16] + NET _084_[16] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 51000 ) N ;
+    - F[17] + NET _084_[17] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 50000 ) N ;
+    - F[18] + NET _084_[18] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 49000 ) N ;
+    - F[19] + NET _084_[19] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 48000 ) N ;
+    - F[1] + NET _084_[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 66000 ) N ;
+    - F[20] + NET _084_[20] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 47000 ) N ;
+    - F[21] + NET _084_[21] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 46000 ) N ;
+    - F[22] + NET _084_[22] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 45000 ) N ;
+    - F[23] + NET _084_[23] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 44000 ) N ;
+    - F[24] + NET _084_[24] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 43000 ) N ;
+    - F[25] + NET _084_[25] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 42000 ) N ;
+    - F[26] + NET _084_[26] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 41000 ) N ;
+    - F[27] + NET _084_[27] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 40000 ) N ;
+    - F[28] + NET _084_[28] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 39000 ) N ;
+    - F[29] + NET _084_[29] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 38000 ) N ;
+    - F[2] + NET _084_[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 65000 ) N ;
+    - F[30] + NET _084_[30] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 37000 ) N ;
+    - F[31] + NET _084_[31] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 36000 ) N ;
+    - F[3] + NET _084_[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 64000 ) N ;
+    - F[4] + NET _084_[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 63000 ) N ;
+    - F[5] + NET _084_[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 62000 ) N ;
+    - F[6] + NET _084_[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 61000 ) N ;
+    - F[7] + NET _084_[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 60000 ) N ;
+    - F[8] + NET _084_[8] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 59000 ) N ;
+    - F[9] + NET _084_[9] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 58000 ) N ;
+    - rev1 + NET rev1 + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 34000 ) N ;
+    - rev1_n + NET rev1_n + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M1 ( -150 -150 ) ( 150 150 )
+        + FIXED ( 90000 33500 ) N ;
+END PINS
+NETS 137 ;
+    - A0 ( PIN A0 ) ( _263_ B2 ) ( _252_ B2 ) ( _219_ A ) + USE SIGNAL ;
+    - A[0] ( PIN A[0] ) ( _200_ A2 ) ( _193_ B1 ) + USE SIGNAL ;
+    - A[10] ( PIN A[10] ) ( _214_ B2 ) ( _202_ A2 ) + USE SIGNAL ;
+    - A[11] ( PIN A[11] ) ( _213_ B2 ) ( _203_ A2 ) + USE SIGNAL ;
+    - A[12] ( PIN A[12] ) ( _212_ B2 ) ( _204_ A2 ) + USE SIGNAL ;
+    - A[13] ( PIN A[13] ) ( _210_ B2 ) ( _205_ A2 ) + USE SIGNAL ;
+    - A[14] ( PIN A[14] ) ( _209_ B2 ) ( _206_ A2 ) + USE SIGNAL ;
+    - A[15] ( PIN A[15] ) ( _208_ B2 ) ( _207_ A2 ) + USE SIGNAL ;
+    - A[16] ( PIN A[16] ) ( _208_ A2 ) ( _207_ B2 ) + USE SIGNAL ;
+    - A[17] ( PIN A[17] ) ( _209_ A2 ) ( _206_ B2 ) + USE SIGNAL ;
+    - A[18] ( PIN A[18] ) ( _210_ A2 ) ( _205_ B2 ) + USE SIGNAL ;
+    - A[19] ( PIN A[19] ) ( _212_ A2 ) ( _204_ B2 ) + USE SIGNAL ;
+    - A[1] ( PIN A[1] ) ( _211_ A2 ) ( _192_ B2 ) + USE SIGNAL ;
+    - A[20] ( PIN A[20] ) ( _213_ A2 ) ( _203_ B2 ) + USE SIGNAL ;
+    - A[21] ( PIN A[21] ) ( _214_ A2 ) ( _202_ B2 ) + USE SIGNAL ;
+    - A[22] ( PIN A[22] ) ( _215_ A2 ) ( _201_ B2 ) + USE SIGNAL ;
+    - A[23] ( PIN A[23] ) ( _216_ A2 ) ( _199_ B2 ) + USE SIGNAL ;
+    - A[24] ( PIN A[24] ) ( _198_ B2 ) ( _185_ A2 ) + USE SIGNAL ;
+    - A[25] ( PIN A[25] ) ( _197_ B2 ) ( _186_ A2 ) + USE SIGNAL ;
+    - A[26] ( PIN A[26] ) ( _196_ B2 ) ( _187_ A2 ) + USE SIGNAL ;
+    - A[27] ( PIN A[27] ) ( _195_ B2 ) ( _188_ A2 ) + USE SIGNAL ;
+    - A[28] ( PIN A[28] ) ( _194_ B2 ) ( _189_ A2 ) + USE SIGNAL ;
+    - A[29] ( PIN A[29] ) ( _191_ A2 ) ( _190_ B2 ) + USE SIGNAL ;
+    - A[2] ( PIN A[2] ) ( _191_ B2 ) ( _190_ A2 ) + USE SIGNAL ;
+    - A[30] ( PIN A[30] ) ( _211_ B2 ) ( _192_ A2 ) + USE SIGNAL ;
+    - A[31] ( PIN A[31] ) ( _200_ B2 ) ( _193_ A2 ) + USE SIGNAL ;
+    - A[3] ( PIN A[3] ) ( _194_ A2 ) ( _189_ B2 ) + USE SIGNAL ;
+    - A[4] ( PIN A[4] ) ( _195_ A2 ) ( _188_ B2 ) + USE SIGNAL ;
+    - A[5] ( PIN A[5] ) ( _196_ A2 ) ( _187_ B2 ) + USE SIGNAL ;
+    - A[6] ( PIN A[6] ) ( _197_ A2 ) ( _186_ B2 ) + USE SIGNAL ;
+    - A[7] ( PIN A[7] ) ( _198_ A2 ) ( _185_ B2 ) + USE SIGNAL ;
+    - A[8] ( PIN A[8] ) ( _216_ B2 ) ( _199_ A2 ) + USE SIGNAL ;
+    - A[9] ( PIN A[9] ) ( _215_ B2 ) ( _201_ A2 ) + USE SIGNAL ;
+    - B[0] ( PIN B[0] ) ( _251_ B1 ) ( _250_ B1 ) ( _249_ B1 ) ( _248_ B1 ) ( _247_ B1 ) ( _246_ B1 )
+      ( _245_ B1 ) ( _244_ B1 ) ( _243_ B1 ) ( _242_ B1 ) ( _241_ B1 ) ( _240_ B1 ) ( _239_ B1 ) ( _238_ B1 )
+      ( _237_ B1 ) ( _236_ B1 ) ( _235_ B1 ) ( _234_ B1 ) ( _233_ B1 ) ( _232_ B1 ) ( _231_ B1 ) ( _230_ B1 )
+      ( _229_ B1 ) ( _228_ B1 ) ( _227_ B1 ) ( _226_ B1 ) ( _225_ B1 ) ( _224_ B1 ) ( _223_ B1 ) ( _222_ B1 )
+      ( _221_ B1 ) ( _220_ B1 ) ( _217_ A ) + USE SIGNAL ;
+    - B[1] ( PIN B[1] ) ( _283_ B1 ) ( _282_ B1 ) ( _281_ B1 ) ( _280_ B1 ) ( _279_ B1 ) ( _278_ B1 )
+      ( _277_ B1 ) ( _276_ B1 ) ( _275_ B1 ) ( _274_ B1 ) ( _273_ B1 ) ( _272_ B1 ) ( _271_ B1 ) ( _270_ B1 )
+      ( _269_ B1 ) ( _268_ B1 ) ( _267_ B1 ) ( _266_ B1 ) ( _265_ B1 ) ( _264_ B1 ) ( _263_ B1 ) ( _262_ B1 )
+      ( _261_ B1 ) ( _260_ B1 ) ( _259_ B1 ) ( _258_ B1 ) ( _257_ B1 ) ( _256_ B1 ) ( _255_ B1 ) ( _254_ B1 )
+      ( _253_ B1 ) ( _252_ B1 ) ( _218_ A ) + USE SIGNAL ;
+    - XXX + USE SIGNAL ;
+    - _035_ ( _231_ B2 ) ( _220_ A2 ) ( _200_ Y ) + USE SIGNAL ;
+    - _036_ ( _222_ B2 ) ( _221_ A2 ) ( _202_ Y ) + USE SIGNAL ;
+    - _037_ ( _223_ B2 ) ( _222_ A2 ) ( _203_ Y ) + USE SIGNAL ;
+    - _038_ ( _224_ B2 ) ( _223_ A2 ) ( _204_ Y ) + USE SIGNAL ;
+    - _039_ ( _225_ B2 ) ( _224_ A2 ) ( _205_ Y ) + USE SIGNAL ;
+    - _040_ ( _226_ B2 ) ( _225_ A2 ) ( _206_ Y ) + USE SIGNAL ;
+    - _041_ ( _227_ B2 ) ( _226_ A2 ) ( _207_ Y ) + USE SIGNAL ;
+    - _042_ ( _228_ B2 ) ( _227_ A2 ) ( _208_ Y ) + USE SIGNAL ;
+    - _043_ ( _229_ B2 ) ( _228_ A2 ) ( _209_ Y ) + USE SIGNAL ;
+    - _044_ ( _230_ B2 ) ( _229_ A2 ) ( _210_ Y ) + USE SIGNAL ;
+    - _045_ ( _232_ B2 ) ( _230_ A2 ) ( _212_ Y ) + USE SIGNAL ;
+    - _046_ ( _242_ B2 ) ( _231_ A2 ) ( _211_ Y ) + USE SIGNAL ;
+    - _047_ ( _233_ B2 ) ( _232_ A2 ) ( _213_ Y ) + USE SIGNAL ;
+    - _048_ ( _234_ B2 ) ( _233_ A2 ) ( _214_ Y ) + USE SIGNAL ;
+    - _049_ ( _235_ B2 ) ( _234_ A2 ) ( _215_ Y ) + USE SIGNAL ;
+    - _050_ ( _236_ B2 ) ( _235_ A2 ) ( _216_ Y ) + USE SIGNAL ;
+    - _051_ ( _237_ B2 ) ( _236_ A2 ) ( _185_ Y ) + USE SIGNAL ;
+    - _052_ ( _238_ B2 ) ( _237_ A2 ) ( _186_ Y ) + USE SIGNAL ;
+    - _053_ ( _239_ B2 ) ( _238_ A2 ) ( _187_ Y ) + USE SIGNAL ;
+    - _054_ ( _240_ B2 ) ( _239_ A2 ) ( _188_ Y ) + USE SIGNAL ;
+    - _055_ ( _241_ B2 ) ( _240_ A2 ) ( _189_ Y ) + USE SIGNAL ;
+    - _056_ ( _243_ B2 ) ( _241_ A2 ) ( _191_ Y ) + USE SIGNAL ;
+    - _057_ ( _245_ B2 ) ( _242_ A2 ) ( _190_ Y ) + USE SIGNAL ;
+    - _058_ ( _244_ B2 ) ( _243_ A2 ) ( _192_ Y ) + USE SIGNAL ;
+    - _059_ ( _244_ A2 ) ( _193_ Y ) + USE SIGNAL ;
+    - _060_ ( _246_ B2 ) ( _245_ A2 ) ( _194_ Y ) + USE SIGNAL ;
+    - _061_ ( _247_ B2 ) ( _246_ A2 ) ( _195_ Y ) + USE SIGNAL ;
+    - _062_ ( _248_ B2 ) ( _247_ A2 ) ( _196_ Y ) + USE SIGNAL ;
+    - _063_ ( _249_ B2 ) ( _248_ A2 ) ( _197_ Y ) + USE SIGNAL ;
+    - _064_ ( _250_ B2 ) ( _249_ A2 ) ( _198_ Y ) + USE SIGNAL ;
+    - _065_ ( _251_ B2 ) ( _250_ A2 ) ( _199_ Y ) + USE SIGNAL ;
+    - _066_ ( _251_ A2 ) ( _221_ B2 ) ( _201_ Y ) + USE SIGNAL ;
+    - _067_ ( _220_ B2 ) ( _219_ Y ) + USE SIGNAL ;
+    - _068_ ( _251_ A1 ) ( _250_ A1 ) ( _249_ A1 ) ( _248_ A1 ) ( _247_ A1 ) ( _246_ A1 ) ( _245_ A1 )
+      ( _244_ A1 ) ( _243_ A1 ) ( _242_ A1 ) ( _241_ A1 ) ( _240_ A1 ) ( _239_ A1 ) ( _238_ A1 ) ( _237_ A1 )
+      ( _236_ A1 ) ( _235_ A1 ) ( _234_ A1 ) ( _233_ A1 ) ( _232_ A1 ) ( _231_ A1 ) ( _230_ A1 ) ( _229_ A1 )
+      ( _228_ A1 ) ( _227_ A1 ) ( _226_ A1 ) ( _225_ A1 ) ( _224_ A1 ) ( _223_ A1 ) ( _222_ A1 ) ( _221_ A1 )
+      ( _220_ A1 ) ( _217_ Y ) + USE SIGNAL ;
+    - _069_ ( _283_ A1 ) ( _282_ A1 ) ( _281_ A1 ) ( _280_ A1 ) ( _279_ A1 ) ( _278_ A1 ) ( _277_ A1 )
+      ( _276_ A1 ) ( _275_ A1 ) ( _274_ A1 ) ( _273_ A1 ) ( _272_ A1 ) ( _271_ A1 ) ( _270_ A1 ) ( _269_ A1 )
+      ( _268_ A1 ) ( _267_ A1 ) ( _266_ A1 ) ( _265_ A1 ) ( _264_ A1 ) ( _263_ A1 ) ( _262_ A1 ) ( _261_ A1 )
+      ( _260_ A1 ) ( _259_ A1 ) ( _258_ A1 ) ( _257_ A1 ) ( _256_ A1 ) ( _255_ A1 ) ( _254_ A1 ) ( _253_ A1 )
+      ( _252_ A1 ) ( _218_ Y ) + USE SIGNAL ;
+    - _079_[0] ( _274_ B2 ) ( _252_ A2 ) ( _220_ Y ) + USE SIGNAL ;
+    - _079_[10] ( _255_ B2 ) ( _253_ A2 ) ( _221_ Y ) + USE SIGNAL ;
+    - _079_[11] ( _256_ B2 ) ( _254_ A2 ) ( _222_ Y ) + USE SIGNAL ;
+    - _079_[12] ( _257_ B2 ) ( _255_ A2 ) ( _223_ Y ) + USE SIGNAL ;
+    - _079_[13] ( _258_ B2 ) ( _256_ A2 ) ( _224_ Y ) + USE SIGNAL ;
+    - _079_[14] ( _259_ B2 ) ( _257_ A2 ) ( _225_ Y ) + USE SIGNAL ;
+    - _079_[15] ( _260_ B2 ) ( _258_ A2 ) ( _226_ Y ) + USE SIGNAL ;
+    - _079_[16] ( _261_ B2 ) ( _259_ A2 ) ( _227_ Y ) + USE SIGNAL ;
+    - _079_[17] ( _262_ B2 ) ( _260_ A2 ) ( _228_ Y ) + USE SIGNAL ;
+    - _079_[18] ( _264_ B2 ) ( _261_ A2 ) ( _229_ Y ) + USE SIGNAL ;
+    - _079_[19] ( _265_ B2 ) ( _262_ A2 ) ( _230_ Y ) + USE SIGNAL ;
+    - _079_[1] ( _277_ B2 ) ( _263_ A2 ) ( _231_ Y ) + USE SIGNAL ;
+    - _079_[20] ( _266_ B2 ) ( _264_ A2 ) ( _232_ Y ) + USE SIGNAL ;
+    - _079_[21] ( _267_ B2 ) ( _265_ A2 ) ( _233_ Y ) + USE SIGNAL ;
+    - _079_[22] ( _268_ B2 ) ( _266_ A2 ) ( _234_ Y ) + USE SIGNAL ;
+    - _079_[23] ( _269_ B2 ) ( _267_ A2 ) ( _235_ Y ) + USE SIGNAL ;
+    - _079_[24] ( _270_ B2 ) ( _268_ A2 ) ( _236_ Y ) + USE SIGNAL ;
+    - _079_[25] ( _271_ B2 ) ( _269_ A2 ) ( _237_ Y ) + USE SIGNAL ;
+    - _079_[26] ( _272_ B2 ) ( _270_ A2 ) ( _238_ Y ) + USE SIGNAL ;
+    - _079_[27] ( _273_ B2 ) ( _271_ A2 ) ( _239_ Y ) + USE SIGNAL ;
+    - _079_[28] ( _275_ B2 ) ( _272_ A2 ) ( _240_ Y ) + USE SIGNAL ;
+    - _079_[29] ( _276_ B2 ) ( _273_ A2 ) ( _241_ Y ) + USE SIGNAL ;
+    - _079_[2] ( _278_ B2 ) ( _274_ A2 ) ( _242_ Y ) + USE SIGNAL ;
+    - _079_[30] ( _275_ A2 ) ( _243_ Y ) + USE SIGNAL ;
+    - _079_[31] ( _276_ A2 ) ( _244_ Y ) + USE SIGNAL ;
+    - _079_[3] ( _279_ B2 ) ( _277_ A2 ) ( _245_ Y ) + USE SIGNAL ;
+    - _079_[4] ( _280_ B2 ) ( _278_ A2 ) ( _246_ Y ) + USE SIGNAL ;
+    - _079_[5] ( _281_ B2 ) ( _279_ A2 ) ( _247_ Y ) + USE SIGNAL ;
+    - _079_[6] ( _282_ B2 ) ( _280_ A2 ) ( _248_ Y ) + USE SIGNAL ;
+    - _079_[7] ( _283_ B2 ) ( _281_ A2 ) ( _249_ Y ) + USE SIGNAL ;
+    - _079_[8] ( _282_ A2 ) ( _253_ B2 ) ( _250_ Y ) + USE SIGNAL ;
+    - _079_[9] ( _283_ A2 ) ( _254_ B2 ) ( _251_ Y ) + USE SIGNAL ;
+    - _084_[0] ( PIN F[0] ) ( _252_ Y ) + USE SIGNAL ;
+    - _084_[10] ( PIN F[10] ) ( _253_ Y ) + USE SIGNAL ;
+    - _084_[11] ( PIN F[11] ) ( _254_ Y ) + USE SIGNAL ;
+    - _084_[12] ( PIN F[12] ) ( _255_ Y ) + USE SIGNAL ;
+    - _084_[13] ( PIN F[13] ) ( _256_ Y ) + USE SIGNAL ;
+    - _084_[14] ( PIN F[14] ) ( _257_ Y ) + USE SIGNAL ;
+    - _084_[15] ( PIN F[15] ) ( _258_ Y ) + USE SIGNAL ;
+    - _084_[16] ( PIN F[16] ) ( _259_ Y ) + USE SIGNAL ;
+    - _084_[17] ( PIN F[17] ) ( _260_ Y ) + USE SIGNAL ;
+    - _084_[18] ( PIN F[18] ) ( _261_ Y ) + USE SIGNAL ;
+    - _084_[19] ( PIN F[19] ) ( _262_ Y ) + USE SIGNAL ;
+    - _084_[1] ( PIN F[1] ) ( _263_ Y ) + USE SIGNAL ;
+    - _084_[20] ( PIN F[20] ) ( _264_ Y ) + USE SIGNAL ;
+    - _084_[21] ( PIN F[21] ) ( _265_ Y ) + USE SIGNAL ;
+    - _084_[22] ( PIN F[22] ) ( _266_ Y ) + USE SIGNAL ;
+    - _084_[23] ( PIN F[23] ) ( _267_ Y ) + USE SIGNAL ;
+    - _084_[24] ( PIN F[24] ) ( _268_ Y ) + USE SIGNAL ;
+    - _084_[25] ( PIN F[25] ) ( _269_ Y ) + USE SIGNAL ;
+    - _084_[26] ( PIN F[26] ) ( _270_ Y ) + USE SIGNAL ;
+    - _084_[27] ( PIN F[27] ) ( _271_ Y ) + USE SIGNAL ;
+    - _084_[28] ( PIN F[28] ) ( _272_ Y ) + USE SIGNAL ;
+    - _084_[29] ( PIN F[29] ) ( _273_ Y ) + USE SIGNAL ;
+    - _084_[2] ( PIN F[2] ) ( _274_ Y ) + USE SIGNAL ;
+    - _084_[30] ( PIN F[30] ) ( _275_ Y ) + USE SIGNAL ;
+    - _084_[31] ( PIN F[31] ) ( _276_ Y ) + USE SIGNAL ;
+    - _084_[3] ( PIN F[3] ) ( _277_ Y ) + USE SIGNAL ;
+    - _084_[4] ( PIN F[4] ) ( _278_ Y ) + USE SIGNAL ;
+    - _084_[5] ( PIN F[5] ) ( _279_ Y ) + USE SIGNAL ;
+    - _084_[6] ( PIN F[6] ) ( _280_ Y ) + USE SIGNAL ;
+    - _084_[7] ( PIN F[7] ) ( _281_ Y ) + USE SIGNAL ;
+    - _084_[8] ( PIN F[8] ) ( _282_ Y ) + USE SIGNAL ;
+    - _084_[9] ( PIN F[9] ) ( _283_ Y ) + USE SIGNAL ;
+    - rev1 ( PIN rev1 ) ( _216_ B1 ) ( _215_ B1 ) ( _214_ B1 ) ( _213_ B1 ) ( _212_ B1 ) ( _211_ B1 )
+      ( _210_ B1 ) ( _209_ B1 ) ( _208_ B1 ) ( _207_ B1 ) ( _206_ B1 ) ( _205_ B1 ) ( _204_ B1 ) ( _203_ B1 )
+      ( _202_ B1 ) ( _201_ B1 ) ( _200_ B1 ) ( _199_ B1 ) ( _198_ B1 ) ( _197_ B1 ) ( _196_ B1 ) ( _195_ B1 )
+      ( _194_ B1 ) ( _193_ B2 ) ( _192_ B1 ) ( _191_ B1 ) ( _190_ B1 ) ( _189_ B1 ) ( _188_ B1 ) ( _187_ B1 )
+      ( _186_ B1 ) ( _185_ B1 ) + USE SIGNAL ;
+    - rev1_n ( PIN rev1_n ) ( _216_ A1 ) ( _215_ A1 ) ( _214_ A1 ) ( _213_ A1 ) ( _212_ A1 ) ( _211_ A1 )
+      ( _210_ A1 ) ( _209_ A1 ) ( _208_ A1 ) ( _207_ A1 ) ( _206_ A1 ) ( _205_ A1 ) ( _204_ A1 ) ( _203_ A1 )
+      ( _202_ A1 ) ( _201_ A1 ) ( _200_ A1 ) ( _199_ A1 ) ( _198_ A1 ) ( _197_ A1 ) ( _196_ A1 ) ( _195_ A1 )
+      ( _194_ A1 ) ( _193_ A1 ) ( _192_ A1 ) ( _191_ A1 ) ( _190_ A1 ) ( _189_ A1 ) ( _188_ A1 ) ( _187_ A1 )
+      ( _186_ A1 ) ( _185_ A1 ) + USE SIGNAL ;
+END NETS
+END DESIGN
