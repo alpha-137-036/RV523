@@ -4,7 +4,7 @@ read_liberty ../../../lib/RV523.lib
 read_verilog shifter1.netlist.v
 link_design shifter1
 
-read_def -floorplan_initialize shifter1_floorplan.def
+read_def -floorplan_initialize shifter1.floorplan.def
 
 # For some reason place_pin crashes. 
 # Fortunately, the fixed pin locations in the .DEF file works
@@ -24,7 +24,7 @@ improve_placement -random_seed 1111
 improve_placement -random_seed 9876
 improve_placement -random_seed 911
 
-write_def shifter1_placed.def
+write_def shifter1.placed.def
 
 #pin_access -via_in_pin_bottom_layer M1
 
