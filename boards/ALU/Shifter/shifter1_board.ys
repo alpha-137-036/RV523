@@ -1,0 +1,10 @@
+read_verilog -sv ../alu_typedefs.sv shifter1_board.sv shifter1.netlist.v
+read_verilog -lib ../../../lib/RV523_blackbox.v
+
+hierarchy -top shifter1_board
+flatten -noscopeinfo
+
+write_json shifter1_board.netlist.json
+write_verilog shifter1_board.netlist.v
+
+exec -- python3 ../../../tools/yosysJsonToKicadNetlist.py shifter1_board.netlist.json shifter1_board.kicad.net
