@@ -31,6 +31,20 @@ while {$iter < $max_improve_iters} {
 
 write_def shifter1.placed.def
 
+puts "Write shifter1.placed.csv"
+set csv [open "shifter1.placed.csv" w]
+puts $csv "ref,x,y"
+
+foreach cell [[[[ord::get_db] getChip] getBlock] getInsts] {
+    set name [$cell getName]
+    set x [expr {[[$cell getBBox] xMin] / 1000}]
+    set y [[$cell getBBox] yMin]
+    set kicadY [expr {(100000 - 4000 - $y) / 1000}]
+    puts $csv "sh1.$name,$x,$kicadY"
+}
+close $csv
+
+
 #pin_access -via_in_pin_bottom_layer M1
 
 #global_route -verbose

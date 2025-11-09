@@ -33,6 +33,5 @@ stat -liberty ../../../lib/RV523.lib
 
 rename -hide
 
-write_json shifter1.netlist.json
 write_verilog shifter1.netlist.v
 
