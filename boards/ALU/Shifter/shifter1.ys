@@ -26,7 +26,7 @@ opt_reduce
 opt_expr
 
 techmap;
-dfflibmap -liberty ../../../lib/RV523.lib
+#dfflibmap -liberty ../../../lib/RV523.lib
 abc -script shifter.abc -liberty ../../../lib/RV523.lib
 
 stat -liberty ../../../lib/RV523.lib
