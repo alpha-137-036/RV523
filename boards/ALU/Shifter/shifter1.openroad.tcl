@@ -4,6 +4,9 @@ read_liberty ../../../lib/RV523.lib
 read_verilog shifter1.netlist.v
 link_design shifter1
 
+puts "Generate shifter1.floorplan.def"
+exec python3 generate_shifter1_floorplan.py > shifter1.floorplan.def
+
 read_def -floorplan_initialize shifter1.floorplan.def
 
 # For some reason place_pin crashes. 
@@ -11,18 +14,20 @@ read_def -floorplan_initialize shifter1.floorplan.def
 
 
 #initialize_floorplan -die_area "0 0 100 100 " -core_area "0 0 50 70.4" -site CoreSite 
-global_placement -density 0.85 -routability_driven
-detailed_placement -disallow_one_site_gaps 
-improve_placement -random_seed 1234
-improve_placement -random_seed 6666
-improve_placement -random_seed 9999
-improve_placement -random_seed 8888
-improve_placement -random_seed 7777
-improve_placement -random_seed 4444
-improve_placement -random_seed 2222
-improve_placement -random_seed 1111
-improve_placement -random_seed 9876
-improve_placement -random_seed 911
+global_placement -density 0.9 -routability_driven
+set max_placement_iters 100
+set iter 0
+while {$iter < $max_placement_iters} {
+    incr iter
+    improve_placement -random_seed $iter
+}
+set max_improve_iters 50
+set iter 0
+detailed_placement
+while {$iter < $max_improve_iters} {
+    incr iter
+    improve_placement -random_seed $iter
+}
 
 write_def shifter1.placed.def
 

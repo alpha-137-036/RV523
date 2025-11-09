@@ -3,9 +3,9 @@ DIVIDERCHAR "/" ;
 BUSBITCHARS "[]" ;
 DESIGN shifter1 ;
 UNITS DISTANCE MICRONS 1000 ;
-DIEAREA ( 0 0 ) ( 100000 100000 ) ;""")
+DIEAREA ( 0 0 ) ( 60000 100000 ) ;""")
 for row in range(22):
-    print(f"""ROW ROW_{row} CoreSite 5000  {6000+row*4000} N DO 44 BY 1 STEP 1000 0 ;""")
+    print(f"""ROW ROW_{row} CoreSite 6000  {6000+row*4000} N DO 40 BY 1 STEP 1000 0 ;""")
 trackStep = 50
 trackCount = 2000
 for m in range(1,4):
@@ -13,7 +13,7 @@ for m in range(1,4):
 TRACKS Y 0 DO {trackCount} STEP {trackStep} LAYER M{m} ;
     """)
 print("""PINS 0 ;""")
-x = 90000
+x = 55000
 y = 67500
 pinDimension=300
 pinRect = f"( {-pinDimension/2} {-pinDimension/2} ) ( {pinDimension/2} {pinDimension/2} )"
