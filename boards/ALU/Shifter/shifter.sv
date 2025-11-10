@@ -68,6 +68,10 @@ module shifter1
         );
     end
     assign F = Fk[K];
+    
+    // KLUDGE: add decaps for the shifter1 macros
+    `include "shifter1.decaps.v"
+    
 endmodule
 
 module shifter2

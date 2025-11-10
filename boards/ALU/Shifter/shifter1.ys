@@ -1,3 +1,4 @@
+exec -- python3 generate_shifter1_decaps.py > shifter1.decaps.v
 read_verilog -sv ../alu_typedefs.sv shifter.sv
 read_verilog -lib ../../../lib/RV523_blackbox.v
 
@@ -31,6 +32,7 @@ abc -script shifter.abc -liberty ../../../lib/RV523.lib
 
 stat -liberty ../../../lib/RV523.lib
 
+select -del */t:DECAP
 rename -hide
 
 write_verilog shifter1.netlist.v

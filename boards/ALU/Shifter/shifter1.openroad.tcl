@@ -2,6 +2,7 @@ read_lef ../../../lib/RV523_tech.lef
 read_lef ../../../lib/RV523_cells.lef
 read_liberty ../../../lib/RV523.lib
 read_verilog shifter1.netlist.v
+
 link_design shifter1
 
 puts "Generate shifter1.floorplan.def"
@@ -13,6 +14,11 @@ read_def -floorplan_initialize shifter1.floorplan.def
 # Fortunately, the fixed pin locations in the .DEF file works
 
 
+#place_endcaps -endcap DECAP 
+
+# abuse command tapcell to also insert DECAP as if they were tap cells
+#tapcell -endcap DECAP -tapcell_master DECAP -distance 60
+
 #initialize_floorplan -die_area "0 0 100 100 " -core_area "0 0 50 70.4" -site CoreSite 
 global_placement -density 0.9 -routability_driven
 set max_placement_iters 100
@@ -21,8 +27,12 @@ while {$iter < $max_placement_iters} {
     incr iter
     improve_placement -random_seed $iter
 }
-set max_improve_iters 50
+set max_improve_iters 100
 set iter 0
+detailed_placement
+detailed_placement
+detailed_placement
+detailed_placement
 detailed_placement
 while {$iter < $max_improve_iters} {
     incr iter
@@ -43,9 +53,3 @@ foreach cell [[[[ord::get_db] getChip] getBlock] getInsts] {
     puts $csv "sh1.$name,$x,$kicadY"
 }
 close $csv
-
-
-#pin_access -via_in_pin_bottom_layer M1
-
-#global_route -verbose
-#detailed_route  -via_in_pin_bottom_layer M1

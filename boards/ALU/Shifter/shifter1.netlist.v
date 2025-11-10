@@ -2,7 +2,7 @@
 
 (* dynports =  1  *)
 (* top =  1  *)
-(* src = "shifter.sv:45.1-71.10" *)
+(* src = "shifter.sv:45.1-75.10" *)
 module shifter1(rev1, rev1_n, A0, A, B, F);
   (* src = "shifter.sv:52.18-52.20" *)
   wire _000_;
@@ -1281,6 +1281,336 @@ module shifter1(rev1, rev1_n, A0, A, B, F);
     .B1(B[1]),
     .B2(_079_[7]),
     .Y(_084_[9])
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:1.18-1.28" *)
+  DECAP decap0_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:3.18-3.28" *)
+  DECAP decap0_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:2.18-2.28" *)
+  DECAP decap0_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:31.18-31.29" *)
+  DECAP decap10_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:33.18-33.29" *)
+  DECAP decap10_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:32.18-32.29" *)
+  DECAP decap10_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:34.18-34.29" *)
+  DECAP decap11_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:36.18-36.29" *)
+  DECAP decap11_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:35.18-35.29" *)
+  DECAP decap11_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:37.18-37.29" *)
+  DECAP decap12_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:39.18-39.29" *)
+  DECAP decap12_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:38.18-38.29" *)
+  DECAP decap12_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:40.18-40.29" *)
+  DECAP decap13_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:42.18-42.29" *)
+  DECAP decap13_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:41.18-41.29" *)
+  DECAP decap13_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:43.18-43.29" *)
+  DECAP decap14_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:45.18-45.29" *)
+  DECAP decap14_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:44.18-44.29" *)
+  DECAP decap14_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:46.18-46.29" *)
+  DECAP decap15_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:48.18-48.29" *)
+  DECAP decap15_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:47.18-47.29" *)
+  DECAP decap15_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:49.18-49.29" *)
+  DECAP decap16_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:51.18-51.29" *)
+  DECAP decap16_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:50.18-50.29" *)
+  DECAP decap16_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:52.18-52.29" *)
+  DECAP decap17_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:54.18-54.29" *)
+  DECAP decap17_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:53.18-53.29" *)
+  DECAP decap17_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:55.18-55.29" *)
+  DECAP decap18_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:57.18-57.29" *)
+  DECAP decap18_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:56.18-56.29" *)
+  DECAP decap18_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:58.18-58.29" *)
+  DECAP decap19_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:60.18-60.29" *)
+  DECAP decap19_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:59.18-59.29" *)
+  DECAP decap19_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:4.18-4.28" *)
+  DECAP decap1_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:6.18-6.28" *)
+  DECAP decap1_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:5.18-5.28" *)
+  DECAP decap1_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:61.18-61.29" *)
+  DECAP decap20_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:63.18-63.29" *)
+  DECAP decap20_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:62.18-62.29" *)
+  DECAP decap20_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:64.18-64.29" *)
+  DECAP decap21_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:66.18-66.29" *)
+  DECAP decap21_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:65.18-65.29" *)
+  DECAP decap21_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:7.18-7.28" *)
+  DECAP decap2_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:9.18-9.28" *)
+  DECAP decap2_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:8.18-8.28" *)
+  DECAP decap2_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:10.18-10.28" *)
+  DECAP decap3_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:12.18-12.28" *)
+  DECAP decap3_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:11.18-11.28" *)
+  DECAP decap3_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:13.18-13.28" *)
+  DECAP decap4_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:15.18-15.28" *)
+  DECAP decap4_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:14.18-14.28" *)
+  DECAP decap4_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:16.18-16.28" *)
+  DECAP decap5_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:18.18-18.28" *)
+  DECAP decap5_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:17.18-17.28" *)
+  DECAP decap5_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:19.18-19.28" *)
+  DECAP decap6_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:21.18-21.28" *)
+  DECAP decap6_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:20.18-20.28" *)
+  DECAP decap6_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:22.18-22.28" *)
+  DECAP decap7_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:24.18-24.28" *)
+  DECAP decap7_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:23.18-23.28" *)
+  DECAP decap7_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:25.18-25.28" *)
+  DECAP decap8_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:27.18-27.28" *)
+  DECAP decap8_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:26.18-26.28" *)
+  DECAP decap8_R (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:28.18-28.28" *)
+  DECAP decap9_L (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:30.18-30.28" *)
+  DECAP decap9_M (
+  );
+  (* keep = 32'd1 *)
+  (* module_not_derived = 32'd1 *)
+  (* src = "shifter1.decaps.v:29.18-29.28" *)
+  DECAP decap9_R (
   );
   assign F = _084_;
   assign _072_ = _075_;
