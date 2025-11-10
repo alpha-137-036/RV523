@@ -253,8 +253,8 @@ def analyzeFootprintFlipped():
                 cellFootprints.append(obj)
                 footprintsByY.setdefault(obj.position.y, []).append(obj)
 
-    # Enumerate the rows by increasing Y coordinates
-    yList = sorted(footprintsByY.keys())
+    # Enumerate the rows by indecreasing Y coordinates
+    yList = reversed(sorted(footprintsByY.keys()))
     # Alternate normal and flipped
     flipped = False
     for y in yList:
