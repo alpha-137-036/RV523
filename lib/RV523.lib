@@ -34,6 +34,11 @@ library (RV523) {
     index_2 ("5, 10, 20, 40, 60, 80, 100");
   }
 
+  /* DECAP */
+  cell (DECAP) {
+    area : 2;
+  }
+
   /* BUF */
   cell (BUF) {
     cell_footprint : buf;
