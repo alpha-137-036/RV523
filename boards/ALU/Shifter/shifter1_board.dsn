@@ -43,73 +43,83 @@
     )
   )
   (placement
+    (component Capacitor_SMD:C_0402_1005Metric
+      (place C3 56500.000000 -69000.000000 front 90.000000)
+      (place C4 61000.000000 -94500.000000 front 180.000000)
+      (place C1 61000.000000 -5500.000000 front 180.000000)
+      (place C2 56500.000000 -31000.000000 front 90.000000)
+    )
+    (component Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+      (place j2 62000.000000 -2500.000000 front -90.000000)
+      (place j3 62000.000000 -97500.000000 front -90.000000)
+    )
     (component RV523:DECAP
-      (place sh1.decap9_R 49000.000000 -54000.000000 front 0.000000)
+      (place sh1.decap14_M 32000.000000 -34000.000000 front 0.000000)
+      (place sh1.decap19_R 49000.000000 -14000.000000 front 0.000000)
+      (place sh1.decap13_M 23000.000000 -38000.000000 front 0.000000)
+      (place sh1.decap12_R 49000.000000 -42000.000000 front 0.000000)
+      (place sh1.decap7_R 49000.000000 -62000.000000 front 0.000000)
       (place sh1.decap9_M 23000.000000 -54000.000000 front 0.000000)
-      (place sh1.decap9_L 6000.000000 -54000.000000 front 0.000000)
+      (place sh1.decap21_L 6000.000000 -6000.000000 front 0.000000)
+      (place sh1.decap17_L 6000.000000 -22000.000000 front 0.000000)
+      (place sh1.decap4_L 6000.000000 -74000.000000 front 0.000000)
+      (place sh1.decap5_R 49000.000000 -70000.000000 front 0.000000)
+      (place sh1.decap19_M 23000.000000 -14000.000000 front 0.000000)
+      (place sh1.decap11_R 49000.000000 -46000.000000 front 0.000000)
+      (place sh1.decap19_L 6000.000000 -14000.000000 front 0.000000)
+      (place sh1.decap10_M 32000.000000 -50000.000000 front 0.000000)
+      (place sh1.decap6_R 49000.000000 -66000.000000 front 0.000000)
+      (place sh1.decap4_M 32000.000000 -74000.000000 front 0.000000)
+      (place sh1.decap2_L 6000.000000 -82000.000000 front 0.000000)
+      (place sh1.decap18_M 32000.000000 -18000.000000 front 0.000000)
+      (place sh1.decap16_R 49000.000000 -26000.000000 front 0.000000)
+      (place sh1.decap5_M 23000.000000 -70000.000000 front 0.000000)
+      (place sh1.decap15_R 49000.000000 -30000.000000 front 0.000000)
+      (place sh1.decap6_L 6000.000000 -66000.000000 front 0.000000)
+      (place sh1.decap3_R 49000.000000 -78000.000000 front 0.000000)
+      (place sh1.decap12_L 6000.000000 -42000.000000 front 0.000000)
+      (place sh1.decap0_R 49000.000000 -90000.000000 front 0.000000)
+      (place sh1.decap9_R 49000.000000 -54000.000000 front 0.000000)
+      (place sh1.decap16_M 32000.000000 -26000.000000 front 0.000000)
+      (place sh1.decap5_L 6000.000000 -70000.000000 front 0.000000)
+      (place sh1.decap17_R 49000.000000 -22000.000000 front 0.000000)
+      (place sh1.decap13_R 49000.000000 -38000.000000 front 0.000000)
       (place sh1.decap8_R 49000.000000 -58000.000000 front 0.000000)
       (place sh1.decap8_M 32000.000000 -58000.000000 front 0.000000)
-      (place sh1.decap8_L 6000.000000 -58000.000000 front 0.000000)
-      (place sh1.decap7_R 49000.000000 -62000.000000 front 0.000000)
-      (place sh1.decap7_M 23000.000000 -62000.000000 front 0.000000)
-      (place sh1.decap7_L 6000.000000 -62000.000000 front 0.000000)
-      (place sh1.decap6_R 49000.000000 -66000.000000 front 0.000000)
-      (place sh1.decap6_M 32000.000000 -66000.000000 front 0.000000)
-      (place sh1.decap6_L 6000.000000 -66000.000000 front 0.000000)
-      (place sh1.decap5_R 49000.000000 -70000.000000 front 0.000000)
-      (place sh1.decap5_M 23000.000000 -70000.000000 front 0.000000)
-      (place sh1.decap5_L 6000.000000 -70000.000000 front 0.000000)
       (place sh1.decap4_R 49000.000000 -74000.000000 front 0.000000)
-      (place sh1.decap4_M 32000.000000 -74000.000000 front 0.000000)
-      (place sh1.decap4_L 6000.000000 -74000.000000 front 0.000000)
-      (place sh1.decap3_R 49000.000000 -78000.000000 front 0.000000)
-      (place sh1.decap3_M 23000.000000 -78000.000000 front 0.000000)
-      (place sh1.decap2_R 49000.000000 -82000.000000 front 0.000000)
-      (place sh1.decap2_M 32000.000000 -82000.000000 front 0.000000)
-      (place sh1.decap2_L 6000.000000 -82000.000000 front 0.000000)
-      (place sh1.decap21_R 49000.000000 -6000.000000 front 0.000000)
-      (place sh1.decap21_M 23000.000000 -6000.000000 front 0.000000)
-      (place sh1.decap21_L 6000.000000 -6000.000000 front 0.000000)
-      (place sh1.decap20_R 49000.000000 -10000.000000 front 0.000000)
-      (place sh1.decap20_M 32000.000000 -10000.000000 front 0.000000)
-      (place sh1.decap20_L 6000.000000 -10000.000000 front 0.000000)
-      (place sh1.decap1_R 49000.000000 -86000.000000 front 0.000000)
-      (place sh1.decap1_M 23000.000000 -86000.000000 front 0.000000)
-      (place sh1.decap1_L 6000.000000 -86000.000000 front 0.000000)
-      (place sh1.decap19_R 49000.000000 -14000.000000 front 0.000000)
-      (place sh1.decap19_M 23000.000000 -14000.000000 front 0.000000)
-      (place sh1.decap19_L 6000.000000 -14000.000000 front 0.000000)
-      (place sh1.decap18_R 49000.000000 -18000.000000 front 0.000000)
-      (place sh1.decap18_M 32000.000000 -18000.000000 front 0.000000)
-      (place sh1.decap18_L 6000.000000 -18000.000000 front 0.000000)
-      (place sh1.decap17_R 49000.000000 -22000.000000 front 0.000000)
-      (place sh1.decap17_M 23000.000000 -22000.000000 front 0.000000)
-      (place sh1.decap17_L 6000.000000 -22000.000000 front 0.000000)
-      (place sh1.decap16_R 49000.000000 -26000.000000 front 0.000000)
-      (place sh1.decap16_M 32000.000000 -26000.000000 front 0.000000)
-      (place sh1.decap16_L 6000.000000 -26000.000000 front 0.000000)
-      (place sh1.decap15_R 49000.000000 -30000.000000 front 0.000000)
-      (place sh1.decap15_M 23000.000000 -30000.000000 front 0.000000)
-      (place sh1.decap15_L 6000.000000 -30000.000000 front 0.000000)
-      (place sh1.decap14_R 49000.000000 -34000.000000 front 0.000000)
-      (place sh1.decap14_M 32000.000000 -34000.000000 front 0.000000)
-      (place sh1.decap14_L 6000.000000 -34000.000000 front 0.000000)
-      (place sh1.decap13_R 49000.000000 -38000.000000 front 0.000000)
-      (place sh1.decap13_M 23000.000000 -38000.000000 front 0.000000)
-      (place sh1.decap13_L 6000.000000 -38000.000000 front 0.000000)
-      (place sh1.decap12_R 49000.000000 -42000.000000 front 0.000000)
       (place sh1.decap12_M 32000.000000 -42000.000000 front 0.000000)
-      (place sh1.decap12_L 6000.000000 -42000.000000 front 0.000000)
-      (place sh1.decap11_R 49000.000000 -46000.000000 front 0.000000)
-      (place sh1.decap11_M 23000.000000 -46000.000000 front 0.000000)
-      (place sh1.decap11_L 6000.000000 -46000.000000 front 0.000000)
+      (place sh1.decap3_M 23000.000000 -78000.000000 front 0.000000)
+      (place sh1.decap18_L 6000.000000 -18000.000000 front 0.000000)
       (place sh1.decap10_R 49000.000000 -50000.000000 front 0.000000)
-      (place sh1.decap10_M 32000.000000 -50000.000000 front 0.000000)
-      (place sh1.decap0_R 49000.000000 -90000.000000 front 0.000000)
-      (place sh1.decap0_M 32000.000000 -90000.000000 front 0.000000)
-      (place sh1.decap0_L 6000.000000 -90000.000000 front 0.000000)
       (place sh1.decap3_L 6000.000000 -78000.000000 front 0.000000)
+      (place sh1.decap1_R 49000.000000 -86000.000000 front 0.000000)
+      (place sh1.decap2_R 49000.000000 -82000.000000 front 0.000000)
+      (place sh1.decap14_R 49000.000000 -34000.000000 front 0.000000)
+      (place sh1.decap2_M 32000.000000 -82000.000000 front 0.000000)
+      (place sh1.decap7_L 6000.000000 -62000.000000 front 0.000000)
+      (place sh1.decap8_L 6000.000000 -58000.000000 front 0.000000)
+      (place sh1.decap1_L 6000.000000 -86000.000000 front 0.000000)
+      (place sh1.decap7_M 23000.000000 -62000.000000 front 0.000000)
+      (place sh1.decap6_M 32000.000000 -66000.000000 front 0.000000)
+      (place sh1.decap11_L 6000.000000 -46000.000000 front 0.000000)
+      (place sh1.decap20_R 49000.000000 -10000.000000 front 0.000000)
+      (place sh1.decap16_L 6000.000000 -26000.000000 front 0.000000)
+      (place sh1.decap15_L 6000.000000 -30000.000000 front 0.000000)
+      (place sh1.decap9_L 6000.000000 -54000.000000 front 0.000000)
+      (place sh1.decap0_L 6000.000000 -90000.000000 front 0.000000)
+      (place sh1.decap1_M 23000.000000 -86000.000000 front 0.000000)
+      (place sh1.decap20_M 32000.000000 -10000.000000 front 0.000000)
+      (place sh1.decap0_M 32000.000000 -90000.000000 front 0.000000)
+      (place sh1.decap21_M 23000.000000 -6000.000000 front 0.000000)
+      (place sh1.decap14_L 6000.000000 -34000.000000 front 0.000000)
+      (place sh1.decap13_L 6000.000000 -38000.000000 front 0.000000)
+      (place sh1.decap15_M 23000.000000 -30000.000000 front 0.000000)
+      (place sh1.decap18_R 49000.000000 -18000.000000 front 0.000000)
+      (place sh1.decap17_M 23000.000000 -22000.000000 front 0.000000)
       (place sh1.decap10_L 6000.000000 -50000.000000 front 0.000000)
+      (place sh1.decap21_R 49000.000000 -6000.000000 front 0.000000)
+      (place sh1.decap11_M 23000.000000 -46000.000000 front 0.000000)
+      (place sh1.decap20_L 6000.000000 -10000.000000 front 0.000000)
     )
     (component RV523:NOT
       (place sh1._219_ 47000.000000 -18000.000000 front 0.000000)
@@ -219,6 +229,39 @@
     )
   )
   (library
+    (image Capacitor_SMD:C_0402_1005Metric
+      (outline (path signal 120  -107.836 360  107.836 360))
+      (outline (path signal 120  -107.836 -360  107.836 -360))
+      (outline (path signal 50  -910 460  910 460))
+      (outline (path signal 50  -910 -460  -910 460))
+      (outline (path signal 50  910 460  910 -460))
+      (outline (path signal 50  910 -460  -910 -460))
+      (outline (path signal 100  -500 250  500 250))
+      (outline (path signal 100  -500 -250  -500 250))
+      (outline (path signal 100  500 250  500 -250))
+      (outline (path signal 100  500 -250  -500 -250))
+      (pin RoundRect[T]Pad_560.000000x620.000000_140.533000_um_0.000000_0 1 -480 0)
+      (pin RoundRect[T]Pad_560.000000x620.000000_140.533000_um_0.000000_0 2 480 0)
+    )
+    (image Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+      (outline (path signal 120  -1380 1380  0 1380))
+      (outline (path signal 120  -1380 0  -1380 1380))
+      (outline (path signal 120  -1380 -1270  -1380 -3920))
+      (outline (path signal 120  -1380 -1270  1380 -1270))
+      (outline (path signal 120  -1380 -3920  1380 -3920))
+      (outline (path signal 120  1380 -1270  1380 -3920))
+      (outline (path signal 50  -1770 1770  -1770 -4320))
+      (outline (path signal 50  -1770 -4320  1770 -4320))
+      (outline (path signal 50  1770 1770  -1770 1770))
+      (outline (path signal 50  1770 -4320  1770 1770))
+      (outline (path signal 100  -1270 635  -635 1270))
+      (outline (path signal 100  -1270 -3810  -1270 635))
+      (outline (path signal 100  -635 1270  1270 1270))
+      (outline (path signal 100  1270 1270  1270 -3810))
+      (outline (path signal 100  1270 -3810  -1270 -3810))
+      (pin Rect[A]Pad_1700.000000x1700.000000_um 1 0 0)
+      (pin Round[A]Pad_1700.000000_um 2 0 -2540)
+    )
     (image RV523:DECAP
       (outline (path signal 200  0 0  1000 0))
       (outline (path signal 200  0 -4000  1000 -4000))
@@ -292,31 +335,31 @@
       (via_keepout "" (polygon B.Cu 0  0 0  8000 0  8000 -1500  0 -1500  0 0))
     )
     (image "RV523_Common:FPC-SMD_THD0518-80CL-GF"
-      (outline (path signal 254  -22150 1500  -22150 -389))
-      (outline (path signal 254  -22150 -2451  -22150 -3390))
-      (outline (path signal 254  -22150 -3390  22190 -3390))
-      (outline (path signal 254  -20110 1500  -22150 1500))
       (outline (path signal 254  22190 1500  20131 1500))
+      (outline (path signal 254  -20110 1500  -22150 1500))
+      (outline (path signal 254  -22150 1500  -22150 -389))
       (outline (path signal 254  22190 1450  22190 1500))
       (outline (path signal 254  22190 -389  22190 1450))
+      (outline (path signal 254  -22150 -2451  -22150 -3390))
       (outline (path signal 254  22190 -3390  22190 -2451))
+      (outline (path signal 254  -22150 -3390  22190 -3390))
+      (outline (path signal 51  22051 1406  22049 -2296))
+      (outline (path signal 51  -22050.5 1404  -22051 1404))
       (outline (path signal 51  -22051 1404  22051 1406))
       (outline (path signal 51  -22051 -2290.5  -22050.5 1404))
-      (outline (path signal 51  -22050.5 1404  -22051 1404))
-      (outline (path signal 51  -21743 -2393  -21740 -2291.5))
       (outline (path signal 51  -21740 -2291.5  -22051 -2290.5))
-      (outline (path signal 51  -21198 -2393  -21743 -2393))
-      (outline (path signal 51  -21198 -3012.5  -21198 -2393))
-      (outline (path signal 51  -20403.5 -3007  -21198 -3012.5))
-      (outline (path signal 51  -20398.5 -3255.5  -20403.5 -3007))
-      (outline (path signal 51  20399.5 -3255.5  -20398.5 -3255.5))
-      (outline (path signal 51  20400.5 -3006  20399.5 -3255.5))
-      (outline (path signal 51  21201 -2394.5  21201 -3006.5))
-      (outline (path signal 51  21201 -3006.5  20400.5 -3006))
-      (outline (path signal 51  21740 -2395  21201 -2394.5))
       (outline (path signal 51  21741 -2295.5  21740 -2395))
       (outline (path signal 51  22049 -2296  21741 -2295.5))
-      (outline (path signal 51  22051 1406  22049 -2296))
+      (outline (path signal 51  -21198 -2393  -21743 -2393))
+      (outline (path signal 51  -21743 -2393  -21740 -2291.5))
+      (outline (path signal 51  21201 -2394.5  21201 -3006.5))
+      (outline (path signal 51  21740 -2395  21201 -2394.5))
+      (outline (path signal 51  20400.5 -3006  20399.5 -3255.5))
+      (outline (path signal 51  21201 -3006.5  20400.5 -3006))
+      (outline (path signal 51  -20403.5 -3007  -21198 -3012.5))
+      (outline (path signal 51  -21198 -3012.5  -21198 -2393))
+      (outline (path signal 51  20399.5 -3255.5  -20398.5 -3255.5))
+      (outline (path signal 51  -20398.5 -3255.5  -20403.5 -3007))
       (pin Rect[T]Pad_300.000000x1200.000000_um 1 -19750 1420)
       (pin Rect[T]Pad_300.000000x1200.000000_um 2 -19251 1420)
       (pin Rect[T]Pad_300.000000x1200.000000_um 3 -18750.5 1420)
@@ -400,11 +443,27 @@
       (pin Rect[T]Pad_2000.000000x1600.000000_um 81 -21850 -1420)
       (pin Rect[T]Pad_2000.000000x1600.000000_um 82 21850 -1420)
     )
+    (padstack Round[A]Pad_1700.000000_um
+      (shape (circle F.Cu 1700))
+      (shape (circle In1.Cu 1700))
+      (shape (circle In2.Cu 1700))
+      (shape (circle B.Cu 1700))
+      (attach off)
+    )
     (padstack Round[A]Pad_400.000000_um
       (shape (circle F.Cu 400))
       (shape (circle In1.Cu 400))
       (shape (circle In2.Cu 400))
       (shape (circle B.Cu 400))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_560.000000x620.000000_140.533000_um_0.000000_0
+      (shape (polygon F.Cu 0  -280.533 170  -269.836 223.78  -239.372 269.372  -193.78 299.836
+            -139.999 310.532  140 310.533  193.78 299.836  239.372 269.372
+            269.836 223.78  280.532 169.999  280.533 -170  269.836 -223.78
+            239.372 -269.372  193.78 -299.836  139.999 -310.532  -140 -310.533
+            -193.78 -299.836  -239.372 -269.372  -269.836 -223.78  -280.532 -169.999
+            -280.533 170))
       (attach off)
     )
     (padstack Rect[T]Pad_2000.000000x1600.000000_um
@@ -413,6 +472,13 @@
     )
     (padstack Rect[T]Pad_300.000000x1200.000000_um
       (shape (rect F.Cu -150 -600 150 600))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1700.000000x1700.000000_um
+      (shape (rect F.Cu -850 -850 850 850))
+      (shape (rect In1.Cu -850 -850 850 850))
+      (shape (rect In2.Cu -850 -850 850 850))
+      (shape (rect B.Cu -850 -850 850 850))
       (attach off)
     )
     (padstack "Via[0-3]_400:300_um"
@@ -448,8 +514,9 @@
     (net A.31
       (pins sh1._200_-B2 sh1._193_-A2 j1-9)
     )
-    (net pins.78
-      (pins j1-79)
+    (net GND
+      (pins C3-1 C4-1 C1-1 C2-1 j2-1 j3-1 j1-1 j1-3 j1-5 j1-7 j1-75 j1-77 j1-79 j1-81
+        j1-82)
     )
     (net F.25
       (pins sh1._269_-Y j1-20)
@@ -472,8 +539,8 @@
     (net F.8
       (pins sh1._282_-Y j1-54)
     )
-    (net pins.2
-      (pins j1-3)
+    (net VDD
+      (pins C3-2 C4-2 C1-2 C2-2 j2-2 j3-2 j1-2 j1-4 j1-6 j1-76 j1-78 j1-80)
     )
     (net A.0
       (pins sh1._200_-A2 sh1._193_-B1 j1-71)
@@ -546,9 +613,6 @@
     (net A.15
       (pins sh1._208_-B2 j1-41 sh1._207_-A2)
     )
-    (net pins.79
-      (pins j1-80)
-    )
     (net B.0
       (pins sh1._244_-B1 sh1._250_-B1 sh1._241_-B1 sh1._234_-B1 sh1._222_-B1 sh1._217_-A
         sh1._246_-B1 sh1._243_-B1 sh1._227_-B1 sh1._226_-B1 sh1._245_-B1 sh1._242_-B1
@@ -593,9 +657,6 @@
     (net F.14
       (pins sh1._257_-Y j1-42)
     )
-    (net pins.1
-      (pins j1-2)
-    )
     (net A.10
       (pins sh1._202_-A2 sh1._214_-B2 j1-51)
     )
@@ -616,12 +677,6 @@
     )
     (net A.20
       (pins sh1._213_-A2 j1-31 sh1._203_-B2)
-    )
-    (net pins.75
-      (pins j1-76)
-    )
-    (net pins.76
-      (pins j1-77)
     )
     (net F.28
       (pins sh1._272_-Y j1-14)
@@ -864,21 +919,6 @@
     (net sh1._073_.9
       (pins sh1._283_-A2 sh1._254_-B2 sh1._251_-Y)
     )
-    (net pins.3
-      (pins j1-4)
-    )
-    (net pins.4
-      (pins j1-5)
-    )
-    (net pins.0
-      (pins j1-1)
-    )
-    (net pins.77
-      (pins j1-78)
-    )
-    (net pins.74
-      (pins j1-75)
-    )
     (net pins.72
       (pins sh1._192_-B1 sh1._200_-B1 sh1._211_-B1 sh1._216_-B1 sh1._193_-B2 sh1._212_-B1
         sh1._205_-B1 sh1._188_-B1 sh1._202_-B1 sh1._196_-B1 sh1._209_-B1 sh1._198_-B1
@@ -895,29 +935,22 @@
         sh1._194_-A1 sh1._190_-A1 sh1._203_-A1 sh1._210_-A1 sh1._195_-A1 sh1._204_-A1
         sh1._206_-A1 sh1._199_-A1)
     )
-    (net pins.6
-      (pins j1-7)
-    )
-    (net pins.5
-      (pins j1-6)
-    )
     (class kicad_default A.0 A.1 A.10 A.11 A.12 A.13 A.14 A.15 A.16 A.17 A.18
       A.19 A.2 A.20 A.21 A.22 A.23 A.24 A.25 A.26 A.27 A.28 A.29 A.3 A.30
       A.31 A.4 A.5 A.6 A.7 A.8 A.9 A0 B.0 B.1 F.0 F.1 F.10 F.11 F.12 F.13
       F.14 F.15 F.16 F.17 F.18 F.19 F.2 F.20 F.21 F.22 F.23 F.24 F.25 F.26
-      F.27 F.28 F.29 F.3 F.30 F.31 F.4 F.5 F.6 F.7 F.8 F.9 pins.0 pins.1 pins.2
-      pins.3 pins.4 pins.5 pins.6 pins.71 pins.72 pins.74 pins.75 pins.76
-      pins.77 pins.78 pins.79 sh1._035_ sh1._036_ sh1._037_ sh1._038_ sh1._039_
-      sh1._040_ sh1._041_ sh1._042_ sh1._043_ sh1._044_ sh1._045_ sh1._046_
-      sh1._047_ sh1._048_ sh1._049_ sh1._050_ sh1._051_ sh1._052_ sh1._053_
-      sh1._054_ sh1._055_ sh1._056_ sh1._057_ sh1._058_ sh1._059_ sh1._060_
-      sh1._061_ sh1._062_ sh1._063_ sh1._064_ sh1._065_ sh1._066_ sh1._067_
-      sh1._068_ sh1._069_ sh1._073_.0 sh1._073_.1 sh1._073_.10 sh1._073_.11
-      sh1._073_.12 sh1._073_.13 sh1._073_.14 sh1._073_.15 sh1._073_.16 sh1._073_.17
-      sh1._073_.18 sh1._073_.19 sh1._073_.2 sh1._073_.20 sh1._073_.21 sh1._073_.22
-      sh1._073_.23 sh1._073_.24 sh1._073_.25 sh1._073_.26 sh1._073_.27 sh1._073_.28
-      sh1._073_.29 sh1._073_.3 sh1._073_.30 sh1._073_.31 sh1._073_.4 sh1._073_.5
-      sh1._073_.6 sh1._073_.7 sh1._073_.8 sh1._073_.9
+      F.27 F.28 F.29 F.3 F.30 F.31 F.4 F.5 F.6 F.7 F.8 F.9 pins.71 pins.72
+      sh1._035_ sh1._036_ sh1._037_ sh1._038_ sh1._039_ sh1._040_ sh1._041_
+      sh1._042_ sh1._043_ sh1._044_ sh1._045_ sh1._046_ sh1._047_ sh1._048_
+      sh1._049_ sh1._050_ sh1._051_ sh1._052_ sh1._053_ sh1._054_ sh1._055_
+      sh1._056_ sh1._057_ sh1._058_ sh1._059_ sh1._060_ sh1._061_ sh1._062_
+      sh1._063_ sh1._064_ sh1._065_ sh1._066_ sh1._067_ sh1._068_ sh1._069_
+      sh1._073_.0 sh1._073_.1 sh1._073_.10 sh1._073_.11 sh1._073_.12 sh1._073_.13
+      sh1._073_.14 sh1._073_.15 sh1._073_.16 sh1._073_.17 sh1._073_.18 sh1._073_.19
+      sh1._073_.2 sh1._073_.20 sh1._073_.21 sh1._073_.22 sh1._073_.23 sh1._073_.24
+      sh1._073_.25 sh1._073_.26 sh1._073_.27 sh1._073_.28 sh1._073_.29 sh1._073_.3
+      sh1._073_.30 sh1._073_.31 sh1._073_.4 sh1._073_.5 sh1._073_.6 sh1._073_.7
+      sh1._073_.8 sh1._073_.9
       (circuit
         (use_via "Via[0-3]_400:300_um")
       )
@@ -926,7 +959,81 @@
         (clearance 100)
       )
     )
+    (class Power,Default GND VDD
+      (circuit
+        (use_via "Via[0-3]_400:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 100)
+      )
+    )
   )
   (wiring
+    (wire (path F.Cu 200  61480 -71910  61420 -71850)(net GND)(type fix))
+    (wire (path F.Cu 200  61480 -94500  61480 -71910)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -38000  51000 -30000)(net GND)(type fix))
+    (wire (path F.Cu 200  61480 -28090  61420 -28150)(net GND)(type fix))
+    (wire (path F.Cu 200  61480 -5500  61480 -28090)(net GND)(type fix))
+    (wire (path F.Cu 200  60969 -6011  51011 -6011)(net GND)(type fix))
+    (wire (path F.Cu 200  61480 -5500  60969 -6011)(net GND)(type fix))
+    (wire (path F.Cu 200  51011 -6011  51000 -6000)(net GND)(type fix))
+    (wire (path F.Cu 200  60520 -4020  60520 -5500)(net VDD)(type fix))
+    (wire (path F.Cu 200  59460 -2960  60520 -4020)(net VDD)(type fix))
+    (wire (path F.Cu 200  59460 -2500  59460 -2960)(net VDD)(type fix))
+    (wire (path F.Cu 200  62000 -4980  61480 -5500)(net GND)(type fix))
+    (wire (path F.Cu 200  62000 -2500  62000 -4980)(net GND)(type fix))
+    (wire (path F.Cu 200  60520 -96440  60520 -94500)(net VDD)(type fix))
+    (wire (path F.Cu 200  59460 -97500  60520 -96440)(net VDD)(type fix))
+    (wire (path F.Cu 200  62000 -95500  62000 -97500)(net GND)(type fix))
+    (wire (path F.Cu 200  61480 -94980  62000 -95500)(net GND)(type fix))
+    (wire (path F.Cu 200  61480 -94500  61480 -94980)(net GND)(type fix))
+    (wire (path F.Cu 200  60969 -93989  61480 -94500)(net GND)(type fix))
+    (wire (path F.Cu 200  51011 -93989  60969 -93989)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -94000  51011 -93989)(net GND)(type fix))
+    (wire (path F.Cu 200  5000 -97500  59460 -97500)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -90000  5000 -97500)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -2500  59460 -2500)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -10000  5000 -2500)(net VDD)(type fix))
+    (wire (path F.Cu 200  6000 -62000  50500 -62000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -86000  50500 -86000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -94000  51000 -94000  51000 -86000  50101 -86000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -86000  51000 -78000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -6000  6000 -6000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -14000  51000 -6000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -14000  51000 -14000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -22000  51000 -14000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -22000  51000 -22000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -30000  51000 -22000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -30000  51000 -30000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -38000  51000 -38000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -46000  51000 -38000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -46000  51000 -46000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -54000  51000 -46000)(net GND)(type fix))
+    (wire (path F.Cu 200  6000 -54000  51000 -54000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -62000  50101 -62000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -62000  51000 -54000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -70000  51000 -62000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -70000  6000 -70000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -78000  51000 -70000)(net GND)(type fix))
+    (wire (path F.Cu 200  51000 -78000  6000 -78000)(net GND)(type fix))
+    (wire (path F.Cu 200  50000 -10000  5000 -10000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -42000  5000 -50000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -90000  50000 -90000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -82000  5000 -90000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -82000  5000 -82000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -74000  5000 -82000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -74000  50000 -74000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -66000  5000 -74000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -66000  5000 -66000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -58000  5000 -58000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -50000  5000 -50000  5000 -66000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -10000  5000 -18000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -42000  5000 -42000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -34000  5000 -42000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -34000  5000 -34000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -26000  5000 -26000  5000 -34000)(net VDD)(type fix))
+    (wire (path F.Cu 200  5000 -18000  5000 -26000)(net VDD)(type fix))
+    (wire (path F.Cu 200  50000 -18000  5000 -18000)(net VDD)(type fix))
   )
 )
