@@ -85,7 +85,7 @@
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
-        "items_not_allowed": "warning",
+        "items_not_allowed": "error",
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
@@ -245,7 +245,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "shifter1_board.kicad_pro",
+    "filename": "shifter1_board.final.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -275,7 +275,7 @@
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
-        "via_diameter": 0.6,
+        "via_diameter": 0.4,
         "via_drill": 0.3
       }
     ],
@@ -298,7 +298,7 @@
       "netlist": "shifter1_board.kicad.net",
       "plot": "",
       "pos_files": "",
-      "specctra_dsn": "shifter1_board.dsn",
+      "specctra_dsn": "shifter1_board.final.dsn",
       "step": "",
       "svg": "",
       "vrml": ""
