@@ -41,6 +41,33 @@ MACRO BUF
         
 END BUF
 
+MACRO DELAY80
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  SIZE 9 BY 4 ;
+
+  SITE CoreSite ;
+
+  PIN A
+      DIRECTION INPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 0.3 2.05 0.7 2.45 ;
+      END
+  END A
+
+  PIN Y
+      DIRECTION OUTPUT ;
+      USE SIGNAL ;
+      PORT
+          LAYER M1 ;
+          RECT 8.3 2.05 8.7 2.45 ;
+      END
+  END Y
+
+END DELAY80
+
 MACRO NOT
   CLASS CORE ;
   ORIGIN 0 0 ;

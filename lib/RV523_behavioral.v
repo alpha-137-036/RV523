@@ -5,6 +5,13 @@ module BUF(
     assign Y = A;
 endmodule
 
+module DELAY80(
+    output Y,
+    input A
+);
+    assign Y = A;
+endmodule
+
 module NOT(
     output Y,
     input A

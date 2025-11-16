@@ -10,6 +10,16 @@ endmodule
 
                     
 (* blackbox *)
+(* techmap_celltype = "DELAY80" *)
+(* footprint = "RV523:DELAY80" *)
+module DELAY80(
+    output Y,
+    input A
+);
+endmodule
+
+
+(* blackbox *)
 (* techmap_celltype = "NOT" *)
 (* footprint = "RV523:NOT" *)
 module NOT(
