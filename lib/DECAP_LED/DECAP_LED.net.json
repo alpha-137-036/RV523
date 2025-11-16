@@ -1,12 +1,43 @@
 {
   "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
-    "CAP": {
+    "$abstract\\Capacitor": {
       "attributes": {
         "footprint": "Capacitor_SMD:C_0402_1005Metric",
         "blackbox": "00000000000000000000000000000001",
-        "value": "0.1u",
-        "src": "../DECAP/DECAP.v:5.1-11.10"
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:42.1-51.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "$abstract\\Resistor": {
+      "attributes": {
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:29.1-38.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "$paramod\\Capacitor\\value=t32'00110000001011100011000101110101": {
+      "attributes": {
+        "hdlname": "Capacitor",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "src": "../RV523_MOSFETS.v:42.1-51.10"
+      },
+      "parameter_default_values": {
+        "value": "0.1u"
       },
       "ports": {
         "pin1": {
@@ -26,7 +57,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "1 ",
-            "src": "../DECAP/DECAP.v:7.11-7.15"
+            "src": "../RV523_MOSFETS.v:47.11-47.15"
           }
         },
         "pin2": {
@@ -34,7 +65,48 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "2",
-            "src": "../DECAP/DECAP.v:9.11-9.15"
+            "src": "../RV523_MOSFETS.v:49.11-49.15"
+          }
+        }
+      }
+    },
+    "$paramod\\Resistor\\value=t24'001100110011001100110000": {
+      "attributes": {
+        "hdlname": "Resistor",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "src": "../RV523_MOSFETS.v:29.1-38.10"
+      },
+      "parameter_default_values": {
+        "value": "330"
+      },
+      "ports": {
+        "pin1": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "pin2": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "pin1": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "num": "1 ",
+            "src": "../RV523_MOSFETS.v:34.11-34.15"
+          }
+        },
+        "pin2": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "num": "2",
+            "src": "../RV523_MOSFETS.v:36.11-36.15"
           }
         }
       }
@@ -42,7 +114,7 @@
     "DECAP_LED": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "DECAP_LED.v:26.1-37.10"
+        "src": "DECAP_LED.v:13.1-24.10"
       },
       "ports": {
         "A": {
@@ -64,9 +136,9 @@
           "attributes": {
             "cell_keep": "00000000000000000000000000000001",
             "cell_module_not_derived": "00000000000000000000000000000001",
-            "cell_src": "DECAP_LED.v:32.11-32.18",
+            "cell_src": "DECAP_LED.v:19.11-19.18",
             "module": "DECAP",
-            "module_src": "../DECAP/DECAP.v:13.1-19.10"
+            "module_src": "../DECAP/DECAP.v:1.1-7.10"
           },
           "port_directions": {
           },
@@ -75,14 +147,14 @@
         },
         "DECAP.C": {
           "hide_name": 0,
-          "type": "CAP",
+          "type": "$paramod\\Capacitor\\value=t32'00110000001011100011000101110101",
           "parameters": {
           },
           "attributes": {
             "hdlname": "DECAP C",
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "../DECAP/DECAP.v:18.9-18.34"
+            "src": "../DECAP/DECAP.v:6.33-6.58"
           },
           "port_directions": {
             "pin1": "inout",
@@ -101,7 +173,7 @@
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "DECAP_LED.v:36.9-36.34"
+            "src": "DECAP_LED.v:23.9-23.34"
           },
           "port_directions": {
             "anode": "inout",
@@ -114,13 +186,13 @@
         },
         "R": {
           "hide_name": 0,
-          "type": "Resistor_330",
+          "type": "$paramod\\Resistor\\value=t24'001100110011001100110000",
           "parameters": {
           },
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "DECAP_LED.v:34.18-34.45"
+            "src": "DECAP_LED.v:21.31-21.58"
           },
           "port_directions": {
             "pin1": "inout",
@@ -137,7 +209,7 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "DECAP_LED.v:27.11-27.12"
+            "src": "DECAP_LED.v:14.11-14.12"
           }
         },
         "DECAP.GND": {
@@ -160,14 +232,14 @@
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "DECAP_LED.v:28.11-28.18"
+            "src": "DECAP_LED.v:15.11-15.18"
           }
         },
         "i": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "DECAP_LED.v:30.10-30.11",
+            "src": "DECAP_LED.v:17.10-17.11",
             "unused_bits": "0 "
           }
         }
@@ -177,7 +249,7 @@
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
         "footprint": "LED_SMD:LED_0402_1005Metric",
-        "src": "DECAP_LED.v:17.1-23.10"
+        "src": "DECAP_LED.v:5.1-11.10"
       },
       "ports": {
         "cathode": {
@@ -197,7 +269,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "2",
-            "src": "DECAP_LED.v:21.11-21.16"
+            "src": "DECAP_LED.v:9.11-9.16"
           }
         },
         "cathode": {
@@ -205,7 +277,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "1 ",
-            "src": "DECAP_LED.v:19.11-19.18"
+            "src": "DECAP_LED.v:7.11-7.18"
           }
         }
       }
@@ -308,44 +380,6 @@
           "attributes": {
             "num": "2",
             "src": "../RV523_MOSFETS.v:23.11-23.12"
-          }
-        }
-      }
-    },
-    "Resistor_330": {
-      "attributes": {
-        "footprint": "Resistor_SMD:R_0402_1005Metric",
-        "blackbox": "00000000000000000000000000000001",
-        "value": "330",
-        "src": "DECAP_LED.v:6.1-12.10"
-      },
-      "ports": {
-        "pin1": {
-          "direction": "inout",
-          "bits": [ 2 ]
-        },
-        "pin2": {
-          "direction": "inout",
-          "bits": [ 3 ]
-        }
-      },
-      "cells": {
-      },
-      "netnames": {
-        "pin1": {
-          "hide_name": 0,
-          "bits": [ 2 ],
-          "attributes": {
-            "num": "1 ",
-            "src": "DECAP_LED.v:8.11-8.15"
-          }
-        },
-        "pin2": {
-          "hide_name": 0,
-          "bits": [ 3 ],
-          "attributes": {
-            "num": "2",
-            "src": "DECAP_LED.v:10.11-10.15"
           }
         }
       }

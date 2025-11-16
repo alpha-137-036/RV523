@@ -1,6 +1,34 @@
 {
   "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
+    "$abstract\\Capacitor": {
+      "attributes": {
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:42.1-51.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "$abstract\\Resistor": {
+      "attributes": {
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:29.1-38.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
     "OR3": {
       "attributes": {
         "top": "00000000000000000000000000000001",

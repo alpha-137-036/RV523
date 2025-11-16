@@ -1,0 +1,3 @@
+.subckt DECAP VDD VSS
+ CC VSS VDD 0.1u
+.ends

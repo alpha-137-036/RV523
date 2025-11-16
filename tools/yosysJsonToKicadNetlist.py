@@ -80,7 +80,6 @@ def getPinNumber(cellNet, pinIdx):
 
 nets = {}
 cells = []
-
 print(f"Writing {args.outputFilename}")
 with open(args.outputFilename, 'w') as output:
     output.write("(export (version \"E\")\n")
@@ -88,7 +87,7 @@ with open(args.outputFilename, 'w') as output:
     output.write("(components \n")
     for cell in topModule["cells"].values():
         type = cell["type"]
-        if (type != "$scopeinfo"):
+        if type != "$scopeinfo":
             cellModule = data["modules"][type]
             if not cellModule:
                 raise Exception(f"Module {type} not found")
@@ -97,11 +96,18 @@ with open(args.outputFilename, 'w') as output:
                 "cellModule": cellModule,
                 "type": type
             })
+            if cellModule['attributes'].get('hdlname') == "Resistor":
+                cells[-1]["moduleKind"] = "Resistor"
+            elif cellModule['attributes'].get('hdlname') == "Capacitor":
+                cells[-1]["moduleKind"] = "Capacitor"
+            else:
+                cells[-1]["moduleKind"] = "Module"
             output.write(f"   (comp (ref \"{cell['name']}\")\n")
             footprint = cellModule["attributes"]["footprint"]
             output.write(f"      (footprint \"{footprint}\")\n")
-            value = cellModule["attributes"].get("value")
+            value = cellModule["attributes"].get("value") or cellModule.get("parameter_default_values",{}).get("value")
             if value:
+                cells[-1]["value"] = value
                 output.write(f"      (value \"{value}\")\n")
             for pin, wireIDs in cell["connections"].items():
                 for wireIdx, wireID in enumerate(wireIDs):
@@ -170,12 +176,21 @@ if args.spice:
         output.write(" VDD VSS")
         output.write("\n")
         for cell in cells:
-            output.write(f" X{cell['name']}")
+            if cell['moduleKind'] == "Resistor":
+                output.write(f" R{cell['name']}")
+            elif cell['moduleKind'] == "Capacitor":
+                output.write(f" C{cell['name']}")
+            else:
+                output.write(f" X{cell['name']}")
             for pinNumber in sorted(cell["pins"]):
                 netName = cell["pins"][pinNumber]["name"]
                 if netName == "GND":
                     netName = "VSS"
                 output.write(f" {netName}")
-            output.write(f" {cell['type']}\n")
+            if cell['moduleKind'] == "Resistor" or cell['moduleKind'] == "Capacitor":
+                output.write(f" {cell['value']}")
+            else:
+                output.write(f" {cell['type']}")
+            output.write("\n")
 
         output.write(".ends\n")

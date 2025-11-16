@@ -1,0 +1,5 @@
+.subckt DECAP_LED A LED_GND VDD VSS
+ CDECAP.C VSS VDD 0.1u
+ XL i A LED
+ RR i LED_GND 330
+.ends

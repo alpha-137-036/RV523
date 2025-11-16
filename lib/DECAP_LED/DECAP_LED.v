@@ -1,18 +1,6 @@
 `include "../DECAP/DECAP.v"
 
 (* blackbox *)
-(* footprint="Resistor_SMD:R_0402_1005Metric" *)
-(* value="330" *)
-module Resistor_330(
-    (* num="1" *)
-    inout pin1,
-    (* num="2" *)
-    inout pin2
-);
-endmodule
-
-
-(* blackbox *)
 (* footprint="LED_SMD:LED_0402_1005Metric" *)
 module LED(
     (* num="1" *)
@@ -22,7 +10,6 @@ module LED(
 );
 endmodule
 
-
 module DECAP_LED(
     input A,
     input LED_GND
@@ -31,7 +18,7 @@ module DECAP_LED(
     (* keep *)
     DECAP DECAP();
     (* keep *)
-    Resistor_330 R(.pin1(i), .pin2(LED_GND));
+    Resistor #(.value("330")) R(.pin1(i), .pin2(LED_GND));
     (* keep *)
     LED L(.cathode(i), .anode(A));
 endmodule

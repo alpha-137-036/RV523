@@ -1,12 +1,43 @@
 {
   "creator": "Yosys 0.55+46 (git sha1 aa1daa702, clang++ 18.1.8 -fPIC -O3)",
   "modules": {
-    "CAP": {
+    "$abstract\\Capacitor": {
       "attributes": {
         "footprint": "Capacitor_SMD:C_0402_1005Metric",
         "blackbox": "00000000000000000000000000000001",
-        "value": "0.1u",
-        "src": "DECAP.v:5.1-11.10"
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:42.1-51.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "$abstract\\Resistor": {
+      "attributes": {
+        "footprint": "Resistor_SMD:R_0402_1005Metric",
+        "blackbox": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "../RV523_MOSFETS.v:29.1-38.10"
+      },
+      "ports": {
+      },
+      "cells": {
+      },
+      "netnames": {
+      }
+    },
+    "$paramod\\Capacitor\\value=t32'00110000001011100011000101110101": {
+      "attributes": {
+        "hdlname": "Capacitor",
+        "blackbox": "00000000000000000000000000000001",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "src": "../RV523_MOSFETS.v:42.1-51.10"
+      },
+      "parameter_default_values": {
+        "value": "0.1u"
       },
       "ports": {
         "pin1": {
@@ -26,7 +57,7 @@
           "bits": [ 2 ],
           "attributes": {
             "num": "1 ",
-            "src": "DECAP.v:7.11-7.15"
+            "src": "../RV523_MOSFETS.v:47.11-47.15"
           }
         },
         "pin2": {
@@ -34,7 +65,7 @@
           "bits": [ 3 ],
           "attributes": {
             "num": "2",
-            "src": "DECAP.v:9.11-9.15"
+            "src": "../RV523_MOSFETS.v:49.11-49.15"
           }
         }
       }
@@ -42,20 +73,20 @@
     "DECAP": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "DECAP.v:13.1-19.10"
+        "src": "DECAP.v:1.1-7.10"
       },
       "ports": {
       },
       "cells": {
         "C": {
           "hide_name": 0,
-          "type": "CAP",
+          "type": "$paramod\\Capacitor\\value=t32'00110000001011100011000101110101",
           "parameters": {
           },
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "DECAP.v:18.9-18.34"
+            "src": "DECAP.v:6.33-6.58"
           },
           "port_directions": {
             "pin1": "inout",
@@ -86,8 +117,8 @@
     },
     "RV523_NMOS": {
       "attributes": {
-        "value": "NMOS",
         "footprint": "RV523:SOT523",
+        "value": "NMOS",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
         "src": "../RV523_MOSFETS.v:4.1-12.10"
@@ -137,8 +168,8 @@
     },
     "RV523_PMOS": {
       "attributes": {
-        "value": "PMOS",
         "footprint": "RV523:SOT523",
+        "value": "PMOS",
         "blackbox": "00000000000000000000000000000001",
         "cells_not_processed": "00000000000000000000000000000001",
         "src": "../RV523_MOSFETS.v:17.1-25.10"
