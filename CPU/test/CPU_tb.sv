@@ -13,8 +13,8 @@ module CPU_tb();
         rst_n = 0;
         #3200
         rst_n = 1;
-        #5000
-        rst_n = 0;
+        // #5000
+        // rst_n = 0;
     end
     
     always begin
