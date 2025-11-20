@@ -1,29 +1,29 @@
 
 module IF(
-    input logic                 clk,
-    input logic                 rst_n,
+    input logic         clk,
+    input logic         rst_n,
 
     // Input from control/hazard unit
-    input logic                 branch,
+    input logic         branch,
 
     // ROM interface
-    output logic [`PCWIDTH-1:2] c_addr,
-    input  logic [31:2]         c_rdata,
+    output logic [31:0] c_addr,
+    input  logic [31:0] c_rdata,
     
     // input from MEM stage
-    input logic [`PCWIDTH-1:2]  branch_target,
+    input logic [31:0]  branch_target,
 
     // output to ID stage (registered)
-    output logic [31:2]         id_instr,
-    output logic [`PCWIDTH-1:2] id_pc,
-    output logic [`PCWIDTH-1:2] id_npc 
+    output logic [31:0] id_instr,
+    output logic [31:0] id_pc,
+    output logic [31:0] id_npc 
 );    
-    logic [31:2]                if_instr;
-    logic [`PCWIDTH-1:2]        if_pc;
-    logic [`PCWIDTH-1:2]        if_npc;    
+    logic [31:0]        if_instr;
+    logic [31:0]        if_pc;
+    logic [31:0]        if_npc;    
     
     always_comb begin 
-        if_npc = if_pc + 1;
+        if_npc = if_pc + 4;
     end
     
     always @(posedge clk) begin
@@ -35,7 +35,7 @@ module IF(
     end
 
     // Fetch from ROM 
-    assign c_addr   = if_pc[`PCWIDTH:2];
+    assign c_addr   = if_pc;
     assign if_instr = c_rdata;
 
     // flip-flops to ID stage
@@ -47,10 +47,6 @@ module IF(
 
     // TRACING
     always @(posedge clk) begin
-        logic[`PCWIDTH-1:0] if_pc_full;
-        logic[31:0] if_instr_full;
-        if_pc_full = {if_pc, 2'b00};
-        if_instr_full = {if_instr, 2'b11};
-        $strobe("%.6f : [IF] pc=%X, instr=%X", $realtime, if_pc_full, if_instr_full);
+        $strobe("%.6f : [IF] id_pc=%X, id_npc=%X, if_instr=%X", $realtime, if_pc, if_npc, if_instr);
     end
 endmodule
