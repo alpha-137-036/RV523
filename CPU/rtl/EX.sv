@@ -32,14 +32,14 @@ module EX(
     input logic rst_n,
 
     // Inputs from ID stage
+    input logic ex_alu_A_PC_sel,
+    input logic ex_alu_B_imm_sel,
+    input logic[11:0] ex_alu_op,
     input logic[31:0] ex_rs1,
     input logic[31:0] ex_rs2,
     input logic[31:0] ex_imm,
     input logic[31:0] ex_pc,
     input logic[31:0] ex_npc,
-    input logic ex_alu_A_PC_sel,
-    input logic ex_alu_B_imm_sel,
-    input logic[11:0] ex_alu_ctrl,
     
     // Inputs from MEM stage
     input logic[31:0] mem_fwd,
@@ -82,7 +82,7 @@ module EX(
     assign alu_B = ex_alu_B_imm_sel ? ex_imm : rs2_fwd;
                       
     ALU u_alu(
-        .ctrl(ex_alu_ctrl),
+        .op(ex_alu_op),
         .A(alu_A),
         .B(alu_B),
         .Y(alu_Y));
@@ -105,9 +105,24 @@ module EX(
     //
     //
     always @(posedge clk) begin
-        $display("%.6f : [EX] ex_pc=%X, ex_npc=%X, A=%X, B=%X, Y=%X",
+        string ex_alu_op_string;
+        case (ex_alu_op)
+        `ALU_OP_ADD: ex_alu_op_string = "ADD"; 
+        `ALU_OP_SUB: ex_alu_op_string = "SUB"; 
+        `ALU_OP_SLL: ex_alu_op_string = "SLL"; 
+        `ALU_OP_SRL: ex_alu_op_string = "SRL"; 
+        `ALU_OP_SRA: ex_alu_op_string = "SRA"; 
+        `ALU_OP_AND: ex_alu_op_string = "AND"; 
+        `ALU_OP_XOR: ex_alu_op_string = "XOR"; 
+        `ALU_OP_OR:  ex_alu_op_string = "OR"; 
+        `ALU_OP_SLTU: ex_alu_op_string = "SLTU"; 
+        `ALU_OP_SLT:  ex_alu_op_string = "SLT"; 
+        `ALU_OP_SEQ:  ex_alu_op_string = "SEQ"; 
+        default: ex_alu_op_string = 'X; 
+        endcase
+        $display("%.6f : [EX] ex_pc=%X, ex_npc=%X, A=%X, B=%X, ex_alu_op=%X(%s), Y=%X",
             $realtime, ex_pc, ex_npc,
-            alu_A, alu_B, alu_Y);
+            alu_A, alu_B, ex_alu_op, ex_alu_op_string, alu_Y);
     end
 endmodule
 

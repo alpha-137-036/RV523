@@ -8,9 +8,8 @@ module CPU(
     input  logic [31:0] c_rdata
 );
     logic [31:0] id_pc, id_npc, id_instr, ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc;
-
+    logic [11:0] ex_alu_op;
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel;
-
 
     IF u_if(
         .clk(clk),
@@ -38,6 +37,7 @@ module CPU(
         .ex_rs2(ex_rs2),
         .ex_pc(ex_pc),
         .ex_npc(ex_npc),
+        .ex_alu_op(ex_alu_op),
         .ex_alu_A_PC_sel(ex_alu_A_PC_sel),
         .ex_alu_B_imm_sel(ex_alu_B_imm_sel)
     );
@@ -45,13 +45,14 @@ module CPU(
     EX u_ex(
         .clk(clk),
         .rst_n(rst_n),
+        .ex_alu_A_PC_sel(ex_alu_A_PC_sel),
+        .ex_alu_B_imm_sel(ex_alu_B_imm_sel),
+        .ex_alu_op(ex_alu_op),
         .ex_imm(ex_imm),
         .ex_rs1(ex_rs1),
         .ex_rs2(ex_rs2),
         .ex_pc(ex_pc),
         .ex_npc(ex_npc),
-        .ex_alu_A_PC_sel(ex_alu_A_PC_sel),
-        .ex_alu_B_imm_sel(ex_alu_B_imm_sel),
         .ex_rs1_fwd_sel(2'b00),
         .ex_rs2_fwd_sel(2'b00)
     );

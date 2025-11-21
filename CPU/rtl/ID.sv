@@ -31,6 +31,7 @@ module ID(
     output logic [4:0]  id_rd_idx,
    
     // Outputs to the EX stage
+    output logic [11:0] ex_alu_op,
     output logic [31:0] ex_imm,
     output logic [31:0] ex_rs1,
     output logic [31:0] ex_rs2,
@@ -40,6 +41,7 @@ module ID(
     output logic ex_alu_B_imm_sel
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
+    logic [11:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
     
     always @(*) begin
@@ -70,18 +72,46 @@ module ID(
         endcase
         id_alu_A_PC_sel = opcode == `OPCODE_AUIPC || opcode == `OPCODE_JAL;
         id_alu_B_imm_sel = opcode != `OPCODE_OP && opcode != `OPCODE_BRANCH;
-    end
 
-    // Selection of rs1_idx, rs2_idx, rd_idx
-    always @(*) begin
-        if (id_instr[6:2] == `OPCODE_LUI) begin
-            // Simplest way to get 0 as rs1 
-            id_rs1_idx = 0; 
-        end else begin
-            id_rs1_idx = id_instr[19:15];
-        end
+        // Selection of rs1_idx, rs2_idx, rd_idx
+        id_rs1_idx = opcode == `OPCODE_LUI ? 0 : id_instr[19:15]; 
         id_rs2_idx = id_instr[24:20];
         id_rd_idx  = id_instr[11: 7];
+        
+        // Selection of ALU operation
+        case (opcode)
+        default: id_alu_op = 'X;
+        `OPCODE_OP,
+        `OPCODE_OP_IMM: begin
+            // Determined by FUNCT3 and bit 30
+            case (id_instr[14:12])
+            3'b000: id_alu_op = opcode == `OPCODE_OP && id_instr[30] ? `ALU_OP_SUB : `ALU_OP_ADD;
+            3'b001: id_alu_op = `ALU_OP_SLL;
+            3'b010: id_alu_op = `ALU_OP_SLT;
+            3'b011: id_alu_op = `ALU_OP_SLTU;
+            3'b100: id_alu_op = `ALU_OP_XOR;
+            3'b101: id_alu_op = id_instr[30] ? `ALU_OP_SRA : `ALU_OP_SRL;
+            3'b110: id_alu_op = `ALU_OP_OR;
+            3'b111: id_alu_op = `ALU_OP_AND;
+            endcase
+        end
+        `OPCODE_LUI,
+        `OPCODE_AUIPC,
+        `OPCODE_LOAD,
+        `OPCODE_STORE,
+        `OPCODE_JAL,
+        `OPCODE_JALR:
+            id_alu_op = `ALU_OP_ADD;
+        `OPCODE_BRANCH:
+            // Determined by FUNCT3
+            case (id_instr[14:13])
+            2'b00: id_alu_op = `ALU_OP_SEQ;
+            2'b10: id_alu_op = `ALU_OP_SLT;
+            2'b11: id_alu_op = `ALU_OP_SLTU;
+            2'b01: id_alu_op = 'X;
+            // TODO: bit 12 means "inverse the result"
+            endcase
+        endcase 
     end
     
     // 
@@ -106,6 +136,7 @@ module ID(
         ex_imm <= id_imm;
         ex_rs1 <= id_rs1;
         ex_rs2 <= id_rs2;
+        ex_alu_op <= id_alu_op;
         ex_alu_A_PC_sel <= id_alu_A_PC_sel;
         ex_alu_B_imm_sel <= id_alu_B_imm_sel;
     end
