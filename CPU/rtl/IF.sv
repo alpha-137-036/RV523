@@ -44,9 +44,9 @@ module IF(
         id_pc    <= if_pc;
         id_npc   <= if_npc;
     end
-
+    
     // TRACING
     always @(posedge clk) begin
-        $strobe("%.6f : [IF] id_pc=%X, id_npc=%X, if_instr=%X", $realtime, if_pc, if_npc, if_instr);
+        $display("%.6f : [IF] if_pc=%X, if_npc=%X, if_instr=%X", $realtime, if_pc, if_npc, if_instr);
     end
 endmodule
