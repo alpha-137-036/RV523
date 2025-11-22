@@ -1,3 +1,5 @@
+`define INSTR_NOP 32'h00000013
+
 
 module IF(
     input logic         clk,
@@ -40,7 +42,7 @@ module IF(
 
     // flip-flops to ID stage
     always @(posedge clk) begin
-        id_instr <= if_instr;
+        id_instr <= !rst_n ? `INSTR_NOP : if_instr;
         id_pc    <= if_pc;
         id_npc   <= if_npc;
     end
