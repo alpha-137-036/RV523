@@ -30,12 +30,6 @@ module EX(
     input logic[31:0] ex_pc,
     input logic[31:0] ex_npc,
     
-    // Inputs from MEM stage
-    input logic[31:0] mem_fwd,
-    
-    // Inputs from the WB stage
-    input logic[31:0] wb_fwd,
-    
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
     output logic[31:0] mem_alu_out,
@@ -68,7 +62,7 @@ module EX(
         rs2_fwd_from_mem = ex_rs2_idx == mem_rd_idx && mem_rd_idx != 0 && !mem_load;
         rs2_fwd_from_wb  = ex_rs2_idx == wb_rd_idx && wb_rd_idx != 0;
         
-        rs2_fwd = rs1_fwd_from_mem ? mem_alu_npc_out : rs2_fwd_from_wb ? wb_rd : ex_rs2;
+        rs2_fwd = rs2_fwd_from_mem ? mem_alu_npc_out : rs2_fwd_from_wb ? wb_rd : ex_rs2;
 
         ex_wdata = rs1_fwd;
   
