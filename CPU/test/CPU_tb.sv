@@ -11,7 +11,7 @@ module CPU_tb();
     initial begin
         clk = 1;
         rst_n = 0;
-        #3200
+        #4200
         rst_n = 1;
         // #5000
         // rst_n = 0;
@@ -28,7 +28,7 @@ module CPU_tb();
     end
     
     always @(posedge clk) begin
-        if ($time >= 20000) begin
+        if ($time >= 25000) begin
             $stop;
         end
     end
