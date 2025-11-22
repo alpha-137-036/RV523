@@ -34,12 +34,14 @@ module EX(
     // Inputs from ID stage
     input logic ex_alu_A_PC_sel,
     input logic ex_alu_B_imm_sel,
-    input logic ex_reg_write,
     input logic ex_load,
     input logic ex_store,
     input logic[11:0] ex_alu_op,
     input logic[31:0] ex_rs1,
+    input logic[4:0]  ex_rs1_idx,
     input logic[31:0] ex_rs2,
+    input logic[4:0]  ex_rs2_idx,
+    input logic[4:0]  ex_rd_idx,
     input logic[31:0] ex_imm,
     input logic[31:0] ex_pc,
     input logic[31:0] ex_npc,
@@ -55,11 +57,11 @@ module EX(
     input logic [1:0] ex_rs2_fwd_sel,
     
     // Output to MEM stage 
+    output logic[4:0]  mem_rd_idx,
     output logic[31:0] mem_alu_out,
     output logic[31:0] mem_wdata,
     output logic[31:0] mem_branch_target,
     output logic[31:0] mem_npc,
-    output logic mem_reg_write,
     output logic mem_load,
     output logic mem_store
 );
@@ -106,9 +108,9 @@ module EX(
         mem_wdata <= wdata;
         mem_branch_target <= ex_branch_target;
         mem_npc <= ex_npc;
-        mem_reg_write <= ex_reg_write;
         mem_load <= ex_load;
         mem_store <= ex_store;
+        mem_rd_idx <= ex_rd_idx;
     end
     
     

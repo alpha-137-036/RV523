@@ -9,7 +9,7 @@ module MEM(
     input logic[31:0] mem_npc,
     input logic       mem_load,
     input logic       mem_store,
-    input logic       mem_reg_write,
+    input logic[4:0]  mem_rd_idx,
     
     // Data memory bus
     output logic[31:0] d_addr,
@@ -19,22 +19,23 @@ module MEM(
     output logic       d_write,
     
     // Output to WB stage
-    output logic[31:0] wb_reg_wdata,
-    output logic       wb_reg_write
+    output logic       wb_load_store,
+    output logic[31:0] wb_mem_rdata,
+    output logic[31:0] wb_alu_out,
+    output logic[4:0]  wb_rd_idx
 );
 
-    logic [31:0] mem_reg_wdata;
-    
     always @(*) begin
         d_addr = mem_alu_out;
         d_read = mem_load;
         d_write = mem_store;
-        mem_reg_wdata = mem_load ? d_rdata : mem_alu_out; // TODO: JALR !
     end
     
     always @(posedge(clk)) begin
-        wb_reg_wdata <= mem_reg_wdata;
-        wb_reg_write <= mem_reg_write;
+        wb_load_store <= mem_load || mem_store;
+        wb_mem_rdata <= d_rdata;
+        wb_alu_out <= mem_alu_out; // TODO: mux npc
+        wb_rd_idx <= mem_rd_idx;
     end
     
     //

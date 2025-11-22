@@ -20,30 +20,27 @@ module ID(
     input logic [31:0] id_pc,
     input logic [31:0] id_npc,
     
-    // Inputs from control logic 
-    input logic [31:0] id_wdata,
-    input logic [4:0]  id_wrd_idx,
-    input logic        id_write,
+    // Inputs from WB stage 
+    input logic [31:0] wb_rd,
+    input logic [4:0]  wb_rd_idx,
     
-    // Outputs to the control logic 
-    output logic [4:0]  id_rs1_idx,
-    output logic [4:0]  id_rs2_idx,
-    output logic [4:0]  id_rd_idx,
-   
     // Outputs to the EX stage
     output logic [11:0] ex_alu_op,
     output logic [31:0] ex_imm,
     output logic [31:0] ex_rs1,
+    output logic [4:0]  ex_rs1_idx,
     output logic [31:0] ex_rs2,
+    output logic [4:0]  ex_rs2_idx,
+    output logic [4:0]  ex_rd_idx,
     output logic [31:0] ex_pc,
     output logic [31:0] ex_npc,
     output logic ex_alu_A_PC_sel,
     output logic ex_alu_B_imm_sel,
-    output logic ex_reg_write,
     output logic ex_load,
     output logic ex_store
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
+    logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
     logic [11:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
     logic id_reg_write, id_load, id_store;
@@ -80,7 +77,7 @@ module ID(
         // Selection of rs1_idx, rs2_idx, rd_idx
         id_rs1_idx = opcode == `OPCODE_LUI ? 0 : id_instr[19:15]; 
         id_rs2_idx = id_instr[24:20];
-        id_rd_idx  = id_instr[11: 7];
+        id_rd_idx  = opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH || opcode == `OPCODE_SYSTEM ? 0 : id_instr[11: 7];
         
         // Selection of ALU operation
         case (opcode)
@@ -116,7 +113,6 @@ module ID(
             // TODO: bit 12 means "inverse the result"
             endcase
         endcase 
-        id_reg_write = !(opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH || opcode == `OPCODE_SYSTEM);
         id_load = opcode == `OPCODE_LOAD;
         id_store = opcode == `OPCODE_STORE;
     end
@@ -131,9 +127,9 @@ module ID(
         .rs2_idx(id_rs2_idx),
         .rs1(id_rs1),
         .rs2(id_rs2),
-        .rd_idx(id_wrd_idx),
-        .write(id_write),
-        .rd(id_wdata)
+        .rd_idx(wb_rd_idx),
+        .write(wb_reg_write),
+        .rd(wb_rd)
     );
 
     // register and propagate to EX stage 
@@ -142,11 +138,13 @@ module ID(
         ex_npc <= id_npc;
         ex_imm <= id_imm;
         ex_rs1 <= id_rs1;
+        ex_rs1_idx <= id_rs1_idx;
         ex_rs2 <= id_rs2;
+        ex_rs2_idx <= id_rs2_idx;
+        ex_rd_idx <= id_rd_idx;
         ex_alu_op <= id_alu_op;
         ex_alu_A_PC_sel <= id_alu_A_PC_sel;
         ex_alu_B_imm_sel <= id_alu_B_imm_sel;
-        ex_reg_write <= id_reg_write;
         ex_load <= id_load;
         ex_store <= id_store;
     end
