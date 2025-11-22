@@ -4,13 +4,13 @@ module WB(
     
     input logic       wb_load_store,
     input logic[31:0] wb_mem_rdata,
-    input logic[31:0] wb_alu_out,
+    input logic[31:0] wb_alu_npc_out,
     input logic[4:0]  wb_rd_idx,
     
     output logic[31:0] wb_rd    
 );
     always @(*) begin
-        wb_rd = wb_load_store ? wb_mem_rdata : wb_alu_out;
+        wb_rd = wb_load_store ? wb_mem_rdata : wb_alu_npc_out;
     end
     
     

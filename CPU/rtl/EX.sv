@@ -1,22 +1,6 @@
 //
 // CPU execution stage
 //
-module select3(
-    input logic[1:0] sel,
-    input logic[31:0] in0,
-    input logic[31:0] in1,
-    input logic[31:0] in2,
-    output logic[31:0] out
-);
-    always_comb begin
-        case (sel)
-            2'b00: out = in0; 
-            2'b01: out = in1;
-            2'b11: out = in2;
-            default: out = 'X;
-        endcase
-    end
-endmodule
 
 module BranchAdder(
     input logic[31:0] A,
@@ -52,10 +36,6 @@ module EX(
     // Inputs from the WB stage
     input logic[31:0] wb_fwd,
     
-    // Inputs from the control/hazard units
-    input logic [1:0] ex_rs1_fwd_sel,
-    input logic [1:0] ex_rs2_fwd_sel,
-    
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
     output logic[31:0] mem_alu_out,
@@ -63,30 +43,50 @@ module EX(
     output logic[31:0] mem_branch_target,
     output logic[31:0] mem_npc,
     output logic mem_load,
-    output logic mem_store
-);
-    logic[31:0] rs1_fwd, rs2_fwd, wdata, alu_A, alu_B, alu_Y, ex_branch_target;
+    output logic mem_store,
+
+    // Inputs from MEM stage, for hazard control
+    input  logic[31:0] mem_alu_npc_out,
     
-    // Select rs1 from ID stage or forwarded from MEM or WB stage
-    select3 u_sel_rs1(
-        .sel(ex_rs1_fwd_sel),
-        .in0(ex_rs1),
-        .in1(mem_fwd),
-        .in2(wb_fwd),
-        .out(rs1_fwd));
+    // Inputs from the WB stage, for hazard control
+    input  logic[4:0]  wb_rd_idx,
+    input  logic[31:0] wb_rd
+    
+);
+    logic[31:0] rs1_fwd, rs2_fwd, ex_wdata, alu_A, alu_B, alu_Y, ex_branch_target;
+    
+    // Select rs1 from ID stage or forwarded from MEM or WB stages
+    always @(*) begin
+        if (ex_rs1_idx == mem_rd_idx && mem_rd_idx != 0 && !mem_load) begin
+            // RAW hazard, forward from MEM stage
+            rs1_fwd = mem_alu_npc_out;
+        end else if (ex_rs1_idx == wb_rd_idx && wb_rd_idx != 0) begin
+            // RAW hazard, forward from WB stage
+            rs1_fwd = wb_rd;
+        end else begin
+            // No RAW hazard
+            rs1_fwd = ex_rs1;
+        end
+    end
+    
+    // Select rs2 from ID stage or forwarded from MEM or WB stages
+    always @(*) begin
+        if (ex_rs2_idx == mem_rd_idx && mem_rd_idx != 0 && !mem_load) begin
+            // RAW hazard, forward from MEM stage
+            rs2_fwd = mem_alu_npc_out;
+        end else if (ex_rs2_idx == wb_rd_idx && wb_rd_idx != 0) begin
+            // RAW hazard, forward from WB stage
+            rs2_fwd = wb_rd;
+        end else begin
+            // No RAW hazard
+            rs2_fwd = ex_rs1;
+        end
+    end
         
-    assign wdata = rs1_fwd;
+    assign ex_wdata = rs1_fwd;
   
     // Select ALU A argument from either RS1 or PC
     assign alu_A = ex_alu_A_PC_sel ? ex_pc : rs1_fwd ;
-       
-    // Select RS2 from ID stage or forwarded from MEM or WB stage
-    select3 u_sel_rs2(
-        .sel(ex_rs2_fwd_sel),
-        .in0(ex_rs2),
-        .in1(mem_fwd),
-        .in2(wb_fwd),
-        .out(rs2_fwd));
        
     // Select ALU B argument from either RS2 or IMM
     assign alu_B = ex_alu_B_imm_sel ? ex_imm : rs2_fwd;
@@ -105,7 +105,7 @@ module EX(
     // register and propagate to MEM stage
     always @(posedge(clk)) begin
         mem_alu_out <= alu_Y;
-        mem_wdata <= wdata;
+        mem_wdata <= ex_wdata;
         mem_branch_target <= ex_branch_target;
         mem_npc <= ex_npc;
         mem_load <= ex_load;
@@ -135,8 +135,10 @@ module EX(
         `ALU_OP_SEQ:  ex_alu_op_string = "SEQ"; 
         default: ex_alu_op_string = 'X; 
         endcase
-        $display("%.6f : [EX] ex_pc=%X, ex_npc=%X, A=%X, B=%X, ex_alu_op=%X(%s), Y=%X",
+        $display("%.6f : [EX] ex_pc=%X, ex_npc=%X, ex_rs1:x%0d=%X, ex_rs2:x%0d=%X, A=%X, B=%X, ex_alu_op=%X(%s), Y=%X",
             $realtime, ex_pc, ex_npc,
+            ex_rs1_idx, ex_rs1,
+            ex_rs2_idx, ex_rs2,
             alu_A, alu_B, ex_alu_op, ex_alu_op_string, alu_Y);
     end
 endmodule

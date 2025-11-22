@@ -21,20 +21,25 @@ module MEM(
     // Output to WB stage
     output logic       wb_load_store,
     output logic[31:0] wb_mem_rdata,
-    output logic[31:0] wb_alu_out,
-    output logic[4:0]  wb_rd_idx
+    output logic[31:0] wb_alu_npc_out,
+    output logic[4:0]  wb_rd_idx,
+    
+    // Output to EX stage for hazard control
+    output logic[31:0] mem_alu_npc_out
 );
 
     always @(*) begin
         d_addr = mem_alu_out;
         d_read = mem_load;
         d_write = mem_store;
+        
+        mem_alu_npc_out = mem_alu_out; // TODO: mux with npc
     end
     
     always @(posedge(clk)) begin
         wb_load_store <= mem_load || mem_store;
         wb_mem_rdata <= d_rdata;
-        wb_alu_out <= mem_alu_out; // TODO: mux npc
+        wb_alu_npc_out <= mem_alu_npc_out;
         wb_rd_idx <= mem_rd_idx;
     end
     
@@ -42,7 +47,9 @@ module MEM(
     // TRACING
     // 
     always @(posedge(clk)) begin
-        $display("%.6f : [MEM] mem_npc=%X", $realtime, mem_npc);
+        $display("%.6f : [MEM] mem_npc=%X, mem_alu_npc_out:x%0d=%X",
+            $realtime, mem_npc,
+            mem_rd_idx, mem_alu_npc_out);
         if (mem_load) begin
             $display("    load %X -> %X", d_addr, d_rdata); 
         end

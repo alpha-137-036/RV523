@@ -21,11 +21,11 @@ module CPU(
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store;
     
-    logic [31:0] mem_alu_out, mem_wdata, mem_branch_target, mem_npc;
+    logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_branch_target, mem_npc;
     logic [4:0]  mem_rd_idx;
     logic mem_load, mem_store;
 
-    logic [31:0] wb_alu_out, wb_rd, wb_mem_rdata;
+    logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata;
     logic [4:0]  wb_rd_idx;
     logic wb_load_store;
 
@@ -81,8 +81,6 @@ module CPU(
         .ex_rd_idx(ex_rd_idx),
         .ex_pc(ex_pc),
         .ex_npc(ex_npc),
-        .ex_rs1_fwd_sel(2'b00),
-        .ex_rs2_fwd_sel(2'b00),
         .ex_load(ex_load),
         .ex_store(ex_store),
         .mem_alu_out(mem_alu_out),
@@ -91,7 +89,10 @@ module CPU(
         .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
-        .mem_rd_idx(mem_rd_idx)
+        .mem_rd_idx(mem_rd_idx),
+        .mem_alu_npc_out(mem_alu_npc_out),
+        .wb_rd_idx(wb_rd_idx),
+        .wb_rd(wb_rd)
     );
 
     MEM u_mem(
@@ -105,10 +106,11 @@ module CPU(
         .mem_load(mem_load),
         .mem_store(mem_store),
         .mem_rd_idx(mem_rd_idx),
+        .mem_alu_npc_out(mem_alu_npc_out),
 
         .wb_load_store(wb_load_store),
         .wb_mem_rdata(wb_mem_rdata),
-        .wb_alu_out(wb_alu_out),
+        .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx)
     );
 
@@ -118,7 +120,7 @@ module CPU(
         
         .wb_load_store(wb_load_store),
         .wb_mem_rdata(wb_mem_rdata),
-        .wb_alu_out(wb_alu_out),
+        .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd)
     );
