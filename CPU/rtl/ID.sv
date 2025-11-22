@@ -38,12 +38,16 @@ module ID(
     output logic [31:0] ex_pc,
     output logic [31:0] ex_npc,
     output logic ex_alu_A_PC_sel,
-    output logic ex_alu_B_imm_sel
+    output logic ex_alu_B_imm_sel,
+    output logic ex_reg_write,
+    output logic ex_load,
+    output logic ex_store
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [11:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
-    
+    logic id_reg_write, id_load, id_store;
+
     always @(*) begin
         logic [4:0] opcode;
         opcode = id_instr[6:2];
@@ -112,6 +116,9 @@ module ID(
             // TODO: bit 12 means "inverse the result"
             endcase
         endcase 
+        id_reg_write = !(opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH || opcode == `OPCODE_SYSTEM);
+        id_load = opcode == `OPCODE_LOAD;
+        id_store = opcode == `OPCODE_STORE;
     end
     
     // 
@@ -139,6 +146,9 @@ module ID(
         ex_alu_op <= id_alu_op;
         ex_alu_A_PC_sel <= id_alu_A_PC_sel;
         ex_alu_B_imm_sel <= id_alu_B_imm_sel;
+        ex_reg_write <= id_reg_write;
+        ex_load <= id_load;
+        ex_store <= id_store;
     end
     
     //
