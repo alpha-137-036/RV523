@@ -37,13 +37,16 @@ module ID(
     output logic ex_alu_A_PC_sel,
     output logic ex_alu_B_imm_sel,
     output logic ex_load,
-    output logic ex_store
+    output logic ex_store,
+    output logic ex_jalr,
+    output logic ex_jalx,
+    output logic ex_bxx
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
     logic [11:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
-    logic id_reg_write, id_load, id_store;
+    logic id_reg_write, id_load, id_store, id_jalr, id_jalx, id_bxx;
 
     always @(*) begin
         logic [4:0] opcode;
@@ -115,6 +118,10 @@ module ID(
         endcase 
         id_load = opcode == `OPCODE_LOAD;
         id_store = opcode == `OPCODE_STORE;
+        
+        id_jalr = opcode == `OPCODE_JALR;
+        id_jalx = opcode == `OPCODE_JALR || opcode == `OPCODE_JAL;
+        id_bxx  = opcode == `OPCODE_BRANCH;
     end
     
     // 
@@ -147,6 +154,9 @@ module ID(
         ex_alu_B_imm_sel <= id_alu_B_imm_sel;
         ex_load <= id_load;
         ex_store <= id_store;
+        ex_jalr <= id_jalr;
+        ex_jalx <= id_jalx;
+        ex_bxx <= id_bxx;
     end
     
     //

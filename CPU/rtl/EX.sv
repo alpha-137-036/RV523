@@ -20,6 +20,9 @@ module EX(
     input logic ex_alu_B_imm_sel,
     input logic ex_load,
     input logic ex_store,
+    input logic ex_jalr,
+    input logic ex_jalx,
+    input logic ex_bxx,
     input logic[11:0] ex_alu_op,
     input logic[31:0] ex_rs1,
     input logic[4:0]  ex_rs1_idx,
@@ -38,6 +41,9 @@ module EX(
     output logic[31:0] mem_npc,
     output logic mem_load,
     output logic mem_store,
+    output logic mem_jalr,
+    output logic mem_jalx,
+    output logic mem_bxx,
 
     // Inputs from MEM stage, for hazard control
     input  logic[31:0] mem_alu_npc_out,
@@ -88,10 +94,13 @@ module EX(
         mem_alu_out <= alu_Y;
         mem_wdata <= ex_wdata;
         mem_branch_target <= ex_branch_target;
+        mem_rd_idx <= ex_rd_idx;
         mem_npc <= ex_npc;
         mem_load <= ex_load;
         mem_store <= ex_store;
-        mem_rd_idx <= ex_rd_idx;
+        mem_jalr <= ex_jalr;
+        mem_jalx <= ex_jalx;
+        mem_bxx <= ex_bxx;
     end
     
     

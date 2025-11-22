@@ -9,7 +9,11 @@ module MEM(
     input logic[31:0] mem_npc,
     input logic       mem_load,
     input logic       mem_store,
+    input logic       mem_jalr,
+    input logic       mem_jalx,
+    input logic       mem_bxx,
     input logic[4:0]  mem_rd_idx,
+    input logic       mem_branch_target_from_alu,
     
     // Data memory bus
     output logic[31:0] d_addr,
@@ -25,15 +29,22 @@ module MEM(
     output logic[4:0]  wb_rd_idx,
     
     // Output to EX stage for hazard control
-    output logic[31:0] mem_alu_npc_out
+    output logic[31:0] mem_alu_npc_out,
+    
+    // Output to IF stage
+    output logic[31:0] if_branch_target,
+    output logic       if_take_branch
 );
-
+    
     always @(*) begin
         d_addr = mem_alu_out;
         d_read = mem_load;
         d_write = mem_store;
         
-        mem_alu_npc_out = mem_alu_out; // TODO: mux with npc
+        mem_alu_npc_out = mem_jalx ? mem_npc : mem_alu_out;
+        
+        if_branch_target = mem_jalr ? mem_alu_out : mem_branch_target;
+        if_take_branch = mem_jalx || (mem_bxx && mem_alu_out[0]);
     end
     
     always @(posedge(clk)) begin

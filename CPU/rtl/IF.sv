@@ -13,7 +13,8 @@ module IF(
     input  logic [31:0] c_rdata,
     
     // input from MEM stage
-    input logic [31:0]  branch_target,
+    input logic [31:0]  if_branch_target,
+    input logic         if_take_branch,
 
     // output to ID stage (registered)
     output logic [31:0] id_instr,
@@ -32,7 +33,7 @@ module IF(
         if (!rst_n) begin
             if_pc <= '0;
         end else begin
-            if_pc <= branch ? branch_target : if_npc;
+            if_pc <= if_take_branch ? if_branch_target : if_npc;
         end
     end
 
@@ -50,5 +51,8 @@ module IF(
     // TRACING
     always @(posedge clk) begin
         $display("%.6f : [IF] if_pc=%X, if_npc=%X, if_instr=%X", $realtime, if_pc, if_npc, if_instr);
+        if (if_take_branch) begin
+            $display("    branch to %X", if_branch_target);
+        end
     end
 endmodule

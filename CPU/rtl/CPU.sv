@@ -14,16 +14,20 @@ module CPU(
     output logic        d_read,
     output logic        d_write
 );
+
+    logic [31:0] if_branch_target;
+    logic if_take_branch;
+    
     logic [31:0] id_pc, id_npc, id_instr;
     
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc;
     logic [11:0] ex_alu_op;
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
-    logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store;
+    logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx;
     
     logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_branch_target, mem_npc;
     logic [4:0]  mem_rd_idx;
-    logic mem_load, mem_store;
+    logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx;
 
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata;
     logic [4:0]  wb_rd_idx;
@@ -35,7 +39,8 @@ module CPU(
         
         .c_addr(c_addr),
         .c_rdata(c_rdata),
-        .branch(1'b0),
+        .if_take_branch(if_take_branch),
+        .if_branch_target(if_branch_target),
         
         .id_pc(id_pc),
         .id_npc(id_npc),
@@ -62,6 +67,9 @@ module CPU(
         .ex_alu_B_imm_sel(ex_alu_B_imm_sel),
         .ex_load(ex_load),
         .ex_store(ex_store),
+        .ex_jalr(ex_jalr),
+        .ex_jalx(ex_jalx),
+        .ex_bxx(ex_bxx),
 
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd)
@@ -83,12 +91,18 @@ module CPU(
         .ex_npc(ex_npc),
         .ex_load(ex_load),
         .ex_store(ex_store),
+        .ex_jalr(ex_jalr),
+        .ex_jalx(ex_jalx),
+        .ex_bxx(ex_bxx),
         .mem_alu_out(mem_alu_out),
         .mem_wdata(mem_wdata),
         .mem_branch_target(mem_branch_target),
         .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
+        .mem_jalr(mem_jalr),
+        .mem_jalx(mem_jalx),
+        .mem_bxx(mem_bxx),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
@@ -105,13 +119,19 @@ module CPU(
         .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
+        .mem_jalr(mem_jalr),
+        .mem_jalx(mem_jalx),
+        .mem_bxx(mem_bxx),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
 
         .wb_load_store(wb_load_store),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
-        .wb_rd_idx(wb_rd_idx)
+        .wb_rd_idx(wb_rd_idx),
+        
+        .if_take_branch(if_take_branch),
+        .if_branch_target(if_branch_target)
     );
 
     WB u_wb(
