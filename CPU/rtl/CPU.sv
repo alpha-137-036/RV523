@@ -144,7 +144,13 @@ module CPU(
         .wb_bubble_tracing(wb_bubble_tracing),
 
         .if_take_branch(if_take_branch),
-        .if_branch_target(if_branch_target)
+        .if_branch_target(if_branch_target),
+
+        .d_addr(d_addr),
+        .d_read(d_read),
+        .d_write(d_write),
+        .d_rdata(d_rdata),
+        .d_wdata(d_wdata)
     );
 
     WB u_wb(

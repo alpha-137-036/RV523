@@ -43,6 +43,8 @@ module MEM(
         d_read = mem_load;
         d_write = mem_store;
         
+        d_wdata = mem_wdata;
+        
         mem_alu_npc_out = mem_jalx ? mem_npc : mem_alu_out;
         
         if_branch_target = mem_jalr ? mem_alu_out : mem_branch_target;
