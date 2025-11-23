@@ -67,5 +67,9 @@ module MEM(
         if (mem_store) begin
             $display("    store %X -> %X", d_wdata, d_addr);             
         end
+        $display("    if_take_branch=%d", if_take_branch);
+        if (if_take_branch) begin
+            $display("        if_branch_target=%X", if_branch_target);
+        end
     end
 endmodule

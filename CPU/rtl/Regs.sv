@@ -6,7 +6,6 @@ module Regs(
     input logic [4:0] rd_idx,
     
     input logic [31:0] rd,
-    input logic write,
     
     output logic [31:0] rs1,
     output logic [31:0] rs2
@@ -14,13 +13,27 @@ module Regs(
     logic [31:0] x[1:31];
     
     always @(*) begin
-        rs1 = rs1_idx == 0 ? 0 : x[rs1_idx];
-        rs2 = rs2_idx == 0 ? 0 : x[rs2_idx];
+        if (rs1_idx == 5'b0) begin
+            rs1 = 32'b0;
+        end else if (rs1_idx == rd_idx) begin
+            // Write-before-read !
+            rs1 = rd;
+        end else begin
+            rs1 = x[rs1_idx];
+        end
+        if (rs2_idx == 5'b0) begin
+            rs2 = 32'b0;
+        end else if (rs2_idx == rd_idx) begin
+            // Write-before-read !
+            rs2 = rd;
+        end else begin
+            rs2 = x[rs2_idx];
+        end
     end
     
     always @(posedge(clk)) begin
-        if (write && rd_idx != 0) begin
-            x[rd_idx] = rd;
+        if (rd_idx != 5'b0) begin
+            x[rd_idx] <= rd;
         end
     end
 
