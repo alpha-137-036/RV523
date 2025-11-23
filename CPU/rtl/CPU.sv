@@ -22,7 +22,7 @@ module CPU(
     logic id_bubble_tracing;
     
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc;
-    logic [11:0] ex_alu_op;
+    logic [10:0] ex_alu_op;
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx;
     logic ex_bubble_tracing;

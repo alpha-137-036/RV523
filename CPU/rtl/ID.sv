@@ -89,7 +89,7 @@ module ID(
 
         // Selection of rs1_idx, rs2_idx, rd_idx
         id_rs1_idx = opcode == `OPCODE_LUI ? 0 : id_instr[19:15]; 
-        id_rs2_idx = opcode == `OPCODE_LOAD || opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH ? id_instr[24:20] : 0;
+        id_rs2_idx = opcode == `OPCODE_LOAD || opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH || opcode == `OPCODE_OP ? id_instr[24:20] : 0;
 
         // If EX stage is currently executing a LOAD into a register that
         // matches one the operands, we have a Load-Use hazard
