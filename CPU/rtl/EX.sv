@@ -97,7 +97,6 @@ module EX(
         mem_alu_out <= alu_Y;
         mem_wdata <= ex_wdata;
         mem_branch_target <= ex_branch_target;
-        mem_rd_idx <= ex_rd_idx;
         mem_npc <= ex_npc;
 
         // Branch hazard: if a branch is taken in this cycle in the MEM stage
@@ -109,12 +108,15 @@ module EX(
             mem_jalr <= 0;
             mem_jalx <= 0;
             mem_bxx <= 0;
+            // GOTCHA! mem_rd_idx is harmful because it can interfere with the RAW resolution
+            mem_rd_idx <= 0;
         end else begin
             mem_load <= ex_load;
             mem_store <= ex_store;
             mem_jalr <= ex_jalr;
             mem_jalx <= ex_jalx;
             mem_bxx <= ex_bxx;
+            mem_rd_idx <= ex_rd_idx;
         end
         mem_bubble_tracing <= if_take_branch || ex_bubble_tracing;
     end

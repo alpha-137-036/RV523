@@ -44,7 +44,8 @@ module CPU(
         .c_rdata(c_rdata),
         .if_take_branch(if_take_branch),
         .if_branch_target(if_branch_target),
-        
+        .id_stall(id_stall),
+
         .id_pc(id_pc),
         .id_npc(id_npc),
         .id_instr(id_instr),
@@ -80,7 +81,8 @@ module CPU(
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
         
-        .if_take_branch(if_take_branch)
+        .if_take_branch(if_take_branch),
+        .id_stall(id_stall)
     );
     
     EX u_ex(

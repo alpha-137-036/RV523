@@ -7,22 +7,22 @@ module IF(
     input logic         clk,
     input logic         rst_n,
 
-    // Input from control/hazard unit
-    input logic         branch,
-
     // ROM interface
     output logic [31:0] c_addr,
     input  logic [31:0] c_rdata,
-    
-    // input from MEM stage
-    input logic [31:0]  if_branch_target,
-    input logic         if_take_branch,
 
     // output to ID stage (registered)
     output logic [31:0] id_instr,
     output logic [31:0] id_pc,
     output logic [31:0] id_npc,
-    output logic        id_bubble_tracing
+    output logic        id_bubble_tracing,
+
+    // input from ID stage
+    input  logic        id_stall,
+
+    // input from MEM stage
+    input logic [31:0]  if_branch_target,
+    input logic         if_take_branch
 );    
     logic [31:0]        if_instr;
     logic [31:0]        if_pc;
@@ -44,15 +44,17 @@ module IF(
             if_pc <= if_take_branch ? if_branch_target : if_npc;
         end
 
-        if (!rst_n || if_take_branch) begin
-            id_instr <= `INSTR_BUBBLE;
-            id_bubble_tracing <= 1;
-        end else begin
-            id_instr <= if_instr;
-            id_bubble_tracing <= 0;
+        if (!rst_n || !id_stall) begin
+            if (!rst_n || if_take_branch) begin
+                id_instr <= `INSTR_BUBBLE;
+                id_bubble_tracing <= 1;
+            end else begin
+                id_instr <= if_instr;
+                id_bubble_tracing <= 0;
+            end
+            id_pc    <= if_pc;
+            id_npc   <= if_npc;
         end
-        id_pc    <= if_pc;
-        id_npc   <= if_npc;
     end
     
     // TRACING

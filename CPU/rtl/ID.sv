@@ -47,7 +47,10 @@ module ID(
 
     // Inputs from WB stage for RAW hazards
     input logic [31:0] wb_rd,
-    input logic [4:0]  wb_rd_idx
+    input logic [4:0]  wb_rd_idx,
+
+    // Output to IF stage: a stall has been detected (Load-Use Hazard)
+    output logic id_stall
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
@@ -86,7 +89,19 @@ module ID(
 
         // Selection of rs1_idx, rs2_idx, rd_idx
         id_rs1_idx = opcode == `OPCODE_LUI ? 0 : id_instr[19:15]; 
-        id_rs2_idx = id_instr[24:20];
+        id_rs2_idx = opcode == `OPCODE_LOAD || opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH ? id_instr[24:20] : 0;
+
+        // If EX stage is currently executing a LOAD into a register that
+        // matches one the operands, we have a Load-Use hazard
+        id_stall = 0;
+        if (ex_load) begin
+            if (!id_alu_A_PC_sel && id_rs1_idx != 0 && ex_rd_idx == id_rs1_idx) begin
+                id_stall = 1;
+            end
+            if (!id_alu_B_imm_sel && id_rs2_idx != 0 && ex_rd_idx == id_rs2_idx) begin
+                id_stall = 1;
+            end
+        end
         casex (opcode) 
         default:
             id_rd_idx = id_instr[11: 7];
@@ -155,33 +170,42 @@ module ID(
 
     // register and propagate to EX stage 
     always @(posedge(clk)) begin
-        ex_pc <= id_pc;
-        ex_npc <= id_npc;
-        ex_imm <= id_imm;
-        ex_rs1 <= id_rs1;
-        ex_rs1_idx <= id_rs1_idx;
-        ex_rs2 <= id_rs2;
-        ex_rs2_idx <= id_rs2_idx;
-        ex_rd_idx <= id_rd_idx;
-        ex_alu_op <= id_alu_op;
-        ex_alu_A_PC_sel <= id_alu_A_PC_sel;
-        ex_alu_B_imm_sel <= id_alu_B_imm_sel;
-        // Branch hazard: if branch is taken now, the instruction handed over to EX stage can be harmful
-        // make it harmless by zeroizing all control lines ("bubble")
-        if (if_take_branch) begin
+        if (!id_stall) begin
+            ex_pc <= id_pc;
+            ex_npc <= id_npc;
+            ex_imm <= id_imm;
+            ex_rs1 <= id_rs1;
+            ex_rs1_idx <= id_rs1_idx;
+            ex_rs2 <= id_rs2;
+            ex_rs2_idx <= id_rs2_idx;
+            ex_alu_op <= id_alu_op;
+            ex_alu_A_PC_sel <= id_alu_A_PC_sel;
+            ex_alu_B_imm_sel <= id_alu_B_imm_sel;
+        end
+        if (if_take_branch || id_stall) begin
+            // Branch hazard: if branch is taken now, the instruction handed over to EX stage can be harmful
+            // make it harmless by zeroizing all control lines ("bubble")
+            // This is not a stall: we continue pushing new instructions
+
+            // Other case of inserting a bubble:
+            // stall because of Load-Use hazard
             ex_load <= 0;
             ex_store <= 0;
             ex_jalr <= 0;
             ex_jalx <= 0;
             ex_bxx <= 0;
+            // GOTCHA! ex_rd_idx is harmful as it can interfere with RAW hazard resolution
+            ex_rd_idx <= 0;
         end else begin
+            // No stall, no branch hazard: propagate the instruction control signals
             ex_load <= id_load;
             ex_store <= id_store;
             ex_jalr <= id_jalr;
             ex_jalx <= id_jalx;
             ex_bxx <= id_bxx;
+            ex_rd_idx <= id_rd_idx;
         end
-        ex_bubble_tracing <= if_take_branch || id_bubble_tracing;
+        ex_bubble_tracing <= if_take_branch || id_bubble_tracing || id_stall;
     end
     
     //
