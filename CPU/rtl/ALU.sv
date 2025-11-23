@@ -1,7 +1,7 @@
 
 
 module ALU(
-    input  logic[11:0] op,
+    input  logic[10:0] op,
     input  logic[31:0] A,
     input  logic[31:0] B,
     output logic[31:0] Y
@@ -17,8 +17,11 @@ module ALU(
             `ALU_OP_XOR: Y = A ^ B;
             `ALU_OP_OR:  Y = A | B;
             `ALU_OP_SLTU: Y = {31'b0, A < B};
+            `ALU_OP_SGEU: Y = {31'b0, A >= B};
             `ALU_OP_SLT:  Y = {31'b0, $signed(A) < $signed(B)};
+            `ALU_OP_SGE:  Y = {31'b0, $signed(A) >= $signed(B)};
             `ALU_OP_SEQ:  Y = {31'b0, A == B};
+            `ALU_OP_SNE:  Y = {31'b0, A != B};
             default:  Y = 'X;
         endcase
     end

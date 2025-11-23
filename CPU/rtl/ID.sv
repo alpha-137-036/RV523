@@ -23,7 +23,7 @@ module ID(
     input logic        id_bubble_tracing,
     
     // Outputs to the EX stage
-    output logic [11:0] ex_alu_op,
+    output logic [10:0] ex_alu_op,
     output logic [31:0] ex_imm,
     output logic [31:0] ex_rs1,
     output logic [4:0]  ex_rs1_idx,
@@ -54,7 +54,7 @@ module ID(
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
-    logic [11:0] id_alu_op;
+    logic [10:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
     logic id_reg_write, id_load, id_store, id_jalr, id_jalx, id_bxx;
 
@@ -138,11 +138,14 @@ module ID(
             id_alu_op = `ALU_OP_ADD;
         `OPCODE_BRANCH:
             // Determined by FUNCT3
-            case (id_instr[14:13])
-            2'b00: id_alu_op = `ALU_OP_SEQ;
-            2'b10: id_alu_op = `ALU_OP_SLT;
-            2'b11: id_alu_op = `ALU_OP_SLTU;
-            2'b01: id_alu_op = 'X;
+            case (id_instr[14:12])
+            3'b000: id_alu_op = `ALU_OP_SEQ;
+            3'b001: id_alu_op = `ALU_OP_SNE;
+            3'b100: id_alu_op = `ALU_OP_SLT;
+            3'b101: id_alu_op = `ALU_OP_SGE;
+            3'b110: id_alu_op = `ALU_OP_SLTU;
+            3'b111: id_alu_op = `ALU_OP_SGEU;
+            default: id_alu_op = 'X;
             // TODO: bit 12 means "inverse the result"
             endcase
         endcase 

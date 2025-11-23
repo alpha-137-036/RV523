@@ -23,7 +23,7 @@ module EX(
     input logic ex_jalr,
     input logic ex_jalx,
     input logic ex_bxx,
-    input logic[11:0] ex_alu_op,
+    input logic[10:0] ex_alu_op,
     input logic[31:0] ex_rs1,
     input logic[4:0]  ex_rs1_idx,
     input logic[31:0] ex_rs2,
@@ -140,9 +140,12 @@ module EX(
         `ALU_OP_XOR: ex_alu_op_string = "XOR"; 
         `ALU_OP_OR:  ex_alu_op_string = "OR"; 
         `ALU_OP_SLTU: ex_alu_op_string = "SLTU"; 
-        `ALU_OP_SLT:  ex_alu_op_string = "SLT"; 
-        `ALU_OP_SEQ:  ex_alu_op_string = "SEQ"; 
-        default: ex_alu_op_string = 'X; 
+        `ALU_OP_SGEU: ex_alu_op_string = "SGEU";
+        `ALU_OP_SLT:  ex_alu_op_string = "SLT";
+        `ALU_OP_SGE:  ex_alu_op_string = "SGE";
+        `ALU_OP_SEQ:  ex_alu_op_string = "SEQ";
+        `ALU_OP_SNE:  ex_alu_op_string = "SNE";
+        default: ex_alu_op_string = 'X;
         endcase
         if (ex_alu_A_PC_sel) A_origin = "pc";
         else if (rs1_fwd_from_mem) A_origin = "mem";
