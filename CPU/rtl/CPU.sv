@@ -19,21 +19,22 @@ module CPU(
     logic if_take_branch;
     
     logic [31:0] id_pc, id_npc, id_instr;
+    logic id_bubble_tracing;
     
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc;
     logic [11:0] ex_alu_op;
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx;
-    logic ex_instr_suppressed_tracing;
+    logic ex_bubble_tracing;
     
     logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_branch_target, mem_npc;
     logic [4:0]  mem_rd_idx;
     logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx;
-    logic mem_instr_suppressed_tracing;
+    logic mem_bubble_tracing;
 
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata;
     logic [4:0]  wb_rd_idx;
-    logic wb_load_store;
+    logic wb_load_store, wb_bubble_tracing;
 
     IF u_if(
         .clk(clk),
@@ -46,7 +47,8 @@ module CPU(
         
         .id_pc(id_pc),
         .id_npc(id_npc),
-        .id_instr(id_instr)
+        .id_instr(id_instr),
+        .id_bubble_tracing(id_bubble_tracing)
     );
     ID u_id(
         .clk(clk),
@@ -55,6 +57,7 @@ module CPU(
         .id_pc(id_pc),
         .id_npc(id_npc),
         .id_instr(id_instr),
+        .id_bubble_tracing(id_bubble_tracing),
         
         .ex_imm(ex_imm),
         .ex_rs1(ex_rs1),
@@ -72,7 +75,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
-        .ex_instr_suppressed_tracing(ex_instr_suppressed_tracing),
+        .ex_bubble_tracing(ex_bubble_tracing),
 
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
@@ -99,7 +102,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
-        .ex_instr_suppressed_tracing(ex_instr_suppressed_tracing),
+        .ex_bubble_tracing(ex_bubble_tracing),
         .mem_alu_out(mem_alu_out),
         .mem_wdata(mem_wdata),
         .mem_branch_target(mem_branch_target),
@@ -111,7 +114,7 @@ module CPU(
         .mem_bxx(mem_bxx),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
-        .mem_instr_suppressed_tracing(mem_instr_suppressed_tracing),
+        .mem_bubble_tracing(mem_bubble_tracing),
         .if_take_branch(if_take_branch),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd)
@@ -132,13 +135,14 @@ module CPU(
         .mem_bxx(mem_bxx),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
-        .mem_instr_suppressed_tracing(mem_instr_suppressed_tracing),
+        .mem_bubble_tracing(mem_bubble_tracing),
 
         .wb_load_store(wb_load_store),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
-        
+        .wb_bubble_tracing(wb_bubble_tracing),
+
         .if_take_branch(if_take_branch),
         .if_branch_target(if_branch_target)
     );
@@ -151,7 +155,8 @@ module CPU(
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
-        .wb_rd(wb_rd)
+        .wb_rd(wb_rd),
+        .wb_bubble_tracing(wb_bubble_tracing)
     );
 
 

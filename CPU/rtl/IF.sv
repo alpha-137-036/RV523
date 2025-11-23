@@ -1,5 +1,7 @@
-`define INSTR_NOP 32'h00000013
-
+// A bubble doesn't need to be a full NOP instruction as this requires 32 gates just to set up...
+// Instead we just use the opcode xx111 (reserved) as bubble. The ID stage will interpret it
+// as a harmless operation
+`define INSTR_BUBBLE {25'bx,7'bxx111xx}
 
 module IF(
     input logic         clk,
@@ -19,7 +21,8 @@ module IF(
     // output to ID stage (registered)
     output logic [31:0] id_instr,
     output logic [31:0] id_pc,
-    output logic [31:0] id_npc 
+    output logic [31:0] id_npc,
+    output logic        id_bubble_tracing
 );    
     logic [31:0]        if_instr;
     logic [31:0]        if_pc;
@@ -29,21 +32,25 @@ module IF(
         if_npc = if_pc + 4;
     end
     
-    always @(posedge clk) begin
-        if (!rst_n) begin
-            if_pc <= '0;
-        end else begin
-            if_pc <= if_take_branch ? if_branch_target : if_npc;
-        end
-    end
-
     // Fetch from ROM 
     assign c_addr   = if_pc;
     assign if_instr = c_rdata;
 
     // flip-flops to ID stage
     always @(posedge clk) begin
-        id_instr <= !rst_n ? `INSTR_NOP : if_instr;
+        if (!rst_n) begin
+            if_pc <= '0;
+        end else begin
+            if_pc <= if_take_branch ? if_branch_target : if_npc;
+        end
+
+        if (!rst_n || if_take_branch) begin
+            id_instr <= `INSTR_BUBBLE;
+            id_bubble_tracing <= 1;
+        end else begin
+            id_instr <= if_instr;
+            id_bubble_tracing <= 0;
+        end
         id_pc    <= if_pc;
         id_npc   <= if_npc;
     end

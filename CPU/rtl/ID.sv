@@ -8,6 +8,7 @@
 `define OPCODE_AUIPC  5'b00101
 `define OPCODE_LUI    5'b01101
 `define OPCODE_SYSTEM 5'b11100
+`define OPCODE_BUBBLE 5'bxx111
 
 // All other opcodes are not used in RV32I
 
@@ -19,10 +20,7 @@ module ID(
     input logic [31:0] id_instr,
     input logic [31:0] id_pc,
     input logic [31:0] id_npc,
-    
-    // Inputs from WB stage 
-    input logic [31:0] wb_rd,
-    input logic [4:0]  wb_rd_idx,
+    input logic        id_bubble_tracing,
     
     // Outputs to the EX stage
     output logic [11:0] ex_alu_op,
@@ -42,10 +40,14 @@ module ID(
     output logic ex_jalx,
     output logic ex_bxx,
 
-    output logic ex_instr_suppressed_tracing,
+    output logic ex_bubble_tracing,
 
-    // Inputs from MEM stage for branch hazard
-    input  logic if_take_branch
+    // Inputs from MEM stage for branch hazards
+    input  logic if_take_branch,
+
+    // Inputs from WB stage for RAW hazards
+    input logic [31:0] wb_rd,
+    input logic [4:0]  wb_rd_idx
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
@@ -56,7 +58,7 @@ module ID(
     always @(*) begin
         logic [4:0] opcode;
         opcode = id_instr[6:2];
-        case (opcode)
+        casex (opcode)
         default:
             // no immediate. imm is dont-care
             id_imm = 'X;
@@ -85,8 +87,16 @@ module ID(
         // Selection of rs1_idx, rs2_idx, rd_idx
         id_rs1_idx = opcode == `OPCODE_LUI ? 0 : id_instr[19:15]; 
         id_rs2_idx = id_instr[24:20];
-        id_rd_idx  = opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH || opcode == `OPCODE_SYSTEM ? 0 : id_instr[11: 7];
-        
+        casex (opcode) 
+        default:
+            id_rd_idx = id_instr[11: 7];
+        `OPCODE_STORE,
+        `OPCODE_BRANCH,
+        `OPCODE_SYSTEM,
+        `OPCODE_BUBBLE:
+            // There is no "reg-write-enable" signal. Instead we use rd == 0. 
+            id_rd_idx = 0;
+        endcase
         // Selection of ALU operation
         case (opcode)
         default: id_alu_op = 'X;
@@ -157,7 +167,7 @@ module ID(
         ex_alu_A_PC_sel <= id_alu_A_PC_sel;
         ex_alu_B_imm_sel <= id_alu_B_imm_sel;
         // Branch hazard: if branch is taken now, the instruction handed over to EX stage can be harmful
-        // make it harmless by zeroizing all control lines
+        // make it harmless by zeroizing all control lines ("bubble")
         if (if_take_branch) begin
             ex_load <= 0;
             ex_store <= 0;
@@ -171,7 +181,7 @@ module ID(
             ex_jalx <= id_jalx;
             ex_bxx <= id_bxx;
         end
-        ex_instr_suppressed_tracing <= if_take_branch;
+        ex_bubble_tracing <= if_take_branch || id_bubble_tracing;
     end
     
     //
@@ -183,83 +193,86 @@ module ID(
         $display("%.6f : [ID] id_pc=%X, id_npc=%X, id_instr=%X, id_imm=%X, id_rs1:x%0d=%X, id_rs2:x%0d=%X, id_rd=x%0d",
             $realtime, id_pc, id_npc, id_instr, id_imm, 
             id_rs1_idx, id_rs1, id_rs2_idx, id_rs2, id_rd_idx);
-
-        // Disassembly
-        case (id_instr[6:2])
-        `OPCODE_AUIPC:
-            $display("    %X: %X auipc x%0d, 0x%0X", id_pc, id_instr, id_rd_idx, id_imm);
-        `OPCODE_LUI:
-            $display("    %X: %X: lui x%0d, 0x%0X", id_pc, id_instr, id_rd_idx, id_imm);
-        `OPCODE_OP_IMM,
-        `OPCODE_OP: begin
-            string op;
-            case (id_instr[14:12])
-                3'd0: op = id_instr[6:2] == `OPCODE_OP && id_instr[30] ? "sub" : "add";
-                3'd4: op = "xor";
-                3'd6: op = "or";
-                3'd7: op = "and";
-                3'd1: op = "sll";
-                3'd5: op = id_instr[30] ? "sra" : "srl";
-                3'd2: op = "slt";
-                3'd3: op = "sltu";
-            endcase
-            if (id_instr[6:2] == `OPCODE_OP) begin
-                $display("    %X: %X: %s x%0d, x%0d, x%0d", id_pc, id_instr, op, id_rd_idx, id_rs1_idx, id_rs2_idx);
-            end else begin
-                $display("    %X: %X: %si x%0d, x%0d, 0x%0X", id_pc, id_instr, op, id_rd_idx, id_rs1_idx, id_imm);
+        if (id_bubble_tracing) begin
+            $display("    [ID] <bubble>");
+        end else begin
+            // Disassembly
+            case (id_instr[6:2])
+            `OPCODE_AUIPC:
+                $display("    %X: %X auipc x%0d, 0x%0X", id_pc, id_instr, id_rd_idx, id_imm);
+            `OPCODE_LUI:
+                $display("    %X: %X: lui x%0d, 0x%0X", id_pc, id_instr, id_rd_idx, id_imm);
+            `OPCODE_OP_IMM,
+            `OPCODE_OP: begin
+                string op;
+                case (id_instr[14:12])
+                    3'd0: op = id_instr[6:2] == `OPCODE_OP && id_instr[30] ? "sub" : "add";
+                    3'd4: op = "xor";
+                    3'd6: op = "or";
+                    3'd7: op = "and";
+                    3'd1: op = "sll";
+                    3'd5: op = id_instr[30] ? "sra" : "srl";
+                    3'd2: op = "slt";
+                    3'd3: op = "sltu";
+                endcase
+                if (id_instr[6:2] == `OPCODE_OP) begin
+                    $display("    %X: %X: %s x%0d, x%0d, x%0d", id_pc, id_instr, op, id_rd_idx, id_rs1_idx, id_rs2_idx);
+                end else begin
+                    $display("    %X: %X: %si x%0d, x%0d, 0x%0X", id_pc, id_instr, op, id_rd_idx, id_rs1_idx, id_imm);
+                end
             end
-        end
-        `OPCODE_LOAD: begin
-            string op;
-            case (id_instr[14:12])
-                3'd0: op = "lb";
-                3'd1: op = "lh";
-                3'd2: op = "lw";
-                3'd4: op = "lbu";
-                3'd5: op = "lhu";
-                default: op = "l??";
+            `OPCODE_LOAD: begin
+                string op;
+                case (id_instr[14:12])
+                    3'd0: op = "lb";
+                    3'd1: op = "lh";
+                    3'd2: op = "lw";
+                    3'd4: op = "lbu";
+                    3'd5: op = "lhu";
+                    default: op = "l??";
+                endcase
+                $display("    %X: %X: %s x%0d, 0x%0X(x%0d)", id_pc, id_instr, op, id_rd_idx, id_imm, id_rs1_idx);
+            end
+            `OPCODE_STORE: begin
+                string op;
+                case (id_instr[14:12])
+                    3'd0: op = "sb";
+                    3'd1: op = "sh";
+                    3'd2: op = "sw";
+                    default: op = "s??";
+                endcase
+                $display("    %X: %X: %s x%0d, 0x%0X(x%0d)", id_pc, id_instr, op, id_rs2_idx, id_imm, id_rs1_idx);
+            end
+            `OPCODE_BRANCH: begin
+                string op;
+                case (id_instr[14:12])
+                    3'd0: op = "beq";
+                    3'd1: op = "bne";
+                    3'd4: op = "blt";
+                    3'd5: op = "bge";
+                    3'd6: op = "bltu";
+                    3'd6: op = "bgeu";
+                    default: op = "b??";
+                endcase
+                $display("    %X: %X: %s x%0d, x%0d, 0x%0X", id_pc, id_instr, op, id_rs1_idx, id_rs2_idx, id_pc + id_imm);
+            end
+            `OPCODE_JAL:
+                $display("    %X: %X: jal x%0d, 0x%0X", id_pc, id_instr, id_rd_idx, id_pc + id_imm);
+            `OPCODE_JALR:
+                $display("    %X: %X: jalr x%0d, 0x%0X(x%0d)", id_pc, id_instr, id_rd_idx, id_imm, id_rs1_idx);
+            `OPCODE_SYSTEM: begin
+                string op;
+                case (id_instr[31:20])
+                    12'd0: op = "ecall";
+                    12'd1: op = "ebreak";
+                    default: op = "system-??";
+                endcase
+                $display("    %X: %X: %s", id_pc, id_instr, op);
+            end
+            default:
+                $display("    %X: %X: ???", id_pc, id_instr);
             endcase
-            $display("    %X: %X: %s x%0d, 0x%0X(x%0d)", id_pc, id_instr, op, id_rd_idx, id_imm, id_rs1_idx);
         end
-        `OPCODE_STORE: begin
-            string op;
-            case (id_instr[14:12])
-                3'd0: op = "sb";
-                3'd1: op = "sh";
-                3'd2: op = "sw";
-                default: op = "s??";
-            endcase
-            $display("    %X: %X: %s x%0d, 0x%0X(x%0d)", id_pc, id_instr, op, id_rs2_idx, id_imm, id_rs1_idx);
-        end
-        `OPCODE_BRANCH: begin
-            string op;
-            case (id_instr[14:12])
-                3'd0: op = "beq";
-                3'd1: op = "bne";
-                3'd4: op = "blt";
-                3'd5: op = "bge";
-                3'd6: op = "bltu";
-                3'd6: op = "bgeu";
-                default: op = "b??";
-            endcase
-            $display("    %X: %X: %s x%0d, x%0d, 0x%0X", id_pc, id_instr, op, id_rs1_idx, id_rs2_idx, id_pc + id_imm);
-        end
-        `OPCODE_JAL:
-            $display("    %X: %X: jal x%0d, 0x%0X", id_pc, id_instr, id_rd_idx, id_pc + id_imm);
-        `OPCODE_JALR:
-            $display("    %X: %X: jalr x%0d, 0x%0X(x%0d)", id_pc, id_instr, id_rd_idx, id_imm, id_rs1_idx);
-        `OPCODE_SYSTEM: begin
-            string op;
-            case (id_instr[31:20])
-                12'd0: op = "ecall";
-                12'd1: op = "ebreak";
-                default: op = "system-??";
-            endcase
-            $display("    %X: %X: %s", id_pc, id_instr, op);
-        end
-        default:
-            $display("    %X: %X: ???", id_pc, id_instr);
-        endcase
     end
 
 endmodule
