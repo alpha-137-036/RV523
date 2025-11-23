@@ -73,7 +73,7 @@ module EX(
         
         rs2_fwd = rs2_fwd_from_mem ? mem_alu_npc_out : rs2_fwd_from_wb ? wb_rd : ex_rs2;
 
-        ex_wdata = rs1_fwd;
+        ex_wdata = rs2_fwd;
   
         // Select ALU A argument from either RS1 or PC
         alu_A = ex_alu_A_PC_sel ? ex_pc : rs1_fwd ;
