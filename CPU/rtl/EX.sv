@@ -32,6 +32,7 @@ module EX(
     input logic[31:0] ex_imm,
     input logic[31:0] ex_pc,
     input logic[31:0] ex_npc,
+    input logic       ex_instr_suppressed_tracing,
     
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
@@ -44,9 +45,11 @@ module EX(
     output logic mem_jalr,
     output logic mem_jalx,
     output logic mem_bxx,
+    output logic mem_instr_suppressed_tracing,
 
     // Inputs from MEM stage, for hazard control
     input  logic[31:0] mem_alu_npc_out,
+    input  logic       if_take_branch,
     
     // Inputs from the WB stage, for hazard control
     input  logic[4:0]  wb_rd_idx,
@@ -55,6 +58,7 @@ module EX(
 );
     logic rs1_fwd_from_mem, rs1_fwd_from_wb;
     logic rs2_fwd_from_mem, rs2_fwd_from_wb;
+    logic ex_instr_suppressed;
     logic[31:0] rs1_fwd, rs2_fwd, ex_wdata, alu_A, alu_B, alu_Y, ex_branch_target;
     
     always @(*) begin
@@ -96,11 +100,24 @@ module EX(
         mem_branch_target <= ex_branch_target;
         mem_rd_idx <= ex_rd_idx;
         mem_npc <= ex_npc;
-        mem_load <= ex_load;
-        mem_store <= ex_store;
-        mem_jalr <= ex_jalr;
-        mem_jalx <= ex_jalx;
-        mem_bxx <= ex_bxx;
+
+        // Branch hazard: if a branch is taken in this cycle in the MEM stage
+        // the instruction in the EX stage must be harmless in the next cycle
+        // we can therefore set all control signals to zero
+        if (if_take_branch) begin
+            mem_load <= 0;
+            mem_store <= 0;
+            mem_jalr <= 0;
+            mem_jalx <= 0;
+            mem_bxx <= 0;
+        end else begin
+            mem_load <= ex_load;
+            mem_store <= ex_store;
+            mem_jalr <= ex_jalr;
+            mem_jalx <= ex_jalx;
+            mem_bxx <= ex_bxx;
+        end
+        mem_instr_suppressed_tracing <= if_take_branch || ex_instr_suppressed_tracing;
     end
     
     
@@ -139,6 +156,9 @@ module EX(
             alu_A, A_origin,
             alu_B, B_origin,
             ex_alu_op, ex_alu_op_string, alu_Y);
+        if (ex_instr_suppressed_tracing) begin
+            $display("    [EX] <instr suppressed>");
+        end
     end
 endmodule
 

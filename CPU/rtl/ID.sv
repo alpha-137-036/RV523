@@ -40,7 +40,12 @@ module ID(
     output logic ex_store,
     output logic ex_jalr,
     output logic ex_jalx,
-    output logic ex_bxx
+    output logic ex_bxx,
+
+    output logic ex_instr_suppressed_tracing,
+
+    // Inputs from MEM stage for branch hazard
+    input  logic if_take_branch
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
@@ -135,7 +140,6 @@ module ID(
         .rs1(id_rs1),
         .rs2(id_rs2),
         .rd_idx(wb_rd_idx),
-        .write(wb_reg_write),
         .rd(wb_rd)
     );
 
@@ -152,11 +156,22 @@ module ID(
         ex_alu_op <= id_alu_op;
         ex_alu_A_PC_sel <= id_alu_A_PC_sel;
         ex_alu_B_imm_sel <= id_alu_B_imm_sel;
-        ex_load <= id_load;
-        ex_store <= id_store;
-        ex_jalr <= id_jalr;
-        ex_jalx <= id_jalx;
-        ex_bxx <= id_bxx;
+        // Branch hazard: if branch is taken now, the instruction handed over to EX stage can be harmful
+        // make it harmless by zeroizing all control lines
+        if (if_take_branch) begin
+            ex_load <= 0;
+            ex_store <= 0;
+            ex_jalr <= 0;
+            ex_jalx <= 0;
+            ex_bxx <= 0;
+        end else begin
+            ex_load <= id_load;
+            ex_store <= id_store;
+            ex_jalr <= id_jalr;
+            ex_jalx <= id_jalx;
+            ex_bxx <= id_bxx;
+        end
+        ex_instr_suppressed_tracing <= if_take_branch;
     end
     
     //

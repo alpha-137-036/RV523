@@ -13,7 +13,8 @@ module MEM(
     input logic       mem_jalx,
     input logic       mem_bxx,
     input logic[4:0]  mem_rd_idx,
-    input logic       mem_branch_target_from_alu,
+
+    input logic       mem_instr_suppressed_tracing,
     
     // Data memory bus
     output logic[31:0] d_addr,
@@ -70,6 +71,9 @@ module MEM(
         $display("    if_take_branch=%d", if_take_branch);
         if (if_take_branch) begin
             $display("        if_branch_target=%X", if_branch_target);
+        end
+        if (mem_instr_suppressed_tracing) begin
+            $display("        [MEM] <instr suppressed>");
         end
     end
 endmodule

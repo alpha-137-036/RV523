@@ -24,10 +24,12 @@ module CPU(
     logic [11:0] ex_alu_op;
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx;
+    logic ex_instr_suppressed_tracing;
     
     logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_branch_target, mem_npc;
     logic [4:0]  mem_rd_idx;
     logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx;
+    logic mem_instr_suppressed_tracing;
 
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata;
     logic [4:0]  wb_rd_idx;
@@ -70,9 +72,12 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
+        .ex_instr_suppressed_tracing(ex_instr_suppressed_tracing),
 
         .wb_rd_idx(wb_rd_idx),
-        .wb_rd(wb_rd)
+        .wb_rd(wb_rd),
+        
+        .if_take_branch(if_take_branch)
     );
     
     EX u_ex(
@@ -94,6 +99,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
+        .ex_instr_suppressed_tracing(ex_instr_suppressed_tracing),
         .mem_alu_out(mem_alu_out),
         .mem_wdata(mem_wdata),
         .mem_branch_target(mem_branch_target),
@@ -105,6 +111,8 @@ module CPU(
         .mem_bxx(mem_bxx),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
+        .mem_instr_suppressed_tracing(mem_instr_suppressed_tracing),
+        .if_take_branch(if_take_branch),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd)
     );
@@ -124,6 +132,7 @@ module CPU(
         .mem_bxx(mem_bxx),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
+        .mem_instr_suppressed_tracing(mem_instr_suppressed_tracing),
 
         .wb_load_store(wb_load_store),
         .wb_mem_rdata(wb_mem_rdata),
