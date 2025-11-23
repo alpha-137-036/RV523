@@ -28,8 +28,16 @@ module IF(
     logic [31:0]        if_pc;
     logic [31:0]        if_npc;    
     
-    always_comb begin 
-        if_npc = if_pc + 4;
+    always_comb begin
+        if (!rst_n) begin
+            if_npc = 0;
+        end else if (if_take_branch) begin
+            if_npc = if_branch_target;
+        end else if (id_stall) begin
+            if_npc = if_pc;
+        end else begin
+            if_npc = if_pc + 4;
+        end
     end
     
     // Fetch from ROM 
@@ -38,11 +46,7 @@ module IF(
 
     // flip-flops to ID stage
     always @(posedge clk) begin
-        if (!rst_n) begin
-            if_pc <= '0;
-        end else begin
-            if_pc <= if_take_branch ? if_branch_target : if_npc;
-        end
+        if_pc <= if_npc;
 
         if (!rst_n || !id_stall) begin
             if (!rst_n || if_take_branch) begin
