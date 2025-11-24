@@ -23,15 +23,14 @@ module WB(
     // Tracing
     //
     always @(posedge(clk)) begin
+        disassemble("WB", wb_trc_pc, wb_trc_instr, wb_trc_bubble);
+        if (wb_rd_idx != 0) begin
+            $display("[ WB]     x%0d <- %X", wb_rd_idx, wb_rd);
+        end
         // EBREAK stops the simulation
         if (wb_ebreak) begin
             $display("********* EBREAK");
             $stop;
-        end
-
-        disassemble("WB", wb_trc_pc, wb_trc_instr, wb_trc_bubble);
-        if (wb_rd_idx != 0) begin
-            $display("[ WB]     x%0d <- %X", wb_rd_idx, wb_rd);
         end
     end
     
