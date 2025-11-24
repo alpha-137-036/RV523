@@ -39,6 +39,7 @@ module ID(
     output logic ex_jalr,
     output logic ex_jalx,
     output logic ex_bxx,
+    output logic ex_ebreak,
 
     output logic ex_bubble_tracing,
 
@@ -56,7 +57,7 @@ module ID(
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
     logic [10:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
-    logic id_reg_write, id_load, id_store, id_jalr, id_jalx, id_bxx;
+    logic id_reg_write, id_load, id_store, id_jalr, id_jalx, id_bxx, id_ebreak;
 
     always @(*) begin
         logic [4:0] opcode;
@@ -71,7 +72,8 @@ module ID(
             id_imm = {id_instr[31:12],12'b0};
         `OPCODE_LOAD,
         `OPCODE_OP_IMM,
-        `OPCODE_JALR:
+        `OPCODE_JALR,
+        `OPCODE_SYSTEM:
             // I format
             id_imm = {{20{id_instr[31]}},id_instr[31:20]};
         `OPCODE_STORE:
@@ -155,6 +157,8 @@ module ID(
         id_jalr = opcode == `OPCODE_JALR;
         id_jalx = opcode == `OPCODE_JALR || opcode == `OPCODE_JAL;
         id_bxx  = opcode == `OPCODE_BRANCH;
+
+        id_ebreak = opcode == `OPCODE_SYSTEM && id_imm == 12'h001;
     end
     
     // 
@@ -197,6 +201,7 @@ module ID(
             ex_jalr <= 0;
             ex_jalx <= 0;
             ex_bxx <= 0;
+            ex_ebreak <= 0;
             // GOTCHA! ex_rd_idx is harmful as it can interfere with RAW hazard resolution
             ex_rd_idx <= 0;
         end else begin
@@ -206,6 +211,7 @@ module ID(
             ex_jalr <= id_jalr;
             ex_jalx <= id_jalx;
             ex_bxx <= id_bxx;
+            ex_ebreak <= id_ebreak;
             ex_rd_idx <= id_rd_idx;
         end
         ex_bubble_tracing <= if_take_branch || id_bubble_tracing || id_stall;

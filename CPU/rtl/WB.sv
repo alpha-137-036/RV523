@@ -6,6 +6,7 @@ module WB(
     input logic[31:0] wb_mem_rdata,
     input logic[31:0] wb_alu_npc_out,
     input logic[4:0]  wb_rd_idx,
+    input logic       wb_ebreak,
     input logic       wb_bubble_tracing,
     
     output logic[31:0] wb_rd    
@@ -19,6 +20,12 @@ module WB(
     // Tracing
     //
     always @(posedge(clk)) begin
+        // EBREAK stops the simulation
+        if (wb_ebreak) begin
+            $display("********* EBREAK");
+            $stop;
+        end
+
         $display("%.6f : [WB] x%0d <- %X", $realtime, wb_rd_idx, wb_rd);
         if (wb_bubble_tracing) begin
             $display("    [WB] <bubble>");

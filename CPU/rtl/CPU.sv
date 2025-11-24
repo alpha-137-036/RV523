@@ -24,17 +24,17 @@ module CPU(
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc;
     logic [10:0] ex_alu_op;
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
-    logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx;
+    logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx, ex_ebreak;
     logic ex_bubble_tracing;
     
     logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_branch_target, mem_npc;
     logic [4:0]  mem_rd_idx;
-    logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx;
+    logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx, mem_ebreak;
     logic mem_bubble_tracing;
 
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata;
     logic [4:0]  wb_rd_idx;
-    logic wb_load_store, wb_bubble_tracing;
+    logic wb_load_store, wb_ebreak, wb_bubble_tracing;
 
     IF u_if(
         .clk(clk),
@@ -76,6 +76,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
+        .ex_ebreak(ex_break),
         .ex_bubble_tracing(ex_bubble_tracing),
 
         .wb_rd_idx(wb_rd_idx),
@@ -104,6 +105,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
+        .ex_ebreak(ex_break),
         .ex_bubble_tracing(ex_bubble_tracing),
         .mem_alu_out(mem_alu_out),
         .mem_wdata(mem_wdata),
@@ -114,6 +116,7 @@ module CPU(
         .mem_jalr(mem_jalr),
         .mem_jalx(mem_jalx),
         .mem_bxx(mem_bxx),
+        .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
         .mem_bubble_tracing(mem_bubble_tracing),
@@ -135,11 +138,13 @@ module CPU(
         .mem_jalr(mem_jalr),
         .mem_jalx(mem_jalx),
         .mem_bxx(mem_bxx),
+        .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
         .mem_bubble_tracing(mem_bubble_tracing),
 
         .wb_load_store(wb_load_store),
+        .wb_ebreak(wb_ebreak),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
@@ -160,6 +165,7 @@ module CPU(
         .rst_n(rst_n),
         
         .wb_load_store(wb_load_store),
+        .wb_ebreak(wb_ebreak),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),

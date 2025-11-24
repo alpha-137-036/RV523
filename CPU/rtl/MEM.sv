@@ -12,6 +12,7 @@ module MEM(
     input logic       mem_jalr,
     input logic       mem_jalx,
     input logic       mem_bxx,
+    input logic       mem_ebreak,
     input logic[4:0]  mem_rd_idx,
 
     input logic       mem_bubble_tracing,
@@ -25,6 +26,7 @@ module MEM(
     
     // Output to WB stage
     output logic       wb_load_store,
+    output logic       wb_ebreak,
     output logic[31:0] wb_mem_rdata,
     output logic[31:0] wb_alu_npc_out,
     output logic[4:0]  wb_rd_idx,
@@ -53,6 +55,7 @@ module MEM(
     
     always @(posedge(clk)) begin
         wb_load_store <= mem_load || mem_store;
+        wb_ebreak <= mem_ebreak;
         wb_mem_rdata <= d_rdata;
         wb_alu_npc_out <= mem_alu_npc_out;
         wb_rd_idx <= mem_rd_idx;

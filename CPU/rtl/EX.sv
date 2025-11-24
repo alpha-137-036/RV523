@@ -23,6 +23,7 @@ module EX(
     input logic ex_jalr,
     input logic ex_jalx,
     input logic ex_bxx,
+    input logic ex_ebreak,
     input logic[10:0] ex_alu_op,
     input logic[31:0] ex_rs1,
     input logic[4:0]  ex_rs1_idx,
@@ -45,6 +46,7 @@ module EX(
     output logic mem_jalr,
     output logic mem_jalx,
     output logic mem_bxx,
+    output logic mem_ebreak,
     output logic mem_bubble_tracing,
 
     // Inputs from MEM stage, for hazard control
@@ -108,6 +110,7 @@ module EX(
             mem_jalr <= 0;
             mem_jalx <= 0;
             mem_bxx <= 0;
+            mem_ebreak <= 0;
             // GOTCHA! mem_rd_idx is harmful because it can interfere with the RAW resolution
             mem_rd_idx <= 0;
         end else begin
@@ -116,6 +119,7 @@ module EX(
             mem_jalr <= ex_jalr;
             mem_jalx <= ex_jalx;
             mem_bxx <= ex_bxx;
+            mem_ebreak <= ex_ebreak;
             mem_rd_idx <= ex_rd_idx;
         end
         mem_bubble_tracing <= if_take_branch || ex_bubble_tracing;
