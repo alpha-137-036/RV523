@@ -215,9 +215,8 @@ module ID(
     //
     always @(posedge clk) begin
         disassemble("ID", id_pc, id_instr, id_trc_bubble);
-        $display("[ ID]     id_imm=%X, id_rs1:x%0d=%X, id_rs2:x%0d=%X, id_rd=x%0d",
-            id_imm, 
-            id_rs1_idx, id_rs1, id_rs2_idx, id_rs2, id_rd_idx);
+        $display("[ ID]     rd=x%0d, rs1:x%0d=%X, rs2:x%0d=%X, imm=%X",
+            id_rd_idx, id_rs1_idx, id_rs1, id_rs2_idx, id_rs2, id_imm);
     end
 
 endmodule
