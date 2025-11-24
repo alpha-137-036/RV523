@@ -92,7 +92,7 @@ task automatic disassemble(
             3'd4: op = "blt";
             3'd5: op = "bge";
             3'd6: op = "bltu";
-            3'd6: op = "bgeu";
+            3'd7: op = "bgeu";
             default: op = "b??";
         endcase
         $swrite(disassembly, "%s x%0d, x%0d, 0x%0X", op, rs1_idx, rs2_idx, pc + imm);
