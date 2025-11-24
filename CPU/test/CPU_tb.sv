@@ -8,8 +8,15 @@ module code_rom(
 );
     logic [31:0] code[0:1023];
     
-    initial begin
-        $readmemh("code.hex", code);
+    initial begin    
+        string hexfilename;
+        if ($value$plusargs("CODEHEX=%s", hexfilename)) begin
+            $display("Loading code memory from %s", hexfilename);
+            $readmemh(hexfilename, code);
+        end else begin
+            $display("No CODEHEX plusarg provided");
+            $stop;
+        end
     end
     
     always_comb begin
