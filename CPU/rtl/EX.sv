@@ -33,7 +33,7 @@ module EX(
     input logic[31:0] ex_imm,
     input logic[31:0] ex_pc,
     input logic[31:0] ex_npc,
-    input logic       ex_bubble_tracing,
+    input logic       ex_trc_bubble,
     
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
@@ -47,7 +47,7 @@ module EX(
     output logic mem_jalx,
     output logic mem_bxx,
     output logic mem_ebreak,
-    output logic mem_bubble_tracing,
+    output logic mem_trc_bubble,
 
     // Inputs from MEM stage, for hazard control
     input  logic[31:0] mem_alu_npc_out,
@@ -122,7 +122,7 @@ module EX(
             mem_ebreak <= ex_ebreak;
             mem_rd_idx <= ex_rd_idx;
         end
-        mem_bubble_tracing <= if_take_branch || ex_bubble_tracing;
+        mem_trc_bubble <= if_take_branch || ex_trc_bubble;
     end
     
     
@@ -164,7 +164,7 @@ module EX(
             alu_A, A_origin,
             alu_B, B_origin,
             ex_alu_op, ex_alu_op_string, alu_Y);
-        if (ex_bubble_tracing) begin
+        if (ex_trc_bubble) begin
             $display("    [EX] <bubble>");
         end
     end

@@ -20,7 +20,7 @@ module ID(
     input logic [31:0] id_instr,
     input logic [31:0] id_pc,
     input logic [31:0] id_npc,
-    input logic        id_bubble_tracing,
+    input logic        id_trc_bubble,
     
     // Outputs to the EX stage
     output logic [10:0] ex_alu_op,
@@ -41,7 +41,7 @@ module ID(
     output logic ex_bxx,
     output logic ex_ebreak,
 
-    output logic ex_bubble_tracing,
+    output logic ex_trc_bubble,
 
     // Inputs from MEM stage for branch hazards
     input  logic if_take_branch,
@@ -157,7 +157,7 @@ module ID(
         id_jalr = opcode == `OPCODE_JALR;
         id_jalx = opcode == `OPCODE_JALR || opcode == `OPCODE_JAL;
         id_bxx  = opcode == `OPCODE_BRANCH;
-
+        
         id_ebreak = opcode == `OPCODE_SYSTEM && id_imm == 12'h001;
     end
     
@@ -214,7 +214,7 @@ module ID(
             ex_ebreak <= id_ebreak;
             ex_rd_idx <= id_rd_idx;
         end
-        ex_bubble_tracing <= if_take_branch || id_bubble_tracing || id_stall;
+        ex_trc_bubble <= if_take_branch || id_trc_bubble || id_stall;
     end
     
     //
@@ -226,7 +226,7 @@ module ID(
         $display("%.6f : [ID] id_pc=%X, id_npc=%X, id_instr=%X, id_imm=%X, id_rs1:x%0d=%X, id_rs2:x%0d=%X, id_rd=x%0d",
             $realtime, id_pc, id_npc, id_instr, id_imm, 
             id_rs1_idx, id_rs1, id_rs2_idx, id_rs2, id_rd_idx);
-        if (id_bubble_tracing) begin
+        if (id_trc_bubble) begin
             $display("    [ID] <bubble>");
         end else begin
             // Disassembly

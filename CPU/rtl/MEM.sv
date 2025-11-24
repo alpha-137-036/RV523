@@ -15,7 +15,7 @@ module MEM(
     input logic       mem_ebreak,
     input logic[4:0]  mem_rd_idx,
 
-    input logic       mem_bubble_tracing,
+    input logic       mem_trc_bubble,
     
     // Data memory bus
     output logic[31:0] d_addr,
@@ -30,7 +30,7 @@ module MEM(
     output logic[31:0] wb_mem_rdata,
     output logic[31:0] wb_alu_npc_out,
     output logic[4:0]  wb_rd_idx,
-    output logic       wb_bubble_tracing,
+    output logic       wb_trc_bubble,
     
     // Output to EX stage for hazard control
     output logic[31:0] mem_alu_npc_out,
@@ -59,7 +59,7 @@ module MEM(
         wb_mem_rdata <= d_rdata;
         wb_alu_npc_out <= mem_alu_npc_out;
         wb_rd_idx <= mem_rd_idx;
-        wb_bubble_tracing <= mem_bubble_tracing;
+        wb_trc_bubble <= mem_trc_bubble;
     end
     
     //
@@ -79,7 +79,7 @@ module MEM(
         if (if_take_branch) begin
             $display("        if_branch_target=%X", if_branch_target);
         end
-        if (mem_bubble_tracing) begin
+        if (mem_trc_bubble) begin
             $display("        [MEM] <bubble>");
         end
     end

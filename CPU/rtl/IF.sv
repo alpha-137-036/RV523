@@ -15,7 +15,7 @@ module IF(
     output logic [31:0] id_instr,
     output logic [31:0] id_pc,
     output logic [31:0] id_npc,
-    output logic        id_bubble_tracing,
+    output logic        id_trc_bubble,
 
     // input from ID stage
     input  logic        id_stall,
@@ -51,10 +51,10 @@ module IF(
         if (!rst_n || !id_stall) begin
             if (!rst_n || if_take_branch) begin
                 id_instr <= `INSTR_BUBBLE;
-                id_bubble_tracing <= 1;
+                id_trc_bubble <= 1;
             end else begin
                 id_instr <= if_instr;
-                id_bubble_tracing <= 0;
+                id_trc_bubble <= 0;
             end
             id_pc    <= if_pc;
             id_npc   <= if_npc;
