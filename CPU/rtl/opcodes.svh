@@ -1,0 +1,11 @@
+`define OPCODE_LOAD   5'b00000
+`define OPCODE_STORE  5'b01000
+`define OPCODE_BRANCH 5'b11000
+`define OPCODE_JALR   5'b11001
+`define OPCODE_JAL    5'b11011
+`define OPCODE_OP_IMM 5'b00100
+`define OPCODE_OP     5'b01100
+`define OPCODE_AUIPC  5'b00101
+`define OPCODE_LUI    5'b01101
+`define OPCODE_SYSTEM 5'b11100
+`define OPCODE_BUBBLE 5'bxx111

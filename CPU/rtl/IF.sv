@@ -15,14 +15,17 @@ module IF(
     output logic [31:0] id_instr,
     output logic [31:0] id_pc,
     output logic [31:0] id_npc,
-    output logic        id_trc_bubble,
 
     // input from ID stage
     input  logic        id_stall,
 
     // input from MEM stage
-    input logic [31:0]  if_branch_target,
-    input logic         if_take_branch
+    input  logic [31:0] if_branch_target,
+    input  logic        if_take_branch,
+    
+    // tracing
+    output logic        id_trc_bubble,
+    output logic [31:0] if_trc_instr
 );    
     logic [31:0]        if_instr;
     logic [31:0]        if_pc;
@@ -43,6 +46,7 @@ module IF(
     // Fetch from ROM 
     assign c_addr   = if_pc;
     assign if_instr = c_rdata;
+    assign if_trc_instr = if_instr;
 
     // flip-flops to ID stage
     always @(posedge clk) begin
@@ -63,9 +67,9 @@ module IF(
     
     // TRACING
     always @(posedge clk) begin
-        $display("%.6f : [IF] if_pc=%X, if_npc=%X, if_instr=%X", $realtime, if_pc, if_npc, if_instr);
+        disassemble("IF", if_pc, if_instr, 0);
         if (if_take_branch) begin
-            $display("    branch to %X", if_branch_target);
+            $display("[ IF]     branch to %X", if_branch_target);
         end
     end
 endmodule

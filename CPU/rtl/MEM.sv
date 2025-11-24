@@ -14,8 +14,6 @@ module MEM(
     input logic       mem_bxx,
     input logic       mem_ebreak,
     input logic[4:0]  mem_rd_idx,
-
-    input logic       mem_trc_bubble,
     
     // Data memory bus
     output logic[31:0] d_addr,
@@ -30,14 +28,20 @@ module MEM(
     output logic[31:0] wb_mem_rdata,
     output logic[31:0] wb_alu_npc_out,
     output logic[4:0]  wb_rd_idx,
-    output logic       wb_trc_bubble,
     
     // Output to EX stage for hazard control
     output logic[31:0] mem_alu_npc_out,
     
     // Output to IF stage
     output logic[31:0] if_branch_target,
-    output logic       if_take_branch
+    output logic       if_take_branch,
+
+    input  logic       mem_trc_bubble,
+    input  logic[31:0] mem_trc_pc,
+    input  logic[31:0] mem_trc_instr,
+    output logic       wb_trc_bubble,
+    output logic[31:0] wb_trc_pc,
+    output logic[31:0] wb_trc_instr
 );
     
     always @(*) begin
@@ -60,27 +64,23 @@ module MEM(
         wb_alu_npc_out <= mem_alu_npc_out;
         wb_rd_idx <= mem_rd_idx;
         wb_trc_bubble <= mem_trc_bubble;
+        wb_trc_pc <= mem_trc_pc;
+        wb_trc_instr <= mem_trc_instr;
     end
     
     //
     // TRACING
     // 
     always @(posedge(clk)) begin
-        $display("%.6f : [MEM] mem_npc=%X, mem_alu_npc_out:x%0d=%X",
-            $realtime, mem_npc,
-            mem_rd_idx, mem_alu_npc_out);
+        disassemble("MEM", mem_trc_pc, mem_trc_instr, mem_trc_bubble);
         if (mem_load) begin
-            $display("    load %X -> %X", d_addr, d_rdata); 
+            $display("[MEM] load %X -> %X", d_addr, d_rdata); 
         end
         if (mem_store) begin
-            $display("    store %X -> %X", d_wdata, d_addr);             
+            $display("[MEM] store %X -> %X", d_wdata, d_addr);             
         end
-        $display("    if_take_branch=%d", if_take_branch);
         if (if_take_branch) begin
-            $display("        if_branch_target=%X", if_branch_target);
-        end
-        if (mem_trc_bubble) begin
-            $display("        [MEM] <bubble>");
+            $display("[MEM] branch to %X", if_branch_target);
         end
     end
 endmodule

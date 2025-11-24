@@ -33,7 +33,6 @@ module EX(
     input logic[31:0] ex_imm,
     input logic[31:0] ex_pc,
     input logic[31:0] ex_npc,
-    input logic       ex_trc_bubble,
     
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
@@ -47,7 +46,6 @@ module EX(
     output logic mem_jalx,
     output logic mem_bxx,
     output logic mem_ebreak,
-    output logic mem_trc_bubble,
 
     // Inputs from MEM stage, for hazard control
     input  logic[31:0] mem_alu_npc_out,
@@ -55,8 +53,14 @@ module EX(
     
     // Inputs from the WB stage, for hazard control
     input  logic[4:0]  wb_rd_idx,
-    input  logic[31:0] wb_rd
+    input  logic[31:0] wb_rd,
     
+    input  logic       ex_trc_bubble,
+    input  logic[31:0] ex_trc_pc,
+    input  logic[31:0] ex_trc_instr,
+    output logic       mem_trc_bubble,
+    output logic[31:0] mem_trc_pc,
+    output logic[31:0] mem_trc_instr
 );
     logic rs1_fwd_from_mem, rs1_fwd_from_wb;
     logic rs2_fwd_from_mem, rs2_fwd_from_wb;
@@ -123,6 +127,8 @@ module EX(
             mem_rd_idx <= ex_rd_idx;
         end
         mem_trc_bubble <= if_take_branch || ex_trc_bubble;
+        mem_trc_instr <= ex_trc_instr;
+        mem_trc_pc <= ex_pc;
     end
     
     
@@ -134,6 +140,9 @@ module EX(
     always @(posedge clk) begin
         string ex_alu_op_string;
         string A_origin, B_origin;
+
+        disassemble("EX", ex_pc, ex_trc_instr, ex_trc_bubble);
+
         case (ex_alu_op)
         `ALU_OP_ADD: ex_alu_op_string = "ADD"; 
         `ALU_OP_SUB: ex_alu_op_string = "SUB"; 
@@ -159,14 +168,10 @@ module EX(
         else if (rs2_fwd_from_mem) B_origin = "mem";
         else if (rs2_fwd_from_wb) B_origin = "wb";
         else B_origin = "id";
-        $display("%.6f : [EX] ex_pc=%X, ex_npc=%X, A=%X(%s), B=%X(%s), ex_alu_op=%X(%s), Y=%X",
-            $realtime, ex_pc, ex_npc,
+        $display("[ EX]     A=%X(%s), B=%X(%s), ex_alu_op=%X(%s), Y=%X",
             alu_A, A_origin,
             alu_B, B_origin,
             ex_alu_op, ex_alu_op_string, alu_Y);
-        if (ex_trc_bubble) begin
-            $display("    [EX] <bubble>");
-        end
     end
 endmodule
 
