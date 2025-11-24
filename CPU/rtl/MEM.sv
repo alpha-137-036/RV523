@@ -74,13 +74,15 @@ module MEM(
     always @(posedge(clk)) begin
         disassemble("MEM", mem_trc_pc, mem_trc_instr, mem_trc_bubble);
         if (mem_load) begin
-            $display("[MEM] load %X -> %X", d_addr, d_rdata); 
+            $display("[MEM]     load %X -> %X", d_addr, d_rdata); 
         end
         if (mem_store) begin
-            $display("[MEM] store %X -> %X", d_wdata, d_addr);             
+            $display("[MEM]     store %X -> %X", d_wdata, d_addr);             
         end
         if (if_take_branch) begin
-            $display("[MEM] branch to %X", if_branch_target);
+            $display("[MEM]     branch to %X", if_branch_target);
+        end else if (mem_bxx) begin
+            $display("[MEM]     branch not taken");
         end
     end
 endmodule
