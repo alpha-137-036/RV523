@@ -48,10 +48,10 @@ class Indexer {
                     if (memStorePending) {
                         trace.events.add(trace.new MemUpdateEvent(
                                 memAddr,
-                                ram[memAddr - 0x2000_0000],
+                                ram[(memAddr - 0x2000_0000) / 4],
                                 memData
                         ));
-                        ram[memAddr - 0x2000_0000] = memData;
+                        ram[(memAddr - 0x2000_0000) / 4] = memData;
                         memStorePending = false;
                     }
                 } else if ((matcher = REG_UPDATE_PATTERN.matcher(line)).matches()) {

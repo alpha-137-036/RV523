@@ -28,7 +28,7 @@ public class TraceAccessor {
             case RegisterUpdateEvent r ->
                 this.x[r.regIdx] = forward ? r.newValue : r.oldValue;
             case MemUpdateEvent m ->
-                this.ram[m.addr - 0x20000000] = forward ? m.newValue : m.oldValue;
+                this.ram[(m.addr - 0x20000000) / 4] = forward ? m.newValue : m.oldValue;
         }
     }
 
