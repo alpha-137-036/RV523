@@ -2,11 +2,12 @@ module WB(
     input  logic clk,
     input  logic rst_n,
     
-    input  logic       wb_load_store,
+    input  logic       wb_load,
+    input  logic       wb_ebreak,
+    input  logic[2:0]  wb_size,
     input  logic[31:0] wb_mem_rdata,
     input  logic[31:0] wb_alu_npc_out,
     input  logic[4:0]  wb_rd_idx,
-    input  logic       wb_ebreak,
     
     output logic[31:0] wb_rd,
 
@@ -15,7 +16,23 @@ module WB(
     input  logic[31:0] wb_trc_instr
 );
     always @(*) begin
-        wb_rd = wb_load_store ? wb_mem_rdata : wb_alu_npc_out;
+        if (wb_load) begin
+           // Process the loaded data: zero or sign extend
+           case (wb_size)
+           3'b000: // lb
+                wb_rd = {{24{wb_mem_rdata[7]}},wb_mem_rdata[7:0]};
+           3'b100: // lbu
+                wb_rd = {24'b0,wb_mem_rdata[7:0]};
+           3'b001: // lh
+                wb_rd = {{16{wb_mem_rdata[15]}},wb_mem_rdata[15:0]};
+           3'b101: // lhu
+                wb_rd = {16'b0,wb_mem_rdata[15:0]};
+           3'bx00: // lw
+                wb_rd = wb_mem_rdata;
+           endcase
+        end else begin
+            wb_rd = wb_alu_npc_out;
+        end
     end
     
     

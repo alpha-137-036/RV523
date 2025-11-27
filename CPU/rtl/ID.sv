@@ -23,6 +23,7 @@ module ID(
     output logic        ex_alu_B_imm_sel,
     output logic        ex_load,
     output logic        ex_store,
+    output logic [2:0]  ex_size,
     output logic        ex_jalr,
     output logic        ex_jalx,
     output logic        ex_bxx,
@@ -45,6 +46,7 @@ module ID(
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
+    logic [2:0]  id_size;
     logic [10:0] id_alu_op;
     logic id_alu_A_PC_sel,  id_alu_B_imm_sel;
     logic id_reg_write, id_load, id_store, id_jalr, id_jalx, id_bxx, id_ebreak;
@@ -138,12 +140,15 @@ module ID(
             3'b110: id_alu_op = `ALU_OP_SLTU;
             3'b111: id_alu_op = `ALU_OP_SGEU;
             default: id_alu_op = 'X;
-            // TODO: bit 12 means "inverse the result"
             endcase
         endcase 
         id_load = opcode == `OPCODE_LOAD;
         id_store = opcode == `OPCODE_STORE;
-        
+        id_size = 'X;
+        if (id_load || id_store) begin
+            id_size = id_instr[14:12];
+        end
+
         id_jalr = opcode == `OPCODE_JALR;
         id_jalx = opcode == `OPCODE_JALR || opcode == `OPCODE_JAL;
         id_bxx  = opcode == `OPCODE_BRANCH;
@@ -204,6 +209,7 @@ module ID(
             ex_ebreak <= id_ebreak;
             ex_rd_idx <= id_rd_idx;
         end
+        ex_size <= id_size;
         ex_trc_bubble <= if_take_branch || id_trc_bubble || id_stall;
         ex_trc_instr <= id_instr;
     end

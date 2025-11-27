@@ -12,7 +12,8 @@ module CPU(
     output logic [31:0] d_wdata,
     input  logic [31:0] d_rdata,
     output logic        d_read,
-    output logic        d_write
+    output logic        d_write,
+    output logic [1:0]  d_size
 );
 
     logic [31:0] if_branch_target, if_trc_instr;
@@ -24,17 +25,20 @@ module CPU(
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc, ex_trc_instr;
     logic [10:0] ex_alu_op;
     logic [4:0]  ex_rs1_idx, ex_rs2_idx, ex_rd_idx;
+    logic [2:0]  ex_size;
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx, ex_ebreak;
     logic ex_trc_bubble;
     
     logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_branch_target, mem_npc, mem_trc_pc, mem_trc_instr;
     logic [4:0]  mem_rd_idx;
+    logic [2:0]  mem_size;
     logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx, mem_ebreak;
     logic mem_trc_bubble;
 
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata, wb_trc_pc, wb_trc_instr;
+    logic [2:0]  wb_size;
     logic [4:0]  wb_rd_idx;
-    logic wb_load_store, wb_ebreak, wb_trc_bubble;
+    logic wb_load, wb_ebreak, wb_trc_bubble;
 
     IF u_if(
         .clk(clk),
@@ -74,6 +78,7 @@ module CPU(
         .ex_alu_B_imm_sel(ex_alu_B_imm_sel),
         .ex_load(ex_load),
         .ex_store(ex_store),
+        .ex_size(ex_size),
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
@@ -106,6 +111,7 @@ module CPU(
         .ex_npc(ex_npc),
         .ex_load(ex_load),
         .ex_store(ex_store),
+        .ex_size(ex_size),
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
@@ -116,6 +122,7 @@ module CPU(
         .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
+        .mem_size(mem_size),
         .mem_jalr(mem_jalr),
         .mem_jalx(mem_jalx),
         .mem_bxx(mem_bxx),
@@ -143,6 +150,7 @@ module CPU(
         .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
+        .mem_size(mem_size),
         .mem_jalr(mem_jalr),
         .mem_jalx(mem_jalx),
         .mem_bxx(mem_bxx),
@@ -150,7 +158,8 @@ module CPU(
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
 
-        .wb_load_store(wb_load_store),
+        .wb_load(wb_load),
+        .wb_size(wb_size),
         .wb_ebreak(wb_ebreak),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
@@ -162,6 +171,7 @@ module CPU(
         .d_addr(d_addr),
         .d_read(d_read),
         .d_write(d_write),
+        .d_size(d_size),
         .d_rdata(d_rdata),
         .d_wdata(d_wdata),
 
@@ -177,7 +187,8 @@ module CPU(
         .clk(clk),
         .rst_n(rst_n),
         
-        .wb_load_store(wb_load_store),
+        .wb_load(wb_load),
+        .wb_size(wb_size),
         .wb_ebreak(wb_ebreak),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),

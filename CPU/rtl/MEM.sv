@@ -1,19 +1,20 @@
 module MEM(
-    input logic clk,
-    input logic rst_n,
+    input  logic clk,
+    input  logic rst_n,
     
     // Inputs from EX stage
-    input logic[31:0] mem_alu_out,
-    input logic[31:0] mem_wdata,
-    input logic[31:0] mem_branch_target,
-    input logic[31:0] mem_npc,
-    input logic       mem_load,
-    input logic       mem_store,
-    input logic       mem_jalr,
-    input logic       mem_jalx,
-    input logic       mem_bxx,
-    input logic       mem_ebreak,
-    input logic[4:0]  mem_rd_idx,
+    input  logic[31:0] mem_alu_out,
+    input  logic[31:0] mem_wdata,
+    input  logic[31:0] mem_branch_target,
+    input  logic[31:0] mem_npc,
+    input  logic       mem_load,
+    input  logic       mem_store,
+    input  logic[2:0]  mem_size,
+    input  logic       mem_jalr,
+    input  logic       mem_jalx,
+    input  logic       mem_bxx,
+    input  logic       mem_ebreak,
+    input  logic[4:0]  mem_rd_idx,
     
     // Data memory bus
     output logic[31:0] d_addr,
@@ -21,9 +22,11 @@ module MEM(
     input  logic[31:0] d_rdata,
     output logic       d_read,
     output logic       d_write,
-    
+    output logic[1:0]  d_size,
+
     // Output to WB stage
-    output logic       wb_load_store,
+    output logic       wb_load,
+    output logic[2:0]  wb_size,
     output logic       wb_ebreak,
     output logic[31:0] wb_mem_rdata,
     output logic[31:0] wb_alu_npc_out,
@@ -50,7 +53,8 @@ module MEM(
         d_write = mem_store;
         
         d_wdata = mem_wdata;
-        
+        d_size  = mem_size[1:0];
+
         mem_alu_npc_out = mem_jalx ? mem_npc : mem_alu_out;
         
         if_branch_target = mem_jalr ? mem_alu_out : mem_branch_target;
@@ -58,14 +62,15 @@ module MEM(
     end
     
     always @(posedge(clk)) begin
-        wb_load_store <= mem_load || mem_store;
-        wb_ebreak <= mem_ebreak;
-        wb_mem_rdata <= d_rdata;
-        wb_alu_npc_out <= mem_alu_npc_out;
-        wb_rd_idx <= mem_rd_idx;
-        wb_trc_bubble <= mem_trc_bubble;
-        wb_trc_pc <= mem_trc_pc;
-        wb_trc_instr <= mem_trc_instr;
+        wb_load         <= mem_load;
+        wb_size         <= mem_size;
+        wb_ebreak       <= mem_ebreak;
+        wb_mem_rdata    <= d_rdata;
+        wb_alu_npc_out  <= mem_alu_npc_out;
+        wb_rd_idx       <= mem_rd_idx;
+        wb_trc_bubble   <= mem_trc_bubble;
+        wb_trc_pc       <= mem_trc_pc;
+        wb_trc_instr    <= mem_trc_instr;
     end
     
     //
@@ -77,7 +82,11 @@ module MEM(
             $display("[MEM]     load %X -> %X", d_addr, d_rdata); 
         end
         if (mem_store) begin
-            $display("[MEM]     store %X -> %X", d_wdata, d_addr);             
+            case (mem_size[1:0])
+                2'b10: $display("[MEM]     store %X -> %X", d_wdata      , d_addr);
+                2'b01: $display("[MEM]     store %X -> %X", d_wdata[15:0], d_addr);
+                2'b00: $display("[MEM]     store %X -> %X", d_wdata [7:0], d_addr);
+            endcase
         end
         if (if_take_branch) begin
             $display("[MEM]     branch to %X", if_branch_target);

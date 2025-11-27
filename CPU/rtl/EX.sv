@@ -12,27 +12,28 @@ endmodule
 
 
 module EX(
-    input logic clk,
-    input logic rst_n,
+    input  logic clk,
+    input  logic rst_n,
 
     // Inputs from ID stage
-    input logic ex_alu_A_PC_sel,
-    input logic ex_alu_B_imm_sel,
-    input logic ex_load,
-    input logic ex_store,
-    input logic ex_jalr,
-    input logic ex_jalx,
-    input logic ex_bxx,
-    input logic ex_ebreak,
-    input logic[10:0] ex_alu_op,
-    input logic[31:0] ex_rs1,
-    input logic[4:0]  ex_rs1_idx,
-    input logic[31:0] ex_rs2,
-    input logic[4:0]  ex_rs2_idx,
-    input logic[4:0]  ex_rd_idx,
-    input logic[31:0] ex_imm,
-    input logic[31:0] ex_pc,
-    input logic[31:0] ex_npc,
+    input  logic       ex_alu_A_PC_sel,
+    input  logic       ex_alu_B_imm_sel,
+    input  logic       ex_load,
+    input  logic       ex_store,
+    input  logic[2:0]  ex_size,
+    input  logic       ex_jalr,
+    input  logic       ex_jalx,
+    input  logic       ex_bxx,
+    input  logic       ex_ebreak,
+    input  logic[10:0] ex_alu_op,
+    input  logic[31:0] ex_rs1,
+    input  logic[4:0]  ex_rs1_idx,
+    input  logic[31:0] ex_rs2,
+    input  logic[4:0]  ex_rs2_idx,
+    input  logic[4:0]  ex_rd_idx,
+    input  logic[31:0] ex_imm,
+    input  logic[31:0] ex_pc,
+    input  logic[31:0] ex_npc,
     
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
@@ -40,12 +41,13 @@ module EX(
     output logic[31:0] mem_wdata,
     output logic[31:0] mem_branch_target,
     output logic[31:0] mem_npc,
-    output logic mem_load,
-    output logic mem_store,
-    output logic mem_jalr,
-    output logic mem_jalx,
-    output logic mem_bxx,
-    output logic mem_ebreak,
+    output logic       mem_load,
+    output logic       mem_store,
+    output logic[2:0]  mem_size,
+    output logic       mem_jalr,
+    output logic       mem_jalx,
+    output logic       mem_bxx,
+    output logic       mem_ebreak,
 
     // Inputs from MEM stage, for hazard control
     input  logic[31:0] mem_alu_npc_out,
@@ -126,6 +128,8 @@ module EX(
             mem_ebreak <= ex_ebreak;
             mem_rd_idx <= ex_rd_idx;
         end
+        mem_size <= ex_size;
+
         mem_trc_bubble <= if_take_branch || ex_trc_bubble;
         mem_trc_instr <= ex_trc_instr;
         mem_trc_pc <= ex_pc;
