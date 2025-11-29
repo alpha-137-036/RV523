@@ -15,11 +15,16 @@ typedef struct {
 
 #define OUT ((OUT_t*)0x40000000)
 
+void printString(const char* s) {
+    while (1) {
+        char c = *s;
+        if (c == 0) break;
+        OUT->out = c;
+        s++;
+    }
+}
+
 int main(void) {
-    OUT->out = 'H';
-    OUT->out = 'e';
-    OUT->out = 'l';
-    OUT->out = 'l';
-    OUT->out = 'o';
+    printString("Hello world");
 }   
     //return fib(7);

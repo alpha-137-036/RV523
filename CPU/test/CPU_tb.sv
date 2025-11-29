@@ -29,7 +29,7 @@ endmodule
 module ram(
     input  logic        clk,
     input  logic [`RAM_ADDR_BITS-1:2] d_addr,
-    output logic [31:0] d_rdata,
+    output tri   [31:0] d_rdata,
     input  logic [31:0] d_wdata,
     input  logic        d_sel,
     input  logic        d_write,
@@ -44,11 +44,8 @@ module ram(
         end
     end
     
-    always @(*) begin
-        if (d_sel && !d_write) begin
-            d_rdata = data[d_addr];
-        end
-    end
+    assign d_rdata = d_sel && !d_write ? data[d_addr] : 'z;
+
     always @(posedge clk) begin
         if (d_sel && d_write) begin
             logic [31:0] mask;
@@ -68,10 +65,36 @@ module ram(
     end
 endmodule
 
+
+`define RODATA_ADDR_BITS 16 // 64KB of RODATA
+module rodata(
+    input  logic        clk,
+    input  logic [`RODATA_ADDR_BITS-1:2] addr,
+    output tri [31:0] rdata,
+    input  logic        sel,
+    input  logic        write
+);
+    logic [31:0] rodata[0:1 << (`RODATA_ADDR_BITS-2)];
+
+    initial begin
+        string hexfilename;
+        if ($value$plusargs("RODATAHEX=%s", hexfilename)) begin
+            $display("Loading rodata memory from %s", hexfilename);
+            $readmemh(hexfilename, rodata);
+        end else begin
+            $display("No RODATAHEX plusarg provided");
+            $stop;
+        end
+    end
+
+    assign rdata = sel && !write ? rodata[addr] : 'z;
+endmodule
+
+
 module out(
     input  logic        clk,
     input  logic [11:2] addr,
-    output logic [31:0] rdata,
+    output tri   [31:0] rdata,
     input  logic [31:0] wdata,
     input  logic        sel,
     input  logic        write,
@@ -177,4 +200,14 @@ module CPU_tb();
         .d_rdata(d_rdata),
         .d_wdata(d_wdata)
     );
+
+    assign rodata_sel = d_sel && d_addr[31:20] == 12'h100;
+    rodata u_rodata(
+        .clk(clk),
+        .addr(d_addr[`RODATA_ADDR_BITS-1:2]),
+        .sel(rodata_sel),
+        .write(d_write),
+        .rdata(d_rdata)
+    );
+
 endmodule

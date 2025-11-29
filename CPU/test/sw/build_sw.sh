@@ -9,7 +9,9 @@ $GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -march=rv32i -c test_fibonac
 
 $GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -march=rv32i -nostdlib -T bare_metal.ld build/crt0.o build/test_fibonacci.o -o build/test_fibonacci.elf
 
-$GCC_HOME/bin/riscv32-unknown-elf-objdump -d build/test_fibonacci.elf > build/test_fibonacci.elf.txt
+$GCC_HOME/bin/riscv32-unknown-elf-objdump -d -s build/test_fibonacci.elf > build/test_fibonacci.elf.txt
 
 $GCC_HOME/bin/riscv32-unknown-elf-objcopy -O binary --only-section=.text --reverse-bytes=4 build/test_fibonacci.elf build/test_fibonacci.bin
 xxd -p -c 4 build/test_fibonacci.bin > build/test_fibonacci.hex
+$GCC_HOME/bin/riscv32-unknown-elf-objcopy -O binary --only-section=.rodata --reverse-bytes=4 build/test_fibonacci.elf build/test_fibonacci-rodata.bin
+xxd -p -c 4 build/test_fibonacci-rodata.bin > build/test_fibonacci-rodata.hex
