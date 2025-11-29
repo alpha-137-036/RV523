@@ -11,7 +11,7 @@ module CPU(
     output logic [31:2] d_addr,
     output logic [31:0] d_wdata,
     input  logic [31:0] d_rdata,
-    output logic        d_read,
+    output logic        d_sel,
     output logic        d_write,
     output logic [3:0]  d_byte_sel
 );
@@ -171,7 +171,7 @@ module CPU(
         .if_branch_target(if_branch_target),
 
         .d_addr(d_addr),
-        .d_read(d_read),
+        .d_sel(d_sel),
         .d_write(d_write),
         .d_byte_sel(d_byte_sel),
         .d_rdata(d_rdata),

@@ -24,43 +24,45 @@ module code_rom(
     end
 endmodule
 
+`define RAM_ADDR_BITS 16 // 64KB of RAM
+
 module ram(
     input  logic        clk,
-    input  logic [31:2] d_addr,
+    input  logic [`RAM_ADDR_BITS-1:2] d_addr,
     output logic [31:0] d_rdata,
     input  logic [31:0] d_wdata,
-    input  logic        d_read,
+    input  logic        d_sel,
     input  logic        d_write,
     input  logic [3:0]  d_byte_sel
 );
-    logic [31:0] data[0:1023];
+    logic [31:0] data[0:1 << (`RAM_ADDR_BITS-2)];
     
     initial begin
         integer i;
-        for (i = 0; i < 1024; i++) begin
+        for (i = 0; i < (1 << (`RAM_ADDR_BITS-2)); i++) begin
             data[i] = 0;
         end
     end
     
     always @(*) begin
-        if (d_read) begin
-            d_rdata = data[d_addr[11:2]];
+        if (d_sel && !d_write) begin
+            d_rdata = data[d_addr];
         end
     end
     always @(posedge clk) begin
-        if (d_write) begin
+        if (d_sel && d_write) begin
             logic [31:0] mask;
             if (d_byte_sel[3]) begin
-                data[d_addr[11:2]][31:24] <= d_wdata[31:24];
+                data[d_addr][31:24] <= d_wdata[31:24];
             end
             if (d_byte_sel[2]) begin
-                data[d_addr[11:2]][23:16] <= d_wdata[23:16];
+                data[d_addr][23:16] <= d_wdata[23:16];
             end
             if (d_byte_sel[1]) begin
-                data[d_addr[11:2]][15:8] <= d_wdata[15:8];
+                data[d_addr][15:8] <= d_wdata[15:8];
             end
             if (d_byte_sel[0]) begin
-                data[d_addr[11:2]][7:0] <= d_wdata[7:0];
+                data[d_addr][7:0] <= d_wdata[7:0];
             end
         end
     end
@@ -73,9 +75,9 @@ module CPU_tb();
     logic [31:0] c_addr;
     logic [31:0] c_rdata;
     logic [31:2] d_addr;
-    logic [31:0] d_rdata;
+    tri   [31:0] d_rdata;
     logic [31:0] d_wdata;
-    logic        d_read;
+    logic        d_sel;
     logic        d_write;
     logic [3:0]  d_byte_sel;
 
@@ -118,7 +120,7 @@ module CPU_tb();
         .c_addr(c_addr),
         .c_rdata(c_rdata),
         .d_addr(d_addr),
-        .d_read(d_read),
+        .d_sel(d_sel),
         .d_byte_sel(d_byte_sel),
         .d_write(d_write),
         .d_rdata(d_rdata),
@@ -130,12 +132,14 @@ module CPU_tb();
         .rdata(c_rdata)
     );
     
+
+
     ram u_ram(
         .clk(clk),
-        .d_addr(d_addr),
-        .d_read(d_read),
-        .d_byte_sel(d_byte_sel),
+        .d_addr(d_addr[`RAM_ADDR_BITS-1:2]),
+        .d_sel(d_sel),
         .d_write(d_write),
+        .d_byte_sel(d_byte_sel),
         .d_rdata(d_rdata),
         .d_wdata(d_wdata)
     );

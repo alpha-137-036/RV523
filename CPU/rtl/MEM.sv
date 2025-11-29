@@ -20,7 +20,7 @@ module MEM(
     output logic[31:2] d_addr,
     output logic[31:0] d_wdata,
     input  logic[31:0] d_rdata,
-    output logic       d_read,
+    output logic       d_sel,
     output logic       d_write,
     output logic[3:0]  d_byte_sel,
 
@@ -51,7 +51,7 @@ module MEM(
     always @(*) begin
         mem_addr = mem_alu_out;
         d_addr = mem_addr[31:2];
-        d_read = mem_load;
+        d_sel = mem_load || mem_store;
         d_write = mem_store;
         
         casex ({mem_size[1:0],mem_addr[1:0]})
@@ -121,13 +121,13 @@ module MEM(
     always @(posedge(clk)) begin
         disassemble("MEM", mem_trc_pc, mem_trc_instr, mem_trc_bubble);
         if (mem_load) begin
-            $display("[MEM]     load %X -> %X", d_addr, d_rdata); 
+            $display("[MEM]     load %X -> %X", mem_addr, d_rdata);
         end
         if (mem_store) begin
             case (mem_size[1:0])
-                2'b10: $display("[MEM]     store %X -> %X", d_wdata      , d_addr);
-                2'b01: $display("[MEM]     store %X -> %X", d_wdata[15:0], d_addr);
-                2'b00: $display("[MEM]     store %X -> %X", d_wdata [7:0], d_addr);
+                2'b10: $display("[MEM]     store %X -> %X", mem_wdata      , mem_addr);
+                2'b01: $display("[MEM]     store %X -> %X", mem_wdata[15:0], mem_addr);
+                2'b00: $display("[MEM]     store %X -> %X", mem_wdata [7:0], mem_addr);
             endcase
         end
         if (if_take_branch) begin
