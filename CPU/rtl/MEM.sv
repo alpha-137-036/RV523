@@ -17,17 +17,18 @@ module MEM(
     input  logic[4:0]  mem_rd_idx,
     
     // Data memory bus
-    output logic[31:0] d_addr,
+    output logic[31:2] d_addr,
     output logic[31:0] d_wdata,
     input  logic[31:0] d_rdata,
     output logic       d_read,
     output logic       d_write,
-    output logic[1:0]  d_size,
+    output logic[3:0]  d_byte_sel,
 
     // Output to WB stage
-    output logic       wb_load,
-    output logic[2:0]  wb_size,
     output logic       wb_ebreak,
+    output logic       wb_load,
+    output logic[1:0]  wb_addr,
+    output logic[2:0]  wb_size,
     output logic[31:0] wb_mem_rdata,
     output logic[31:0] wb_alu_npc_out,
     output logic[4:0]  wb_rd_idx,
@@ -46,14 +47,54 @@ module MEM(
     output logic[31:0] wb_trc_pc,
     output logic[31:0] wb_trc_instr
 );
-    
+    logic [31:0] mem_addr;
     always @(*) begin
-        d_addr = mem_alu_out;
+        mem_addr = mem_alu_out;
+        d_addr = mem_addr[31:2];
         d_read = mem_load;
         d_write = mem_store;
         
-        d_wdata = mem_wdata;
-        d_size  = mem_size[1:0];
+        casex ({mem_size[1:0],mem_addr[1:0]})
+        4'b10xx: begin
+            // word access
+            d_byte_sel = 4'b1111;
+            d_wdata = mem_wdata;
+        end
+        4'b010x: begin
+            // low half-word access
+            d_byte_sel = 4'b0011;
+            d_wdata = {16'bx, mem_wdata[15:0]};
+        end
+        4'b011x: begin
+            // high half-word access
+            d_byte_sel = 4'b1100;
+            d_wdata = {mem_wdata[15:0], 16'bx};
+        end
+        4'b0000: begin
+            // byte 0
+            d_byte_sel = 4'b0001;
+            d_wdata = {24'bx, mem_wdata[7:0]};
+        end
+        4'b0001: begin
+            // byte 1
+            d_byte_sel = 4'b0010;
+            d_wdata = {16'bx, mem_wdata[7:0],8'bx};
+        end
+        4'b0010: begin
+            // byte 2
+            d_byte_sel = 4'b0100;
+            d_wdata = {8'bx, mem_wdata[7:0],16'bx};
+        end
+        4'b0011: begin
+            // byte 3
+            d_byte_sel = 4'b1000;
+            d_wdata = {mem_wdata[7:0],24'bx};
+        end
+        default: begin
+            d_byte_sel = 4'bxxxx;
+            d_wdata = 32'bx;
+        end
+        endcase
 
         mem_alu_npc_out = mem_jalx ? mem_npc : mem_alu_out;
         
@@ -62,9 +103,10 @@ module MEM(
     end
     
     always @(posedge(clk)) begin
-        wb_load         <= mem_load;
-        wb_size         <= mem_size;
         wb_ebreak       <= mem_ebreak;
+        wb_load         <= mem_load;
+        wb_addr         <= mem_addr[1:0];
+        wb_size         <= mem_size;
         wb_mem_rdata    <= d_rdata;
         wb_alu_npc_out  <= mem_alu_npc_out;
         wb_rd_idx       <= mem_rd_idx;

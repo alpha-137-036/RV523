@@ -8,12 +8,12 @@ module CPU(
     input  logic [31:0] c_rdata,
 
     // DATA interface
-    output logic [31:0] d_addr,
+    output logic [31:2] d_addr,
     output logic [31:0] d_wdata,
     input  logic [31:0] d_rdata,
     output logic        d_read,
     output logic        d_write,
-    output logic [1:0]  d_size
+    output logic [3:0]  d_byte_sel
 );
 
     logic [31:0] if_branch_target, if_trc_instr;
@@ -38,6 +38,7 @@ module CPU(
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata, wb_trc_pc, wb_trc_instr;
     logic [2:0]  wb_size;
     logic [4:0]  wb_rd_idx;
+    logic [1:0]  wb_addr;
     logic wb_load, wb_ebreak, wb_trc_bubble;
 
     IF u_if(
@@ -160,6 +161,7 @@ module CPU(
 
         .wb_load(wb_load),
         .wb_size(wb_size),
+        .wb_addr(wb_addr),
         .wb_ebreak(wb_ebreak),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
@@ -171,7 +173,7 @@ module CPU(
         .d_addr(d_addr),
         .d_read(d_read),
         .d_write(d_write),
-        .d_size(d_size),
+        .d_byte_sel(d_byte_sel),
         .d_rdata(d_rdata),
         .d_wdata(d_wdata),
 
@@ -187,9 +189,10 @@ module CPU(
         .clk(clk),
         .rst_n(rst_n),
         
-        .wb_load(wb_load),
-        .wb_size(wb_size),
         .wb_ebreak(wb_ebreak),
+        .wb_load(wb_load),
+        .wb_addr(wb_addr),
+        .wb_size(wb_size),
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),

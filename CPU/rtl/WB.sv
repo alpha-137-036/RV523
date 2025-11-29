@@ -1,9 +1,10 @@
 module WB(
     input  logic clk,
     input  logic rst_n,
-    
-    input  logic       wb_load,
+
     input  logic       wb_ebreak,
+    input  logic       wb_load,
+    input  logic[1:0]  wb_addr,
     input  logic[2:0]  wb_size,
     input  logic[31:0] wb_mem_rdata,
     input  logic[31:0] wb_alu_npc_out,
@@ -17,18 +18,34 @@ module WB(
 );
     always @(*) begin
         if (wb_load) begin
-           // Process the loaded data: zero or sign extend
-           case (wb_size)
-           3'b000: // lb
-                wb_rd = {{24{wb_mem_rdata[7]}},wb_mem_rdata[7:0]};
-           3'b100: // lbu
-                wb_rd = {24'b0,wb_mem_rdata[7:0]};
-           3'b001: // lh
-                wb_rd = {{16{wb_mem_rdata[15]}},wb_mem_rdata[15:0]};
-           3'b101: // lhu
-                wb_rd = {16'b0,wb_mem_rdata[15:0]};
-           3'bx00: // lw
+           // Process the loaded data: select bytes, zero or sign extend result
+           casex ({wb_size,wb_addr})
+           5'bx10xx: // lw
                 wb_rd = wb_mem_rdata;
+           5'b0010x: // lh, low half-word
+                wb_rd = {{16{wb_mem_rdata[15]}},wb_mem_rdata[15:0]};
+           5'b0011x: // lh, high half-word
+                wb_rd = {{16{wb_mem_rdata[31]}},wb_mem_rdata[31:16]};
+           5'b1010x: // lhu, low half-word
+                wb_rd = {16'b0,wb_mem_rdata[15:0]};
+           5'b1011x: // lhu, high half-word
+                wb_rd = {16'b0,wb_mem_rdata[31:16]};
+           5'b00000: // lb, byte 0
+                wb_rd = {{24{wb_mem_rdata[7]}},wb_mem_rdata[7:0]};
+           5'b00001: // lb, byte 1
+                wb_rd = {{24{wb_mem_rdata[15]}},wb_mem_rdata[15:8]};
+           5'b00010: // lb, byte 2
+                wb_rd = {{24{wb_mem_rdata[23]}},wb_mem_rdata[23:16]};
+           5'b00011: // lb, byte 3
+                wb_rd = {{24{wb_mem_rdata[31]}},wb_mem_rdata[31:24]};
+           5'b10000: // lbu, byte 0
+                wb_rd = {24'b0,wb_mem_rdata[7:0]};
+           5'b10001: // lbu, byte 1
+                wb_rd = {24'b0,wb_mem_rdata[15:8]};
+           5'b10010: // lbu, byte 2
+                wb_rd = {24'b0,wb_mem_rdata[23:16]};
+           5'b10011: // lbu, byte 3
+                wb_rd = {24'b0,wb_mem_rdata[31:24]};
            endcase
         end else begin
             wb_rd = wb_alu_npc_out;
