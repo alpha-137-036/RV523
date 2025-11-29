@@ -68,6 +68,25 @@ module ram(
     end
 endmodule
 
+module out(
+    input  logic        clk,
+    input  logic [11:2] addr,
+    output logic [31:0] rdata,
+    input  logic [31:0] wdata,
+    input  logic        sel,
+    input  logic        write,
+    input  logic [3:0]  byte_sel
+);
+
+    always @(posedge(clk)) begin
+        if (sel && {addr,2'b00} == 12'h000 && byte_sel[0]) begin
+            // Write to output byte
+            $display("[OUT] %X(%c)", wdata[7:0], wdata[7:0]);
+        end
+    end    
+
+endmodule
+
 module CPU_tb();
 
     logic clk;
@@ -80,6 +99,9 @@ module CPU_tb();
     logic        d_sel;
     logic        d_write;
     logic [3:0]  d_byte_sel;
+
+    logic        ram_sel;
+    logic        out_sel;
 
     initial begin
         clk = 1;
@@ -132,12 +154,24 @@ module CPU_tb();
         .rdata(c_rdata)
     );
     
+    assign out_sel = d_sel && d_addr[31:12] == 20'h40000; 
+    
+    out u_out(
+        .clk(clk),
+        .addr(d_addr[11:2]),
+        .sel(out_sel),
+        .write(d_write),
+        .byte_sel(d_byte_sel),
+        .rdata(d_rdata),
+        .wdata(d_wdata)        
+    );
 
+    assign ram_sel = d_sel && d_addr[31:20] == 12'h200; 
 
     ram u_ram(
         .clk(clk),
         .d_addr(d_addr[`RAM_ADDR_BITS-1:2]),
-        .d_sel(d_sel),
+        .d_sel(ram_sel),
         .d_write(d_write),
         .d_byte_sel(d_byte_sel),
         .d_rdata(d_rdata),
