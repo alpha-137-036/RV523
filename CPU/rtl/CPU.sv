@@ -41,6 +41,13 @@ module CPU(
     logic [1:0]  wb_addr;
     logic wb_load, wb_ebreak, wb_trc_bubble;
 
+    logic [31:0] trc_cycle_count, trc_instr_count;
+
+    initial begin
+        trc_cycle_count = 0;
+        trc_instr_count = 0;
+    end
+
     IF u_if(
         .clk(clk),
         .rst_n(rst_n),
@@ -204,7 +211,11 @@ module CPU(
 
 
     always @(posedge(clk)) begin
-        $strobe("------- %.6f", $realtime);
+        trc_cycle_count++;
+        if (rst_n && !wb_trc_bubble) begin
+            trc_instr_count++;
+        end
+        $strobe("------- %.6f: cycle %0d, instr %0d", $realtime, trc_cycle_count, trc_instr_count);
     end
 
 endmodule
