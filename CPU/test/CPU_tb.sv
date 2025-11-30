@@ -1,12 +1,14 @@
 
 `timescale 1ns/1ns
 
+`define CODE_ADDR_BITS 16 // 64KB of CODE
+
 module code_rom(
     input logic [31:2] addr,
     
     output logic [31:0] rdata
 );
-    logic [31:0] code[0:1023];
+    logic [31:0] code[0:(1 << (`CODE_ADDR_BITS-2))-1];
     
     initial begin    
         string hexfilename;
@@ -19,7 +21,7 @@ module code_rom(
         end
     end
     
-    always_comb begin
+    always @(*) begin
         rdata = code[addr];
     end
 endmodule
@@ -35,7 +37,7 @@ module ram(
     input  logic        d_write,
     input  logic [3:0]  d_byte_sel
 );
-    logic [31:0] data[0:1 << (`RAM_ADDR_BITS-2)];
+    logic [31:0] data[0:(1 << (`RAM_ADDR_BITS-2))-1];
     
     initial begin
         integer i;
@@ -74,7 +76,7 @@ module rodata(
     input  logic        sel,
     input  logic        write
 );
-    logic [31:0] rodata[0:1 << (`RODATA_ADDR_BITS-2)];
+    logic [31:0] rodata[0:(1 << (`RODATA_ADDR_BITS-2))-1];
 
     initial begin
         string hexfilename;
