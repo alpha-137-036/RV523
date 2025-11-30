@@ -160,7 +160,7 @@ module CPU_tb();
     end
     
     always @(posedge clk) begin
-        if ($time >= 3000000) begin
+        if ($time >= 10000000) begin
             $display("***** TIMEOUT");
             $stop;
         end

@@ -1,5 +1,7 @@
 .org 0x00000000
 
+.section .boot_text
+
 _start:
 .global _start
     li sp, 0x20000400

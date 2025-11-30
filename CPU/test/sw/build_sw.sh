@@ -4,10 +4,11 @@ mkdir -p build/
 
 OPT=-Oz
 
-$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -march=rv32i -c crt0.s -o build/crt0.o
-$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -march=rv32i -c test_fibonacci.c -o build/test_fibonacci.o
+$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -I . -march=rv32i -c crt0.s -o build/crt0.o
+$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -I . -march=rv32i -c test_fibonacci.c -o build/test_fibonacci.o
+$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -I . -march=rv32i -c printf/printf.c -o build/printf.o
 
-$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -march=rv32i -nostdlib -T bare_metal.ld build/crt0.o build/test_fibonacci.o -o build/test_fibonacci.elf
+$GCC_HOME/bin/riscv32-unknown-elf-gcc -Wall -g $OPT -march=rv32i -nostdlib -T bare_metal.ld  build/printf.o  build/crt0.o build/test_fibonacci.o  -lgcc  -o build/test_fibonacci.elf
 
 $GCC_HOME/bin/riscv32-unknown-elf-objdump -d -s build/test_fibonacci.elf > build/test_fibonacci.elf.txt
 
