@@ -35,10 +35,6 @@ module MEM(
     
     // Output to EX stage for hazard control
     output logic[31:0] mem_alu_npc_out,
-    
-    // Output to IF stage
-    output logic[31:0] if_branch_target,
-    output logic       if_take_branch,
 
     input  logic       mem_trc_bubble,
     input  logic[31:0] mem_trc_pc,
@@ -97,9 +93,6 @@ module MEM(
         endcase
 
         mem_alu_npc_out = mem_jalx ? mem_npc : mem_alu_out;
-        
-        if_branch_target = mem_jalr ? mem_alu_out : mem_branch_target;
-        if_take_branch = mem_jalx || (mem_bxx && mem_alu_out[0]);
     end
     
     always @(posedge(clk)) begin
@@ -129,11 +122,6 @@ module MEM(
                 2'b01: $display("[MEM]     store %X -> %X", mem_wdata[15:0], mem_addr);
                 2'b00: $display("[MEM]     store %X -> %X", mem_wdata [7:0], mem_addr);
             endcase
-        end
-        if (if_take_branch) begin
-            $display("[MEM]     branch to %X", if_branch_target);
-        end else if (mem_bxx) begin
-            $display("[MEM]     branch not taken");
         end
     end
 endmodule

@@ -51,12 +51,15 @@ module EX(
 
     // Inputs from MEM stage, for hazard control
     input  logic[31:0] mem_alu_npc_out,
-    input  logic       if_take_branch,
     
     // Inputs from the WB stage, for hazard control
     input  logic[4:0]  wb_rd_idx,
     input  logic[31:0] wb_rd,
-    
+
+    // Outputs to IF stage for branching
+    output logic[31:0] if_branch_target,
+    output logic       if_take_branch,
+
     input  logic       ex_trc_bubble,
     input  logic[31:0] ex_trc_instr,
     output logic       mem_trc_bubble,
@@ -87,6 +90,13 @@ module EX(
            
         // Select ALU B argument from either RS2 or IMM
         alu_B = ex_alu_B_imm_sel ? ex_imm : rs2_fwd;
+
+        // Calculate if branch must be taken
+        // Takes a bit of time after the ALU, but spares one cycle
+        // for each branch misprediction
+        if_branch_target = ex_jalr ? alu_Y : ex_branch_target;
+        if_take_branch = ex_jalx || (ex_bxx && alu_Y[0]);
+
     end
     ALU u_alu(
         .op(ex_alu_op),
@@ -103,33 +113,18 @@ module EX(
     always @(posedge(clk)) begin
         mem_alu_out <= alu_Y;
         mem_wdata <= ex_wdata;
-        mem_branch_target <= ex_branch_target;
         mem_npc <= ex_npc;
 
-        // Branch hazard: if a branch is taken in this cycle in the MEM stage
-        // the instruction in the EX stage must be harmless in the next cycle
-        // we can therefore set all control signals to zero
-        if (if_take_branch) begin
-            mem_load <= 0;
-            mem_store <= 0;
-            mem_jalr <= 0;
-            mem_jalx <= 0;
-            mem_bxx <= 0;
-            mem_ebreak <= 0;
-            // GOTCHA! mem_rd_idx is harmful because it can interfere with the RAW resolution
-            mem_rd_idx <= 0;
-        end else begin
-            mem_load <= ex_load;
-            mem_store <= ex_store;
-            mem_jalr <= ex_jalr;
-            mem_jalx <= ex_jalx;
-            mem_bxx <= ex_bxx;
-            mem_ebreak <= ex_ebreak;
-            mem_rd_idx <= ex_rd_idx;
-        end
+        mem_load <= ex_load;
+        mem_store <= ex_store;
+        mem_jalr <= ex_jalr;
+        mem_jalx <= ex_jalx;
+        mem_bxx <= ex_bxx;
+        mem_ebreak <= ex_ebreak;
+        mem_rd_idx <= ex_rd_idx;
         mem_size <= ex_size;
 
-        mem_trc_bubble <= if_take_branch || ex_trc_bubble;
+        mem_trc_bubble <= ex_trc_bubble;
         mem_trc_instr <= ex_trc_instr;
         mem_trc_pc <= ex_pc;
     end
@@ -175,6 +170,12 @@ module EX(
             alu_A, A_origin,
             alu_B, B_origin,
             ex_alu_op, ex_alu_op_string, alu_Y);
+        if (if_take_branch) begin
+            $display("[ EX]     branch to %X", if_branch_target);
+        end else if (mem_bxx) begin
+            $display("[ EX]     branch not taken");
+        end
+
     end
 endmodule
 

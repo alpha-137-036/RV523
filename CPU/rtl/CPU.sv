@@ -136,9 +136,10 @@ module CPU(
         .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
-        .if_take_branch(if_take_branch),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
+        .if_take_branch(if_take_branch),
+        .if_branch_target(if_branch_target),
 
         .ex_trc_bubble(ex_trc_bubble),
         .ex_trc_instr(ex_trc_instr),
@@ -172,9 +173,6 @@ module CPU(
         .wb_mem_rdata(wb_mem_rdata),
         .wb_alu_npc_out(wb_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
-
-        .if_take_branch(if_take_branch),
-        .if_branch_target(if_branch_target),
 
         .d_addr(d_addr),
         .d_sel(d_sel),
