@@ -96,7 +96,12 @@ module ID(
                 id_stall = 1;
             end
         end
-        casex (opcode) 
+        // Do NOT stall when we're taking a branch, otherwise, the stalled instruction
+        // gets executed !
+        if (if_take_branch) begin
+            id_stall = 0;
+        end
+        casex (opcode)
         default:
             id_rd_idx = id_instr[11: 7];
         `OPCODE_STORE,
