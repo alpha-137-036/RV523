@@ -58,7 +58,6 @@ module EX(
     input  logic[31:0] wb_rd,
     
     input  logic       ex_trc_bubble,
-    input  logic[31:0] ex_trc_pc,
     input  logic[31:0] ex_trc_instr,
     output logic       mem_trc_bubble,
     output logic[31:0] mem_trc_pc,

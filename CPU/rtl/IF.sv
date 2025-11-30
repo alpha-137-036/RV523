@@ -24,8 +24,7 @@ module IF(
     input  logic        if_take_branch,
     
     // tracing
-    output logic        id_trc_bubble,
-    output logic [31:0] if_trc_instr
+    output logic        id_trc_bubble
 );    
     logic [31:0]        if_instr;
     logic [31:0]        if_pc;
@@ -46,7 +45,6 @@ module IF(
     // Fetch from ROM 
     assign c_addr   = if_pc;
     assign if_instr = c_rdata;
-    assign if_trc_instr = if_instr;
 
     // flip-flops to ID stage
     always @(posedge clk) begin

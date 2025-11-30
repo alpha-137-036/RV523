@@ -16,7 +16,7 @@ module CPU(
     output logic [3:0]  d_byte_sel
 );
 
-    logic [31:0] if_branch_target, if_trc_instr;
+    logic [31:0] if_branch_target;
     logic if_take_branch;
     
     logic [31:0] id_pc, id_npc, id_instr;
@@ -54,8 +54,7 @@ module CPU(
         .id_pc(id_pc),
         .id_npc(id_npc),
         .id_instr(id_instr),
-        
-        .if_trc_instr(if_trc_instr),
+
         .id_trc_bubble(id_trc_bubble)
     );
     ID u_id(
