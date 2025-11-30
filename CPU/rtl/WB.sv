@@ -7,7 +7,7 @@ module WB(
     input  logic[1:0]  wb_addr,
     input  logic[2:0]  wb_size,
     input  logic[31:0] wb_mem_rdata,
-    input  logic[31:0] wb_alu_npc_out,
+    input  logic[31:0] wb_wdata,
     input  logic[4:0]  wb_rd_idx,
     
     output logic[31:0] wb_rd,
@@ -48,7 +48,7 @@ module WB(
                 wb_rd = {24'b0,wb_mem_rdata[31:24]};
            endcase
         end else begin
-            wb_rd = wb_alu_npc_out;
+            wb_rd = wb_wdata;
         end
     end
     

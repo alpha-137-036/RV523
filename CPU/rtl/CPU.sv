@@ -29,13 +29,13 @@ module CPU(
     logic ex_alu_A_PC_sel, ex_alu_B_imm_sel, ex_load, ex_store, ex_jalr, ex_jalx, ex_bxx, ex_ebreak;
     logic ex_trc_bubble;
     
-    logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_npc, mem_trc_pc, mem_trc_instr;
+    logic [31:0] mem_addr, mem_wdata, mem_trc_pc, mem_trc_instr;
     logic [4:0]  mem_rd_idx;
     logic [2:0]  mem_size;
     logic mem_load, mem_store, mem_jalr, mem_jalx, mem_ebreak;
     logic mem_trc_bubble;
 
-    logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata, wb_trc_pc, wb_trc_instr;
+    logic [31:0] wb_wdata, wb_rd, wb_mem_rdata, wb_trc_pc, wb_trc_instr;
     logic [2:0]  wb_size;
     logic [4:0]  wb_rd_idx;
     logic [1:0]  wb_addr;
@@ -123,9 +123,8 @@ module CPU(
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
         .ex_ebreak(ex_break),
-        .mem_alu_out(mem_alu_out),
+        .mem_addr(mem_addr),
         .mem_wdata(mem_wdata),
-        .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
         .mem_size(mem_size),
@@ -133,7 +132,6 @@ module CPU(
         .mem_jalx(mem_jalx),
         .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
-        .mem_alu_npc_out(mem_alu_npc_out),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
         .if_take_branch(if_take_branch),
@@ -150,9 +148,8 @@ module CPU(
         .clk(clk),
         .rst_n(rst_n),
 
-        .mem_alu_out(mem_alu_out),
+        .mem_addr(mem_addr),
         .mem_wdata(mem_wdata),
-        .mem_npc(mem_npc),
         .mem_load(mem_load),
         .mem_store(mem_store),
         .mem_size(mem_size),
@@ -160,14 +157,13 @@ module CPU(
         .mem_jalx(mem_jalx),
         .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
-        .mem_alu_npc_out(mem_alu_npc_out),
 
         .wb_load(wb_load),
         .wb_size(wb_size),
         .wb_addr(wb_addr),
         .wb_ebreak(wb_ebreak),
         .wb_mem_rdata(wb_mem_rdata),
-        .wb_alu_npc_out(wb_alu_npc_out),
+        .wb_wdata(wb_wdata),
         .wb_rd_idx(wb_rd_idx),
 
         .d_addr(d_addr),
@@ -194,7 +190,7 @@ module CPU(
         .wb_addr(wb_addr),
         .wb_size(wb_size),
         .wb_mem_rdata(wb_mem_rdata),
-        .wb_alu_npc_out(wb_alu_npc_out),
+        .wb_wdata(wb_wdata),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
         

@@ -37,18 +37,14 @@ module EX(
     
     // Output to MEM stage 
     output logic[4:0]  mem_rd_idx,
-    output logic[31:0] mem_alu_out,
+    output logic[31:0] mem_addr,
     output logic[31:0] mem_wdata,
-    output logic[31:0] mem_npc,
     output logic       mem_load,
     output logic       mem_store,
     output logic[2:0]  mem_size,
     output logic       mem_jalr,
     output logic       mem_jalx,
     output logic       mem_ebreak,
-
-    // Inputs from MEM stage, for hazard control
-    input  logic[31:0] mem_alu_npc_out,
     
     // Inputs from the WB stage, for hazard control
     input  logic[4:0]  wb_rd_idx,
@@ -73,15 +69,15 @@ module EX(
         rs1_fwd_from_mem = ex_rs1_idx == mem_rd_idx && mem_rd_idx != 0 && !mem_load;
         rs1_fwd_from_wb  = ex_rs1_idx == wb_rd_idx && wb_rd_idx != 0;
 
-        rs1_fwd = rs1_fwd_from_mem ? mem_alu_npc_out : rs1_fwd_from_wb ? wb_rd : ex_rs1;
+        rs1_fwd = rs1_fwd_from_mem ? mem_wdata : rs1_fwd_from_wb ? wb_rd : ex_rs1;
 
         // Select rs2 from ID stage or forwarded from MEM or WB stages
         rs2_fwd_from_mem = ex_rs2_idx == mem_rd_idx && mem_rd_idx != 0 && !mem_load;
         rs2_fwd_from_wb  = ex_rs2_idx == wb_rd_idx && wb_rd_idx != 0;
         
-        rs2_fwd = rs2_fwd_from_mem ? mem_alu_npc_out : rs2_fwd_from_wb ? wb_rd : ex_rs2;
+        rs2_fwd = rs2_fwd_from_mem ? mem_wdata : rs2_fwd_from_wb ? wb_rd : ex_rs2;
 
-        ex_wdata = rs2_fwd;
+        ex_wdata = ex_store ? rs2_fwd : ex_jalx ? ex_npc : alu_Y;
   
         // Select ALU A argument from either RS1 or PC
         alu_A = ex_alu_A_PC_sel ? ex_pc : rs1_fwd ;
@@ -109,9 +105,8 @@ module EX(
         
     // register and propagate to MEM stage
     always @(posedge(clk)) begin
-        mem_alu_out <= alu_Y;
+        mem_addr <= alu_Y;
         mem_wdata <= ex_wdata;
-        mem_npc <= ex_npc;
 
         mem_load <= ex_load;
         mem_store <= ex_store;

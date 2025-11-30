@@ -3,15 +3,13 @@ module MEM(
     input  logic rst_n,
     
     // Inputs from EX stage
-    input  logic[31:0] mem_alu_out,
+    input  logic[31:0] mem_addr,
     input  logic[31:0] mem_wdata,
-    input  logic[31:0] mem_npc,
     input  logic       mem_load,
     input  logic       mem_store,
     input  logic[2:0]  mem_size,
     input  logic       mem_jalr,
     input  logic       mem_jalx,
-    input  logic       mem_bxx,
     input  logic       mem_ebreak,
     input  logic[4:0]  mem_rd_idx,
     
@@ -29,11 +27,8 @@ module MEM(
     output logic[1:0]  wb_addr,
     output logic[2:0]  wb_size,
     output logic[31:0] wb_mem_rdata,
-    output logic[31:0] wb_alu_npc_out,
+    output logic[31:0] wb_wdata,
     output logic[4:0]  wb_rd_idx,
-    
-    // Output to EX stage for hazard control
-    output logic[31:0] mem_alu_npc_out,
 
     input  logic       mem_trc_bubble,
     input  logic[31:0] mem_trc_pc,
@@ -42,9 +37,7 @@ module MEM(
     output logic[31:0] wb_trc_pc,
     output logic[31:0] wb_trc_instr
 );
-    logic [31:0] mem_addr;
     always @(*) begin
-        mem_addr = mem_alu_out;
         d_addr = mem_addr[31:2];
         d_sel = mem_load || mem_store;
         d_write = mem_store;
@@ -90,8 +83,6 @@ module MEM(
             d_wdata = 32'bx;
         end
         endcase
-
-        mem_alu_npc_out = mem_jalx ? mem_npc : mem_alu_out;
     end
     
     always @(posedge(clk)) begin
@@ -100,7 +91,7 @@ module MEM(
         wb_addr         <= mem_addr[1:0];
         wb_size         <= mem_size;
         wb_mem_rdata    <= d_rdata;
-        wb_alu_npc_out  <= mem_alu_npc_out;
+        wb_wdata        <= mem_wdata;
         wb_rd_idx       <= mem_rd_idx;
         wb_trc_bubble   <= mem_trc_bubble;
         wb_trc_pc       <= mem_trc_pc;
