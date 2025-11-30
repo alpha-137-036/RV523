@@ -45,7 +45,6 @@ module EX(
     output logic[2:0]  mem_size,
     output logic       mem_jalr,
     output logic       mem_jalx,
-    output logic       mem_bxx,
     output logic       mem_ebreak,
 
     // Inputs from MEM stage, for hazard control
@@ -118,7 +117,6 @@ module EX(
         mem_store <= ex_store;
         mem_jalr <= ex_jalr;
         mem_jalx <= ex_jalx;
-        mem_bxx <= ex_bxx;
         mem_ebreak <= ex_ebreak;
         mem_rd_idx <= ex_rd_idx;
         mem_size <= ex_size;
@@ -171,7 +169,7 @@ module EX(
             ex_alu_op, ex_alu_op_string, alu_Y);
         if (if_take_branch) begin
             $display("[ EX]     branch to %X", if_branch_target);
-        end else if (mem_bxx) begin
+        end else if (ex_bxx) begin
             $display("[ EX]     branch not taken");
         end
 

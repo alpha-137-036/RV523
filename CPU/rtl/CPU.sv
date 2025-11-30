@@ -32,7 +32,7 @@ module CPU(
     logic [31:0] mem_alu_out, mem_alu_npc_out, mem_wdata, mem_npc, mem_trc_pc, mem_trc_instr;
     logic [4:0]  mem_rd_idx;
     logic [2:0]  mem_size;
-    logic mem_load, mem_store, mem_jalr, mem_jalx, mem_bxx, mem_ebreak;
+    logic mem_load, mem_store, mem_jalr, mem_jalx, mem_ebreak;
     logic mem_trc_bubble;
 
     logic [31:0] wb_alu_npc_out, wb_rd, wb_mem_rdata, wb_trc_pc, wb_trc_instr;
@@ -131,7 +131,6 @@ module CPU(
         .mem_size(mem_size),
         .mem_jalr(mem_jalr),
         .mem_jalx(mem_jalx),
-        .mem_bxx(mem_bxx),
         .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
@@ -159,7 +158,6 @@ module CPU(
         .mem_size(mem_size),
         .mem_jalr(mem_jalr),
         .mem_jalx(mem_jalx),
-        .mem_bxx(mem_bxx),
         .mem_ebreak(mem_ebreak),
         .mem_rd_idx(mem_rd_idx),
         .mem_alu_npc_out(mem_alu_npc_out),
