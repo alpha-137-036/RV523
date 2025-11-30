@@ -5,7 +5,6 @@ module MEM(
     // Inputs from EX stage
     input  logic[31:0] mem_alu_out,
     input  logic[31:0] mem_wdata,
-    input  logic[31:0] mem_branch_target,
     input  logic[31:0] mem_npc,
     input  logic       mem_load,
     input  logic       mem_store,

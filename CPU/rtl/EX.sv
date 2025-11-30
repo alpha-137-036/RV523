@@ -39,7 +39,6 @@ module EX(
     output logic[4:0]  mem_rd_idx,
     output logic[31:0] mem_alu_out,
     output logic[31:0] mem_wdata,
-    output logic[31:0] mem_branch_target,
     output logic[31:0] mem_npc,
     output logic       mem_load,
     output logic       mem_store,
@@ -68,7 +67,7 @@ module EX(
 );
     logic rs1_fwd_from_mem, rs1_fwd_from_wb;
     logic rs2_fwd_from_mem, rs2_fwd_from_wb;
-    logic[31:0] rs1_fwd, rs2_fwd, ex_wdata, alu_A, alu_B, alu_Y, ex_branch_target;
+    logic[31:0] rs1_fwd, rs2_fwd, ex_wdata, alu_A, alu_B, alu_Y, ex_pc_plus_imm;
     
     always @(*) begin
         // Select rs1 from ID stage or forwarded from MEM or WB stages
@@ -94,7 +93,7 @@ module EX(
         // Calculate if branch must be taken
         // Takes a bit of time after the ALU, but spares one cycle
         // for each branch misprediction
-        if_branch_target = ex_jalr ? alu_Y : ex_branch_target;
+        if_branch_target = ex_jalr ? alu_Y : ex_pc_plus_imm;
         if_take_branch = ex_jalx || (ex_bxx && alu_Y[0]);
 
     end
@@ -107,7 +106,7 @@ module EX(
     BranchAdder u_branch(
         .A(ex_pc),
         .B(ex_imm),
-        .Y(ex_branch_target));
+        .Y(ex_pc_plus_imm));
         
     // register and propagate to MEM stage
     always @(posedge(clk)) begin
