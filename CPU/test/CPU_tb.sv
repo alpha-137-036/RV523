@@ -102,11 +102,23 @@ module out(
     input  logic        write,
     input  logic [3:0]  byte_sel
 );
-
+    integer outFD;
+    initial begin
+        string outfilename;
+        if ($value$plusargs("OUTFILE=%s", outfilename)) begin
+            $display("Writing output to %s", outfilename);
+            outFD = $fopen(outfilename, "w");
+        end else begin
+            outFD = 0;
+        end
+    end
     always @(posedge(clk)) begin
         if (sel && {addr,2'b00} == 12'h000 && byte_sel[0]) begin
             // Write to output byte
             $display("[OUT] %X(%c)", wdata[7:0], wdata[7:0]);
+            if (outFD != 0) begin
+                $fwrite(outFD, "%c", wdata[7:0]);
+            end
         end
     end    
 
