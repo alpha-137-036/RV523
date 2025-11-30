@@ -42,8 +42,6 @@ module EX(
     output logic       mem_load,
     output logic       mem_store,
     output logic[2:0]  mem_size,
-    output logic       mem_jalr,
-    output logic       mem_jalx,
     output logic       mem_ebreak,
     
     // Inputs from the WB stage, for hazard control
@@ -110,8 +108,6 @@ module EX(
 
         mem_load <= ex_load;
         mem_store <= ex_store;
-        mem_jalr <= ex_jalr;
-        mem_jalx <= ex_jalx;
         mem_ebreak <= ex_ebreak;
         mem_rd_idx <= ex_rd_idx;
         mem_size <= ex_size;

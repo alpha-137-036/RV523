@@ -8,8 +8,6 @@ module MEM(
     input  logic       mem_load,
     input  logic       mem_store,
     input  logic[2:0]  mem_size,
-    input  logic       mem_jalr,
-    input  logic       mem_jalx,
     input  logic       mem_ebreak,
     input  logic[4:0]  mem_rd_idx,
     
