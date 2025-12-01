@@ -20,7 +20,7 @@ module CPU(
     logic if_take_branch;
     
     logic [31:0] id_pc, id_npc, id_instr;
-    logic id_trc_bubble;
+    logic id_stall, id_trc_bubble;
     
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc, ex_trc_instr;
     logic [10:0] ex_alu_op;
@@ -89,7 +89,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
-        .ex_ebreak(ex_break),
+        .ex_ebreak(ex_ebreak),
 
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
@@ -122,7 +122,7 @@ module CPU(
         .ex_jalr(ex_jalr),
         .ex_jalx(ex_jalx),
         .ex_bxx(ex_bxx),
-        .ex_ebreak(ex_break),
+        .ex_ebreak(ex_ebreak),
         .mem_addr(mem_addr),
         .mem_wdata(mem_wdata),
         .mem_load(mem_load),
