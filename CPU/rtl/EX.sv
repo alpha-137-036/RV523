@@ -52,11 +52,13 @@ module EX(
     output logic[31:0] if_branch_target,
     output logic       if_take_branch,
 
+`ifdef TRACING
     input  logic       ex_trc_bubble,
     input  logic[31:0] ex_trc_instr,
     output logic       mem_trc_bubble,
     output logic[31:0] mem_trc_pc,
     output logic[31:0] mem_trc_instr
+`endif
 );
     logic rs1_fwd_from_mem, rs1_fwd_from_wb;
     logic rs2_fwd_from_mem, rs2_fwd_from_wb;
@@ -112,12 +114,14 @@ module EX(
         mem_rd_idx <= ex_rd_idx;
         mem_size <= ex_size;
 
+`ifdef TRACING
         mem_trc_bubble <= ex_trc_bubble;
         mem_trc_instr <= ex_trc_instr;
         mem_trc_pc <= ex_pc;
+`endif
     end
     
-    
+`ifdef TRACING
     //
     //
     // TRACING
@@ -165,5 +169,6 @@ module EX(
         end
 
     end
+`endif
 endmodule
 

@@ -41,12 +41,14 @@ module CPU(
     logic [1:0]  wb_addr;
     logic wb_load, wb_ebreak, wb_trc_bubble;
 
+`ifdef TRACING
     logic [31:0] trc_cycle_count, trc_instr_count;
 
     initial begin
         trc_cycle_count = 0;
         trc_instr_count = 0;
     end
+`endif
 
     IF u_if(
         .clk(clk),
@@ -62,7 +64,9 @@ module CPU(
         .id_npc(id_npc),
         .id_instr(id_instr),
 
+`ifdef TRACING
         .id_trc_bubble(id_trc_bubble)
+`endif
     );
     ID u_id(
         .clk(clk),
@@ -97,9 +101,11 @@ module CPU(
         .if_take_branch(if_take_branch),
         .id_stall(id_stall),
 
+`ifdef TRACING
         .id_trc_bubble(id_trc_bubble),
         .ex_trc_bubble(ex_trc_bubble),
         .ex_trc_instr(ex_trc_instr)
+`endif
     );
     
     EX u_ex(
@@ -135,11 +141,13 @@ module CPU(
         .if_take_branch(if_take_branch),
         .if_branch_target(if_branch_target),
 
+`ifdef TRACING
         .ex_trc_bubble(ex_trc_bubble),
         .ex_trc_instr(ex_trc_instr),
         .mem_trc_bubble(mem_trc_bubble),
         .mem_trc_pc(mem_trc_pc),
         .mem_trc_instr(mem_trc_instr)
+`endif
     );
 
     MEM u_mem(
@@ -169,12 +177,14 @@ module CPU(
         .d_rdata(d_rdata),
         .d_wdata(d_wdata),
 
+`ifdef TRACING
         .mem_trc_bubble(mem_trc_bubble),
         .mem_trc_pc(mem_trc_pc),
         .mem_trc_instr(mem_trc_instr),
         .wb_trc_bubble(wb_trc_bubble),
         .wb_trc_pc(wb_trc_pc),
         .wb_trc_instr(wb_trc_instr)
+`endif
     );
 
     WB u_wb(
@@ -189,13 +199,16 @@ module CPU(
         .wb_wdata(wb_wdata),
         .wb_rd_idx(wb_rd_idx),
         .wb_rd(wb_rd),
-        
+
+`ifdef TRACING
         .wb_trc_pc(wb_trc_pc),
         .wb_trc_instr(wb_trc_instr),
         .wb_trc_bubble(wb_trc_bubble)
+`endif
     );
 
 
+`ifdef TRACING
     always @(posedge(clk)) begin
         trc_cycle_count++;
         if (rst_n && !wb_trc_bubble) begin
@@ -203,5 +216,5 @@ module CPU(
         end
         $strobe("------- %.6f: cycle %0d, instr %0d", $realtime, trc_cycle_count, trc_instr_count);
     end
-
+`endif
 endmodule

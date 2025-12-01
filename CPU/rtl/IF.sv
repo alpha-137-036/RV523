@@ -23,9 +23,11 @@ module IF(
     input  logic [31:0] if_branch_target,
     input  logic        if_take_branch,
     
+`ifdef TRACING
     // tracing
     output logic        id_trc_bubble
-);    
+`endif
+);
     logic [31:0]        if_instr;
     logic [31:0]        if_pc;
     logic [31:0]        if_npc;    
@@ -53,16 +55,21 @@ module IF(
         if (!rst_n || !id_stall) begin
             if (!rst_n || if_take_branch) begin
                 id_instr <= `INSTR_BUBBLE;
+`ifdef TRACING
                 id_trc_bubble <= 1;
+`endif
             end else begin
                 id_instr <= if_instr;
+`ifdef TRACING
                 id_trc_bubble <= 0;
+`endif
             end
             id_pc    <= if_pc;
             id_npc   <= if_npc;
         end
     end
-    
+
+`ifdef TRACING
     // TRACING
     always @(posedge clk) begin
         disassemble("IF", if_pc, if_instr, 0);
@@ -70,4 +77,5 @@ module IF(
             $display("[ IF]     branch to %X", if_branch_target);
         end
     end
+`endif
 endmodule

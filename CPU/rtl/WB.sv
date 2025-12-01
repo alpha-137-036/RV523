@@ -12,9 +12,11 @@ module WB(
     
     output logic[31:0] wb_rd,
 
+`ifdef TRACING
     input  logic       wb_trc_bubble,
     input  logic[31:0] wb_trc_pc,
     input  logic[31:0] wb_trc_instr
+`endif
 );
     always @(*) begin
         if (wb_load) begin
@@ -52,7 +54,7 @@ module WB(
         end
     end
     
-    
+`ifdef TRACING
     //
     // Tracing
     //
@@ -67,5 +69,6 @@ module WB(
             $stop;
         end
     end
-    
+`endif
+
 endmodule

@@ -39,10 +39,11 @@ module ID(
     // Output to IF stage: a stall has been detected (Load-Use Hazard)
     output logic        id_stall,
 
+`ifdef TRACING
     input  logic        id_trc_bubble,
     output logic        ex_trc_bubble,
     output logic[31:0]  ex_trc_instr
-    
+`endif
 );
     logic [31:0] id_imm, id_rs1, id_rs2;
     logic [4:0]  id_rs1_idx, id_rs2_idx, id_rd_idx;
@@ -215,10 +216,13 @@ module ID(
             ex_rd_idx <= id_rd_idx;
         end
         ex_size <= id_size;
+`ifdef TRACING
         ex_trc_bubble <= if_take_branch || id_trc_bubble || id_stall;
         ex_trc_instr <= id_instr;
+`endif
     end
-    
+
+`ifdef TRACING
     //
     //
     // TRACING
@@ -229,5 +233,5 @@ module ID(
         $display("[ ID]     rd=x%0d, rs1:x%0d=%X, rs2:x%0d=%X, imm=%X",
             id_rd_idx, id_rs1_idx, id_rs1, id_rs2_idx, id_rs2, id_imm);
     end
-
+`endif
 endmodule

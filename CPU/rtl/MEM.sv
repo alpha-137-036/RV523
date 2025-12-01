@@ -28,12 +28,14 @@ module MEM(
     output logic[31:0] wb_wdata,
     output logic[4:0]  wb_rd_idx,
 
+`ifdef TRACING
     input  logic       mem_trc_bubble,
     input  logic[31:0] mem_trc_pc,
     input  logic[31:0] mem_trc_instr,
     output logic       wb_trc_bubble,
     output logic[31:0] wb_trc_pc,
     output logic[31:0] wb_trc_instr
+`endif
 );
     always @(*) begin
         d_addr = mem_addr[31:2];
@@ -91,11 +93,14 @@ module MEM(
         wb_mem_rdata    <= d_rdata;
         wb_wdata        <= mem_wdata;
         wb_rd_idx       <= mem_rd_idx;
+`ifdef TRACING
         wb_trc_bubble   <= mem_trc_bubble;
         wb_trc_pc       <= mem_trc_pc;
         wb_trc_instr    <= mem_trc_instr;
+`endif
     end
-    
+
+`ifdef TRACING
     //
     // TRACING
     // 
@@ -112,4 +117,5 @@ module MEM(
             endcase
         end
     end
+`endif
 endmodule
