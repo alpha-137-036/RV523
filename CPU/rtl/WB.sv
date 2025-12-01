@@ -22,7 +22,7 @@ module WB(
         if (wb_load) begin
            // Process the loaded data: select bytes, zero or sign extend result
            casex ({wb_size,wb_addr})
-           5'bx10xx: // lw
+           5'b010xx: // lw
                 wb_rd = wb_mem_rdata;
            5'b0010x: // lh, low half-word
                 wb_rd = {{16{wb_mem_rdata[15]}},wb_mem_rdata[15:0]};
@@ -48,6 +48,8 @@ module WB(
                 wb_rd = {24'b0,wb_mem_rdata[23:16]};
            5'b10011: // lbu, byte 3
                 wb_rd = {24'b0,wb_mem_rdata[31:24]};
+           default:
+                wb_rd = 32'bx;
            endcase
         end else begin
             wb_rd = wb_wdata;
