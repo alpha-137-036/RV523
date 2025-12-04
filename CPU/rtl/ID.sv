@@ -5,6 +5,7 @@ module ID(
     input logic rst_n,
 
     // Inputs from IF stage
+    input logic        id_bubble,
     input logic [31:0] id_instr,
     input logic [31:0] id_pc,
     input logic [31:0] id_npc,
@@ -40,7 +41,6 @@ module ID(
     output logic        id_stall,
 
 `ifdef TRACING
-    input  logic        id_trc_bubble,
     output logic        ex_trc_bubble,
     output logic[31:0]  ex_trc_instr
 `endif
@@ -55,6 +55,9 @@ module ID(
     always @(*) begin
         logic [4:0] opcode;
         opcode = id_instr[6:2];
+        if (id_bubble) begin
+            opcode = 5'b11111; // harmless (until we fault on illegal instruction!)
+        end
         casex (opcode)
         default:
             // no immediate. imm is dont-care
@@ -83,7 +86,7 @@ module ID(
         id_alu_B_imm_sel = opcode != `OPCODE_OP && opcode != `OPCODE_BRANCH;
 
         // Selection of rs1_idx, rs2_idx, rd_idx
-        id_rs1_idx = opcode == `OPCODE_LUI ? 0 : id_instr[19:15]; 
+        id_rs1_idx = opcode == `OPCODE_LUI || id_bubble ? 0 : id_instr[19:15];
         id_rs2_idx = opcode == `OPCODE_LOAD || opcode == `OPCODE_STORE || opcode == `OPCODE_BRANCH || opcode == `OPCODE_OP ? id_instr[24:20] : 0;
 
         // If EX stage is currently executing a LOAD into a register that
@@ -104,11 +107,10 @@ module ID(
         end
         casex (opcode)
         default:
-            id_rd_idx = id_instr[11: 7];
+            id_rd_idx = id_bubble ? 0 : id_instr[11: 7];
         `OPCODE_STORE,
         `OPCODE_BRANCH,
-        `OPCODE_SYSTEM,
-        `OPCODE_BUBBLE:
+        `OPCODE_SYSTEM:
             // There is no "reg-write-enable" signal. Instead we use rd == 0. 
             id_rd_idx = 0;
         endcase
@@ -217,7 +219,7 @@ module ID(
         end
         ex_size <= id_size;
 `ifdef TRACING
-        ex_trc_bubble <= if_take_branch || id_trc_bubble || id_stall;
+        ex_trc_bubble <= if_take_branch || id_bubble || id_stall;
         ex_trc_instr <= id_instr;
 `endif
     end
@@ -229,7 +231,7 @@ module ID(
     //
     //
     always @(posedge clk) begin
-        disassemble("ID", id_pc, id_instr, id_trc_bubble);
+        disassemble("ID", id_pc, id_instr, id_bubble);
         $display("[ ID]     rd=x%0d, rs1:x%0d=%X, rs2:x%0d=%X, imm=%X",
             id_rd_idx, id_rs1_idx, id_rs1, id_rs2_idx, id_rs2, id_imm);
     end

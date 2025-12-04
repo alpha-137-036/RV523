@@ -20,7 +20,7 @@ module CPU(
     logic if_take_branch;
     
     logic [31:0] id_pc, id_npc, id_instr;
-    logic id_stall, id_trc_bubble;
+    logic id_stall, id_bubble;
     
     logic [31:0] ex_imm, ex_rs1, ex_rs2, ex_pc, ex_npc, ex_trc_instr;
     logic [10:0] ex_alu_op;
@@ -56,6 +56,7 @@ module CPU(
         
         .c_addr(c_addr),
         .c_rdata(c_rdata),
+
         .if_take_branch(if_take_branch),
         .if_branch_target(if_branch_target),
         .id_stall(id_stall),
@@ -63,10 +64,7 @@ module CPU(
         .id_pc(id_pc),
         .id_npc(id_npc),
         .id_instr(id_instr),
-
-`ifdef TRACING
-        .id_trc_bubble(id_trc_bubble)
-`endif
+        .id_bubble(id_bubble)
     );
     ID u_id(
         .clk(clk),
@@ -75,7 +73,8 @@ module CPU(
         .id_pc(id_pc),
         .id_npc(id_npc),
         .id_instr(id_instr),
-        
+        .id_bubble(id_bubble),
+
         .ex_imm(ex_imm),
         .ex_rs1(ex_rs1),
         .ex_rs1_idx(ex_rs1_idx),
@@ -102,7 +101,6 @@ module CPU(
         .id_stall(id_stall),
 
 `ifdef TRACING
-        .id_trc_bubble(id_trc_bubble),
         .ex_trc_bubble(ex_trc_bubble),
         .ex_trc_instr(ex_trc_instr)
 `endif

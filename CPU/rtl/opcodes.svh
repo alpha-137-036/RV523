@@ -8,4 +8,3 @@
 `define OPCODE_AUIPC  5'b00101
 `define OPCODE_LUI    5'b01101
 `define OPCODE_SYSTEM 5'b11100
-`define OPCODE_BUBBLE 5'bxx111
