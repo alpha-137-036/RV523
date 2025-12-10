@@ -1,0 +1,448 @@
+[](4'b0000),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[](4'b0000),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=1
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC_PLUS_4,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=1
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC_PLUS_4,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[REQUESTED]({2'b00,`REQUESTED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=1
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC_PLUS_4,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> ANSWERED,[QUEUED]
+    --> [QUEUED],if_instr_valid=1
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC_PLUS_4,next_request=NEXT_PC_PLUS_4
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [QUEUED, QUEUED]
+    --> [QUEUED, QUEUED],if_instr_valid=0
+    --> [QUEUED, QUEUED]({`QUEUED,`QUEUED}),next_pc=PC,next_request=NONE
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [QUEUED, QUEUED]
+    --> [QUEUED, QUEUED],if_instr_valid=0
+    --> [QUEUED, QUEUED]({`QUEUED,`QUEUED}),next_pc=PC,next_request=NONE
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [QUEUED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> ANSWERED,[]
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [QUEUED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, QUEUED],if_instr_valid=0
+    --> [RETIRED, QUEUED]({`RETIRED,`QUEUED}),next_pc=PC,next_request=NONE
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, QUEUED],if_instr_valid=0
+    --> [RETIRED, QUEUED]({`RETIRED,`QUEUED}),next_pc=PC,next_request=NONE
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> []
+    --> [],if_instr_valid=0
+    --> [REQUESTED]({2'b00,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> ANSWERED,[QUEUED]
+    --> [QUEUED],if_instr_valid=1
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC_PLUS_4,next_request=NEXT_PC_PLUS_4
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> ANSWERED,[QUEUED]
+    --> [QUEUED],if_instr_valid=1
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC_PLUS_4,next_request=NEXT_PC_PLUS_4
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [QUEUED, QUEUED]
+    --> [QUEUED, QUEUED],if_instr_valid=0
+    --> [QUEUED, QUEUED]({`QUEUED,`QUEUED}),next_pc=PC,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [QUEUED, QUEUED]
+    --> [QUEUED, QUEUED],if_instr_valid=0
+    --> [QUEUED, QUEUED]({`QUEUED,`QUEUED}),next_pc=PC,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [QUEUED, QUEUED]
+    --> [QUEUED, QUEUED],if_instr_valid=0
+    --> [QUEUED, QUEUED]({`QUEUED,`QUEUED}),next_pc=PC,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [QUEUED, QUEUED]
+    --> [QUEUED, QUEUED],if_instr_valid=0
+    --> [QUEUED, QUEUED]({`QUEUED,`QUEUED}),next_pc=PC,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [QUEUED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [QUEUED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> ANSWERED,[QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [QUEUED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[QUEUED, QUEUED]({`QUEUED,`QUEUED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [QUEUED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=PC,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=PC,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=PC,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=PC,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [RETIRED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, RETIRED]({`RETIRED,`RETIRED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [RETIRED, RETIRED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=0:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, QUEUED],if_instr_valid=0
+    --> [RETIRED, QUEUED]({`RETIRED,`QUEUED}),next_pc=PC,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=0:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, QUEUED],if_instr_valid=0
+    --> [RETIRED, QUEUED]({`RETIRED,`QUEUED}),next_pc=PC,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [QUEUED]
+    --> [QUEUED],if_instr_valid=0
+    --> [QUEUED, REQUESTED]({`QUEUED,`REQUESTED}),next_pc=PC,next_request=NEXT_PC_PLUS_4
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=0:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, QUEUED],if_instr_valid=0
+    --> [RETIRED, QUEUED]({`RETIRED,`QUEUED}),next_pc=PC,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=0:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, QUEUED],if_instr_valid=0
+    --> [RETIRED, QUEUED]({`RETIRED,`QUEUED}),next_pc=PC,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=1,id_stall=0,ex_take_branch=1:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=0,id_stall=0,ex_take_branch=1:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=1,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [QUEUED]
+    --> [RETIRED],if_instr_valid=0
+    --> [RETIRED, REQUESTED]({`RETIRED,`REQUESTED}),next_pc=BTA,next_request=NEXT_PC
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=1,id_stall=1,ex_take_branch=1:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
+[RETIRED, QUEUED]({`RETIRED,`QUEUED}),c_ack=0,c_stall=0,id_stall=1,ex_take_branch=1:
+    --> [RETIRED, QUEUED]
+    --> [RETIRED, RETIRED],if_instr_valid=0
+    --> [RETIRED, RETIRED]({`RETIRED,`RETIRED}),next_pc=BTA,next_request=NONE
