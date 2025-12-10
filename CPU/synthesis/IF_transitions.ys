@@ -1,0 +1,23 @@
+read_verilog -sv ../rtl/IF_transitions.sv
+hierarchy -top IF_transitions
+flatten
+check;
+clean;
+proc;
+
+#opt_reduce
+#opt_expr
+
+#fsm -nomap
+#fsm_opt
+#fsm_recode -encoding binary
+#fsm_info
+
+#
+#eval -table state,c_ack,c_stall,id_stall,ex_take_branch
+
+techmap;
+abc -script CPU.abc -liberty ../../lib/RV523.lib
+
+write_verilog IF_transitions.netlist.v
+stat -liberty ../../lib/RV523.lib
