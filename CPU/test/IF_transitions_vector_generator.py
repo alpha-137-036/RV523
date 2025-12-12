@@ -32,7 +32,7 @@ class NextPC(Enum):
     def __repr__(self):
         return self.name   # used by REPL, logs, containers
             
-class NextRequest(Enum):
+class Request(Enum):
     NONE=0,
     NEXT_PC=2,
     NEXT_PC_PLUS_4=3
@@ -42,7 +42,7 @@ class NextRequest(Enum):
         return self.name   # used by REPL, logs, containers    
 
 def transition(state, c_ack, c_stall, id_stall, ex_take_branch):
-    print(f"{state}({state_to_string(state)}),c_ack={c_ack},c_stall={c_stall},id_stall={id_stall},ex_take_branch={ex_take_branch}:")
+    print(f"{state},c_ack={c_ack},c_stall={c_stall},id_stall={id_stall},ex_take_branch={ex_take_branch}:")
     transitions_vector.write(f"{{state,c_ack,c_stall,id_stall,ex_take_branch}}={{{state_to_string(state)},1'b{c_ack},1'b{c_stall},1'b{id_stall},1'b{ex_take_branch}}};\n#1;\n")
     state = state[:]
     answered = False
@@ -85,21 +85,21 @@ def transition(state, c_ack, c_stall, id_stall, ex_take_branch):
 
     print(f"    --> {state},if_instr_valid={if_instr_valid}")
 
-    next_request = NextRequest.NONE
+    next_request = Request.NONE
     if len(state) < 2:
         # emit a new request, but only if total number of requests is less than 2
         state.append(RequestState.REQUESTED)
         if ex_take_branch:
-            next_request = NextRequest.NEXT_PC
+            next_request = Request.NEXT_PC
         elif state[0] != RequestState.QUEUED:
-            next_request = NextRequest.NEXT_PC
+            next_request = Request.NEXT_PC
         else:
-            next_request = NextRequest.NEXT_PC_PLUS_4
+            next_request = Request.NEXT_PC_PLUS_4
         
-    print(f"    --> {state}({state_to_string(state)}),next_pc={next_pc},next_request={next_request}")
+    print(f"    --> {state},next_pc={next_pc},next_request={next_request}")
     
-    transitions_vector.write(f"if({{next_state,if_instr_valid,next_pc,next_request}}!={{{state_to_string(state)},1'b{if_instr_valid},`NEXT_PC_{next_pc}, `NEXT_REQUEST_{next_request}}})")
-    transitions_vector.write(f"$display(\"ERROR on (state=%b,c_ack=%b,c_stall=%b,id_stall=%b,ex_take_branch=%b).\\n    Got      (next_state=%b,if_instr_valid=%b,next_pc=%b,next_request=%b)\\n    Expected (next_state=%b,if_instr_valid=%b,next_pc=%b,next_request=%b)\",state, c_ack, c_stall,id_stall,ex_take_branch,next_state,if_instr_valid,next_pc,next_request,{state_to_string(state)},1'b{if_instr_valid},`NEXT_PC_{next_pc}, `NEXT_REQUEST_{next_request});")
+    transitions_vector.write(f"if({{next_state,if_instr_valid,next_pc,next_request}}!={{{state_to_string(state)},1'b{if_instr_valid},`NEXT_PC_{next_pc}, `REQUEST_{next_request}}})")
+    transitions_vector.write(f"$display(\"ERROR on (state=%b,c_ack=%b,c_stall=%b,id_stall=%b,ex_take_branch=%b).\\n    Got      (next_state=%b,if_instr_valid=%b,next_pc=%b,next_request=%b)\\n    Expected (next_state=%b,if_instr_valid=%b,next_pc=%b,next_request=%b)\",state, c_ack, c_stall,id_stall,ex_take_branch,next_state,if_instr_valid,next_pc,next_request,{state_to_string(state)},1'b{if_instr_valid},`NEXT_PC_{next_pc}, `REQUEST_{next_request});")
    
     return state
     

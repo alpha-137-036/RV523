@@ -12,10 +12,10 @@
 `define NEXT_PC_PC_PLUS_4 2'b01
 `define NEXT_PC_BTA 2'b10
 
-// Next request encoding:
-`define NEXT_REQUEST_NONE           2'b00
-`define NEXT_REQUEST_NEXT_PC        2'b10
-`define NEXT_REQUEST_NEXT_PC_PLUS_4 2'b11
+// Request encoding:
+`define REQUEST_NONE           2'b00
+`define REQUEST_NEXT_PC        2'b01
+`define REQUEST_NEXT_PC_PLUS_4 2'b11
 
 module IF_transitions(
     input logic[3:0] state,
@@ -73,7 +73,7 @@ module IF_transitions(
             end
             if_instr_valid = 0;
             next_pc = `NEXT_PC_BTA;
-            next_request = `NEXT_REQUEST_NEXT_PC;
+            next_request = `REQUEST_NEXT_PC;
         end else if (id_stall) begin
             if (answered) begin
                 // This valid instruction must be dropped, unfortunately...
@@ -84,21 +84,21 @@ module IF_transitions(
                 end
             end
             next_pc = `NEXT_PC_PC;
-            next_request = `NEXT_REQUEST_NEXT_PC;
+            next_request = `REQUEST_NEXT_PC;
         end else begin
             if_instr_valid = answered;
             next_pc = answered ? `NEXT_PC_PC_PLUS_4 : `NEXT_PC_PC;
-            next_request = `NEXT_REQUEST_NEXT_PC;
+            next_request = `REQUEST_NEXT_PC;
         end
         
         // Try to issue one more request.
         if (next_state[3:2] == `ABSENT) begin
             next_state = (next_state << 2) | `REQUESTED;
             if (next_state[3:2] == `QUEUED) begin
-                next_request = `NEXT_REQUEST_NEXT_PC_PLUS_4;
+                next_request = `REQUEST_NEXT_PC_PLUS_4;
             end
         end else begin
-            next_request = `NEXT_REQUEST_NONE;
+            next_request = `REQUEST_NONE;
         end
     end
 endmodule

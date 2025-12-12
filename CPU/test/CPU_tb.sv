@@ -4,13 +4,17 @@
 `define CODE_ADDR_BITS 16 // 64KB of CODE
 
 module code_rom(
-    input logic [31:2] addr,
-    
-    output logic [31:0] rdata
+    input logic clk,
+
+    input  logic [31:2] addr,
+    input  logic        stb,
+    output logic [31:0] rdata,
+    output logic        ack,
+    output logic        stall
 );
     logic [31:0] code[0:(1 << (`CODE_ADDR_BITS-2))-1];
-    
-    initial begin    
+
+    initial begin
         string hexfilename;
         if ($value$plusargs("CODEHEX=%s", hexfilename)) begin
             $display("Loading code memory from %s", hexfilename);
@@ -20,10 +24,26 @@ module code_rom(
             $stop;
         end
     end
-    
-    always @(*) begin
-        rdata = code[addr];
+
+    // // Registered wishbone pipelined slave
+    always @(posedge(clk)) begin
+        if (stb) begin
+            rdata <= code[addr];
+            ack   <= 1;
+            stall <= 0;
+        end else begin 
+            ack   <= 0;
+            stall <= 0;
+        end
     end
+
+    // Combinatorial slave
+   // always @(*) begin
+       // rdata = code[addr];
+       // ack   = 1;
+       // stall = 0;
+   // end
+
 endmodule
 
 `define RAM_ADDR_BITS 16 // 64KB of RAM
@@ -38,14 +58,14 @@ module ram(
     input  logic [3:0]  d_byte_sel
 );
     logic [31:0] data[0:(1 << (`RAM_ADDR_BITS-2))-1];
-    
+
     initial begin
         integer i;
         for (i = 0; i < (1 << (`RAM_ADDR_BITS-2)); i++) begin
             data[i] = 0;
         end
     end
-    
+
     assign d_rdata = d_sel && !d_write ? data[d_addr] : 'z;
 
     always @(posedge clk) begin
@@ -120,16 +140,49 @@ module out(
                 $fwrite(outFD, "%c", wdata[7:0]);
             end
         end
-    end    
+    end
 
 endmodule
 
-module CPU_tb();
+// module cycle(
+    // input  logic        clk,
+    // input  logic [11:2] addr,
+    // output tri   [31:0] rdata,
+    // input  logic [31:0] wdata,
+    // input  logic        sel,
+    // input  logic        write,
+    // input  logic [3:0]  byte_sel
+// );
+    // logic [31:0] cycle;
+    // logic [31:0] cycle_rdata;
 
+    // initial begin
+       // cycle = 0;
+    // end
+
+    // assign rdata = sel && !write ? cycle_rdata : 'z;
+
+    // always @(posedge(clk)) begin
+        // cycle <= cycle + 1;
+        // if (sel && {addr,2'b00} == 12'h000 && !write) begin
+            // // Read cycle
+            // rdata <= cycle;
+        // end
+    // end
+// endmodule
+
+
+
+module CPU_tb();
     logic clk;
     logic rst_n;
+    
     logic [31:0] c_addr;
+    logic        c_stb;
+    logic        c_ack;
     logic [31:0] c_rdata;
+    logic        c_stall;
+    
     logic [31:2] d_addr;
     tri   [31:0] d_rdata;
     logic [31:0] d_wdata;
@@ -148,36 +201,39 @@ module CPU_tb();
         // #5000
         // rst_n = 0;
     end
-    
+
     always begin
        #500
        clk = ~clk;
     end
-    
-    initial begin 
+
+    initial begin
         $dumpfile("CPU_tb.vcd");
         $dumpvars(0, CPU_tb);
     end
-    
+
     always @(posedge clk) begin
         if ($time >= 10000000) begin
             $display("***** TIMEOUT");
             $stop;
         end
     end
-    
+
     always @(posedge rst_n) begin
         $display("rst_n -> 1");
-    end 
+    end
     always @(negedge rst_n) begin
         $display("rst_n -> 0");
-    end 
+    end
 
     CPU u_cpu(
         .clk(clk),
         .rst_n(rst_n),
         .c_addr(c_addr),
+        .c_stb(c_stb),
+        .c_ack(c_ack),
         .c_rdata(c_rdata),
+        .c_stall(c_stall),
         .d_addr(d_addr),
         .d_sel(d_sel),
         .d_byte_sel(d_byte_sel),
@@ -185,14 +241,18 @@ module CPU_tb();
         .d_rdata(d_rdata),
         .d_wdata(d_wdata)
     );
-    
+
     code_rom u_code(
+        .clk(clk),
         .addr(c_addr[31:2]),
-        .rdata(c_rdata)
+        .stb(c_stb),
+        .rdata(c_rdata),
+        .ack(c_ack),
+        .stall(c_stall)
     );
-    
-    assign out_sel = d_sel && d_addr[31:12] == 20'h40000; 
-    
+
+    assign out_sel = d_sel && d_addr[31:12] == 20'h40000;
+
     out u_out(
         .clk(clk),
         .addr(d_addr[11:2]),
@@ -200,10 +260,22 @@ module CPU_tb();
         .write(d_write),
         .byte_sel(d_byte_sel),
         .rdata(d_rdata),
-        .wdata(d_wdata)        
+        .wdata(d_wdata)
     );
 
-    assign ram_sel = d_sel && d_addr[31:20] == 12'h200; 
+    // assign cycle_sel = d_sel && d_addr[31:12] == 20'h40001;
+
+    // cycle u_cycle(
+        // .clk(clk),
+        // .addr(d_addr[11:2]),
+        // .sel(cycle_sel),
+        // .write(d_write),
+        // .byte_sel(d_byte_sel),
+        // .rdata(d_rdata),
+        // .wdata(d_wdata)
+    // );
+
+    assign ram_sel = d_sel && d_addr[31:20] == 12'h200;
 
     ram u_ram(
         .clk(clk),

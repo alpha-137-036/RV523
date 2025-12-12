@@ -5,7 +5,10 @@ module CPU(
     
     // CODE interface
     output logic [31:0] c_addr,
+    output logic        c_stb,
+    input  logic        c_ack,
     input  logic [31:0] c_rdata,
+    input  logic        c_stall,
 
     // DATA interface
     output logic [31:2] d_addr,
@@ -55,7 +58,10 @@ module CPU(
         .rst_n(rst_n),
         
         .c_addr(c_addr),
+        .c_stb(c_stb),
+        .c_ack(c_ack),
         .c_rdata(c_rdata),
+        .c_stall(c_stall),
 
         .if_take_branch(if_take_branch),
         .if_branch_target(if_branch_target),
@@ -74,7 +80,7 @@ module CPU(
         .id_npc(id_npc),
         .id_instr(id_instr),
         .id_bubble(id_bubble),
-
+        
         .ex_imm(ex_imm),
         .ex_rs1(ex_rs1),
         .ex_rs1_idx(ex_rs1_idx),
