@@ -1,0 +1,19 @@
+.include "../NOT/NOT.ckt"
+.include "../NAND2/NAND2.ckt"
+.include "../D_LATCH/D_LATCH.ckt"
+
+.subckt PULSE_GENERATOR P nP C VDD VSS
+    R1 C D 330
+    C1 D 0 100p
+    X1 nD D VDD VSS NOT
+    XN10 P0 C nD VDD VSS NAND2
+    XN20 nP0 P0 VDD VSS NOT
+    XN21 P nP0 VDD VSS NOT
+    XN22 nP P0 VDD VSS NOT
+.ends
+
+.subckt PULSED_DFF Q nQ D C VDD VSS 
+    XU1 P nP C VDD VSS PULSE_GENERATOR
+    XU2 Q nQ D nP P VDD VSS D_LATCH
+.ends
+.END
