@@ -1,3 +1,12 @@
+(* blackbox *)
+(* techmap_celltype = "PULSED_DFF" *)
+(* footprint = "RV523:PULSED_DFF" *)
+module PULSED_DFF(
+    output Q,
+    input D,
+    input CK
+);
+endmodule
 
 (* blackbox *)
 (* techmap_celltype = "BUF" *)

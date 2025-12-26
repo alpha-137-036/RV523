@@ -1,3 +1,11 @@
+module PULSED_DFF(
+    output Q,
+    input D,
+    input CK
+);
+    always @(posedge(CK)) Q <= D;
+endmodule
+
 module BUF(
     output Y,
     input A
