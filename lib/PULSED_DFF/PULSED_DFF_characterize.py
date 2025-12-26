@@ -147,7 +147,59 @@ def DFF_characterize(out):
                     out.flush()
                     measurements[inputs] = measurement
                     print(measurement)
-                    
+
+def print_lut_table(table_name, template_name, input_1, input_2, values):
+    print(f"{table_name}({template_name}) {{")
+    print(f"    input_1({",".join(str(x) for x in input_1)});")
+    print(f"    input_2({",".join(str(x) for x in input_2)});")
+    print("    values(")
+    for i in range(len(input_1)):
+        print("        \"", end="")
+        for j in range(len(input_2)):
+            print(values[i*len(input_2)+j], end="," if j < len(input_2)-1 else "")
+        print("\"", end="")
+        print("," if i < len(input_1)-1 else "")
+    print("    );")
+    print("}")
+
+
+def print_tables():
+    for kind in ["cell", "transition"]:
+        for direction in ["rise", "fall"]:
+            if kind == "cell":
+                table_name = kind + "_" + direction
+                key = "ctoq"
+            else:
+                table_name = direction + "_" + kind
+                key = "qslew"
+            values = []
+            for slew in slews:
+                for cap in out_caps:
+                    inputs = Inputs(transition=1 if direction=="rise" else 0, dslew=10.0, cslew=slew/ns, cout=cap/pF)
+                    measurement = measurements[inputs]
+                    values.append(getattr(measurement, key))
+
+            print_lut_table(
+                table_name,
+                f"template_{len(slews)}x{len(out_caps)}",
+                [x/ns for x in slews],
+                [x/pF for x in out_caps],
+                values)
+
+    for kind in ["setup", "hold"]:
+        print(f"timing_type : {kind}_rising;")
+        for direction in ["rise", "fall"]:
+            values = []
+            for dslew in slews:
+                for cslew in slews:
+                    inputs = Inputs(transition=1 if direction=="rise" else 0, dslew=dslew/ns, cslew=cslew/ns, cout=out_caps[0]/pF)
+                    measurement = measurements[inputs]
+                    values.append(getattr(measurement, "t"+kind))
+            print_lut_table(f"{direction}_constraint", f"{kind}_{len(slews)}x{len(slews)}",
+                [x/ns for x in slews],
+                [x/ns for x in slews],
+                values)
+
 readMeasurements("PULSED_DFF.csv")
     
 #print(measurements)
@@ -155,3 +207,6 @@ readMeasurements("PULSED_DFF.csv")
 
 with open("PULSED_DFF.csv", "w") as out:
     DFF_characterize(out)
+
+print_tables()
+
