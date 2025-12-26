@@ -38,14 +38,17 @@ def readMeasurements(filename):
                 measurements[inputs] = measurement
     except FileNotFoundError as e:
         print(e)
-    
+
+ns = 1e-9
+pF = 1e-12
+out_caps = [5*pF, 10*pF, 20*pF, 40*pF, 60*pF, 80*pF, 100*pF, 150*pF, 200*pF]
+slews = [10*ns, 20*ns, 40*ns, 100*ns, 150*ns]
+
 def DFF_characterize(out):
     out.write("transition,cout,cslew,dslew,ctoq,qslew,tsetup,thold\n")
     with open("PULSED_DFF_characterize.ckt") as f:
         circuit = f.read()
-    
-    ns = 1e-9
-    pF = 1e-12
+
     def measure(params, expectedLatched):    
         paramsDefs = "\n".join(f".param {k}={v}" for k,v in params.items())
         ckt = f"""
@@ -128,9 +131,9 @@ def DFF_characterize(out):
         measurement = Measurement(inputs=inputs,ctoq=ctoq_nominal/ns, qslew=qslew/ns,tsetup=tsetup/ns,thold=thold/ns)
         return measurement        
        
-    for cout in [5*pF, 10*pF, 20*pF, 40*pF, 60*pF, 80*pF, 100*pF]:
-        for Cslew in [10*ns, 20*ns, 40*ns, 100*ns, 150*ns]:
-            for Dslew in [10*ns, 20*ns, 40*ns, 100*ns, 150*ns]:
+    for cout in out_caps:
+        for Cslew in slews:
+            for Dslew in slews:
                 for transition in [(0,1), (1,0)]:
                     print(f"Transition: {transition[0]}->{transition[1]}: Cslew={Cslew/ns:.1f}ns, Dslew={Dslew/ns:.1f}, cout={cout/pF:.0f}pF")
 
