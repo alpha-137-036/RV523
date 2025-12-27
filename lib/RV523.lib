@@ -282,6 +282,7 @@ library (RV523) {
 
     pin(RN) {
         direction : input;
+        capacitance : 13.43026;
     }
 
     pin(Q) {

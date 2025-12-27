@@ -1,0 +1,45 @@
+.title Measure input capacitance of CK pin of a DFF
+* ---------------------------------------------------------
+.include ../Transistors/RV523_NMOS.ckt
+.include ../Transistors/RV523_PMOS.ckt
+.include PULSED_DFF_ASYNC_RESET.ckt
+
+.options TEMP = 25C
+.options TNOM = 25C
+.options method=gear
+
+.param vdd=3.3V
+
+* Power supplies
+VDD VDD 0 {vdd}
+VSS VSS 0 0
+
+* Bias the D input to a valid logic level
+VD  D  0  0
+* Bias the RN input to a valid logic level
+VRN  RN  0  {vdd}
+* Bias Q output (optional, depends on your DFF topology)
+* Some DFFs require Q to be pre-biased to avoid floating nodes
+VQ  Q  0  0
+
+* AC source on CK pin
+* 1 mV AC amplitude ensures linearity
+Vin CK 0 DC 0 AC 1
+
+* Instantiate the DFF
+* Replace pin order with your actual subckt definition
+Xdut Q nQ D RN CK VDD VSS PULSED_DFF_ASYNC_RESET
+
+Rload Q 0 100k
+
+* Small-signal AC analysis at 1 MHz
+.ac lin 1 1e6 1e6
+
+.control
+    run
+    let ck_cap = abs(imag(I(Vin))) / (2 * 3.1415926535 * 1e6)
+    print ck_cap
+    exit
+.endc
+
+.end
