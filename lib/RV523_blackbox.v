@@ -9,6 +9,17 @@ module PULSED_DFF(
 endmodule
 
 (* blackbox *)
+(* techmap_celltype = "PULSED_DFF_ASYNC_RESET" *)
+(* footprint = "RV523:PULSED_DFF_ASYNC_RESET" *)
+module PULSED_DFF(
+    output Q,
+    input D,
+    input RN,
+    input CK
+);
+endmodule
+
+(* blackbox *)
 (* techmap_celltype = "BUF" *)
 (* footprint = "RV523:BUF" *)
 module BUF(

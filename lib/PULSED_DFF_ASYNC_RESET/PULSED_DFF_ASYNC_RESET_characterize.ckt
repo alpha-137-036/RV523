@@ -1,0 +1,36 @@
+.include ../Transistors/RV523_NMOS.ckt
+.include ../Transistors/RV523_PMOS.ckt
+.include PULSED_DFF_ASYNC_RESET.ckt
+
+.options TEMP = 25C
+.options TNOM = 25C
+.options method=gear
+
+.param TDrise=3us-Tsetup
+.param TDfall=3us+Thold
+
+Vdd VDD 0 {vdd}
+Vss VSS 0 0V
+
+VRN RN 0 {vdd}
+
+CQ VSS Q {cout}
+
+* 1MHz clock
+
+* slew is time from 20% to 80% => translates into slope from 0% to 100% from -slew/1.2 to slew/1.2
+VC CK 0 PWL(0s 0 {1us-cslew/1.2} 0.0V {1us+cslew/1.2} {vdd} {2us-cslew/1.2} {vdd} {2us+cslew/1.2} 0 {3us-cslew/1.2} 0 {3us+cslew/1.2} {vdd})
+
+* Set D to 1 at TDrise and to 0 at TDfall
+VD D 0 PWL(0s {Va} {TDrise-dslew/1.2} {Va} {TDrise+dslew/1.2} {Vb} {TDfall-dslew/1.2} {Vb} {TDfall+dslew/1.2} {Va})
+
+Xdut Q nQ D RN CK VDD VSS  PULSED_DFF_ASYNC_RESET
+
+.TRAN 0.1ns 4000ns
+
+* check the value is latched
+.meas tran Qlatched FIND V(Q) at=3.5us
+.meas tran clockToQ TRIG V(CK) val={vdd/2} RISE=LAST TARG V(Q) val={vdd/2} CROSS=LAST TD=2.9us
+.meas tran Qslew TRIG V(Q) val={Va + (Vb-Va)*0.2} CROSS=LAST TARG V(Q) val={Va + (Vb-Va)*0.8} CROSS=LAST TD=2.9us
+
+.end

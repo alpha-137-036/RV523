@@ -6,6 +6,20 @@ module PULSED_DFF(
     always @(posedge(CK)) Q <= D;
 endmodule
 
+module PULSED_DFF_ASYNC_RESET(
+    output Q,
+    input D,
+    input RN
+    input CK
+);
+    always @(posedge(CK) or negedge(RN)
+        if (!RN)
+            Q <= 0;
+        else
+            Q <= D;
+endmodule
+
+
 module BUF(
     output Y,
     input A
