@@ -102,7 +102,7 @@ def DFF_characterize(out):
         params["Thold"] = 800*ns
         params["Tsetup"] = 800*ns
         
-        nominal = measure(params, transition[1])
+        nominal = measure(params, transitionTo)
         ctoq_nominal = nominal["ctoq"]
         qslew = nominal["qslew"]
         print(f"Nominal C-to-Q: {ctoq_nominal/ns:.1f}ns, qslew={qslew/ns:.1f}ns")
@@ -150,8 +150,8 @@ def DFF_characterize(out):
 
 def print_lut_table(table_name, template_name, input_1, input_2, values):
     print(f"{table_name}({template_name}) {{")
-    print(f"    input_1({",".join(str(x) for x in input_1)});")
-    print(f"    input_2({",".join(str(x) for x in input_2)});")
+    print(f"    input_1({','.join(str(x) for x in input_1)});")
+    print(f"    input_2({','.join(str(x) for x in input_2)});")
     print("    values(")
     for i in range(len(input_1)):
         print("        \"", end="")
@@ -181,7 +181,7 @@ def print_tables():
 
             print_lut_table(
                 table_name,
-                f"template_{len(slews)}x{len(out_caps)}",
+                f"delay_template_{len(slews)}x{len(out_caps)}",
                 [x/ns for x in slews],
                 [x/pF for x in out_caps],
                 values)
